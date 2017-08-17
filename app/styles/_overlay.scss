@@ -1,0 +1,27 @@
+
+#overlay{
+    position: absolute;
+    top: 99px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow:hidden;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    transition: 0.35s;
+    z-index: 100;
+    
+    .content-modal{
+        
+    }
+    
+    .content-search{
+        padding:3em;
+        background-color: white;
+        width: 55%;
+        height: 100%;
+        right: 0;
+        position: absolute;
+        
+    }
+}

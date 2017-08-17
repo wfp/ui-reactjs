@@ -1,0 +1,154 @@
+<div class="content">
+
+    <ul class="wfp--breadcrumbs">
+        <li class="wfp--breadcrumbs--home wfp--breadcrumbs--step"><a href="/"><i class="fa fa-fw fa-home"></i></a></li>
+        <li class="wfp--breadcrumbs--step"><a href="/"><span class="fill-data" data-content="labels.create_a_request"></span></a></li>
+        <li class="wfp--breadcrumbs--step"><span class="fill-data" data-content="">Leave / Absence application</span></li>
+    </ul>
+
+
+    <section class="wfp-form-container">
+        <div class="wfp-grid">
+            <div class="wfp-u-3-4">
+
+                <h2><span class="fill-data" data-content="form['HR044'].fields.title"></span></h2>
+
+                <!-- FILTER START -->
+        
+                <div class="wfp-filter closed">
+                    <div class="wfp-filter--closed">
+                        <div class="accordion-head">
+                            <a>
+                                <span class="title fill-data" data-content="form['HR044'].fields.show_my_leave_balances"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-fw fa-chevron-down"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="wfp-filter--open">
+                        <div class="accordion-head">
+                            <a>
+                                <span class="title fill-data" data-content="form['HR044'].fields.hide_my_leave_balances"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-fw fa-chevron-up"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <table rules="group" class="wfp-table">
+                            <thead>
+                                <tr>
+                                    <th><span class="fill-data" data-content="form['HR044'].fields.category"></span></th>
+                                    <th><span class="fill-data" data-content="form['HR044'].fields.available"></span></th>
+                                    <th><span class="fill-data" data-content="form['HR044'].fields.used"></span> </th>
+                                    <th><span class="fill-data" data-content="form['HR044'].fields.entitlement"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="fill-data-list" data-content="form['HR044'].values.leave_balances" >
+                                <tr class="template">
+                                    <td class="fill-data-list-item" data-content="requestor"></td>
+                                    <td>
+                                        <a href="#">
+                                            <div class="fill-data-list-item" data-content="request.type"></div>
+                                            <div class="fill-data-list-item" data-content="request.id"></div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <ul class="fill-data-list-item" data-fill-mode="list" data-content="history">
+                                            <li class="template">
+                                                <span class="fill-data-list-item hist_date" data-content="date"></span>
+                                                <span class="fill-data-list-item" data-content="author"></span>
+                                                <div class="fill-data-list-item message-box"  data-fill-attribute="class" data-content="message"><a href="#"><i class="fa fa-fw fa-envelope"></i></a></div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                
+                <!-- FILTER END -->
+
+
+
+                <div class="simple wfp-form--stacked">
+                    <form>
+                      <div class="wfp-grid">
+
+
+                <!--div class="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
+                  <label for="first-name">First name:</label>
+                  <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
+                  <label for="email">Email address:</label>
+                  <input type="email" id="email" name="email">
+                </div>
+              </div>
+              <div class="wfp-form--group">
+                <label for="selection">Pick a subject:</label>
+                <select id="selection">
+                  <optgroup label="Tropical Fruits">
+                    <option value="1" selected="">Oranges</option>
+                    <option value="2">Bananas</option>
+                    <option value="3">Grapefruits</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="wfp-form--group">
+                <label for="message">Your message:</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
+              <div class="wfp-form--group">
+                <div class="wfp-checkbox">
+                  <input type="checkbox" id="sample-1">
+                  <label for="sample-1">I would like to be contacted, if necessary.</label>
+                </div>
+              </div>
+              <fieldset class="wfp-form--group">
+                <legend>Please select preferred contact method:</legend>
+                <div class="wfp-radio">
+                  <input type="radio" id="sample-2" name="radio-grp" checked="">
+                  <label for="sample-2">by email</label>
+                </div>
+                <div class="wfp-radio">
+                  <input type="radio" id="sample-3" name="radio-grp">
+                  <label for="sample-3">by fax (if you still have one)</label>
+                </div>
+                <div class="wfp-radio">
+                  <input type="radio" id="sample-4" name="radio-grp">
+                  <label for="sample-4">by pigeon (may take a few days to reach you)</label>
+                </div>
+              </fieldset-->
+
+
+
+
+
+                <div class="wfp-form--actions">
+                    <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
+                    <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_form"></button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+            </div>
+            <div class="wfp-u-1-4">
+            </div>
+
+        
+
+
+            
+        </div>
+    </section>
+
+    
+</div>

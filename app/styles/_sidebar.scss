@@ -1,0 +1,60 @@
+
+
+.btn-info{
+    padding:10px;
+    border:1px solid $grey-light;
+    display:inline-block;
+    background-color: $grey-lighter;
+    float:right;
+}
+
+
+.sidebar {
+
+    .menu--alt{
+        background-color: white;
+        border:1px solid #ddd;
+    }
+
+    .wpf-menu.wpf-sidebar{
+        height:100%;
+        margin-left:-16px;
+        margin-top:-10px;
+        background-color:#eee;
+    }
+
+
+
+    .menu--group>li{
+        display:block;
+        padding:10px;
+        font-size: 15px;
+    }
+
+    .menu--group>li>a{
+        text-decoration:none;
+    }
+
+    .menu--group>li.active{
+        border-left:2px solid black;
+        padding-left:8px;
+    }
+
+    .menu--group.menu--bottom{
+        position: absolute;
+        bottom:0;
+    }
+
+
+    .menu--group.menu--bottom li{
+        background-color:#ccc;
+        width:100%;
+        bottom:0;
+    }
+
+    .menu--separator{
+        margin-top:-20px;
+        margin-bottom:-20px;
+    }
+
+}

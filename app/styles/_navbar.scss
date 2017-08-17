@@ -1,0 +1,48 @@
+@import '_colors';
+
+nav .img{
+    display:inline;
+    height:32px;
+    width:32px;
+    margin: 0 5px 0 10px;
+    &.img-round{
+        border-radius:100%;
+    }
+}
+ 
+
+.wfp-header-super{
+    background-color:$blue-darker;
+    line-height:2rem;
+    text-align:right;
+    
+    ul{
+        width:100%;
+        margin: 0;
+    }
+
+    li{
+        display: inline-block;
+        padding-left:1rem;
+    }
+    
+    .wfp-grid.wfp-wrapper.wfp-overbar{
+        a.menu--link{
+            /* color: $blue-lighter; */
+            outline:0;
+            color: $background;
+            text-decoration: none;
+            border-bottom-color: transparent;
+            &:hover, &:focus{
+                color: $background;
+                border-bottom-color: $background;
+            }
+        }
+    }
+
+}
+
+a.header--logo{
+    color: $background !important;
+}
+

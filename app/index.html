@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wss</title>
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- WFP UI + Grid System ~ SASS import does not work-->
+    <link rel="stylesheet" href="bower_components/wfp-ui/dist/css/wfpui+grid.css">
+    
+    <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
+    <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
+
+    <link rel="apple-touch-icon-precomposed" href="http://cdn.wfp.org/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://cdn.wfp.org/apple-touch-icon-180x180-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://cdn.wfp.org/apple-touch-icon-152x152-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://cdn.wfp.org/apple-touch-icon-120x120-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://cdn.wfp.org/apple-touch-icon-76x76-precomposed.png" />
+    <link rel="icon" sizes="192x192" href="http://cdn.wfp.org/192-192.png">
+    <link rel="shortcut icon" sizes="76x76" href="http://cdn.wfp.org/favicon.ico" />
+
+    <!-- For modern browsers with SVG support -->
+    <link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/icons/ui/ui-icons.svg.css">
+    <!-- For browsers without SVG support -->
+    <link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/icons/ui/ui-icons.png.css">
+    <!-- IE8-9 Fallback -->
+    <link rel="stylesheet" href="http://cdn.wfp.org/libraries/wfpui/v0.14.0/assets/icons/ui/ui-icons.fallback.css">
+
+    <!-- Fontawesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/jquery.tablesorter/dist/css/theme.blue.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="main" class="wfp-grid">
+      <div id="navbar" class="wfp-u-1-1"></div>
+      <div class="wfp-u-1-1">
+        <div class="wfp-wrapper" id="content"></div>
+    <div id="overlay"></div>
+      </div>
+    </div>
+    
+    <div id="footer"></div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery.tablesorter/dist/js/jquery.tablesorter.combined.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/templating.js"></script>
+    <script src="scripts/mock_data.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/mouse.js"></script>
+    <script src="scripts/behaviors.js"></script>
+    <script src="scripts/dropdown.js"></script>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/filter.js"></script>
+    <script src="scripts/status.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/tooltip.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    
+    <script src="bower_components/wfp-ui/dist/js/responsive-nav.js" defer></script>
+
+  </body>
+</html>

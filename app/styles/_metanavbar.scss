@@ -1,0 +1,27 @@
+/* Other navigational aid components */
+
+@import 'colors';
+
+.tab-selector{
+	color: $grey;
+	font-size: 1rem;
+	padding-bottom: 1rem;
+	a, a:visited{	
+		color: $grey;
+		padding: 1em 2em;
+		text-decoration: none;
+		border-bottom-color: transparent;
+		&:hover{
+			color: $primary;
+			border-bottom-color: $primary;
+		}
+		&.active{
+			color: $primary;
+			border-bottom-color: $primary;
+		}
+		&:focus{
+			text-decoration: none;
+			outline: 0;
+		}
+	}
+}

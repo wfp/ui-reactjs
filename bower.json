@@ -1,0 +1,13 @@
+{
+  "name": "wss",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "wfp-ui": "latest",
+    "jquery.tablesorter": "latest"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
