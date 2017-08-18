@@ -6,4 +6,6 @@ $(document).on("click", ".menuitem", function(){
     $(this).addClass("active");
     load_part("#"+target, action, fill_data_list);
     closeSearch();
+    
+    setTimeout(statuswidgets, 250);
 })

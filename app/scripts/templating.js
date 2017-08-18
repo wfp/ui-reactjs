@@ -8,7 +8,6 @@ function fill_data_list(selector){
         fill_data_list_el(el,"");
     });
     fill_data();
-    
     $("table").tablesorter();
 }
 
