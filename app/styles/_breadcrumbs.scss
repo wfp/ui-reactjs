@@ -9,7 +9,7 @@
         color: $accent;
     }
     .wfp--breadcrumbs--home:after, .wfp--breadcrumbs--step:not(:last-child):after{
-        content:"\0000a0\0000a0\0000a0\0000a0\0000a0>\0000a0\0000a0\0000a0\0000a0\0000a0";
+        content:"\0000a0\0000a0\0000a0>\0000a0\0000a0\0000a0";
         color: $grey-light;
         font-weight: normal;
     }

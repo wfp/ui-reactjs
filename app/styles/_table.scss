@@ -4,9 +4,10 @@ table.wfp-table {
     table-layout:fixed;
     border-spacing:0;
     margin-bottom: 1rem;
+    font-size: 0.9em;
     thead{
         th{
-            padding:20px;
+            padding:2em 1em;
             border-top: 2px solid $grey-lighter;
             border-bottom: 2px solid $grey-lighter;
             text-transform:uppercase;
@@ -33,9 +34,12 @@ table.wfp-table {
  */
     tbody{
         td{
-            padding:20px;
+            padding:1em;
             border-top: 1px solid $grey-lighter;
             border-bottom: none;
+            ul{
+                padding: 0;
+            }
         }
     }
 }
