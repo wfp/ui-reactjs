@@ -47,22 +47,14 @@
                             </thead>
                             <tbody class="fill-data-list" data-content="form['HR044'].values.leave_balances" >
                                 <tr class="template">
-                                    <td class="fill-data-list-item" data-content="requestor"></td>
                                     <td>
-                                        <a href="#">
-                                            <div class="fill-data-list-item" data-content="request.type"></div>
-                                            <div class="fill-data-list-item" data-content="request.id"></div>
-                                        </a>
+                                        <div class="fill-data-list-item hilight" data-content="category.type"></div>
+                                        <div class="fill-data-list-item faint" data-content="category.validity"></div>
+                                     
                                     </td>
-                                    <td>
-                                        <ul class="fill-data-list-item" data-fill-mode="list" data-content="history">
-                                            <li class="template">
-                                                <span class="fill-data-list-item hist_date" data-content="date"></span>
-                                                <span class="fill-data-list-item" data-content="author"></span>
-                                                <div class="fill-data-list-item message-box"  data-fill-attribute="class" data-content="message"><a href="#"><i class="fa fa-fw fa-envelope"></i></a></div>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td class="fill-data-list-item" data-content="available"></td>
+                                    <td class="fill-data-list-item" data-content="used"></td>
+                                    <td class="fill-data-list-item" data-content="entitlement"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,10 +65,142 @@
                 <!-- FILTER END -->
 
 
-
-                <div class="simple wfp-form--stacked">
-                    <form>
+                <div class=" wfp-form--aligned wfp-form--stacked">
                       <div class="wfp-grid">
+
+                        <div class="wfp-u-1">
+                            <form>
+
+                            <div class="wfp-form--group wfp-box--flat-padded wfp-form--behalf close">
+                                <div class="wfp-u-1-3 odd">
+                                    <div class="wfp-checkbox">
+                                      <input type="checkbox" id="cb-change-requestor">
+                                      <label for="cb-change-requestor"><span class="fill-data" data-content="form['HR044'].fields.change_requestor"></span></label>
+                                    </div>
+                                </div>
+                                <div class="wfp-u-2-3">
+                                    <div class="wfp-form--behalf--input">
+                                        <label for="the_form_will_be_submitted_on_behalf_of"><span class="fill-data" data-content="form['HR044'].fields.the_form_will_be_submitted_on_behalf_of"></span></label>
+                                        <input type="text" id="the_form_will_be_submitted_on_behalf_of" name="the_form_will_be_submitted_on_behalf_of">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="wfp-form--group wfp-box--flat-padded">
+                                <div class="wfp-u-1-3 odd">
+                                    <label for="leavetype-selection"><span class="fill-data" data-content="form['HR044'].fields.leave_type"></span><span class="required-symbol">*</span></label>
+                                </div>
+                                <div class="wfp-u-2-3">
+                                    <select id="leavetype-selection" required>
+                                      <optgroup label="Select a leave type">
+                                        <option disabled selected>──────────</option>
+                                        <!--option value="0100">Annual leave</option>
+                                        <option value="0420">Certified sick leave</option>
+                                        <option value="0400">Uncertified sick leave</option>
+                                        <option value="0401">Uncertified family leave</option>
+                                        <option value="0800">Floating Day</option>
+                                        <option value="0710">Compensatory Leave</option>
+                                        <option value="0105">Terminal Leave</option>
+                                        <option value="0300">Travel time</option>
+                                        <option value="0640">Civic Responsibility</option>
+                                        <option value="1600">Not worked day</option-->
+
+                                            <option value="1600">Not worked day</option>
+                                            <option value="0800">Floating Day</option>
+                                            <option value="0300">Travel time</option>
+                                            <option value="0640">Civic Responsibility</option>
+                                            <option value="0710">Compensatory Leave</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            <option value="0420">Certified sick leave</option>
+                                            <option value="0400">Uncertified sick leave</option>
+                                            <option value="0401">Uncertified family leave</option>
+                                        </optgroup>
+                                            <optgroup label="">
+                                            <option value="0100">Annual leave</option>
+                                            <option value="0105">Terminal Leave</option>
+                                      </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <fieldset class="wfp-form--group wfp-box--flat-padded">
+                                <div class="wfp-u-1-3 odd">
+                                    <legend><span class="fill-data" data-content="form['HR044'].fields.please_select_appropriate_option"></span><span class="required-symbol">*</span></legend>
+                                </div>
+                                <div class="wfp-u-2-3">
+
+                                    <div class="wfp-radio">
+                                      <input type="radio" id="leave_option_1" name="radio-grp" checked="">
+                                      <label for="leave_option_1"><span class="fill-data" data-content="form['HR044'].fields.full_days"></span></label>
+                                    </div>
+                                    <div class="wfp-radio">
+                                      <input type="radio" id="leave_option_2" name="radio-grp">
+                                      <label for="leave_option_2"><span class="fill-data" data-content="form['HR044'].fields.half_day_AM"></span></label>
+                                    </div>
+                                    <div class="wfp-radio">
+                                      <input type="radio" id="leave_option_3" name="radio-grp">
+                                      <label for="leave_option_3"><span class="fill-data" data-content="form['HR044'].fields.half_day_PM"></span></label>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+
+                            <div class="wfp-u-1 wfp-box--flat-padded">
+                                
+                                <div class="wfp-u-1-3 odd single-label">
+                                    <label class="fill-data" data-content="labels.creation_date"></label>
+                                </div>
+                                <div class="wfp-u-1-3 text-aligned-left">
+                                    <label class="fill-data" for="from-date" data-content="labels.from"></label>
+                                    <input type="date" name="from-date">
+                                </div>
+                                <div class="wfp-u-1-3 text-aligned-left">
+                                    <label class="fill-data" for="to-date" data-content="labels.to"></label>
+                                    <input type="date" name="to-date">
+                                </div>
+                            </div>
+
+                            <div class="wfp-u-1 wfp-box--flat-padded">
+                                <div class="wfp-u-1-3 odd">
+                                    <label for="contact_details_while_absent"><span class="fill-data" data-content="form['HR044'].fields.contact_details_while_absent"></span><span class="required-symbol">*</span></label>
+                                </div>
+                                <div class="wfp-u-2-3">
+                                    <input type="text" id="contact_details_while_absent" name="contact_details_while_absent" required>
+                                </div>
+                            </div>
+
+                            <div class="wfp-u-1 wfp-box--flat-padded">
+                                <div class="wfp-u-1-3 odd">
+                                    <label for="supervisor"><span class="fill-data" data-content="form['HR044'].fields.supervisor"></span><span class="required-symbol">*</span></label>
+                                </div>
+                                <div class="wfp-u-2-3">
+                                    <input type="text" id="supervisor" name="supervisor" required>
+                                </div>
+                            </div>
+
+                            <div class="wfp-u-1 wfp-box--flat-padded">
+                                <div class="wfp-u-1-3 odd">
+                                    <label for="information_details"><span class="fill-data" data-content="form['HR044'].fields.information_details"></span></label>
+                                </div>
+                                <div class="wfp-u-2-3">
+                                    <input type="text" id="information_details" name="information_details">
+                                </div>
+                            </div>
+
+                            <div class="wfp-form--actions">
+                                <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
+                                <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_form"></button>
+                            </div>
+                            </form>
+
+                        </div>
+                        <div class="wfp-u-1-3">
+
+                        </div>
 
 
                 <!--div class="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
@@ -88,51 +212,19 @@
                   <input type="email" id="email" name="email">
                 </div>
               </div>
-              <div class="wfp-form--group">
-                <label for="selection">Pick a subject:</label>
-                <select id="selection">
-                  <optgroup label="Tropical Fruits">
-                    <option value="1" selected="">Oranges</option>
-                    <option value="2">Bananas</option>
-                    <option value="3">Grapefruits</option>
-                  </optgroup>
-                </select>
-              </div>
+              
               <div class="wfp-form--group">
                 <label for="message">Your message:</label>
                 <textarea name="message" id="message"></textarea>
               </div>
-              <div class="wfp-form--group">
-                <div class="wfp-checkbox">
-                  <input type="checkbox" id="sample-1">
-                  <label for="sample-1">I would like to be contacted, if necessary.</label>
-                </div>
-              </div>
-              <fieldset class="wfp-form--group">
-                <legend>Please select preferred contact method:</legend>
-                <div class="wfp-radio">
-                  <input type="radio" id="sample-2" name="radio-grp" checked="">
-                  <label for="sample-2">by email</label>
-                </div>
-                <div class="wfp-radio">
-                  <input type="radio" id="sample-3" name="radio-grp">
-                  <label for="sample-3">by fax (if you still have one)</label>
-                </div>
-                <div class="wfp-radio">
-                  <input type="radio" id="sample-4" name="radio-grp">
-                  <label for="sample-4">by pigeon (may take a few days to reach you)</label>
-                </div>
-              </fieldset-->
+
+              -->
 
 
 
 
 
-                <div class="wfp-form--actions">
-                    <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
-                    <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_form"></button>
-                </div>
-            </form>
+
         </div>
 
 

@@ -193,3 +193,26 @@ form {
         margin-left: 5px;
     }
 }
+
+.wfp-box--flat-padded{
+    margin-bottom: 2rem !important;
+}
+
+.wfp-form--aligned legend{
+    border: none !important;
+}
+
+
+/* BEHAVIOURS */
+
+.wfp-form--behalf{
+    .wfp-form--behalf--input{
+        display: block;
+    }
+    &.close{
+        .wfp-form--behalf--input{
+            display: none;
+        }
+    }
+
+}

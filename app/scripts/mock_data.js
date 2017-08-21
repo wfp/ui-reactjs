@@ -61,7 +61,6 @@ var labels = {
 
 };
 
-
 var form = [];
 form['HR044'] = {
     fields: {
@@ -70,6 +69,7 @@ form['HR044'] = {
         show_my_leave_balances: "Show my leave balances",
         hide_my_leave_balances: "Hide my leave balances",
         leave_type: "Leave type",
+        the_form_will_be_submitted_on_behalf_of: "The form will be submitted on behalf of",
         leave_description: "If you have insufficient quota or no quota please contact your Time-Keeper if advanced annual leave feasable. See <a href='#'>HR Manual Section</a> V.1 \'Annual Leave\'.",
         number_of_working_days: "Number of working days",
         contact_details_while_absent: "Contact details while absent",
@@ -87,7 +87,17 @@ form['HR044'] = {
         entitlement: "Entitlement",
     },
     values:{
-        leave_balances: {},
+        leave_balances: [
+            {
+                category:{
+                    type: "Annual leave",
+                    validity: "Valid until 28/12/2018"
+                },
+                available: "28 days",
+                used: "28 days",
+                entitlement: "28 days",
+            },
+        ],
     },
     description: "",
     metadata:[],
