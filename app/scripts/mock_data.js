@@ -8,6 +8,7 @@ var user = {
 
 var labels = {
     /* GENERIC */
+    home: "Home",
     incoming_requests: "Incoming requests",
     my_requests: "My requests",
     awaiting_your_action: "Awaiting your action",
@@ -65,7 +66,7 @@ var form = [];
 form['HR044'] = {
     fields: {
         /* LEAVE FORM */
-        title: "Leave / Absence application",
+        title: "Leave / Absence application (HR-044)",
         show_my_leave_balances: "Show my leave balances",
         hide_my_leave_balances: "Hide my leave balances",
         leave_type: "Leave type",
