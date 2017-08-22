@@ -53,10 +53,10 @@ var labels = {
     status: "Status",
     clear_form:"Clear",
     filter_form:"Filter",
-    creation_date:"Creation date:",
+    creation_date:"Creation date",
     dates: "Dates",
-    from:"From *",
-    to:"To *",
+    from:"From",
+    to:"To",
     officer:"Officer",
 
 
@@ -98,7 +98,46 @@ form['HR044'] = {
                 used: "28 days",
                 entitlement: "28 days",
             },
+            {
+                category:{
+                    type: "Certified sick leave",
+                    validity: "Valid until 12/10/2017"
+                },
+                available: "20 days",
+                used: "8 days",
+                entitlement: "19 days",
+            },
         ],
+    },
+    description: "",
+    metadata:[],
+}
+
+form['DISCLOSURE'] = {
+    fields: {
+        /* RELATED PARTY DISCLOSURE FORM */
+        title: "Leave / Absence application (HR-044)",
+        show_my_leave_balances: "Show my leave balances",
+        hide_my_leave_balances: "Hide my leave balances",
+        leave_type: "Leave type",
+        the_form_will_be_submitted_on_behalf_of: "The form will be submitted on behalf of",
+        leave_description: "If you have insufficient quota or no quota please contact your Time-Keeper if advanced annual leave feasable. See <a href='#'>HR Manual Section</a> V.1 \'Annual Leave\'.",
+        number_of_working_days: "Number of working days",
+        contact_details_while_absent: "Contact details while absent",
+        information_details: "Information details",
+        required_fields:"required fields",
+        change_requestor: "Change requestor",
+        please_select_appropriate_option: "Please select appropriate option",
+        full_days: "Full days",
+        half_day_AM: "Half day AM",
+        half_day_PM: "Half day PM",
+        supervisor: "Supervisor",
+        category: "Category",
+        available: "Available",
+        used: "Used",
+        entitlement: "Entitlement",
+    },
+    values:{
     },
     description: "",
     metadata:[],

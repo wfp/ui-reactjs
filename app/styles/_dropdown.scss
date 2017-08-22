@@ -1,24 +1,50 @@
+@import 'colors';
+
+.dropdown{
+    z-index: 1000;
+    padding: 0.5em 0;
+    background-color: $background;
+    color: $black;
+    position:absolute;
+    min-width: 250px;
+    box-shadow: 2px 2px 4px $grey;
+
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li{
+            margin: 0;
+            padding: 0;
+            display: block;
+            a{
+                display: block;
+                padding: 1em 2em;
+                border: none;
+                &:hover{
+                    background-color: $primary;
+                    color: $background;
+                }
+            }
+        }
+    }
+}
+
+
 .dropdown-trigger{
     position:relative;
     cursor:pointer;
-    
     .dropdown {
-        position:absolute;
         top:45px;
         right: 0;
-        background-color: white;
-        color: black;
-        min-width: 250px;
-        padding: 20px 30px;
-        box-shadow: 2px 2px 4px #242424;
     }
     & + .dropdown {
-        position: absolute;
-        background-color: white;
-        color: black;
-        min-width: 250px;
-        padding: 20px 30px;
-        box-shadow: 2px 2px 4px #242424;
+        padding-top: 0;
+        .dropdown--label{
+            background-color: $grey-lighterer;
+            color: $grey-dark;
+            padding: 1em;
+        }
     }
 
     &.closed .dropdown, &.closed + .dropdown{

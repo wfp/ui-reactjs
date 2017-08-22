@@ -216,3 +216,7 @@ form {
     }
 
 }
+
+select:invalid{
+    color: $grey;
+}

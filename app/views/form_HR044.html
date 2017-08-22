@@ -85,8 +85,9 @@
                            </div>
                            <div class="wfp-u-2-3">
                               <select id="leavetype-selection" required>
-                                 <optgroup label="Select a leave type">
-                                    <option disabled selected>──────────</option>
+                                    <option disabled selected value="">Select a leave type</option>
+                                    <option disabled>──────────</option>
+                                 <optgroup label="">
                                     <!--option value="0100">Annual leave</option>
                                        <option value="0420">Certified sick leave</option>
                                        <option value="0400">Uncertified sick leave</option>
@@ -139,13 +140,17 @@
                               <label class="fill-data" data-content="labels.creation_date"></label>
                            </div>
                            <div class="wfp-u-1-3 wfp-box--flat pl0">
-                              <label class="fill-data" for="from-date" data-content="labels.from"></label>
+                              <label><span class="fill-data" for="from-date" data-content="labels.from"></span><span class="required-symbol">*</span></label>
                               <input type="date" name="from-date">
-                              <p><span class="fill-data faint" data-content="form['HR044'].fields.number_of_working_days"></span>:<span class="hilight-symbol">19</span></p>
                            </div>
                            <div class="wfp-u-1-3 wfp-box--flat">
-                              <label class="fill-data" for="to-date" data-content="labels.to"></label>
+                              <label><span class="fill-data" for="to-date" data-content="labels.to"></span><span class="required-symbol">*</span></label>
                               <input type="date" name="to-date">
+                           </div>
+                           <div class="wfp-u-1-3">
+                           </div>
+                           <div class="wfp-u-2-3">
+                              <p><span class="fill-data faint" data-content="form['HR044'].fields.number_of_working_days"></span>:<span class="hilight-symbol">19</span></p>
                            </div>
                         </div>
                         <div class="wfp-grid wfp-box--flat-padded">
