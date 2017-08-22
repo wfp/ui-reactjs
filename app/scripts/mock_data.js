@@ -66,7 +66,8 @@ var form = [];
 form['HR044'] = {
     fields: {
         /* LEAVE FORM */
-        title: "Leave / Absence application (HR-044)",
+        title: "Leave / Absence application",
+        id: "HR-044",
         show_my_leave_balances: "Show my leave balances",
         hide_my_leave_balances: "Hide my leave balances",
         leave_type: "Leave type",
@@ -113,29 +114,12 @@ form['HR044'] = {
     metadata:[],
 }
 
-form['DISCLOSURE'] = {
+form['IPSAS-20'] = {
     fields: {
         /* RELATED PARTY DISCLOSURE FORM */
-        title: "Leave / Absence application (HR-044)",
-        show_my_leave_balances: "Show my leave balances",
-        hide_my_leave_balances: "Hide my leave balances",
-        leave_type: "Leave type",
-        the_form_will_be_submitted_on_behalf_of: "The form will be submitted on behalf of",
-        leave_description: "If you have insufficient quota or no quota please contact your Time-Keeper if advanced annual leave feasable. See <a href='#'>HR Manual Section</a> V.1 \'Annual Leave\'.",
-        number_of_working_days: "Number of working days",
-        contact_details_while_absent: "Contact details while absent",
-        information_details: "Information details",
-        required_fields:"required fields",
-        change_requestor: "Change requestor",
-        please_select_appropriate_option: "Please select appropriate option",
-        full_days: "Full days",
-        half_day_AM: "Half day AM",
-        half_day_PM: "Half day PM",
-        supervisor: "Supervisor",
-        category: "Category",
-        available: "Available",
-        used: "Used",
-        entitlement: "Entitlement",
+        title: "Related party disclosure",
+        id: "IPSAS-20",
+        see_the_disclosure_form: "See my Disclosure form",
     },
     values:{
     },
@@ -328,21 +312,31 @@ var latest_forms = [
     {
         name:"Leave / Absence application",
         description:"HR044 - This is the description for this form",
+        id:"HR-044",
         ident:"form_HR044"
     },
     {
         name:"Related party disclosure",
-        description:"[Test] Related Party Disclosure - This is the description for this form",
-        ident:"form_related_party"
+        description:"[IPSAS-20] Related Party Disclosure - This is the description for this form",
+        id:"IPSAS-20",
+        ident:"form_IPSAS20"
+    },
+    {
+        name:"Related party disclosure",
+        description:"[IPSAS-20] TEST this is the actual form",
+        id:"IPSAS-20",
+        ident:"form_IPSAS20"
     },
     {
         name:"Rental subsidy / advance / deduction",
         description:"HR039 - This form regards Eucation Grant Requests. Submit this form for processing of payment.",
+        id:"HR-039",
         ident:"form_HR039"
     },
     {
         name:"Telecommuting arrangement (TCA)",
         description:"HR027 - This is the description for this form",
+        id:"HR-027",
         ident:"form_HR027"
     },
 
@@ -350,6 +344,7 @@ var latest_forms = [
 
 var request = {};
 request['HR-017097'] = {
+    form_id: "HR-044",
     name: "Leave / Absence application",
     request_date: "Monday 26 September 2017",
     submission_date: "Tuesday 27 September 2017",

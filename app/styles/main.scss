@@ -69,18 +69,37 @@ section, .section{
     font-size: 0.9em;
 }
 
-.hilight-symbol{
-    color: $black;
+.symbol{
     font-weight: bold;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
+.hilight-symbol{
+    @extend .symbol;
+    color: $black;
+
+}
+
 .required-symbol{
+    @extend .symbol;
     color: $red;
-    font-weight: bold;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+}
+
+.tooltip-symbol{
+    @extend .symbol;
+    border-bottom: 1px dashed $grey;
+    padding-bottom: 0.2rem;
+    color: $grey-dark !important;
+    &:hover {
+        color: $primary !important;
+    }
+    a{
+        color: $grey-dark !important;
+        &:hover {
+            color: $primary !important;
+        }
+    }
 }
 
 .hilight{
