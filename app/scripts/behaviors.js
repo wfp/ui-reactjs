@@ -1,5 +1,5 @@
 
-$(document).on("click", ".menuitem", function(){ 
+$(document).on("click", ".menuitem, .mock-navigation", function(){ 
     $(".active").removeClass("active");
     var action = $(this).data("action");
     var target = $(this).data("target");

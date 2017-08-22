@@ -2,7 +2,6 @@
 
 .wfp-form-description{
     padding-bottom: 2rem;
-    /*border-left:1px solid $grey-lighterer;*/
 
     .heading{
         padding-bottom:1em;
@@ -18,6 +17,8 @@
     }
 }
 
+
+/* Form Request Status */
 .wfp-form-manager{
     .form-meta-field{
         .title{
@@ -28,7 +29,7 @@
     .form-meta{
         padding-top:40px;
         &>div{
-            border-left:1px solid #e8e8e8;
+            border-left:1px solid $grey-lighter;
             padding-left:30px;
             
             .form-meta-field{
@@ -124,35 +125,34 @@
     
 }
 
-.wfp-form{
-    input{
-        width:100%;
-    }
-    .wfp-form--input-group{
-        width:100%;
-        input{
-            width:50%;
-        }
-    }
-}
 
-.wfp-form--input-decoration{
-    display:inline-block;
-    border: 1px solid #bababa;
-    padding:6px;
-    padding-bottom:7px;
-    margin-right: -3px;
+/* CURRENCY COMPONENT */
+
+.wfp-form--input-group-currency{
+
+    .wfp-form--input-currency-label{
+        display:inline-block;
+        border: 1px solid $grey;
+        padding:6px;
+        padding-bottom:7px;
+        margin: 0;
+        background-color: $grey-lighter;
+    }
+    .wfp-form--input-currency{
+        border: 1px solid $grey;
+        display: inline-block !important;
+        width: 200px!important;
+    }
+
 }
 
 .disabled{
-    .wfp-form--input-decoration{
-        background-color: rgb(235,235,228);
+    input{
+        background-color: $grey-lighter;
+        opacity: 0.6 !important;
     }
 }
 
-.help-gray{
-    color:#bababa;
-}
 
 form {
     .wfp-grid{
@@ -181,10 +181,6 @@ form {
     }
 }
 
-
-.wfp-form-container{
-
-}
 
 .wfp-form--actions{
     width: 100%;

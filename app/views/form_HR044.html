@@ -7,7 +7,11 @@
    <section class="wfp-form-container">
       <div class="wfp-grid">
 
-         <div class="wfp-u-1">
+         <div class="wfp-u-1-6">
+
+         </div>
+         <div class="wfp-u-2-3">
+
             <h2><span class="fill-data" data-content="form['HR044'].fields.title"></span> (<span class="fill-data" data-content="form['HR044'].fields.id"></span>)</h2>
             <!-- FILTER START -->
             <div class="wfp-filter closed">
@@ -54,140 +58,137 @@
                </div>
             </div>
             <!-- FILTER END -->
-         </div>
 
-         <div class="wfp-u-1-6">
-
-         </div>
-         <div class="wfp-u-2-3">
+            <!-- FORM START -->
             <div class=" wfp-form--aligned wfp-form--stacked">
-               <div class="wfp-grid">
-                  <div class="wfp-u-1">
-                     <form>
-                        <div class="wfp-grid wfp-box--flat-padded wfp-form--behalf close">
-                           <div class="wfp-u-1-3">
-                              <div class="wfp-checkbox">
-                                 <input type="checkbox" id="cb-change-requestor">
-                                 <label for="cb-change-requestor"><span class="fill-data" data-content="form['HR044'].fields.change_requestor"></span></label>
-                              </div>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <div class="wfp-form--behalf--input">
-                                 <label for="the_form_will_be_submitted_on_behalf_of"><span class="fill-data" data-content="form['HR044'].fields.the_form_will_be_submitted_on_behalf_of"></span></label>
-                                 <input type="text" id="the_form_will_be_submitted_on_behalf_of" name="the_form_will_be_submitted_on_behalf_of">
-                              </div>
-                           </div>
+
+               <form>
+                  <div class="wfp-grid wfp-box--flat-padded wfp-form--behalf close">
+                     <div class="wfp-u-1-3">
+                        <div class="wfp-checkbox">
+                           <input type="checkbox" id="cb-change-requestor">
+                           <label for="cb-change-requestor"><span class="fill-data" data-content="form['HR044'].fields.change_requestor"></span></label>
                         </div>
-                        <hr>
-                        <div class="wfp-grid wfp-box--flat-padded">
-                           <div class="wfp-u-1-3">
-                              <label for="leavetype-selection"><span class="fill-data" data-content="form['HR044'].fields.leave_type"></span><span class="required-symbol">*</span></label>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <select id="leavetype-selection" required>
-                                    <option disabled selected value="">Select a leave type</option>
-                                    <option disabled>──────────</option>
-                                 <optgroup label="">
-                                    <!--option value="0100">Annual leave</option>
-                                       <option value="0420">Certified sick leave</option>
-                                       <option value="0400">Uncertified sick leave</option>
-                                       <option value="0401">Uncertified family leave</option>
-                                       <option value="0800">Floating Day</option>
-                                       <option value="0710">Compensatory Leave</option>
-                                       <option value="0105">Terminal Leave</option>
-                                       <option value="0300">Travel time</option>
-                                       <option value="0640">Civic Responsibility</option>
-                                       <option value="1600">Not worked day</option-->
-                                    <option value="1600">Not worked day</option>
-                                    <option value="0800">Floating Day</option>
-                                    <option value="0300">Travel time</option>
-                                    <option value="0640">Civic Responsibility</option>
-                                    <option value="0710">Compensatory Leave</option>
-                                 </optgroup>
-                                 <optgroup label="">
-                                    <option value="0420">Certified sick leave</option>
-                                    <option value="0400">Uncertified sick leave</option>
-                                    <option value="0401">Uncertified family leave</option>
-                                 </optgroup>
-                                 <optgroup label="">
-                                    <option value="0100">Annual leave</option>
-                                    <option value="0105">Terminal Leave</option>
-                                 </optgroup>
-                              </select>
-                           </div>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <div class="wfp-form--behalf--input">
+                           <label for="the_form_will_be_submitted_on_behalf_of"><span class="fill-data" data-content="form['HR044'].fields.the_form_will_be_submitted_on_behalf_of"></span></label>
+                           <input type="text" id="the_form_will_be_submitted_on_behalf_of" name="the_form_will_be_submitted_on_behalf_of">
                         </div>
-                        <fieldset class="wfp-form--group wfp-box--flat-padded wfp-grid">
-                           <div class="wfp-u-1-3">
-                              <legend><span class="fill-data" data-content="form['HR044'].fields.please_select_appropriate_option"></span><span class="required-symbol">*</span></legend>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <div class="wfp-radio">
-                                 <input type="radio" id="leave_option_1" name="radio-grp" checked="">
-                                 <label for="leave_option_1"><span class="fill-data" data-content="form['HR044'].fields.full_days"></span></label>
-                              </div>
-                              <div class="wfp-radio">
-                                 <input type="radio" id="leave_option_2" name="radio-grp">
-                                 <label for="leave_option_2"><span class="fill-data" data-content="form['HR044'].fields.half_day_AM"></span></label>
-                              </div>
-                              <div class="wfp-radio">
-                                 <input type="radio" id="leave_option_3" name="radio-grp">
-                                 <label for="leave_option_3"><span class="fill-data" data-content="form['HR044'].fields.half_day_PM"></span></label>
-                              </div>
-                           </div>
-                        </fieldset>
-                        <div class="wfp-grid wfp-box--flat-padded">
-                           <div class="wfp-u-1-3">
-                              <label class="fill-data" data-content="labels.creation_date"></label>
-                           </div>
-                           <div class="wfp-u-1-3 wfp-box--flat pl0">
-                              <label><span class="fill-data" for="from-date" data-content="labels.from"></span><span class="required-symbol">*</span></label>
-                              <input type="date" name="from-date">
-                           </div>
-                           <div class="wfp-u-1-3 wfp-box--flat">
-                              <label><span class="fill-data" for="to-date" data-content="labels.to"></span><span class="required-symbol">*</span></label>
-                              <input type="date" name="to-date">
-                           </div>
-                           <div class="wfp-u-1-3">
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <p><span class="fill-data faint" data-content="form['HR044'].fields.number_of_working_days"></span>:<span class="hilight-symbol">19</span></p>
-                           </div>
-                        </div>
-                        <div class="wfp-grid wfp-box--flat-padded">
-                           <div class="wfp-u-1-3">
-                              <label for="contact_details_while_absent"><span class="fill-data" data-content="form['HR044'].fields.contact_details_while_absent"></span> <span class="required-symbol">*</span></label>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <input type="text" id="contact_details_while_absent" name="contact_details_while_absent" required>
-                           </div>
-                        </div>
-                        <div class="wfp-grid wfp-box--flat-padded">
-                           <div class="wfp-u-1-3">
-                              <label for="supervisor"><span class="fill-data" data-content="form['HR044'].fields.supervisor"></span> <span class="required-symbol">*</span></label>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <input type="text" id="supervisor" name="supervisor" required>
-                           </div>
-                        </div>
-                        <div class="wfp-grid wfp-box--flat-padded">
-                           <div class="wfp-u-1-3">
-                              <label for="information_details"><span class="fill-data" data-content="form['HR044'].fields.information_details"></span></label>
-                           </div>
-                           <div class="wfp-u-2-3">
-                              <input type="text" id="information_details" name="information_details">
-                           </div>
-                        </div>
-                        <div class="wfp-u-1">
-                           <p><span class="required-symbol">*</span><span class="faint">required field</span></p>
-                        </div>
-                        <div class="wfp-form--actions">
-                           <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
-                           <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_form"></button>
-                        </div>
-                     </form>
+                     </div>
                   </div>
-               </div>
+                  <hr>
+                  <div class="wfp-grid wfp-box--flat-padded">
+                     <div class="wfp-u-1-3">
+                        <label for="leavetype-selection"><span class="fill-data" data-content="form['HR044'].fields.leave_type"></span><span class="required-symbol">*</span></label>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <select id="leavetype-selection" required>
+                              <option disabled selected value="">Select a leave type</option>
+                              <option disabled>──────────</option>
+                           <optgroup label="">
+                              <!--option value="0100">Annual leave</option>
+                                 <option value="0420">Certified sick leave</option>
+                                 <option value="0400">Uncertified sick leave</option>
+                                 <option value="0401">Uncertified family leave</option>
+                                 <option value="0800">Floating Day</option>
+                                 <option value="0710">Compensatory Leave</option>
+                                 <option value="0105">Terminal Leave</option>
+                                 <option value="0300">Travel time</option>
+                                 <option value="0640">Civic Responsibility</option>
+                                 <option value="1600">Not worked day</option-->
+                              <option value="1600">Not worked day</option>
+                              <option value="0800">Floating Day</option>
+                              <option value="0300">Travel time</option>
+                              <option value="0640">Civic Responsibility</option>
+                              <option value="0710">Compensatory Leave</option>
+                           </optgroup>
+                           <optgroup label="">
+                              <option value="0420">Certified sick leave</option>
+                              <option value="0400">Uncertified sick leave</option>
+                              <option value="0401">Uncertified family leave</option>
+                           </optgroup>
+                           <optgroup label="">
+                              <option value="0100">Annual leave</option>
+                              <option value="0105">Terminal Leave</option>
+                           </optgroup>
+                        </select>
+                     </div>
+                  </div>
+                  <fieldset class="wfp-form--group wfp-box--flat-padded wfp-grid">
+                     <div class="wfp-u-1-3">
+                        <legend><span class="fill-data" data-content="form['HR044'].fields.please_select_appropriate_option"></span><span class="required-symbol">*</span></legend>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <div class="wfp-radio">
+                           <input type="radio" id="leave_option_1" name="radio-grp" checked="">
+                           <label for="leave_option_1"><span class="fill-data" data-content="form['HR044'].fields.full_days"></span></label>
+                        </div>
+                        <div class="wfp-radio">
+                           <input type="radio" id="leave_option_2" name="radio-grp">
+                           <label for="leave_option_2"><span class="fill-data" data-content="form['HR044'].fields.half_day_AM"></span></label>
+                        </div>
+                        <div class="wfp-radio">
+                           <input type="radio" id="leave_option_3" name="radio-grp">
+                           <label for="leave_option_3"><span class="fill-data" data-content="form['HR044'].fields.half_day_PM"></span></label>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <div class="wfp-grid wfp-box--flat-padded">
+                     <div class="wfp-u-1-3">
+                        <label class="fill-data" data-content="labels.creation_date"></label>
+                     </div>
+                     <div class="wfp-u-1-3 wfp-box--flat pl0">
+                        <label><span class="fill-data" for="from-date" data-content="labels.from"></span><span class="required-symbol">*</span></label>
+                        <input type="date" name="from-date">
+                     </div>
+                     <div class="wfp-u-1-3 wfp-box--flat">
+                        <label><span class="fill-data" for="to-date" data-content="labels.to"></span><span class="required-symbol">*</span></label>
+                        <input type="date" name="to-date">
+                     </div>
+                     <div class="wfp-u-1-3">
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <p><span class="fill-data faint" data-content="form['HR044'].fields.number_of_working_days"></span>:<span class="hilight-symbol">19</span></p>
+                     </div>
+                  </div>
+                  <div class="wfp-grid wfp-box--flat-padded">
+                     <div class="wfp-u-1-3">
+                        <label for="contact_details_while_absent"><span class="fill-data" data-content="form['HR044'].fields.contact_details_while_absent"></span> <span class="required-symbol">*</span></label>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <input type="text" id="contact_details_while_absent" name="contact_details_while_absent" required>
+                     </div>
+                  </div>
+                  <div class="wfp-grid wfp-box--flat-padded">
+                     <div class="wfp-u-1-3">
+                        <label for="supervisor"><span class="fill-data" data-content="form['HR044'].fields.supervisor"></span> <span class="required-symbol">*</span></label>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <input type="text" id="supervisor" name="supervisor" required>
+                     </div>
+                  </div>
+                  <div class="wfp-grid wfp-box--flat-padded">
+                     <div class="wfp-u-1-3">
+                        <label for="information_details"><span class="fill-data" data-content="form['HR044'].fields.information_details"></span></label>
+                     </div>
+                     <div class="wfp-u-2-3">
+                        <input type="text" id="information_details" name="information_details">
+                     </div>
+                  </div>
+                  
+                  <div class="wfp-u-1 mt1">
+                     <p><span class="required-symbol">*</span><span class="faint">required field</span></p>
+                  </div>
+                  <div class="wfp-form--actions">
+                     <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
+                     <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_form"></button>
+                  </div>
+               </form>
+
             </div>
+            <!-- FORM END -->
+
          </div>
          <div class="wfp-u-1-6">
 

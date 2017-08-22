@@ -1,0 +1,153 @@
+<div class="content">
+
+   <ul class="wfp--breadcrumbs">
+      <li class="wfp--breadcrumbs--home wfp--breadcrumbs--step"><a href="/"><i class="fa fa-fw fa-home"></i> <span class="fill-data" data-content="labels.home"></span></a></li>
+      <li class="wfp--breadcrumbs--step"><a href="/"><span class="fill-data" data-content="labels.create_a_request"></span></a></li>
+      <li class="wfp--breadcrumbs--step"><span class="fill-data" data-content="form['IPSAS-20'].fields.title"></span></li>
+   </ul>
+   <section class="wfp-form-container">
+      <div class="wfp-grid">
+
+        <div class="wfp-u-1-6">
+
+        </div>
+        <!-- MAIN COLUMN START -->
+        <div class="wfp-u-2-3">
+          <h2><span class="fill-data" data-content="form['IPSAS-20'].fields.title"></span> (<span class="fill-data" data-content="form['IPSAS-20'].fields.id"></span>)</h2>
+          
+          <div class="box info">
+            <h2>Dear Colleagues,</h2>
+
+            <p>you are requested to <strong>confirm</strong> your monetary compensation, including your close family member(s), as disclosed in items <strong>1</strong> and <strong>3</strong> respectively and provide any additional information for items <strong>2</strong> and <strong>4</strong> in the form, if applicable.</p>
+            <p>The information you provide will be treated on a strictly confidential basis and it will be disclosed on an aggregated level as part of the Notes to <a href="#">WFP 2016 Financial Statements</a>.</p>
+
+            <p>You are requested to complete this exercise by <strong>3 February 2017</strong>.</p>
+
+          </div>
+
+          <!-- FILTER START -->
+          <div class="wfp-filter closed">
+             <div class="wfp-filter--closed">
+                <div class="accordion-head">
+                   <a>
+                      <span class="title fill-data" data-content="labels.show_my_information"></span>
+                      <span class="pull-right">
+                         <i class="fa fa-fw fa-chevron-down"></i>
+                      </span>
+                   </a>
+                </div>
+             </div>
+             <div class="wfp-filter--open">
+                <div class="accordion-head">
+                   <a>
+                   <span class="title fill-data" data-content="labels.hide_my_information"></span>
+                   <span class="pull-right">
+                   <i class="fa fa-fw fa-chevron-up"></i>
+                   </span>
+                   </a>
+                </div>
+                <div class="wfp-grid filter_container">
+                  <div class="wfp-u-1-2"> 
+                      <div class="name">MARINA SABRINA CRUZ</div>
+                      <div class="role">Finance Consultant</div>
+                      <div class="comp">RMFP</div>
+                  </div>
+                  <div class="wfp-u-1-2"> 
+                      <div class="name">STATUS</div>
+                      <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg"></div>
+
+                  </div>
+              </div>
+             </div>
+
+          </div>
+          <!-- FILTER END -->
+
+          <!-- FORM START -->
+          <div class=" wfp-form--aligned wfp-form--stacked">
+
+            <form>
+
+              <div class="wfp-grid">
+
+                 <div class="wfp-u-1 wfp-box--flat-padded">
+                    <label for="monetary_compensation"><span class="step-symbol fill-data" data-content="labels.one"></span> - <span class="fill-data" data-content="form['IPSAS-20'].fields.monetary_compensation"></span><span class="required-symbol">*</span></label>
+                    
+                    <div class="box note">
+                      <div class="fill-data" data-content="form['IPSAS-20'].fields.monetary_compensation_hint"></div>
+                    </div>
+
+                    <div class="wfp-form--input-group wfp-form--input-group-currency disabled">
+                       <div class="wfp-form--input-currency-label">EUR</div>
+                       <input type="text" class="wfp-form--input-currency" disabled value="123.456,78">
+                    </div>
+
+                    <a href="#" class="wfp-form--msg fill-data" data-action="" data-content="labels.view_statement"></a>
+                 </div>
+
+                 <div class="wfp-u-1 wfp-box--flat-padded">
+                    <label for="non_monetary_compensation"><span class="step-symbol fill-data" data-content="labels.two"></span> - <span class="fill-data" data-content="form['IPSAS-20'].fields.non_monetary_compensation"></span></label>
+                    
+                    <div class="box note">
+                      <div class="fill-data" data-content="form['IPSAS-20'].fields.non_monetary_compensation_hint"></div>
+                    </div>
+
+                    <input type="text" id="non_monetary_compensation" name="non_monetary_compensation">
+                 </div>
+
+                 <div class="wfp-u-1 wfp-box--flat-padded">
+                    <label for="compensation_of_close_family_members_employed_by_wfp"><span class="step-symbol fill-data" data-content="labels.three"></span> - <span class="fill-data" data-content="form['IPSAS-20'].fields.compensation_of_close_family_members_employed_by_wfp"></span><span class="required-symbol">*</span></label>
+                    
+                    <div class="wfp-form--input-group wfp-form--input-group-currency disabled">
+                       <div class="wfp-form--input-currency-label">EUR</div>
+                       <input type="text" class="wfp-form--input-currency" disabled value="123.456,78">
+                    </div>
+
+                    <a href="#" class="wfp-form--msg fill-data" data-action="" data-content="labels.view_statement"></a>
+
+                    <div class="box note">
+                      <div class="fill-data" data-content="form['IPSAS-20'].fields.compensation_of_close_family_members_employed_by_wfp_hint"></div>
+                    </div>
+                    <input type="text" id="compensation_of_close_family_members_employed_by_wfp" name="compensation_of_close_family_members_employed_by_wfp">
+                 </div>
+
+                 <div class="wfp-u-1 wfp-box--flat-padded">
+                    <label for="other_disclosures"><span class="step-symbol fill-data" data-content="labels.four"></span> - <span class="fill-data" data-content="form['IPSAS-20'].fields.other_disclosures"></span></label>
+                    
+                    <div class="box note">
+                      <div class="fill-data" data-content="form['IPSAS-20'].fields.other_disclosures_hint"></div>
+                    </div>
+
+                    <label for=""><span class="step-symbol fill-data" data-content="form['IPSAS-20'].fields.other_disclosures_optional"></span></label>
+                    <input type="text" id="other_disclosures" name="other_disclosures">
+                 </div>
+
+              </div>
+
+              <div class="wfp-checkbox wfp-box--flat-padded">
+                 <input type="checkbox" id="cb-correctness" name="cb-correctness">
+                 <label for="cb-correctness"><span class="fill-data" data-content="form['IPSAS-20'].fields.correctness"></span></label>
+              </div>
+
+              <div class="wfp-u-1 mt1">
+                 <p><span class="required-symbol">*</span><span class="faint">required field</span></p>
+              </div>
+
+
+              <div class="wfp-form--actions">
+                 <button class="wfp-btn btn-medium fill-data" data-content="labels.save_changes"></button>
+                 <button class="wfp-btn wfp-btn--primary btn-medium fill-data" data-content="labels.submit_disclosure"></button>
+              </div>
+
+            </form>
+          </div>
+          <!-- FORM END -->
+
+        </div>
+        <!-- MAIN COLUMN END -->
+        <div class="wfp-u-1-6">
+
+        </div>
+      </div>
+   </section>
+</div>

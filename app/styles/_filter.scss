@@ -12,6 +12,10 @@
         }
     }
 
+    .filter_container{
+        padding: 0 2em 1em;
+    }
+
     &.open .wfp-filter--open{
         .accordion-head{
             background-color:$grey-lighterer;

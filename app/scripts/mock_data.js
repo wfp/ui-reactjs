@@ -7,6 +7,19 @@ var user = {
 };
 
 var labels = {
+
+    zero:"0",
+    one:"1",
+    two:"2",
+    three:"3",
+    four:"4",
+    five:"5",
+    six:"6",
+    seven:"7",
+    eight:"8",
+    nine:"9",
+    ten:"10",
+
     /* GENERIC */
     home: "Home",
     incoming_requests: "Incoming requests",
@@ -26,10 +39,12 @@ var labels = {
 
     /* CTA */
     view_all:"View All",
+    view_statement: "View_statement",
     create_a_request: "Create a request",
     delete_request: "Delete this request",
     download_as_PDF: "Download as PDF",
     submit_form: "Submit form",
+    submit_disclosure: "Submit disclosure",
     save_changes: "Save changes",
 
     /* FORM CREATION */
@@ -49,6 +64,9 @@ var labels = {
     /* FORM MY / INCOMING REQUEST */
     show_filters:"Show filters",
     hide_filters:"Hide filters",
+    show_my_information:"Show my information",
+    hide_my_information:"Hide my information",
+
     form:"Form",
     status: "Status",
     clear_form:"Clear",
@@ -120,6 +138,19 @@ form['IPSAS-20'] = {
         title: "Related party disclosure",
         id: "IPSAS-20",
         see_the_disclosure_form: "See my Disclosure form",
+        monetary_compensation: "Monetary compensation",
+        monetary_compensation_hint: "Monetary compensation represents the salary and all other monetary entitlements paid for the period covered (Jan - Dec 2016) from WFP payroll information, certified by the Chief of corporate payroll branch. It includes: net salaries (plus overtime), post adjustment, entitlements such as representation allowance, assignment and other grants, rental subsidy, family visit and other entitlement travel including shipment costs, other taxable WFP income, employer pension and health insurance contributions.",
+        non_monetary_compensation: "Non-monetary compensation",
+        non_monetary_compensation_hint: "Non-monetary compensation includes benefits, which are not given directly as part of the compensation.",
+        compensation_of_close_family_members_employed_by_wfp: "Compensation of close family members employed by WFP, if applicable",
+        compensation_of_close_family_members_employed_by_wfp_hint: "The compensation of your close family member(s) already declared or registered is reported. If any addition, please provide name(s) and index number(s) in the below box.",
+        other_disclosures: "Other disclosures",
+        other_disclosures_hint: "Other disclosure represents any transaction which is not widely available (and/or widely known) to persons outside key management and other senior staff group. Such items include: financial transactions (loans, advances, grants) or rendering/receiving of services (for example consulting services) given to a member of the key management group.",
+        other_disclosures_optional:"Please list them below, if any, and the corresponding amount(s).",
+
+
+
+        correctness: "This is to certify that the above information is correct",
     },
     values:{
     },
@@ -318,12 +349,6 @@ var latest_forms = [
     {
         name:"Related party disclosure",
         description:"[IPSAS-20] Related Party Disclosure - This is the description for this form",
-        id:"IPSAS-20",
-        ident:"form_IPSAS20"
-    },
-    {
-        name:"Related party disclosure",
-        description:"[IPSAS-20] TEST this is the actual form",
         id:"IPSAS-20",
         ident:"form_IPSAS20"
     },

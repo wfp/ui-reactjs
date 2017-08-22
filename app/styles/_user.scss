@@ -1,5 +1,50 @@
 @import 'colors';
 
+
+/* FOUND IN THE GUIDELINE DOCUMENTATION, NOT IN THE WFP UI */
+
+.box{
+    background-color: $grey-lighterer;
+    padding: .5rem 1rem;
+    border-left: 6px solid $grey;
+    border-radius: 2px;
+    line-height: 1.6;
+    margin: 1rem 0;
+
+    &::last-child{
+      border-right: 0;
+    }
+    &>* {
+      margin: 0 0 .25rem;
+      font-size: .8rem;
+      padding: 0.5rem 0;
+    }
+    h2{
+      font-size: 1rem;
+    }
+
+    &.notice{
+      border-left-color: $yellow;
+    }
+    &.info{
+      border-left-color: $primary;
+    }
+    &.alert{
+      border-left-color: $red;
+    }
+    &.separator{
+      border-left-color: $background;
+    }
+    &.note{
+      background-color: $background;
+      font-size: .7rem;
+      color: $grey-dark;
+    }
+}
+
+
+
+
 // Component: Forms
 // Project: WFPUI
 

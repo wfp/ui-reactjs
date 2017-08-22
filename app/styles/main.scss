@@ -56,10 +56,6 @@ h4{
     border-bottom: 2px solid $grey-lighter;
 }
 
-.container {
-    padding: 0 1em;
-}
-
 section, .section{
     padding-bottom: 3rem;
 }
@@ -101,6 +97,12 @@ section, .section{
         }
     }
 }
+
+.name{
+    font-weight: bold;
+    padding: 1em 0;
+}
+
 
 .hilight{
     color: $black;
