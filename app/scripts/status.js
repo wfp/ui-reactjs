@@ -1,7 +1,5 @@
-function statuswidgets(){
+var statuswidgets = function(){
     $(".status-widget").each(function(i,e){
-       /* if ($(this).children == 0){*/
-
             var steps = $(e).data("steps");
             var done = $(e).data("done");
             var state = $(e).data("state");
@@ -31,8 +29,5 @@ function statuswidgets(){
                     $(e).append(edge);
                 }
             }
-
-    //    }
-
     });
-}
+};

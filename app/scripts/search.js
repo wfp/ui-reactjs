@@ -3,6 +3,7 @@ var opened = false;
 
 //focus ops
 $(document).on("focus", "#search", function(){
+    utils.heights();
     openSearch();
 });
 
