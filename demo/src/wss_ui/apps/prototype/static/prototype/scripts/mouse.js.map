@@ -1,0 +1,1 @@
+{"version":3,"sources":["mouse.js"],"names":["Mousetrap","bind","toggleSearchFocus"],"mappings":";;AAAAA,UAAUC,IAAV,CAAe,QAAf,EAAyB,YAAW;AAAEC;AAAsB,CAA5D","file":"mouse.js","sourcesContent":["Mousetrap.bind('escape', function() { toggleSearchFocus(); });"]}

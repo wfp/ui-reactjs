@@ -1,0 +1,300 @@
+---
+- name: WSS Demo System Provisioning Configuration
+
+  vars_files:
+    - vars/provision.yaml
+    - vars/project.yaml
+    - vars/{{ nickname }}.yaml
+
+  user: "{{ansible_user}}"
+
+  hosts: all
+
+  tasks:
+
+  - debug: msg="{{ansible_user}} {{config_pythonpath}} {{nickname}} "
+
+  - name: Add repositories
+    command: "sudo yum-config-manager --enable {{item}}"
+    with_items:
+      - 'C6.5-base'
+      - 'C6.5-updates'
+      - 'C6.5-extras'
+      - 'C6.5-contrib'
+      - 'C6.5-centosplus'
+    when: nickname == 'vagrant'
+
+  - name: Update repositories
+    command: "sudo yum -y update"
+    when: nickname == 'vagrant'
+
+  - name: install kernel-devel
+    shell: "sudo yum -y install kernel-devel-$(uname -r)"
+    when: nickname == 'vagrant'
+
+  - name: create the project directory
+    file: state=directory dest={{item}}
+    with_items:
+        - "{{config_build_dir}}"
+        - "~/.pip"
+        - "~/tmp/"
+        - "~/var/www/static"
+        - "~/var/www/media"
+        - "~/var/run"
+        - "~/var/cache"
+        - "~/logs"
+        - "~/etc"
+
+
+  - name: upload inputrc
+    copy:
+        src=files/.inputrc
+        dest=~/.inputrc
+
+
+  - name: upload user env configuration
+    template:
+        src=templates/wfp_profile
+        dest=~/.wfp_profile
+
+
+  - name: configure user home
+    lineinfile:
+        dest=~/.bashrc
+        line='. .wfp_profile'
+
+
+  - name: upload known_hosts
+    copy:
+        src=files/known_hosts
+        dest=~/.ssh/known_hosts
+
+
+  - name: ssh-keyscan
+    shell: ssh-keyscan -p 7999 codeassist.wfp.org
+    register: command_result
+
+
+  - name: add codeassist host key
+    lineinfile:
+        dest=~/.ssh/known_hosts
+        line="{{command_result.stdout}}"
+    when: "not 'failed:' in command_result.stderr"
+
+
+  - name: copy pip.conf
+    template:
+        src=files/pip.conf
+        dest=~/.pip/pip.conf
+
+
+  - name: send deploy private key
+    copy:
+        src=files/id_rsa
+        dest=~/.ssh/id_rsa
+        mode=400
+
+
+  - name: send deploy public key
+    copy:
+        src=files/id_rsa.pub
+        dest=~/.ssh/id_rsa.pub
+        mode=400
+
+
+  - name: configure credentials
+    template:
+        src=files/.wss_demo_credentials.json
+        dest=~/.wss_demo_credentials.json
+        force=no
+
+
+  - name: download Python
+    shell:
+        chdir={{config_build_dir}}
+        creates=Python-{{sources_python}}
+        curl -L http://www.python.org/ftp/python/{{sources_python}}/Python-{{sources_python}}.tgz | tar -xz
+
+
+  - name: Download postgres
+    shell:
+        chdir={{config_build_dir}}
+        creates=postgresql-{{sources_postgres}}
+        curl -L http://ftp.postgresql.org/pub/source/v{{sources_postgres}}/postgresql-{{sources_postgres}}.tar.bz2 | tar -jx
+    tags:
+      - download
+    when: nickname=="vagrant"
+
+
+  - name: download uwsgi
+    shell:
+        chdir={{config_build_dir}}
+        creates=uwsgi-{{sources_uwsgi}}
+        curl -L http://projects.unbit.it/downloads/uwsgi-{{sources_uwsgi}}.tar.gz | tar -zx
+
+
+  - name: download nginx
+    shell:
+        chdir={{config_build_dir}}
+        creates=nginx-{{sources_nginx}}
+        curl -L http://nginx.org/download/nginx-{{sources_nginx}}.tar.gz | tar -zx
+
+
+  - name: download pcre
+    shell:
+        chdir={{config_build_dir}}
+        creates=pcre-{{sources_pcre}}
+        curl -L http://sourceforge.net/projects/pcre/files/pcre/{{sources_pcre}}/pcre-{{sources_pcre}}.tar.gz/download | tar -zx
+
+
+  - name: compile python
+    environment:
+        LD_LIBRARY_PATH: "{{config_prefix}}/lib"
+    shell:
+        chdir={{config_build_dir}}/Python-{{sources_python}}
+        creates=~/bin/python
+        ./configure --prefix={{config_prefix}} --enable-unicode=ucs4 --enable-shared --with-threads && make && make install
+
+  - name: compile postgres
+    shell:
+      chdir={{config_build_dir}}/postgresql-{{sources_postgres}}
+      creates=~/bin/pg_config
+      ./configure --prefix={{config_prefix}} && make && make install
+    tags:
+      - compile
+    when: nickname=="vagrant"
+
+  - name: postgres initialise DB (initdb)
+    shell: initdb -D ~/var/data
+        creates=~/var/data/pg_hba.conf
+    tags:
+      - configure
+      - setup
+    when: nickname=="vagrant"
+
+  - name: configure postgres
+    template: src=templates/postgresql.conf
+              dest=~/etc/postgresql.conf
+    tags:
+      - configure
+      - postgres
+    when: nickname=="vagrant"
+
+  - name: configure postgres security
+    template: src=templates/pg_hba.conf
+              dest=~/etc/pg_hba.conf
+    tags:
+      - configure
+      - postgres
+    when: nickname=="vagrant"
+
+  - name: configure postgres ident
+    template: src=templates/pg_ident.conf
+              dest=~/etc/pg_ident.conf
+    tags:
+      - configure
+      - postgres
+    when: nickname=="vagrant"
+
+
+  - name: compile nginx
+    shell:
+        chdir={{config_build_dir}}/nginx-{{sources_nginx}}
+        creates=~/bin/nginx
+        ./configure --prefix={{config_prefix}}
+            --sbin-path={{config_prefix}}/bin
+            --pid-path={{config_prefix}}/run/nginx.pid
+            --lock-path={{config_prefix}}run/nginx.lck
+            --user=$USER
+            --group=$USER
+            --with-debug
+            --with-select_module
+            --with-http_ssl_module
+            --with-http_gzip_static_module
+            --with-http_stub_status_module
+            --with-http_realip_module
+            --with-http_ssl_module
+            --with-http_sub_module
+            --with-http_addition_module
+            --with-http_flv_module
+            --with-http_addition_module
+            --with-file-aio
+            --with-sha1-asm
+            --http-proxy-temp-path={{config_prefix}}/tmp/proxy/
+            --http-client-body-temp-path={{config_prefix}}/tmp/client/
+            --http-fastcgi-temp-path={{config_prefix}}/tmp/fcgi/
+            --http-uwsgi-temp-path={{config_prefix}}/tmp/uwsgi/
+            --http-scgi-temp-path={{config_prefix}}/tmp/scgi/
+            --http-log-path={{config_logdir}}/nginx-access.log
+            --error-log-path={{config_logdir}}/nginx-error.log
+            --with-pcre=../pcre-{{sources_pcre}} && make && make install
+
+
+  - name: move mime.types
+    shell:
+        creates=~/etc/mime.types
+        cp {{config_build_dir}}/nginx-{{sources_nginx}}/conf/mime.types ~/etc
+
+
+  - name: configure nginx
+    template:
+        src=templates/nginx.conf
+        dest=~/etc/nginx.conf
+
+
+  - name: compile uwsgi
+    shell:
+        chdir={{config_build_dir}}/uwsgi-{{sources_uwsgi}}
+        creates=~/bin/uwsgi
+        python uwsgiconfig.py --build && cp uwsgi {{config_prefix}}/bin/uwsgi
+
+
+  - name: configure uwsgi
+    template:
+        src=templates/uwsgi.ini
+        dest=~/etc/uwsgi.ini
+
+
+  - name: install setuptools
+    shell:
+        creates=~/bin/easy_install
+        curl http://python-distribute.org/distribute_setup.py | $HOME/bin/python
+
+
+  - name: install pip
+    shell:
+        chdir={{config_build_dir}}
+        curl -L https://bootstrap.pypa.io/get-pip.py | ~/bin/python
+
+
+  - name: install base python packages
+    shell:
+        ~/bin/pip install {{python_packages}}
+
+
+  - name: supervisor
+    template:
+        src=templates/supervisor.ini
+        dest=~/etc/supervisor.ini
+
+
+  - name: supervisor-postgresql
+    template: src=templates/postgresql.ini
+              dest=~/etc/postgresql.ini
+    when: nickname=="vagrant"
+
+
+  - name: supervisor-postgresql-update
+    shell:
+      cat ~/etc/postgresql.ini >> ~/etc/supervisor.ini
+    when: nickname=="vagrant"
+  - name: run supervisord
+    shell: if [ ! -S ~/var/run/supervisor.sock ]; then supervisord -c etc/supervisor.ini; fi
+
+  - name: Start PostgreSQL
+    supervisorctl: name=postgresql state=started config=~/etc/supervisor.ini
+    when: nickname=='vagrant'
+
+  - name: Create PostgreSQL DB
+    shell: createdb wss_ui_demo_local
+    when: nickname=='vagrant'

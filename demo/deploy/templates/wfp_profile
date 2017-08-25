@@ -1,0 +1,21 @@
+# .wfp_profile
+
+export PS1="[\u@\h \W]\$ "
+
+# User specific aliases and functions
+
+alias rm="/bin/rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias ll="ls -al"
+alias env="env | sort"
+alias supervisorctl="~/bin/supervisorctl -c ~/etc/supervisor.ini"
+alias yui-compressor="~/bin/yuicompressor"
+
+export PATH=$HOME/bin:$PATH
+export LD_LIBRARY_PATH={{config_prefix}}/lib:
+export PYTHONPATH={{config_pythonpath}}:$PYTHONPATH
+export VIRTUAL_ENV={{config_prefix}}
+export VIRTUALENVWRAPPER_PYTHON={{config_prefix}}/bin/python
+export PIP_DOWNLOAD_CACHE={{config_prefix}}/var/cache
+export DJANGO_SETTINGS_MODULE={{django_settings}}

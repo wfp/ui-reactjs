@@ -1,0 +1,58 @@
+system_packages:
+  - wget
+  - curl
+  - git
+  - make
+  - autoconf
+  - libaio
+  - bc
+  - flex
+  - pcre
+  - postgresql-devel
+  - bzip2-devel
+  - expat-devel
+  - libxslt-devel
+  - libxml2-devel
+  - ncurses-devel
+  - openldap-devel
+  - openssl-devel
+  - readline-devel
+  - pcre-devel
+  - zlib-devel
+  - python-devel
+  - libselinux-python
+
+sources_python: 2.7.12
+sources_uwsgi: 2.0.15
+sources_nginx: 1.12.0
+sources_postgres: 9.5.1
+sources_pcre: 8.39
+sources_gunicorn: 19.4.5
+
+python_packages:
+  setuptools
+  virtualenv
+  ipython==5.3.0
+  supervisor
+
+supervisord_username: admin
+supervisord_password: 123
+supervisord_port: 9999
+supervisord_loglevel: error # trace, debug, info, warn, error, critical
+supervisord_logfile_maxbytes: 5MB
+
+nginx_http_port : 9001
+nginx_server_name: ebms.wfp.org
+nginx_loglevel: error # debug, info, notice, warn, error, crit, alert, emerg
+nginx_uwsgi_param_http_host:
+
+celery_loglevel: ERROR # DEBUG, INFO, WARNING, ERROR, CRITICAL, or FATAL
+
+uwsgi_socket: '{{config_prefix}}/var/run/uwsgi.sock' # WARNING change nginx.upstream
+uwsgi_processes: 2
+
+django_settings: settings
+django_media_root: "{{config_prefix}}/var/www/media/"
+django_static_root: "{{config_prefix}}/var/www/static/"
+
+database_default_user: postgres

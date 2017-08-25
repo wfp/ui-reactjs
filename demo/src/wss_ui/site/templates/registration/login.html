@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>WSS UI DEMO - Login</title>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+        <!-- CSS Libs -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.wfp.org/libraries/webfonts/lato/lato.css">
+        <link rel="stylesheet" href="https://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
+
+        <style>
+            ul.errorlist{
+                list-style-type: none;
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser that we do not support anymore.
+            <br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="theme-wrapper">
+            <div class="container h-band">
+                <div class="row logo">
+                    <img src="{% static 'images/wfp-logo.png' %}" class="center-block text-center">
+                </div>
+                <div class="row">
+                    <div class="center-block content text-center">
+                        <h1 class="app-name">WFP Self-service</h1>
+                        {% if messages %}
+                        {% for message in messages %}
+                        <b style="color:red">{{ message }}</b><br>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Login using your WFP Global Credentials</h3>
+                        </div>
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            {{ form.non_field_errors }}
+                            <fieldset class="form-field">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" id="id_username" name="username" placeholder="Username" aria-describedby="addon-user">
+                                </div>
+                                {{ form.username.errors }}
+                            </fieldset>
+
+                            <fieldset class="form-field">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+                                    <input type="password" class="form-control" id="id_password" name="password" placeholder="Password" aria-describedby="addon-password">
+                                    <input type="hidden" name="next" value="{{ next }}" />
+                                </div>
+                                {{ form.password.errors }}
+                            </fieldset>
+
+                            <fieldset class="form-field">
+                                <button id="id_sign_in_btn" type="submit" class="btn btn-default">Sign In</button>
+                            </fieldset>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

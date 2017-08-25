@@ -1,0 +1,15 @@
+# test server
+database:
+  default:
+    engine: "'django.db.backends.postgresql_psycopg2'"
+    name: "'wfp_fpdng_dev'"
+    host: "'localhost'"
+    port: "'5432'"
+    user: "wallet.databases.default.user"
+    password: "wallet.databases.default.password"
+
+
+django_media_root: '{{config_prefix}}/var/www/media/'
+geo_cache_folder: '{{config_prefix}}/var/www/GEO_CACHE/'
+
+nginx_http_port: 8001

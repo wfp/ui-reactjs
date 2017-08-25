@@ -1,0 +1,21 @@
+django_debug: True
+
+database:
+  default:
+    engine: "'django.db.backends.postgresql'"
+    name: "'wss_ui_demo_local'"
+    host: "'127.0.0.1'"
+    port: "'5432'"
+
+django_secret_key: '%jv_4#hoaqwig2gu!eg#^ozptd*a@88u(aasv7z!7xt^5(*i&k'
+
+django_media_root: '/opt/wss_ui_instances/wss_ui_dev/var/www/media/'
+django_static_root: '/opt/wss_ui_instances/wss_ui_dev/var/www/static/'
+
+django_cache_location: '/opt/wss_ui_instances/wss_ui_dev/var/cache/'
+
+django_session_cookie_name: wss_demo_app
+
+
+nginx_http_port : 8311
+nginx_server_name: pydev.wfp.org

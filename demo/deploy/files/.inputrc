@@ -1,0 +1,14 @@
+$include /etc/inputrc
+
+#"\t": menu-complete
+set completion-ignore-case on
+set show-all-if-ambiguous on
+#set match-hidden-files off
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+"\e[5~": previous-history
+"\e[6~": next-history
+
+"\C-x\"": "\"\"C-b"

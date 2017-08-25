@@ -1,0 +1,10 @@
+config_prefix: "{{ansible_env.HOME}}"
+config_build_dir: "{{ansible_env.HOME}}/build.tmp"
+config_pythonpath: "{{ansible_env.HOME}}/etc"
+config_logdir: "{{ansible_env.HOME}}/logs"
+
+app_project_repo: ssh://git@github.com:wfp/wss-ui.git
+app_package_name: wss_ui
+app_title: WSS UI Demo Application
+
+broker_url: 'django://'

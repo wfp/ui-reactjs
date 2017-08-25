@@ -1,0 +1,69 @@
+{% extends "base.html" %}{% load static %}
+{% block css %}
+    {{ block.super }}
+    <style>
+        .col-md-3 a {
+            margin-bottom: 5px;
+        }
+
+        .social-auth {
+            display: block;
+            table-layout: fixed;
+            border-radius: 7px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            background: #eee;
+        }
+
+        #page-wrapper {
+            position: inherit;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+
+        @media (max-width: 990px) {
+            .login-panel{
+                margin: 20px;
+            }
+            .buttons .col-md-2{
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+{% endblock %}
+{% block menu-top %}
+{% endblock menu-top %}
+{% block footer %}
+{% endblock footer %}
+{% block messages %}
+{% endblock messages %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3 col-md-offset-5 login-form">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            {{ form }}
+                            <fieldset>
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://plus.google.com/js/client:plusone.js?onload=start" type="text/javascript"></script>
+    {#        <script src="https://login.persona.org/include.js" type="text/javascript"></script>#}
+{% endblock %}

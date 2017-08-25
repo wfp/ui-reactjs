@@ -1,0 +1,7 @@
+[alpha]
+alpha_node ansible_ssh_port=22 ansible_ssh_host=pydev.wfp.org
+
+[alpha:vars]
+        nickname=alpha
+        ansible_user=wss_ui_dev
+        branch=master

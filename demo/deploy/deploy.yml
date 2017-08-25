@@ -1,0 +1,59 @@
+---
+- name: WSS UI DEMO deployment configuration
+  hosts: all
+  vars_files:
+    - vars/provision.yaml
+    - vars/project.yaml
+    - vars/{{ nickname }}.yaml
+
+  user: "{{ansible_user}}"
+
+  tasks:
+    - debug: msg="{{config_pythonpath}} {{nickname}}"
+
+
+    - name: clean pip build directory
+      shell: rm -fr /tmp/pip_build_{{ansible_user}}
+
+
+    - name: update setuptools
+      shell: pip install -U setuptools
+
+
+    - name: clone repo
+      git: repo={{app_project_repo}}
+          dest=~/checkout
+          key_file="{{ ansible_env.HOME }}/.ssh/id_rsa"
+          accept_hostkey=yes
+          update=yes
+          version={{target}}
+
+    - name: remove .pyc files
+      shell: find ./ . -name '*.pyc' -type f -delete
+      ignore_errors: yes
+
+    - name: install application from git
+      shell:
+        chdir=~/checkout/demo
+        pip install -e .
+
+    - name: install Django
+      shell: pip install -qr ~/checkout/demo/src/requirements/django.pip
+
+
+    - name: copy django settings
+      template: src=templates/settings.py
+              dest=~/etc/{{django_settings}}.py
+
+
+    - name: collectstatic
+      shell: django-admin collectstatic --settings={{django_settings}} --noinput
+      tags:
+        - conf
+
+    - name: sync and migrate
+      shell: django-admin.py migrate --settings={{django_settings}}
+
+
+    - name: restart
+      shell: supervisorctl -c etc/supervisor.ini restart all
