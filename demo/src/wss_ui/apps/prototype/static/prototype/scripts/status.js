@@ -1,6 +1,6 @@
 "use strict";
 
-function statuswidgets() {
+var statuswidgets = function statuswidgets() {
     $(".status-widget").each(function (i, e) {
         var steps = $(e).data("steps");
         var done = $(e).data("done");
@@ -31,5 +31,4 @@ function statuswidgets() {
             }
         }
     });
-}
-//# sourceMappingURL=status.js.map
+};

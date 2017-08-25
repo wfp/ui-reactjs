@@ -60,6 +60,10 @@ function modal_confirm(title, content, confirm_string, options) {
     return modal(title, content, [{ name: confirm_string, type: "confirm" }, { name: "Cancel", type: "cancel" }], options);
 }
 
+function modal_delete(delete_information, options) {
+    return modal("Delete", "This action will delete your request.", [{ name: "Delete", type: "confirm", class: "wfp-btn--danger" }, { name: "Cancel", type: "cancel" }], options);
+}
+
 $(document).on("click", ".modal-trigger", function () {
     var t = $(this);
     var mode = t.data("modal-mode");
@@ -73,11 +77,17 @@ $(document).on("click", ".modal-trigger", function () {
         case "alert":
             modal_alert(title, content, confirm, options);
             break;
+
         case "prompt":
             modal_prompt(title, content, confirm, options);
             break;
+
         case "confirm":
             modal_confirm(title, content, confirm, options);
+            break;
+
+        case "delete":
+            modal_delete(deletion, options);
             break;
 
         default:
@@ -85,4 +95,3 @@ $(document).on("click", ".modal-trigger", function () {
             break;
     }
 });
-//# sourceMappingURL=modal.js.map

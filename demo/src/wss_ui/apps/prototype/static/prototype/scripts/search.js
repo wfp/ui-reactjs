@@ -5,6 +5,7 @@ var opened = false;
 
 //focus ops
 $(document).on("focus", "#search", function () {
+    utils.heights();
     openSearch();
 });
 
@@ -77,4 +78,3 @@ $(document).on("keypress", "#search", function (ev) {
         fill_data_list("#forms-filtered");
     }
 });
-//# sourceMappingURL=search.js.map

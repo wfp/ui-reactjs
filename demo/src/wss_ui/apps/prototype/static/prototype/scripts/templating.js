@@ -8,7 +8,6 @@ function fill_data_list(selector) {
         fill_data_list_el(el, "");
     });
     fill_data();
-
     $("table").tablesorter();
 }
 
@@ -82,4 +81,3 @@ $(function () {
     setTimeout(fill_data_list, 500);
     setTimeout(statuswidgets, 500);
 });
-//# sourceMappingURL=templating.js.map

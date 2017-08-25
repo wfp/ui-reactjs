@@ -24,7 +24,20 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', login_required(TemplateView.as_view(template_name='base.html')), name='home'),
+    url(r'^$', login_required(TemplateView.as_view(
+      template_name='prototype/index.html')), name='home'),
+
+    url(r'^create/$', login_required(TemplateView.as_view(
+      template_name='prototype/create.html')), name='create'),
+
+    url(r'^create/hr044/$', login_required(TemplateView.as_view(
+      template_name='prototype/hr044.html')), name='hr044'),
+
+    url(r'^my/$', login_required(TemplateView.as_view(
+      template_name='prototype/my.html')), name='my'),
+
+    url(r'^incoming/$', login_required(TemplateView.as_view(
+      template_name='prototype/incoming.html')), name='incoming'),
 
 ]
 

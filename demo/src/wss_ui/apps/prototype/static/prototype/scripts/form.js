@@ -9,4 +9,3 @@ $(document).on("click", ".tab-selector a", function (e) {
 	}
 	e.preventDefault();
 });
-//# sourceMappingURL=form.js.map

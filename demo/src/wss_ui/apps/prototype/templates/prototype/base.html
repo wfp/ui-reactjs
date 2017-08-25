@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+    {% block contents %}
+
+
+    {% include "prototype/fragments/navbar.html" %}
+
+    {% block page_contents %}
+
+    {% endblock page_contents %}
+
+    {% include "prototype/fragments/footer.html" %}
+    {% include "prototype/fragments/search.html" %}
+
+
+
+    {% endblock contents %}
+
+
+   {% block bottom-scripts %}
+    <!-- build:js scripts/main.js -->
+    <script src="{% static 'prototype/scripts/status.js' %}"></script>
+    <script src="{% static 'prototype/scripts/main.js' %}"></script>
+    <script src="{% static 'prototype/scripts/mock_data.js' %}"></script>
+    <script src="{% static 'prototype/scripts/search.js' %}"></script>
+    <script src="{% static 'prototype/scripts/mouse.js' %}"></script>
+    <script src="{% static 'prototype/scripts/dropdown.js' %}"></script>
+    <script src="{% static 'prototype/scripts/form.js' %}"></script>
+    <script src="{% static 'prototype/scripts/filter.js' %}"></script>
+    <script src="{% static 'prototype/scripts/modal.js' %}"></script>
+    <script src="{% static 'prototype/scripts/tooltip.js' %}"></script>
+    <script src="{% static 'prototype/scripts/templating.js' %}"></script>
+    <script src="{% static 'prototype/scripts/behaviors.js' %}"></script>
+    <!-- endbuild -->
+    {% endblock bottom-scripts %}

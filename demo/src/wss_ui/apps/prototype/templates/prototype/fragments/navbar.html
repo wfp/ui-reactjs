@@ -1,3 +1,5 @@
+{% load static %}
+
 <!--header role="header" class="wfp-header-int">
 
   <div class="header--mobile">
@@ -42,7 +44,7 @@
           </div>
         </form>
 
-      </div>   
+      </div>
     </div>
     <h1 class="header--title">
       <a href="/" title="Home" rel="home" class="header--logo">newgo.wfp.org</a>
@@ -51,15 +53,6 @@
     </div>
   </div>
 </header-->
-
-
-
-
-
-
-
-
-
 
 
 <div class="navbar">
@@ -85,42 +78,40 @@
         <h1 class="header--title menuitem" data-target="content" data-action="page_home">
           <a href="/" class="header--logo">WFP Self-Service</a>
         </h1>
-        
+
       </div>
       <div class="wfp-u-3-5 wfp-u-md-3-4 header--nav">
         <nav class="header--menu">
           <ul class="menu--group">
-            <li class="menuitem menu--item" data-target="content" data-action="page_my"><a href="#" class="menu--link fill-data" data-content="labels.my_requests"></a></li>
-            <li class="menuitem menu--item" data-target="content" data-action="page_incoming"><a href="#" class="menu--link fill-data" data-content="labels.incoming_requests"></a></li>
+            <li class="menuitem menu--item" data-target="content" data-action="page_my">
+              <a href="{% url 'my' %}" class="menu--link fill-data" data-content="labels.my_requests"></a>
+            </li>
+            <li class="menuitem menu--item" data-target="content" data-action="page_incoming">
+              <a href="{% url 'incoming' %}" class="menu--link fill-data" data-content="labels.incoming_requests"></a>
+            </li>
             <li class="menuitem menu--item" data-target="content" data-action="page_create">
-              <button class="wfp-btn fill-data-list-item wfp-btn--primary" data-fill-attribute="class" data-content="mode"><span class=" fill-data-list-item fill-data" data-content="labels.create_a_request"></span></button>
+              <a class="wfp-btn fill-data-list-item wfp-btn--primary"
+                      data-fill-attribute="class" data-content="mode"
+                      href="{% url 'create' %}">
+                <span class=" fill-data-list-item fill-data"
+                      data-content="labels.create_a_request">
+
+                </span>
+              </a>
             </li>
 
-            <li class="menuitem menu--item">
+            <li class="menu--item">
               <div class="header--search">
                 <input type="search" class="header--input mousetrap" id="search" placeholder="Find a form">
               </div>
-              <!--div class="views-exposed-form block block--views-exposed-filter-block" data-drupal-selector="views-exposed-form-search-results" id="block--views-exposed-filter-block--search-results">
-                <form action="/search" method="get" id="views-exposed-form-search-results" accept-charset="UTF-8" class="wfp-form search-toggle quicksearch quicksearch--small">
-                  <a class="trigger" href="#" toggleid="views-exposed-form-search-results"><i class="icon-search-light xsmall"></i> Search</a>
-                  <div class="target">
-                    <div class="js-form-item form-item js-form-type-textfield form-item-query js-form-item-query form-no-label">
-                      <input data-drupal-selector="edit-query" type="text" id="edit-query" name="query" value="" size="30" maxlength="128" class="form-text" placeholder="Search">
-                    </div>
-                    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                      <button class="button js-form-submit form-submit wfp-btn wfp-btn--icon-only xsmall" data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search"><i class="icon-search-dark xsmall"></i><span class="visually-hidden">Search</span></button>
-                    </div>
-                  </div>
-                </form>
-              </div-->
 
             </li>
 
 
             <li class="menu--item dropdown-trigger closed">
               <a class="menu--link no-underline">
-                <img src="" data-content="user.picture" data-fill-attribute="src" class="img img-round fill-data"> 
-                <span class="fill-data" data-content="user.name"></span> 
+                <img src="" data-content="user.picture" data-fill-attribute="src" class="img img-round fill-data">
+                <span class="fill-data" data-content="user.name"></span>
                 <i class="fa fa-fw fa-chevron-down"></i>
               </a>
               <div class="dropdown">
@@ -133,6 +124,8 @@
         </nav>
       </div>
     </div>
-   
+
   </header>
 </div>
+
+<script src="{% static 'prototype/scripts/navbar.js' %}"></script>

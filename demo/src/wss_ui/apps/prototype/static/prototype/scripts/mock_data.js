@@ -12,7 +12,21 @@ var user = {
 };
 
 var labels = (_labels = {
+
+    zero: "0",
+    one: "1",
+    two: "2",
+    three: "3",
+    four: "4",
+    five: "5",
+    six: "6",
+    seven: "7",
+    eight: "8",
+    nine: "9",
+    ten: "10",
+
     /* GENERIC */
+    home: "Home",
     incoming_requests: "Incoming requests",
     my_requests: "My requests",
     awaiting_your_action: "Awaiting your action",
@@ -30,10 +44,12 @@ var labels = (_labels = {
 
     /* CTA */
     view_all: "View All",
+    view_statement: "View_statement",
     create_a_request: "Create a request",
     delete_request: "Delete this request",
     download_as_PDF: "Download as PDF",
     submit_form: "Submit form",
+    submit_disclosure: "Submit disclosure",
     save_changes: "Save changes",
 
     /* FORM CREATION */
@@ -53,17 +69,22 @@ var labels = (_labels = {
     /* FORM MY / INCOMING REQUEST */
     show_filters: "Show filters",
     hide_filters: "Hide filters",
+    show_my_information: "Show my information",
+    hide_my_information: "Hide my information",
+
     form: "Form"
-}, _defineProperty(_labels, "status", "Status"), _defineProperty(_labels, "clear_form", "Clear"), _defineProperty(_labels, "filter_form", "Filter"), _defineProperty(_labels, "creation_date", "Creation date:"), _defineProperty(_labels, "dates", "Dates"), _defineProperty(_labels, "from", "From *"), _defineProperty(_labels, "to", "To *"), _defineProperty(_labels, "officer", "Officer"), _labels);
+}, _defineProperty(_labels, "status", "Status"), _defineProperty(_labels, "clear_form", "Clear"), _defineProperty(_labels, "filter_form", "Filter"), _defineProperty(_labels, "creation_date", "Creation date"), _defineProperty(_labels, "dates", "Dates"), _defineProperty(_labels, "from", "From"), _defineProperty(_labels, "to", "To"), _defineProperty(_labels, "officer", "Officer"), _labels);
 
 var form = [];
 form['HR044'] = {
     fields: {
         /* LEAVE FORM */
         title: "Leave / Absence application",
+        id: "HR-044",
         show_my_leave_balances: "Show my leave balances",
         hide_my_leave_balances: "Hide my leave balances",
         leave_type: "Leave type",
+        the_form_will_be_submitted_on_behalf_of: "The form will be submitted on behalf of",
         leave_description: "If you have insufficient quota or no quota please contact your Time-Keeper if advanced annual leave feasable. See <a href='#'>HR Manual Section</a> V.1 \'Annual Leave\'.",
         number_of_working_days: "Number of working days",
         contact_details_while_absent: "Contact details while absent",
@@ -81,8 +102,47 @@ form['HR044'] = {
         entitlement: "Entitlement"
     },
     values: {
-        leave_balances: {}
+        leave_balances: [{
+            category: {
+                type: "Annual leave",
+                validity: "Valid until 28/12/2018"
+            },
+            available: "28 days",
+            used: "28 days",
+            entitlement: "28 days"
+        }, {
+            category: {
+                type: "Certified sick leave",
+                validity: "Valid until 12/10/2017"
+            },
+            available: "20 days",
+            used: "8 days",
+            entitlement: "19 days"
+        }]
     },
+    description: "",
+    metadata: []
+};
+
+form['IPSAS-20'] = {
+    fields: {
+        /* RELATED PARTY DISCLOSURE FORM */
+        title: "Related party disclosure",
+        id: "IPSAS-20",
+        see_the_disclosure_form: "See my Disclosure form",
+        monetary_compensation: "Monetary compensation",
+        monetary_compensation_hint: "Monetary compensation represents the salary and all other monetary entitlements paid for the period covered (Jan - Dec 2016) from WFP payroll information, certified by the Chief of corporate payroll branch. It includes: net salaries (plus overtime), post adjustment, entitlements such as representation allowance, assignment and other grants, rental subsidy, family visit and other entitlement travel including shipment costs, other taxable WFP income, employer pension and health insurance contributions.",
+        non_monetary_compensation: "Non-monetary compensation",
+        non_monetary_compensation_hint: "Non-monetary compensation includes benefits, which are not given directly as part of the compensation.",
+        compensation_of_close_family_members_employed_by_wfp: "Compensation of close family members employed by WFP, if applicable",
+        compensation_of_close_family_members_employed_by_wfp_hint: "The compensation of your close family member(s) already declared or registered is reported. If any addition, please provide name(s) and index number(s) in the below box.",
+        other_disclosures: "Other disclosures",
+        other_disclosures_hint: "Other disclosure represents any transaction which is not widely available (and/or widely known) to persons outside key management and other senior staff group. Such items include: financial transactions (loans, advances, grants) or rendering/receiving of services (for example consulting services) given to a member of the key management group.",
+        other_disclosures_optional: "Please list them below, if any, and the corresponding amount(s).",
+
+        correctness: "This is to certify that the above information is correct"
+    },
+    values: {},
     description: "",
     metadata: []
 };
@@ -210,23 +270,28 @@ var requests_incoming = [{
 var latest_forms = [{
     name: "Leave / Absence application",
     description: "HR044 - This is the description for this form",
+    id: "HR-044",
     ident: "form_HR044"
 }, {
     name: "Related party disclosure",
-    description: "[Test] Related Party Disclosure - This is the description for this form",
-    ident: "form_related_party"
+    description: "[IPSAS-20] Related Party Disclosure - This is the description for this form",
+    id: "IPSAS-20",
+    ident: "form_IPSAS20"
 }, {
     name: "Rental subsidy / advance / deduction",
     description: "HR039 - This form regards Eucation Grant Requests. Submit this form for processing of payment.",
+    id: "HR-039",
     ident: "form_HR039"
 }, {
     name: "Telecommuting arrangement (TCA)",
     description: "HR027 - This is the description for this form",
+    id: "HR-027",
     ident: "form_HR027"
 }];
 
 var request = {};
 request['HR-017097'] = {
+    form_id: "HR-044",
     name: "Leave / Absence application",
     request_date: "Monday 26 September 2017",
     submission_date: "Tuesday 27 September 2017",
@@ -402,4 +467,3 @@ var search_links = [{
     name: "Rental Subsidy/Advance/Deduction",
     description: "Description"
 }];
-//# sourceMappingURL=mock_data.js.map

@@ -16,4 +16,3 @@ $(document).on("mouseover", ".tooltip", function () {
 $(document).on("mouseout", ".tooltip", function () {
     $(".tooltip-container").remove();
 });
-//# sourceMappingURL=tooltip.js.map
