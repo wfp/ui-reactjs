@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 import os
 import sys
+import imp
 import codecs
 from distutils.config import PyPIRCCommand
 from setuptools import setup, find_packages
 
 dirname = 'wss_ui'
 
-app = __import__(dirname)
+ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__)))
+init = os.path.join(ROOT, 'src', 'wss_ui', '__init__.py')
+app = imp.load_source('wss_ui', init)
 
 reqs = 'src/requirements/install.any.pip'
 
