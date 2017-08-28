@@ -34,11 +34,11 @@
 
     - name: install application from git
       shell:
-        chdir=~/checkout/demo
+        chdir=~/checkout/demo/demo
         pip install -e .
 
     - name: install Django
-      shell: pip install -qr ~/checkout/demo/src/requirements/django.pip
+      shell: pip install -qr ~/checkout/demo/demo/src/requirements/django.pip
 
 
     - name: copy django settings

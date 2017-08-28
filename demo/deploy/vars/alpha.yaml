@@ -3,11 +3,13 @@ django_debug: True
 database:
   default:
     engine: "'django.db.backends.postgresql'"
-    name: "'wss_ui_demo_local'"
+    name: "'wss_ui_alpha'"
     host: "'127.0.0.1'"
     port: "'5432'"
+    user: "postgres"
+    password: ""
 
-django_secret_key: '%jv_4#hoaqwig2gu!eg#^ozptd*a@88u(aasv7z!7xt^5(*i&k'
+django_secret_key: "'%jv_4#hoaqwig2gu!eg#^ozptd*a@88u(aasv7z!7xt^5(*i&k'"
 
 django_media_root: '/opt/wss_ui_instances/wss_ui_dev/var/www/media/'
 django_static_root: '/opt/wss_ui_instances/wss_ui_dev/var/www/static/'
