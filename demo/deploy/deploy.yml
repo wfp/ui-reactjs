@@ -20,13 +20,13 @@
       shell: pip install -U setuptools
 
 
-    - name: clone repo
-      git: repo={{app_project_repo}}
-          dest=~/checkout
-          key_file="{{ ansible_env.HOME }}/.ssh/id_rsa"
-          accept_hostkey=yes
-          update=yes
-          version={{target}}
+#    - name: clone repo
+#      git: repo={{app_project_repo}}
+#          dest=~/checkout
+#          key_file="{{ ansible_env.HOME }}/.ssh/id_rsa"
+#          accept_hostkey=yes
+#          update=yes
+#          version={{target}}
 
     - name: remove .pyc files
       shell: find ./ . -name '*.pyc' -type f -delete
