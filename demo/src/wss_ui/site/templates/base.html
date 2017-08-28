@@ -10,7 +10,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- WFP UI + Grid System ~ SASS import does not work-->
-    <link rel="stylesheet" href="{% static 'bower_components/wfp-ui/dist/css/wfpui+grid.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/wfp-ui/dist/css/wfpui+grid.css' %}">
 
     <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
     <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
@@ -35,7 +35,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="{% static '/bower_components/jquery.tablesorter/dist/css/theme.blue.css' %}" />
+    <link rel="stylesheet" href="{% static '/vendor/jquery.tablesorter/dist/css/theme.blue.css' %}" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -67,8 +67,8 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="{% static '/bower_components/jquery/dist/jquery.js' %}"></script>
-    <script src="{% static '/bower_components/jquery.tablesorter/dist/js/jquery.tablesorter.combined.js' %}"></script>
+    <script src="{% static '/vendor/jquery/dist/jquery.js' %}"></script>
+    <script src="{% static '/vendor/jquery.tablesorter/dist/js/jquery.tablesorter.combined.js' %}"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
@@ -79,7 +79,7 @@
     {% endblock bottom-scripts %}
 
 
-    <script src="{% static 'bower_components/wfp-ui/dist/js/responsive-nav.js' %}" defer></script>
+    <script src="{% static 'vendor/wfp-ui/dist/js/responsive-nav.js' %}" defer></script>
 
   </body>
 </html>

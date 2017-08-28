@@ -1,0 +1,14 @@
+// Typography: White Space
+// Project: WFP UI
+
+
+
+$ws: (
+  normal: normal,
+  nowrap: nowrap,
+  pre: pre
+);
+
+@mixin ws($wspace: normal) {
+  white-space: map-get($ws, $wspace);
+}

@@ -1,0 +1,16 @@
+// Typography: Transforms
+// Project: WFP UI
+
+
+
+@mixin t-caps {
+  text-transform: capitalize;
+}
+
+@mixin t-allcaps {
+  text-transform: uppercase;
+}
+
+@mixin t-lowcase {
+  text-transform: lowercase;
+}

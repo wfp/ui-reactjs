@@ -1,0 +1,8 @@
+// Typography: Text Decoration
+// Project: WFP UI
+
+
+
+@mixin t-decor($decoration) {
+  text-decoration: $decoration;
+}

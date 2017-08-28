@@ -1,0 +1,46 @@
+{
+  "name": "wfp-ui",
+  "authors": [
+    "Matthew Morek <me@matthewmorek.com> (http://matthewmorek.com)",
+    "James Home <james@jameshome.co> (http://jrah.github.io)"
+  ],
+  "description": "WFP UI",
+  "main": "scss/core.scss",
+  "keywords": [
+    "ui",
+    "interface",
+    "toolkit",
+    "wfp"
+  ],
+  "license": "MIT",
+  "homepage": "www.wfp.org/uiguide",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wfp/ui.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_components",
+    "docs",
+    "test",
+    "tests",
+    "package.json",
+    "gruntfile.js"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "mathsass": "^0.9.5"
+  },
+  "version": "0.15.0",
+  "_release": "0.15.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.15.0",
+    "commit": "36f1c008a9b5165a372528ffb82c2f715e1b538b"
+  },
+  "_source": "https://github.com/wfp/ui.git",
+  "_target": "*",
+  "_originalSource": "wfp-ui"
+}

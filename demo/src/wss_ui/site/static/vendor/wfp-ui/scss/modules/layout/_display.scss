@@ -1,0 +1,6 @@
+// Module: Display
+// Project: WFP UI
+
+@mixin display($mode) {
+  display: $mode;
+}
