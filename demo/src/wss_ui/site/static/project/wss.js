@@ -3,4 +3,25 @@ import ReactDOM from "react-dom";
 
 import WSSHeader from "./header";
 
-ReactDOM.render(<WSSHeader />, document.getElementById('app'));
+
+(function () {
+
+  var wss = function() {
+
+    var urls = {};
+
+    let setup = urlsContextData => {
+      urls = urlsContextData;
+      ReactDOM.render(<WSSHeader urls={urls} />, document.getElementById('app'));
+    };
+
+	  return {urls: urls, setup: setup};
+  };
+
+  if (!window.selfservice) {
+    window.wss = wss();
+  }
+}());
+
+
+

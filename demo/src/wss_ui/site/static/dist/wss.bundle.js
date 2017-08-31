@@ -12700,7 +12700,24 @@ var _header2 = _interopRequireDefault(_header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_header2.default, null), document.getElementById('app'));
+(function () {
+
+  var wss = function wss() {
+
+    var urls = {};
+
+    var setup = function setup(urlsContextData) {
+      urls = urlsContextData;
+      _reactDom2.default.render(_react2.default.createElement(_header2.default, { urls: urls }), document.getElementById('app'));
+    };
+
+    return { urls: urls, setup: setup };
+  };
+
+  if (!window.selfservice) {
+    window.wss = wss();
+  }
+})();
 
 /***/ }),
 /* 105 */
@@ -24847,9 +24864,9 @@ var WSSHeader = function WSSHeader(props) {
     _react2.default.createElement(
       _wfpWssUiReact.Header,
       { title: 'WFP Self-Service' },
-      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: '{% url \'my\' %}', text: 'My requests' }),
-      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: '{% url \'incoming\' %}', text: 'Incoming requests' }),
-      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: '{% url \'create\' %}', text: 'Create a request', isButton: true }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.my, text: 'My requests' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.incoming, text: 'Incoming requests' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.create, text: 'Create a request', isButton: true }),
       _react2.default.createElement(_wfpWssUiReact.SearchWidget, null),
       _react2.default.createElement(_wfpWssUiReact.UserMenuWidget, null)
     )

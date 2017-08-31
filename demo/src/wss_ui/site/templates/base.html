@@ -77,6 +77,14 @@
 
     <script src="{% static '/dist/wss.bundle.js' %}"></script>
 
+    <script>
+      wss.setup({
+        my: "{% url 'my' %}",
+        incoming: "{% url 'incoming' %}",
+        create: "{% url 'create' %}"
+      });
+    </script>
+
     {% block bottom-scripts %}
 
     {% endblock bottom-scripts %}

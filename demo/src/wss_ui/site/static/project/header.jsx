@@ -22,10 +22,10 @@ const WSSHeader = props => {
       </CommonLinksHeader>
 
       <Header title="WFP Self-Service">
-        <LinkMenuItem url="{% url 'my' %}" text="My requests" />
-        <LinkMenuItem url="{% url 'incoming' %}" text="Incoming requests" />
+        <LinkMenuItem url={props.urls.my} text="My requests" />
+        <LinkMenuItem url={props.urls.incoming} text="Incoming requests" />
 
-        <LinkMenuItem url="{% url 'create' %}" text="Create a request" isButton={true} />
+        <LinkMenuItem url={props.urls.create} text="Create a request" isButton={true} />
 
         <SearchWidget />
 
