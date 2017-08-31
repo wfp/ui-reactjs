@@ -1,7 +1,7 @@
 var path = require("path");
 
 module.exports = {
-  entry: ['babel-polyfill', './src/wss_ui/site/static/project/wss.js'],
+  entry: './src/wss_ui/site/static/project/wss.js',
   output: {
     path: path.resolve('./src/wss_ui/site/static/dist'),
     filename: 'wss.bundle.js'
@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -19,5 +19,8 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
   }
 };

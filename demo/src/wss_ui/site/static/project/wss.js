@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {Header} from "wfp-wss-ui-react";
+import WSSHeader from "./header";
 
-let message = () => console.log("Babel integrated as well!!");
-message();
-
-ReactDOM.render(<Header className="myclass">Library integration</Header>,
-  document.getElementById('app'));
+ReactDOM.render(<WSSHeader />, document.getElementById('app'));
