@@ -49,6 +49,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div id="app"></div>
+
     {% block contents %}
 
 
@@ -73,6 +75,7 @@
     <!-- endbuild -->
     <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
 
+    <script src="{% static '/dist/wss.bundle.js' %}"></script>
 
     {% block bottom-scripts %}
 

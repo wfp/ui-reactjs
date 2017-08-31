@@ -2,6 +2,12 @@
   "name": "wfp-wss-ui-react",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "author": "WFP RMTD Team",
   "license": "MIT",
   "engines": {
@@ -52,6 +58,7 @@
     "react-dom": "^15.6.1",
     "run-sequence": "^1.2.2",
     "styled-components": "^2.1.2",
+    "webpack": "^3.5.5",
     "wiredep": "^4.0.0"
   },
   "eslintConfig": {
