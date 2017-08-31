@@ -1,37 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import LogoItem from './logoitem';
+
 
 const Header = props => {
   return (
-    <div
-      className={props.className}
-    >
-      <div className="navbar">
-        <header className="wfp-header-super">
-          <div className="wfp-grid wfp-wrapper wfp-overbar">
-            <div className="wfp-u-1-1">
-              <nav className="wfp-header--menu">
-                <ul className="menu--group">
-                  <li className="menu--item"><a href="http://communities.wfp.org" className="menu--link" target="_blank">WFP Communities</a></li>
-                  <li className="menu--item"><a href="http://opweb.wfp.org" className="menu--link" target="_blank">OPweb</a></li>
-                  <li className="menu--item"><a href="http://docustore.wfp.org" className="menu--link" target="_blank">Docustore</a></li>
-                  <li className="menu--item"><a href="http://manuals.wfp.org/" className="menu--link" target="_blank">WFP Manuals</a></li>
-                  <li className="menu--item"><a href="http://newgo.wfp.org/" className="menu--link" target="_blank">WFPgo</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
+    <header className="wfp-header-int">
+      <div className="wfp-grid wfp-wrapper">
+
+        <LogoItem title={props.title} />
+
+        <div className="wfp-u-3-5 wfp-u-md-3-4 header--nav">
+          <nav className="header--menu">
+            <ul className="menu--group">
+              {props.children}
+            </ul>
+          </nav>
+        </div>
       </div>
-      {props.children}
-    </div>
+    </header>
   );
 };
 
 
 Header.propTypes = {
-  className: PropTypes.string
+  title: PropTypes.string
 };
 
 export default Header;

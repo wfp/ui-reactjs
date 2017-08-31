@@ -1,18 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {CommonLinksHeader, LinkMenuItem} from "wfp-wss-ui-react";
+import {
+  CommonLinksHeader,
+  Header,
+  LinkMenuItem,
+  SearchWidget,
+  UserMenuWidget
+} from "wfp-wss-ui-react";
 
 
-const WSSHeader = () => {
+const WSSHeader = props => {
   return (
-    <CommonLinksHeader>
+    <div className="navbar">
+      <CommonLinksHeader>
         <LinkMenuItem url="http://communities.wfp.org" text="WFP Communities" />
         <LinkMenuItem url="http://opweb.wfp.org" text="OPweb" />
         <LinkMenuItem url="http://docustore.wfp.org" text="Docustore" />
         <LinkMenuItem url="http://manuals.wfp.org/" text="WFP Manuals" />
         <LinkMenuItem url="http://newgo.wfp.org/" text="WFPgo" />
-    </CommonLinksHeader>
+      </CommonLinksHeader>
+
+      <Header title="WFP Self-Service">
+        <LinkMenuItem url="{% url 'my' %}" text="My requests" />
+        <LinkMenuItem url="{% url 'incoming' %}" text="Incoming requests" />
+
+        <LinkMenuItem url="{% url 'create' %}" text="Create a request" isButton={true} />
+
+        <SearchWidget />
+
+        <UserMenuWidget />
+      </Header>
+    </div>
   );
 };
 
