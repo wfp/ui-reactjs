@@ -1,7 +1,13 @@
 {% extends "prototype/base.html" %}
-
     {% block page_contents %}
     {% include "prototype/fragments/page_create.html" %}
     {% endblock page_contents %}
 
-
+{%block bottom-scripts%}
+{{block.super}}
+<script>
+      pagecreate.setup({
+        create: "{% url 'create' %}",
+      });
+    </script>
+{%endblock bottom-scripts%}

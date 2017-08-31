@@ -18,7 +18,7 @@ import WSSHeader from "./header";
 	  return {urls: urls, setup: setup};
   };
 
-  if (!window.selfservice) {
+  if (!window.wss) {
     window.wss = wss();
   }
 }());

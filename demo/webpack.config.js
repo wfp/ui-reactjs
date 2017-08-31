@@ -1,7 +1,10 @@
 var path = require("path");
 
 module.exports = {
-  entry: './src/wss_ui/site/static/project/wss.js',
+  entry: [
+    './src/wss_ui/site/static/project/wss.js',
+    './src/wss_ui/site/static/project/page_create.jsx'
+  ],
   output: {
     path: path.resolve('./src/wss_ui/site/static/dist'),
     filename: 'wss.bundle.js'
