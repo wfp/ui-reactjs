@@ -1,20 +1,20 @@
-webpackJsonp([2],{
+webpackJsonp([0],{
 
-/***/ 241:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(26);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(57);
+var _reactDom = __webpack_require__(45);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _incoming = __webpack_require__(242);
+var _incoming = __webpack_require__(245);
 
 var _incoming2 = _interopRequireDefault(_incoming);
 
@@ -26,8 +26,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     var urls = {};
 
-    var setup = function setup() {
-      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, null), document.getElementById('incoming'));
+    var setup = function setup(urlsContextData) {
+      urls = urlsContextData;
+      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, { urls: urls }), document.getElementById('incoming'));
     };
 
     return { urls: urls, setup: setup };
@@ -40,7 +41,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ 242:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50,48 +51,52 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(26);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(74);
+var _propTypes = __webpack_require__(62);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _wfpWssUiReact = __webpack_require__(63);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import {
-//   CommonLinksHeader,
-//   Header,
-//   LinkMenuItem,
-//   SearchWidget,
-//   UserMenuWidget
-// } from "wfp-wss-ui-react";
+var Table = function Table(props) {
+  return _react2.default.createElement(
+    'table',
+    { className: 'wfp-table' },
+    props.children
+  );
+};
 
+var TableHeader = function TableHeader(props) {
+  return _react2.default.createElement(
+    'thead',
+    null,
+    _react2.default.createElement(
+      'tr',
+      null,
+      props.children
+    )
+  );
+};
+
+var TableHeaderItem = function TableHeaderItem(props) {
+  return _react2.default.createElement(
+    'th',
+    null,
+    _react2.default.createElement('span', { className: props.className, 'data-content': props.label }),
+    _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })
+  );
+};
 
 var WSSIncomingRequests = function WSSIncomingRequests(props) {
   return _react2.default.createElement(
     'div',
     { className: 'content' },
-    _react2.default.createElement(
-      'ul',
-      { className: 'wfp--breadcrumbs' },
-      _react2.default.createElement(
-        'li',
-        { className: 'wfp--breadcrumbs--home wfp--breadcrumbs--step' },
-        _react2.default.createElement(
-          'a',
-          { href: '/' },
-          _react2.default.createElement('i', { className: 'fa fa-fw fa-home' }),
-          _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.home' })
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        { className: 'wfp--breadcrumbs--step' },
-        _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.incoming_requests' })
-      )
-    ),
+    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, { home: 'labels.home', nextLabels: ["labels.incoming_requests"], nextLinks: [props.urls.incoming] }),
     _react2.default.createElement(
       'section',
       null,
@@ -100,286 +105,19 @@ var WSSIncomingRequests = function WSSIncomingRequests(props) {
         null,
         _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.incoming_requests' })
       ),
+      _react2.default.createElement(_wfpWssUiReact.FilterPanel, null),
       _react2.default.createElement(
-        'div',
-        { className: 'wfp-filter closed' },
+        Table,
+        null,
         _react2.default.createElement(
-          'div',
-          { className: 'wfp-filter--closed' },
-          _react2.default.createElement(
-            'div',
-            { className: 'accordion-head' },
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement('span', { className: 'title fill-data', 'data-content': 'labels.show_filters' }),
-              _react2.default.createElement(
-                'span',
-                { className: 'pull-right' },
-                _react2.default.createElement('i', { className: 'fa fa-fw fa-chevron-down' })
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'wfp-filter--open' },
-          _react2.default.createElement(
-            'div',
-            { className: 'accordion-head' },
-            _react2.default.createElement(
-              'a',
-              null,
-              _react2.default.createElement('span', { className: 'title fill-data', 'data-content': 'labels.hide_filters' }),
-              _react2.default.createElement(
-                'span',
-                { className: 'pull-right' },
-                _react2.default.createElement('i', { className: 'fa fa-fw fa-chevron-up' })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'wfp-form--stacked filter_container' },
-            _react2.default.createElement(
-              'form',
-              { className: 'font-medium' },
-              _react2.default.createElement(
-                'div',
-                { className: 'wfp-grid' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'wfp-u-1 wfp-u-md-1-2 wfp-box--flat' },
-                  _react2.default.createElement('label', { className: 'fill-data', 'for': 'form-name', 'data-content': 'labels.form' }),
-                  _react2.default.createElement(
-                    'select',
-                    { id: 'form-name' },
-                    _react2.default.createElement(
-                      'option',
-                      { value: '0', selected: true },
-                      'All form types'
-                    ),
-                    _react2.default.createElement(
-                      'option',
-                      { disabled: true },
-                      '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500'
-                    ),
-                    _react2.default.createElement(
-                      'optgroup',
-                      { label: 'Filter by form type' },
-                      _react2.default.createElement(
-                        'option',
-                        { value: '1' },
-                        '[HR044] Certificate of attendance and statement of school expenditures'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '2' },
-                        '[HR044] Leave Application'
-                      )
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'wfp-u-1 wfp-u-md-1-2 wfp-box--flat' },
-                  _react2.default.createElement('label', { className: 'fill-data', 'for': 'status', 'data-content': 'labels.status' }),
-                  _react2.default.createElement(
-                    'select',
-                    { id: 'status' },
-                    _react2.default.createElement(
-                      'option',
-                      { value: '0', selected: '' },
-                      'All status'
-                    ),
-                    _react2.default.createElement(
-                      'option',
-                      { disabled: true },
-                      '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500'
-                    ),
-                    _react2.default.createElement(
-                      'optgroup',
-                      { label: 'Filter by status' },
-                      _react2.default.createElement(
-                        'option',
-                        { value: '1' },
-                        'Saved draft'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '2' },
-                        'Submitted'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '3' },
-                        'Supervisor acknowledge'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '4' },
-                        'Approved'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '5' },
-                        'Sent back'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '6' },
-                        'Rejected'
-                      )
-                    )
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'wfp-grid' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'wfp-u-1 wfp-u-md-1-2 wfp-box--flat' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'wfp-grid' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'wfp-u-1-3 wfp-box--flat' },
-                      _react2.default.createElement('label', { className: 'fill-data', 'data-content': 'labels.creation_date' })
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'wfp-u-1-3 wfp-box--flat pl0' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        _react2.default.createElement('span', { className: 'fill-data', 'for': 'from-date', 'data-content': 'labels.from' }),
-                        _react2.default.createElement(
-                          'span',
-                          {
-                            className: 'required-symbol' },
-                          '*'
-                        )
-                      ),
-                      _react2.default.createElement('input', { type: 'date', name: 'from-date' })
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'wfp-u-1-3 wfp-box--flat' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        _react2.default.createElement('span', { className: 'fill-data', 'for': 'to-date', 'data-content': 'labels.to' }),
-                        _react2.default.createElement(
-                          'span',
-                          {
-                            className: 'required-symbol' },
-                          '*'
-                        )
-                      ),
-                      _react2.default.createElement('input', { type: 'date', name: 'to-date' })
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'wfp-u-1 wfp-u-md-1-2 wfp-box--flat' },
-                  _react2.default.createElement('label', { className: 'fill-data', 'for': 'officer-name', 'data-content': 'labels.officer' }),
-                  _react2.default.createElement(
-                    'select',
-                    { id: 'officer-name' },
-                    _react2.default.createElement(
-                      'optgroup',
-                      { label: 'Filter by officer name' },
-                      _react2.default.createElement(
-                        'option',
-                        { value: '0', selected: '' },
-                        'From everyone'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { disabled: true },
-                        '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '1' },
-                        'Mario ROSSI'
-                      ),
-                      _react2.default.createElement(
-                        'option',
-                        { value: '2' },
-                        'John SMITH'
-                      )
-                    )
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'wfp-form--actions' },
-                _react2.default.createElement(
-                  'button',
-                  { className: 'wfp-btn wfp-btn--ghost btn-small' },
-                  'Clear'
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { className: 'wfp-btn wfp-btn--primary btn-medium' },
-                  'Filter'
-                )
-              )
-            )
-          )
-        )
-      ),
-      _react2.default.createElement(
-        'table',
-        { rules: 'group', className: 'wfp-table' },
-        _react2.default.createElement(
-          'thead',
+          TableHeader,
           null,
-          _react2.default.createElement(
-            'tr',
-            null,
-            _react2.default.createElement(
-              'th',
-              null,
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.requestor' }),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })
-            ),
-            _react2.default.createElement(
-              'th',
-              null,
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.request' }),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })
-            ),
-            _react2.default.createElement(
-              'th',
-              null,
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.history' })
-            ),
-            _react2.default.createElement(
-              'th',
-              null,
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.status' }),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })
-            ),
-            _react2.default.createElement(
-              'th',
-              null,
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.details' })
-            ),
-            _react2.default.createElement(
-              'th',
-              { className: 'table_cols_actions' },
-              _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.action' })
-            )
-          )
+          _react2.default.createElement(TableHeaderItem, { className: 'fill-data', label: 'labels.requestor' }),
+          _react2.default.createElement(TableHeaderItem, { className: 'fill-data', label: 'labels.request' }),
+          _react2.default.createElement(TableHeaderItem, { className: 'fill-data', label: 'labels.history' }),
+          _react2.default.createElement(TableHeaderItem, { className: 'fill-data', label: 'labels.status' }),
+          _react2.default.createElement(TableHeaderItem, { className: 'fill-data', label: 'labels.details' }),
+          _react2.default.createElement(TableHeaderItem, { className: 'table_cols_actions', label: 'labels.action' })
         ),
         _react2.default.createElement(
           'tbody',
@@ -505,68 +243,7 @@ var WSSIncomingRequests = function WSSIncomingRequests(props) {
           )
         )
       ),
-      _react2.default.createElement(
-        'div',
-        { className: 'wfp-pagination' },
-        _react2.default.createElement(
-          'ol',
-          { className: 'pagination--wrapper' },
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item' },
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'pagination--btn' },
-              'Previous'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item active' },
-            _react2.default.createElement(
-              'span',
-              { className: 'pagination--btn' },
-              '1'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item' },
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'pagination--btn' },
-              '2'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item' },
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'pagination--btn' },
-              '3'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item ellipsis' },
-            _react2.default.createElement(
-              'span',
-              { className: 'pagination--btn ' },
-              '\u2026'
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            { className: 'pagination--item' },
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'pagination--btn' },
-              'Next'
-            )
-          )
-        )
-      )
+      _react2.default.createElement(_wfpWssUiReact.Pages, null)
     )
   );
 };
@@ -579,4 +256,4 @@ exports.default = WSSIncomingRequests;
 
 /***/ })
 
-},[241]);
+},[244]);

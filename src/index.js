@@ -6,6 +6,8 @@ import LogoItem from './components/logoitem';
 import SearchWidget from './components/searchwidget';
 import UserMenuWidget from './components/usermenuwidget';
 import Breadcrumbs from './components/breadcrumbs';
+import Pages from './components/pages';
+import FilterPanel from './components/filterpanel';
 
 module.exports = {
   LinkTo,
@@ -15,5 +17,7 @@ module.exports = {
   LogoItem,
   SearchWidget,
   UserMenuWidget,
-  Breadcrumbs
+  Breadcrumbs,
+  Pages,
+  FilterPanel
 };

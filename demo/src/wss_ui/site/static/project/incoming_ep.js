@@ -9,8 +9,9 @@ import WSSIncomingRequests from './components/incoming';
 
     var urls = {};
 
-    let setup = () => {
-      ReactDOM.render(<WSSIncomingRequests />,
+    let setup = urlsContextData => {
+      urls = urlsContextData;
+      ReactDOM.render(<WSSIncomingRequests urls={urls} />,
         document.getElementById('incoming'));
     };
 

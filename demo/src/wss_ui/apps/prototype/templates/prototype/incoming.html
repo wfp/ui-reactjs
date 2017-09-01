@@ -12,6 +12,8 @@
 {{block.super}}
   <script src="{% static '/dist/incoming_ep.bundle.js' %}"></script>
   <script>
-    incoming_requests.setup();
+    incoming_requests.setup({
+      incoming: "{% url 'incoming' %}",
+    });
   </script>
 {%endblock bottom-scripts%}
