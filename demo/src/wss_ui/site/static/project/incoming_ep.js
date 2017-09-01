@@ -18,7 +18,7 @@ import WSSIncomingRequests from './components/incoming';
 	  return {urls: urls, setup: setup};
   };
 
-  if (!window.pagecreate) {
+  if (!window.incoming_requests) {
     window.incoming_requests = incoming_requests();
   }
 }());

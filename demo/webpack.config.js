@@ -4,7 +4,7 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin")
 module.exports = {
   entry: {
     wss: './src/wss_ui/site/static/project/wss.js',
-    page_create: './src/wss_ui/site/static/project/page_create.jsx',
+    page_create_ep: './src/wss_ui/site/static/project/page_create_ep.js',
     incoming_ep: './src/wss_ui/site/static/project/incoming_ep.js'
   },
   output: {

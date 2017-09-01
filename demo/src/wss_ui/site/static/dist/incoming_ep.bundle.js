@@ -1,20 +1,20 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(26);
+var _react = __webpack_require__(21);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(45);
+var _reactDom = __webpack_require__(33);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _incoming = __webpack_require__(245);
+var _incoming = __webpack_require__(246);
 
 var _incoming2 = _interopRequireDefault(_incoming);
 
@@ -34,14 +34,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     return { urls: urls, setup: setup };
   };
 
-  if (!window.pagecreate) {
+  if (!window.incoming_requests) {
     window.incoming_requests = incoming_requests();
   }
 })();
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51,7 +51,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(26);
+var _react = __webpack_require__(21);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -256,4 +256,4 @@ exports.default = WSSIncomingRequests;
 
 /***/ })
 
-},[244]);
+},[245]);

@@ -1,13 +1,15 @@
 {% extends "prototype/base.html" %}
+{% load static %}
+
     {% block page_contents %}
-    {% include "prototype/fragments/page_create.html" %}
+        <div id='create'></div>
+
     {% endblock page_contents %}
 
 {%block bottom-scripts%}
 {{block.super}}
-<script>
-      pagecreate.setup({
-        create: "{% url 'create' %}",
-      });
-    </script>
+  <script src="{% static '/dist/page_create_ep.bundle.js' %}"></script>
+  <script>
+    page_create.setup();
+  </script>
 {%endblock bottom-scripts%}
