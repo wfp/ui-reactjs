@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import WSSHeader from "./header";
+import WSSHeader from "./components/header";
 
 
 (function () {
@@ -12,7 +12,8 @@ import WSSHeader from "./header";
 
     let setup = urlsContextData => {
       urls = urlsContextData;
-      ReactDOM.render(<WSSHeader urls={urls} />, document.getElementById('app'));
+      ReactDOM.render(<WSSHeader urls={urls} />,
+        document.getElementById('header'));
     };
 
 	  return {urls: urls, setup: setup};

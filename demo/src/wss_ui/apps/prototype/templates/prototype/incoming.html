@@ -1,7 +1,17 @@
 {% extends "prototype/base.html" %}
+{% load static %}
 
-    {% block page_contents %}
-    {% include "prototype/fragments/page_incoming.html" %}
-    {% endblock page_contents %}
+{% block page_contents %}
+
+<div id="incoming"></div>
+
+{% endblock page_contents %}
 
 
+{%block bottom-scripts%}
+{{block.super}}
+  <script src="{% static '/dist/incoming_ep.bundle.js' %}"></script>
+  <script>
+    incoming_requests.setup();
+  </script>
+{%endblock bottom-scripts%}

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import LogoItem from './logoitem';
+import HeaderMenuGroup from './headermenugroup';
 
 
 const Header = props => {
@@ -12,11 +13,7 @@ const Header = props => {
         <LogoItem title={props.title} />
 
         <div className="wfp-u-3-5 wfp-u-md-3-4 header--nav">
-          <nav className="header--menu">
-            <ul className="menu--group">
-              {props.children}
-            </ul>
-          </nav>
+          <HeaderMenuGroup>{props.children}</HeaderMenuGroup>
         </div>
       </div>
     </header>
