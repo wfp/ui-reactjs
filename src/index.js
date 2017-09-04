@@ -8,6 +8,7 @@ import UserMenuWidget from './components/usermenuwidget';
 import Breadcrumbs from './components/breadcrumbs';
 import Pages from './components/pages';
 import FilterPanel from './components/filterpanel';
+import {Tab, Tabs} from './components/tabs';
 
 module.exports = {
   LinkTo,
@@ -19,5 +20,7 @@ module.exports = {
   UserMenuWidget,
   Breadcrumbs,
   Pages,
-  FilterPanel
+  FilterPanel,
+  Tab,
+  Tabs
 };
