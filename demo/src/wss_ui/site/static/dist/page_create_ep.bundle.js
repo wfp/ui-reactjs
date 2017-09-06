@@ -24892,8 +24892,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     /* 9 */
     /***/function (module, exports, __webpack_require__) {
 
-      __webpack_require__(10);
-      module.exports = __webpack_require__(31);
+      module.exports = __webpack_require__(10);
 
       /***/
     },
@@ -24943,6 +24942,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       var _filterpanel2 = _interopRequireDefault(_filterpanel);
 
       var _tabs = __webpack_require__(30);
+
+      var _main = __webpack_require__(31);
+
+      var _main2 = _interopRequireDefault(_main);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -29627,12 +29630,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var Breadcrumbs = function Breadcrumbs(props) {
-        return _react2.default.createElement('ul', { className: 'wfp--breadcrumbs' }, _react2.default.createElement('li', { className: 'wfp--breadcrumbs--home wfp--breadcrumbs--step' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-fw fa-home' }), _react2.default.createElement('span', { className: 'fill-data', 'data-content': props.home }))), props.nextLabels.map(function (nextLabel, ind) {
+        return _react2.default.createElement('ul', { className: 'wfp--breadcrumbs' }, _react2.default.createElement('li', { className: 'wfp--breadcrumbs--home wfp--breadcrumbs--step' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-fw fa-home' }), _react2.default.createElement('span', null, props.home))), props.nextLabels.map(function (nextLabel, ind) {
           var content = "";
           if (props.nextLinks && props.nextLinks.length > ind) {
-            content = _react2.default.createElement('a', { href: props.nextLinks[ind] }, _react2.default.createElement('span', { className: 'fill-data', 'data-content': nextLabel }));
+            content = _react2.default.createElement('a', { href: props.nextLinks[ind] }, _react2.default.createElement('span', null, nextLabel));
           } else {
-            content = _react2.default.createElement('span', { className: 'fill-data', 'data-content': nextLabel });
+            content = _react2.default.createElement('span', null, nextLabel);
           }
           return _react2.default.createElement('li', { key: ind, className: 'wfp--breadcrumbs--step' }, content);
         }));

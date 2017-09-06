@@ -3,7 +3,7 @@ const extractCSS = new ExtractTextPlugin('./lib/styles/[name].css');
 
 
 var config = {
-  entry: ['./src/index.js', './src/styles/main.scss'],
+  entry: ['./src/index.js'],
   output: {
     library: 'wfp-wss-ui-react',
     libraryTarget: 'umd',

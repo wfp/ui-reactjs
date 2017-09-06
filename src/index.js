@@ -10,6 +10,8 @@ import Pages from './components/pages';
 import FilterPanel from './components/filterpanel';
 import {Tab, Tabs} from './components/tabs';
 
+import WssStyle from './styles/main.scss';
+
 module.exports = {
   LinkTo,
   Header,
