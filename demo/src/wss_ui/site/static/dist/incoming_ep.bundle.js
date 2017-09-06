@@ -96,7 +96,7 @@ var WSSIncomingRequests = function WSSIncomingRequests(props) {
   return _react2.default.createElement(
     'div',
     { className: 'content' },
-    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, { home: 'labels.home', nextLabels: ["labels.incoming_requests"], nextLinks: [props.urls.incoming] }),
+    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, { home: labels.home, nextLabels: [labels.incoming_requests], nextLinks: [props.urls.incoming] }),
     _react2.default.createElement(
       'section',
       null,

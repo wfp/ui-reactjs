@@ -42,7 +42,7 @@ const WSSIncomingRequests = props => {
   return (
     <div className="content">
 
-      <Breadcrumbs home="labels.home" nextLabels={["labels.incoming_requests"]} nextLinks={[props.urls.incoming]}/>
+      <Breadcrumbs home={labels.home} nextLabels={[labels.incoming_requests]} nextLinks={[props.urls.incoming]}/>
 
       <section>
         <h2><span className="fill-data" data-content="labels.incoming_requests"></span></h2>
