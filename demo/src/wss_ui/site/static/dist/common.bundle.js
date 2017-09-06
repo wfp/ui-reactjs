@@ -32092,6 +32092,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
       ? ReactClassInterface[name]
       : null;
 
+<<<<<<< HEAD
     // Disallow overriding of base class methods unless explicitly allowed.
     if (ReactClassMixin.hasOwnProperty(name)) {
       _invariant(
@@ -32101,6 +32102,15 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
           'do not overlap with React methods.',
         name
       );
+=======
+var Breadcrumbs = function Breadcrumbs(props) {
+  return _react2.default.createElement('ul', { className: 'wfp--breadcrumbs' }, _react2.default.createElement('li', { className: 'wfp--breadcrumbs--home wfp--breadcrumbs--step' }, _react2.default.createElement('a', { href: '#' }, _react2.default.createElement('i', { className: 'fa fa-fw fa-home' }), _react2.default.createElement('span', null, props.home))), props.nextLabels.map(function (nextLabel, ind) {
+    var content = "";
+    if (props.nextLinks && props.nextLinks.length > ind) {
+      content = _react2.default.createElement('a', { href: props.nextLinks[ind] }, _react2.default.createElement('span', null, nextLabel));
+    } else {
+      content = _react2.default.createElement('span', null, nextLabel);
+>>>>>>> c14270bed034ee139b4647fe578f9800e4de60a6
     }
 
     // Disallow defining methods more than once unless explicitly allowed.

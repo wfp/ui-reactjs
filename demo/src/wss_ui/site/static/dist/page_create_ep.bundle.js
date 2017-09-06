@@ -32681,7 +32681,7 @@ var PageCreate = function PageCreate(props) {
   return _react2.default.createElement(
     'div',
     { className: 'content' },
-    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, { home: 'labels.home', nextLabels: ["labels.create_a_request"], nextLinks: [] }),
+    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, { home: labels.home, nextLabels: [labels.create_a_request], nextLinks: [] }),
     _react2.default.createElement(
       'section',
       null,

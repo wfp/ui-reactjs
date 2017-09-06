@@ -7,16 +7,16 @@ const Breadcrumbs = (props) => {
       <li className="wfp--breadcrumbs--home wfp--breadcrumbs--step">
         <a href="#">
           <i className="fa fa-fw fa-home"></i>
-          <span className="fill-data" data-content={props.home}></span></a>
+          <span>{props.home}</span></a>
       </li>
       {
         props.nextLabels.map((nextLabel, ind) => {
           var content = ""
           if (props.nextLinks && props.nextLinks.length > ind) {
-            content = <a href={props.nextLinks[ind]}><span className="fill-data" data-content={nextLabel}></span></a>
+            content = <a href={props.nextLinks[ind]}><span>{nextLabel}</span></a>
           }
           else {
-            content = <span className="fill-data" data-content={nextLabel}></span>
+            content = <span>{nextLabel}</span>
           }
           return (
             <li key={ind} className="wfp--breadcrumbs--step">
