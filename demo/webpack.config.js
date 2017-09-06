@@ -1,9 +1,11 @@
-var path = require("path");
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin")
+const path = require("path");
+// const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('./styles/[name].css');
 
 module.exports = {
   entry: {
-    wss: './src/wss_ui/site/static/project/wss.js',
+    wss: ['./src/wss_ui/site/static/project/wss.js', 'wfp-wss-ui-react/lib/styles/main.css'],
     page_create_ep: './src/wss_ui/site/static/project/page_create_ep.js',
     incoming_ep: './src/wss_ui/site/static/project/incoming_ep.js'
   },
@@ -22,6 +24,13 @@ module.exports = {
             presets: ['es2015', 'react']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       }
     ]
   },
@@ -29,8 +38,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   plugins: [
-    new CommonsChunkPlugin({
-      name: "common"
-    })
+    // new CommonsChunkPlugin({
+    //   name: "common"
+    // }),
+    extractCSS
   ]
 };

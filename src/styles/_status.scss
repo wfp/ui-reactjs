@@ -1,0 +1,43 @@
+@import 'colors';
+
+.status-widget{
+    min-width:170px;
+    position:relative;
+    z-index:5;
+    .dot{
+        width:16px;
+        height:16px;
+        background-color: $grey_lighter;
+        border-radius:100%;
+        margin-right:7px;
+        display:inline-block;
+        z-index:10;
+    }
+    .edge{
+        width:11px;
+        height:3px;
+        margin-left: -10px;
+        margin-right: -10px;
+        background-color:$grey_lighter;
+        position:absolute;
+        top:7px;
+        display:inline-block;
+        z-index:-10;
+    }
+
+    .success{
+        background-color: $green;
+    }
+    .fail{
+        background-color: $red;
+    }
+    .dot.action{
+        background-color: $red;
+        color:white;
+    }
+    .working{
+        background-color: $primary
+    }
+
+
+}

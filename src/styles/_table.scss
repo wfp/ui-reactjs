@@ -1,0 +1,60 @@
+@import 'colors';
+
+table.wfp-table {
+    table-layout:fixed;
+    border-spacing:0;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.9em;
+    thead{
+        th{
+            padding:2em 1em;
+            border-top: 2px solid $grey-lighter;
+            border-bottom: 2px solid $grey-lighter;
+            text-transform:uppercase;
+            text-align:left;
+            &.table_cols_actions{
+                width: 220px;
+            }
+        }
+        &.tablesorter-header i.fa:before{
+            content:"\f0dc";
+        }
+        
+        &.tablesorter-headerAsc i.fa:before{
+            content:"\f0de";
+        }
+        &.tablesorter-headerDesc i.fa:before{
+            content:"\f0dd";
+        }
+    }
+    /*
+     fa-sort"\f0dc"
+ fa-sort-desc"\f0dd"
+ fa-sort-asc"\f0de"
+ */
+    tbody{
+        td{
+            padding:1em;
+            border-top: 1px solid $grey-lighter;
+            border-bottom: none;
+            ul{
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+
+.message-box{
+    display: block;
+    margin-top:30px;
+}
+.message-box.undefined{
+    display: none;
+}
+
+.hist_date{
+    color: $grey;
+}

@@ -1,0 +1,26 @@
+.modal{
+    position: absolute;
+    top:200px;
+    left:calc( ( 100% - 350px) / 2);
+    width:400px;
+    background-color:white;
+    border-radius: 10px;
+
+    .header{
+        padding:20px;
+        font-size:1.5em;
+        color: rgba(0,0,0,0.85);
+        font-weight: bold;
+        border-bottom:1px solid rgba(0,0,0,0.2);
+    }
+    .body{
+        padding:20px;
+    }
+    .footer{
+        padding:20px;
+        border-top:1px solid rgba(0,0,0,0.2);
+        button{
+            margin-left:10px;
+        }
+    }
+}

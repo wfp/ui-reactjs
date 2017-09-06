@@ -1,0 +1,16 @@
+.tooltip{
+    cursor: pointer;
+}
+
+.tooltip-container{
+    max-width: 300px;
+    min-width:150px;
+    color:white;
+    background-color:rgba(13,13,13,0.9);
+    padding:20px;
+    border-radius:20px;
+    position:absolute;
+    top:1000px;
+    left:100px;
+    z-index:1000000;
+}
