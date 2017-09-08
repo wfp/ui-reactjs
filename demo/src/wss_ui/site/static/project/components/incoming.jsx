@@ -26,7 +26,7 @@ const WSSIncomingRequests = props => {
     {label: "DETAILS"},
     {label: "ACTIONS"}
   ].map((el, index) => {
-    return <TableHeaderItem label={el.label} ref={index} />;
+    return <TableHeaderItem label={el.label} />;
   });
 
   let incomingRequestsItems = incomingRequests.map((el, index) => {
@@ -44,7 +44,8 @@ const WSSIncomingRequests = props => {
         <RequestHistory history={el.history} />
         <RequestStatus status={el.status} />
         <RequestDetails details={el.details} />
-        <RequestAvailableActions actions={el.actions} />
+        <RequestAvailableActions
+          actions={el.actions} defaultAction={el.defaultAction} />
       </tr>
     );
   });

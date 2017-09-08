@@ -9,7 +9,8 @@ const incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Michele MERCALDO",
   request: { type: "HR044 - Leave Application", id: "HR-015710" },
@@ -20,7 +21,8 @@ const incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Enrico GARAVINI",
   request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
@@ -31,7 +33,8 @@ const incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Enrico GARAVINI",
   request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
@@ -42,7 +45,8 @@ const incomingRequests = [{
     state: "success"
   },
   details: [{ name: "Leave date", value: "Friday 16 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }];
 
 

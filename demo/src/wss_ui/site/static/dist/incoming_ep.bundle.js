@@ -32687,7 +32687,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var WSSIncomingRequests = function WSSIncomingRequests(props) {
   var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
-    return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { label: el.label, ref: index });
+    return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { label: el.label });
   });
 
   var incomingRequestsItems = _mdata.incomingRequests.map(function (el, index) {
@@ -32720,7 +32720,8 @@ var WSSIncomingRequests = function WSSIncomingRequests(props) {
       _react2.default.createElement(_historycell2.default, { history: el.history }),
       _react2.default.createElement(_statuscell2.default, { status: el.status }),
       _react2.default.createElement(_detailscell2.default, { details: el.details }),
-      _react2.default.createElement(_actionscell2.default, { actions: el.actions })
+      _react2.default.createElement(_actionscell2.default, {
+        actions: el.actions, defaultAction: el.defaultAction })
     );
   });
 
@@ -32948,6 +32949,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(39);
 
 var _react2 = _interopRequireDefault(_react);
@@ -32958,67 +32961,109 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var RequestAvailableActions = function RequestAvailableActions(prpps) {
-  return _react2.default.createElement(
-    'td',
-    null,
-    _react2.default.createElement(
-      'div',
-      { className: 'inline-actions' },
-      _react2.default.createElement(
-        'span',
-        { className: 'fill-data-list-item', 'data-fill-mode': 'list', 'data-content': 'actions' },
-        _react2.default.createElement(
-          'span',
-          { className: 'template' },
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RequestAvailableActions = function (_React$Component) {
+  _inherits(RequestAvailableActions, _React$Component);
+
+  function RequestAvailableActions(props) {
+    _classCallCheck(this, RequestAvailableActions);
+
+    var _this = _possibleConstructorReturn(this, (RequestAvailableActions.__proto__ || Object.getPrototypeOf(RequestAvailableActions)).call(this, props));
+
+    _this.state = {
+      listIsVisible: false
+    };
+    _this.toggleListVisibility = _this.toggleListVisibility.bind(_this);
+    return _this;
+  }
+
+  _createClass(RequestAvailableActions, [{
+    key: 'toggleListVisibility',
+    value: function toggleListVisibility() {
+      console.log("TOGGLE!!!");
+      this.setState(function (prevState) {
+        return {
+          listIsVisible: !prevState.listIsVisible
+        };
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      console.log("Render Actions !!!");
+      var available_actions = this.props.actions.map(function (el) {
+        return _react2.default.createElement(
+          'li',
+          { className: 'menu--item' },
           _react2.default.createElement(
-            'button',
-            { className: 'wfp-btn btn-small xsmall fill-data-list-item',
-              'data-fill-attribute': 'className', 'data-content': 'mode' },
-            _react2.default.createElement('span', {
-              className: ' fill-data-list-item', 'data-content': 'name' })
+            'a',
+            null,
+            _react2.default.createElement(
+              'span',
+              null,
+              el
+            )
           )
-        )
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'fill-data-list-item', 'data-fill-mode': 'list', 'data-content': 'secondary_actions' },
-        _react2.default.createElement(
-          'button',
-          { className: 'wfp-btn xsmall other dropdown-trigger closed' },
-          _react2.default.createElement('i', {
-            className: 'fa fa-fw fa-chevron-down' })
-        ),
+        );
+      });
+      return _react2.default.createElement(
+        'td',
+        null,
         _react2.default.createElement(
           'div',
-          { className: 'dropdown' },
+          { className: 'inline-actions' },
           _react2.default.createElement(
-            'ul',
-            { className: 'menu--group' },
+            'span',
+            null,
             _react2.default.createElement(
-              'div',
+              'span',
               { className: 'template' },
               _react2.default.createElement(
-                'li',
-                { className: 'menu--item ' },
+                'button',
+                { className: 'wfp-btn btn-small xsmall modal-trigger wfp-btn--primary' },
                 _react2.default.createElement(
-                  'a',
-                  { className: '' },
-                  _react2.default.createElement('span', { className: 'fill-data-list-item',
-                    'data-content': 'name' })
+                  'span',
+                  null,
+                  this.props.defaultAction
                 )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'span',
+            null,
+            _react2.default.createElement(
+              'button',
+              { onClick: this.toggleListVisibility, className: 'wfp-btn xsmall' },
+              _react2.default.createElement('i', { className: "fa fa-fw" + (this.state.listIsVisible ? " fa-chevron-up" : " fa-chevron-down") })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'dropdown', style: { display: this.state.listIsVisible ? "block" : "none" } },
+              _react2.default.createElement(
+                'ul',
+                { className: 'menu--group' },
+                available_actions
               )
             )
           )
         )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
 
-RequestAvailableActions.propTypes = {};
+  return RequestAvailableActions;
+}(_react2.default.Component);
 
 exports.default = RequestAvailableActions;
+
+
+RequestAvailableActions.propTypes = {};
 
 /***/ }),
 /* 234 */
@@ -33037,7 +33082,8 @@ var incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Michele MERCALDO",
   request: { type: "HR044 - Leave Application", id: "HR-015710" },
@@ -33048,7 +33094,8 @@ var incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Enrico GARAVINI",
   request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
@@ -33059,7 +33106,8 @@ var incomingRequests = [{
     state: "working"
   },
   details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }, {
   requestor: "Enrico GARAVINI",
   request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
@@ -33070,7 +33118,8 @@ var incomingRequests = [{
     state: "success"
   },
   details: [{ name: "Leave date", value: "Friday 16 June 2017" }],
-  actions: {}
+  actions: ['Approve', 'Send Back'],
+  defaultAction: 'Approve'
 }];
 
 module.exports = {

@@ -2,36 +2,61 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const RequestAvailableActions = prpps => {
-  return (
-    <td>
-      <div className="inline-actions">
-        <span className="fill-data-list-item" data-fill-mode="list" data-content="actions">
-          <span className="template">
-            <button className="wfp-btn btn-small xsmall fill-data-list-item"
-                    data-fill-attribute="className" data-content="mode"><span
-              className=" fill-data-list-item" data-content="name"></span></button>
+export default class RequestAvailableActions extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      listIsVisible: false
+    };
+    this.toggleListVisibility = this.toggleListVisibility.bind(this);
+  }
+
+  toggleListVisibility() {
+    console.log("TOGGLE!!!");
+    this.setState(prevState => ({
+      listIsVisible: !prevState.listIsVisible
+    }));
+  }
+
+  render() {
+    console.log("Render Actions !!!");
+    let available_actions = this.props.actions.map(el => {
+      return (
+        <li className="menu--item">
+          <a>
+            <span>{el}</span>
+          </a>
+        </li>
+      );
+    });
+    return (
+      <td>
+        <div className="inline-actions">
+          <span>
+            <span className="template">
+              <button className="wfp-btn btn-small xsmall modal-trigger wfp-btn--primary">
+                <span>{this.props.defaultAction}</span>
+              </button>
+            </span>
           </span>
-        </span>
-        <span className="fill-data-list-item" data-fill-mode="list" data-content="secondary_actions">
-          <button className="wfp-btn xsmall other dropdown-trigger closed"><i
-                  className="fa fa-fw fa-chevron-down"></i></button>
-          <div className="dropdown">
-            <ul className="menu--group">
-              <div className="template">
-                <li className="menu--item "><a className=""><span className="fill-data-list-item"
-                                                                  data-content="name"></span></a></li>
-              </div>
-            </ul>
-          </div>
-        </span>
-      </div>
-    </td>
-  );
-};
+          <span >
+            <button onClick={this.toggleListVisibility} className="wfp-btn xsmall">
+              <i className={"fa fa-fw" + (this.state.listIsVisible?" fa-chevron-up":" fa-chevron-down")} />
+            </button>
+            <div className="dropdown" style={{display: this.state.listIsVisible?"block":"none"}}>
+              <ul className="menu--group">
+                {available_actions}
+              </ul>
+            </div>
+          </span>
+        </div>
+      </td>
+    );
+  }
+}
 
 RequestAvailableActions.propTypes = {
 
 };
 
-export default RequestAvailableActions;
