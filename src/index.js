@@ -9,6 +9,10 @@ import Breadcrumbs from './components/breadcrumbs';
 import Pages from './components/pages';
 import FilterPanel from './components/filterpanel';
 import {Tab, Tabs} from './components/tabs';
+import {
+  Table, TableHeader,
+  TableHeaderItem, TableRow, TableRowItem
+} from './components/table';
 
 import WssStyle from './styles/main.scss';
 
@@ -24,5 +28,7 @@ module.exports = {
   Pages,
   FilterPanel,
   Tab,
-  Tabs
+  Tabs,
+  Table, TableHeader,
+  TableHeaderItem, TableRow, TableRowItem
 };
