@@ -10,6 +10,7 @@ export default class RequestAvailableActions extends React.Component {
       listIsVisible: false
     };
     this.toggleListVisibility = this.toggleListVisibility.bind(this);
+    this.performAction = this.performAction.bind(this);
   }
 
   toggleListVisibility() {
@@ -19,12 +20,19 @@ export default class RequestAvailableActions extends React.Component {
     }));
   }
 
+  performAction() {
+    console.log("Perform Action!!!");
+    this.setState({
+      listIsVisible: false
+    });
+  }
+
   render() {
     console.log("Render Actions !!!");
     let available_actions = this.props.actions.map(el => {
       return (
         <li className="menu--item">
-          <a>
+          <a onClick={this.performAction}>
             <span>{el}</span>
           </a>
         </li>
@@ -40,7 +48,7 @@ export default class RequestAvailableActions extends React.Component {
               </button>
             </span>
           </span>
-          <span >
+          <span>
             <button onClick={this.toggleListVisibility} className="wfp-btn xsmall">
               <i className={"fa fa-fw" + (this.state.listIsVisible?" fa-chevron-up":" fa-chevron-down")} />
             </button>

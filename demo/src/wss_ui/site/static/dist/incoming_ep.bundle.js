@@ -32979,6 +32979,7 @@ var RequestAvailableActions = function (_React$Component) {
       listIsVisible: false
     };
     _this.toggleListVisibility = _this.toggleListVisibility.bind(_this);
+    _this.performAction = _this.performAction.bind(_this);
     return _this;
   }
 
@@ -32993,8 +32994,18 @@ var RequestAvailableActions = function (_React$Component) {
       });
     }
   }, {
+    key: 'performAction',
+    value: function performAction() {
+      console.log("Perform Action!!!");
+      this.setState({
+        listIsVisible: false
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       console.log("Render Actions !!!");
       var available_actions = this.props.actions.map(function (el) {
         return _react2.default.createElement(
@@ -33002,7 +33013,7 @@ var RequestAvailableActions = function (_React$Component) {
           { className: 'menu--item' },
           _react2.default.createElement(
             'a',
-            null,
+            { onClick: _this2.performAction },
             _react2.default.createElement(
               'span',
               null,
