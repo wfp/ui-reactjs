@@ -27220,8 +27220,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var whiteptn = /\s{2,}/g; /* matches repeating whitespace */
         var pseudoptn = /([^\(])(:+) */g; /* pseudo element */
         var writingptn = /[svh]\w+-[tblr]{2}/; /* match writing mode property values */
-
-        /* vendors */
+        var gradientptn = /([\w-]+t\()/g; /* match *gradient property */
+        var supportsptn = /\(\s*([^]*?)\s*\)/g; /* match supports (groups) */
+        var propertyptn = /([^]*?);/g; /* match properties leading semicolon 
+                                       /* vendors */
         var webkit = '-webkit-';
         var moz = '-moz-';
         var ms = '-ms-';
@@ -27356,7 +27358,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                   chars = chars.replace(formatptn, '');
                 }
 
-                if ((chars = chars.trim()).length > 0) {
+                if (chars.trim().length > 0) {
                   switch (code) {
                     case SPACE:
                     case TAB:
@@ -27489,9 +27491,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
                           if (length > 0) {
                             switch (second) {
+                              case SUPPORTS:
+                                {
+                                  chars = chars.replace(supportsptn, supports);
+                                }
                               case DOCUMENT:
                               case MEDIA:
-                              case SUPPORTS:
                                 {
                                   child = chars + '{' + child + '}';
                                   break;
@@ -28143,7 +28148,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
          * @return {string}
          */
         function property(input, first, second, third) {
-          var i = 8;
           var index = 0;
           var out = input + ';';
           var hash = first * 2 + second * 3 + third * 4;
@@ -28155,6 +28159,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           } else if (vendor > 0) {
             // vendor prefix
             switch (hash) {
+              // mask
+              case 969:
+                {
+                  out = webkit + out.replace(gradientptn, webkit + '$1') + out;
+                  break;
+                }
+              // filter
               case 951:
                 {
                   out = webkit + out + out;
@@ -28213,14 +28224,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }
               // position: sticky
               case 1017:
-                if (out.indexOf('stick', ++i) === -1) {
-                  break;
+                {
+                  if (out.indexOf('sticky', 9) === -1) {
+                    break;
+                  }
                 }
               // display(flex/inline-flex/inline-box): d, i, s
               case 975:
                 {
                   index = (out = input).length - 10;
-                  cache = (out.charCodeAt(index) === 33 ? out.substring(0, index) : out).substring(i).trim();
+                  cache = (out.charCodeAt(index) === 33 ? out.substring(0, index) : out).substring(input.indexOf(':', 7) + 1).trim();
 
                   switch (hash = cache.charCodeAt(0) + (cache.charCodeAt(7) | 0)) {
                     // inline-
@@ -28351,6 +28364,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           }
 
           return out;
+        }
+
+        /**
+         * @param {string} match
+         * @param {string} group
+         * @return {string}
+         */
+        function supports(match, group) {
+          var out = property(group, group.charCodeAt(0), group.charCodeAt(1), group.charCodeAt(2));
+
+          return out !== group + ';' ? out.replace(propertyptn, 'or($1)').substring(2) : '(' + group + ')';
         }
 
         /**

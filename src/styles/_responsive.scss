@@ -1,0 +1,127 @@
+@media screen and (max-width: 35.5em){
+
+  .wfp-header-super{
+    text-align: left;
+    margin: 0;
+  }
+  .wfp--breadcrumbs{
+    display: none;
+  }
+
+  .wfp-header-super .wfp-grid.wfp-wrapper.wfp-overbar a.menu--link {
+    color: inherit;
+  }
+
+}
+
+@media screen and (max-width: 48em){
+
+  h2{
+    font-size: 2em;
+  }
+
+  .wfp-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+
+  #main-cta{
+    text-align: left;
+  }
+
+  #extended_menu{
+    //display: none;
+    background-color:inherit;
+    box-shadow: none;
+
+      .menu--group{
+        text-align: right;
+        background-color: inherit;
+      }
+      .menu--item{
+        display: inline-block;
+        a{
+          background-color: inherit;
+          border-color: transparent;
+        }
+      }
+    position: relative;
+    top: 0;
+  }
+
+  .wfp-header-int .header--search{
+    display:none;
+  }
+
+  table.wfp-table{
+    font-size: 0.6em;
+  }
+
+  #overlay .content-search{
+    width: 100%;
+  }
+
+  .wfp-column--actions{
+    margin-top: 2em;
+    text-align: right;
+    border: none;
+  }
+
+}
+
+
+@media screen and (max-width: 64em){
+
+
+}
+
+@media screen and (max-width: 80em){
+
+}
+
+
+
+
+/* em wfp-hidden values */
+
+/* wfp-hidden-xs */
+@media screen and (max-width:35.438em) {
+    .wfp-visible-sm{display:none}
+    .wfp-visible-md{display:none}
+    .wfp-visible-lg{display:none}
+    .wfp-visible-xl{display:none}
+    .wfp-hidden-xs{display:none}
+}
+/* wfp-hidden-sm */
+@media screen and (min-width:35.5em) and (max-width:47.938em) {
+    .wfp-visible-xs{display:none}
+    .wfp-visible-md{display:none}
+    .wfp-visible-lg{display:none}
+    .wfp-visible-xl{display:none}
+    .wfp-hidden-sm{display:none}
+}
+/* wfp-hidden-md */
+@media screen and (min-width:48em) and (max-width:63.938em) {
+    .wfp-visible-xs{display:none}
+    .wfp-visible-sm{display:none}
+    .wfp-visible-lg{display:none}
+    .wfp-visible-xl{display:none}
+    .wfp-hidden-md{display:none}
+}
+/* wfp-hidden-lg */
+@media screen and (min-width:64em) and (max-width:79.938em) {
+    .wfp-visible-xs{display:none}
+    .wfp-visible-sm{display:none}
+    .wfp-visible-md{display:none}
+    .wfp-visible-xl{display:none}
+    .wfp-hidden-lg{display:none}
+}
+/* wfp-hidden-xl */
+@media screen and (min-width:80em) {
+    .wfp-visible-xs{display:none}
+    .wfp-visible-sm{display:none}
+    .wfp-visible-md{display:none}
+    .wfp-visible-lg{display:none}
+    .wfp-hidden-xl{display:none}
+}

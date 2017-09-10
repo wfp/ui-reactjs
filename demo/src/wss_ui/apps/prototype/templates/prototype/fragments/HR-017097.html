@@ -5,32 +5,36 @@
         <li class="wfp--breadcrumbs--step"><a href="/"><span class="fill-data" data-content="labels.my_requests"></span></a></li>
         <li class="wfp--breadcrumbs--step"><span class="fill-data" data-content="">Leave / Absence application</span></li>
     </ul>
-                        <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="request['HR-017097'].status.steps|request['HR-017097'].status.current|request['HR-017097'].status.state|request['HR-017097'].status.require_action|request['HR-017097'].status.require_action_msg"></div>
+    
 
+    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="request['HR-017097'].status.steps|request['HR-017097'].status.current|request['HR-017097'].status.state|request['HR-017097'].status.require_action|request['HR-017097'].status.require_action_msg"></div>
 
+    <!-- STATUS HEADER START -->
     <section class="wfp-form-manager">
         <h2><span class="fill-data" data-content="request['HR-017097'].name">Form Name</span></h2>
         <div class="form-meta-field"><span class="title fill-data" data-content="labels.submission_date"></span>: <span class="value fill-data" data-content="request['HR-017097'].submission_date">xx/xx/xxxx</span></div>
         <div class="form-meta-field"><span class="title fill-data" data-content="labels.request_id"></span>: <span class="value fill-data" data-content="request['HR-017097'].request_id">HR-xxxxxxx</span></div>
         <div class="form-meta wfp-grid">
-            <div class="wfp-u-2-5">
+            <div class="wfp-u-2-5 wfp-u-lg-2-5 wfp-u-md-1-2">
                 <div class="form-meta-field"><span class="title fill-data" data-content="labels.requestor"></span>: <span class="value fill-data" data-content="request['HR-017097'].requestor">xxxx YYYY</span> <i class="fa fa-fw fa-info-circle tooltip-icon"></i></div>
                 <div class="form-meta-field"><span class="title fill-data" data-content="labels.approvers"></span>: <span class="value fill-data" data-content="request['HR-017097'].approvers">wwww ZZZZ (Supervisor)</span> <i class="fa fa-fw fa-info-circle tooltip-icon"></i></div>
             </div>
-            <div class="wfp-u-2-5">
+            <div class="wfp-u-2-5 wfp-u-lg-2-5 wfp-u-md-1-2">
                 <div class="form-meta-field"><span class="title fill-data" data-content="labels.status"></span>:
                     <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="request['HR-017097'].status.steps|request['HR-017097'].status.current|request['HR-017097'].status.state|request['HR-017097'].status.require_action|request['HR-017097'].status.require_action_msg"></div>
                 </div>
                 <div class="form-meta-field"><span class="title fill-data" data-content="labels.completion_date"></span>: <span class="value fill-data" data-content="request['HR-017097'].completion_date">HR-xxxxxxx</span></div>
                 <div class="form-meta-field"><span class="title fill-data" data-content="labels.wings_date"></span>: <span class="value fill-data" data-content="request['HR-017097'].wings_date">HR-xxxxxxx</span></div>
             </div>
-            <div class="wfp-u-1-5">
+            <div class="wfp-u-1-5 wfp-u-lg-1-5 wfp-u-md-1-1 wfp-column--actions">
                 <button class="wfp-btn btn-medium wfp-btn--negative"><span class="fill-data" data-content="labels.delete_request"></span></button>
                 <button class="wfp-btn btn-medium"><span class="fill-data" data-content="labels.download_as_PDF"></span></button>
             </div>
 
         </div>
     </section>
+    <!-- STATUS HEADER END -->
+    <!-- STATUS BODY START -->
     <section class="wfp-form-overview">
         <h4 class="fill-data" data-content="labels.overview"></h4>
         <div class="form-meta fill-data-list" data-content="request['HR-017097'].meta">
@@ -40,6 +44,8 @@
             </div>
         </div>
     </section>
+    <!-- STATUS BODY START -->
+    <!-- STATUS HISTORY START -->
     <section class="wfp-form-history">
         <h4 class="fill-data" data-content="labels.history"></h4>
         <div class="form-history-step active next-active step-blue">
@@ -69,5 +75,5 @@
             <span class="title">COMPLETED</span>
         </div>
     </section>
-
+    <!-- STATUS HISTORY END -->
 </div>
