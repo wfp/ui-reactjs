@@ -1,2 +1,3 @@
 wfp-commonlib==1.1
 psycopg2==2.6.1
+djangorestframework-3.6.4

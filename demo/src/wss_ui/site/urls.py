@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
+from wss_ui.site.fake_data_views.incoming_requests import IncomingRequestsJSON
 
 from .views import LoginView, LogoutView
 
@@ -41,6 +42,11 @@ urlpatterns = [
 
 ]
 
+fake_data_urlpatterns = [
+  url(r'^incoming_requests/$', IncomingRequestsJSON.as_view(), name='incoming-requests-json'),
+
+]
+urlpatterns += fake_data_urlpatterns
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

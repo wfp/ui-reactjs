@@ -29557,7 +29557,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var LinkMenuItem = function LinkMenuItem(props) {
-        return _react2.default.createElement('li', { className: 'menu--item' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link", target: '_blank' }, props.text));
+        return _react2.default.createElement('li', { className: 'menu--item' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link" }, props.text));
       };
 
       LinkMenuItem.propTypes = {
@@ -29934,7 +29934,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       };
 
       var TableHeaderItem = function TableHeaderItem(props) {
-        return _react2.default.createElement('th', null, _react2.default.createElement('span', null), _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' }, props.label));
+        return _react2.default.createElement('th', null, _react2.default.createElement('span', null, props.label, _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })));
       };
 
       var TableRow = function TableRow(props) {
@@ -32657,7 +32657,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     var setup = function setup(urlsContextData) {
       urls = urlsContextData;
-      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, { urls: urls }), document.getElementById('incoming'));
+      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, { urls: urls, src: urls.src }), document.getElementById('incoming'));
     };
 
     return { urls: urls, setup: setup };
@@ -32678,6 +32678,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(39);
 
@@ -32705,84 +32707,186 @@ var _actionscell = __webpack_require__(233);
 
 var _actionscell2 = _interopRequireDefault(_actionscell);
 
-var _mdata = __webpack_require__(234);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var WSSIncomingRequests = function WSSIncomingRequests(props) {
-  var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
-    return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { label: el.label });
-  });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var incomingRequestsItems = _mdata.incomingRequests.map(function (el, index) {
-    return _react2.default.createElement(
-      'tr',
-      null,
-      _react2.default.createElement(
-        'td',
-        null,
-        el.requestor
-      ),
-      _react2.default.createElement(
-        'td',
-        null,
-        _react2.default.createElement(
-          'a',
-          { href: '#' },
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import getJSON from 'jquery';
+
+var WSSIncomingRequests = function (_React$Component) {
+  _inherits(WSSIncomingRequests, _React$Component);
+
+  function WSSIncomingRequests(props, context) {
+    _classCallCheck(this, WSSIncomingRequests);
+
+    var _this = _possibleConstructorReturn(this, (WSSIncomingRequests.__proto__ || Object.getPrototypeOf(WSSIncomingRequests)).call(this, props, context));
+
+    _this.state = {
+      incomingRequests: []
+    };
+    return _this;
+  }
+
+  _createClass(WSSIncomingRequests, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      $.getJSON(this.props.src, function (data) {
+        _this2.setState({
+          incomingRequests: data['incoming_requests']
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
+        return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { key: index, label: el.label });
+      });
+      var incomingRequestsItems = this.state.incomingRequests.map(function (el, index) {
+        return _react2.default.createElement(
+          'tr',
+          { key: index },
           _react2.default.createElement(
-            'div',
+            'td',
             null,
-            el.request.type
+            el.requestor
           ),
           _react2.default.createElement(
-            'div',
+            'td',
             null,
-            el.request.id
-          )
-        )
-      ),
-      _react2.default.createElement(_historycell2.default, { history: el.history }),
-      _react2.default.createElement(_statuscell2.default, { status: el.status }),
-      _react2.default.createElement(_detailscell2.default, { details: el.details }),
-      _react2.default.createElement(_actionscell2.default, {
-        actions: el.actions, defaultAction: el.defaultAction })
-    );
-  });
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'div',
+                null,
+                el.request.type
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                el.request.id
+              )
+            )
+          ),
+          _react2.default.createElement(_historycell2.default, { history: el.history }),
+          _react2.default.createElement(_statuscell2.default, { status: el.status }),
+          _react2.default.createElement(_detailscell2.default, { details: el.details }),
+          _react2.default.createElement(_actionscell2.default, {
+            actions: el.actions, defaultAction: el.defaultAction })
+        );
+      });
 
-  return _react2.default.createElement(
-    'div',
-    { className: 'content' },
-    _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, {
-      home: 'labels.home',
-      nextLabels: ["labels.incoming_requests"],
-      nextLinks: [props.urls.incoming] }),
-    _react2.default.createElement(
-      'section',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        _react2.default.createElement('span', { className: 'fill-data', 'data-content': 'labels.incoming_requests' })
-      ),
-      _react2.default.createElement(_wfpWssUiReact.FilterPanel, null),
-      _react2.default.createElement(
-        _wfpWssUiReact.Table,
-        null,
+      return _react2.default.createElement(
+        'div',
+        { className: 'content' },
+        _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, {
+          home: labels.home,
+          nextLabels: [labels.incoming_requests],
+          nextLinks: [this.props.urls.incoming] }),
         _react2.default.createElement(
-          _wfpWssUiReact.TableHeader,
+          'section',
           null,
-          headersItems
-        ),
-        _react2.default.createElement(
-          'tbody',
-          null,
-          incomingRequestsItems
+          _react2.default.createElement(
+            'h2',
+            null,
+            _react2.default.createElement(
+              'span',
+              null,
+              labels.incoming_requests
+            )
+          ),
+          _react2.default.createElement(_wfpWssUiReact.FilterPanel, null),
+          _react2.default.createElement(
+            _wfpWssUiReact.Table,
+            null,
+            _react2.default.createElement(
+              _wfpWssUiReact.TableHeader,
+              null,
+              headersItems
+            ),
+            _react2.default.createElement(
+              'tbody',
+              null,
+              incomingRequestsItems
+            )
+          ),
+          _react2.default.createElement(_wfpWssUiReact.Pages, null)
         )
-      ),
-      _react2.default.createElement(_wfpWssUiReact.Pages, null)
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return WSSIncomingRequests;
+}(_react2.default.Component);
+
+// const WSSIncomingRequests = props => {
+//   let headersItems = [
+//     {label: "REQUESTOR"},
+//     {label: "REQUEST"},
+//     {label: "HISTORY"},
+//     {label: "STATUS"},
+//     {label: "DETAILS"},
+//     {label: "ACTIONS"}
+//   ].map((el, index) => {
+//     return <TableHeaderItem label={el.label}/>;
+//   });
+//
+//   let incomingRequestsItems = incomingRequests.map((el, index) => {
+//     return (
+//       <tr>
+//         <td>
+//           {el.requestor}
+//         </td>
+//         <td>
+//           <a href="#">
+//             <div>{el.request.type}</div>
+//             <div>{el.request.id}</div>
+//           </a>
+//         </td>
+//         <RequestHistory history={el.history}/>
+//         <RequestStatus status={el.status}/>
+//         <RequestDetails details={el.details}/>
+//         <RequestAvailableActions
+//           actions={el.actions} defaultAction={el.defaultAction}/>
+//       </tr>
+//     );
+//   });
+//
+//
+//   return (
+//     <div className="content">
+//
+//       <Breadcrumbs
+//         home={labels.home}
+//         nextLabels={[labels.incoming_requests]}
+//         nextLinks={[props.urls.incoming]}/>
+//
+//       <section>
+//         <h2><span className="fill-data" data-content="labels.incoming_requests"></span></h2>
+//
+//         <FilterPanel/>
+//
+//         <Table>
+//           <TableHeader>
+//             {headersItems}
+//           </TableHeader>
+//           <tbody>
+//           {incomingRequestsItems}
+//           </tbody>
+//         </Table>
+//         <Pages/>
+//       </section>
+//
+//     </div>
+//   );
+// };
+//
 
 WSSIncomingRequests.propTypes = {
   className: _propTypes2.default.string
@@ -33099,67 +33203,6 @@ exports.default = RequestAvailableActions;
 
 
 RequestAvailableActions.propTypes = {};
-
-/***/ }),
-/* 234 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var incomingRequests = [{
-  requestor: "Raffaele FABOZZI",
-  request: { type: "HR044 - Leave Application", id: "HR-015715" },
-  history: [{ date: "Monday 26 June 2017", author: "Submit by Raffaele FABOZZI", message: 124 }],
-  status: {
-    steps: 4,
-    current: 1,
-    state: "working"
-  },
-  details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: ['Approve', 'Send Back'],
-  defaultAction: 'Approve'
-}, {
-  requestor: "Michele MERCALDO",
-  request: { type: "HR044 - Leave Application", id: "HR-015710" },
-  history: [{ date: "Monday 26 June 2017", author: "Submit by Michele MERCALDO" }],
-  status: {
-    steps: 4,
-    current: 1,
-    state: "working"
-  },
-  details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: ['Approve', 'Send Back'],
-  defaultAction: 'Approve'
-}, {
-  requestor: "Enrico GARAVINI",
-  request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
-  history: [{ date: "Monday 26 June 2017", author: "Submit by Enrico GARAVINI", message: 124 }],
-  status: {
-    steps: 4,
-    current: 1,
-    state: "working"
-  },
-  details: [{ name: "Leave date", value: "Friday 30 June 2017" }],
-  actions: ['Approve', 'Send Back'],
-  defaultAction: 'Approve'
-}, {
-  requestor: "Enrico GARAVINI",
-  request: { type: "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)", id: "HR-015703" },
-  history: [{ date: "Sunday 25 June 2017", author: "Submit by Michele MERCALDO" }, { date: "Sunday 25 June 2017", author: "Approve by Maurizio BLASILLI" }, { date: "Monday 26 June 2017", author: "Approve by WINGS" }],
-  status: {
-    steps: 4,
-    current: 4,
-    state: "success"
-  },
-  details: [{ name: "Leave date", value: "Friday 16 June 2017" }],
-  actions: ['Approve', 'Send Back'],
-  defaultAction: 'Approve'
-}];
-
-module.exports = {
-  incomingRequests: incomingRequests
-};
 
 /***/ })
 /******/ ]);

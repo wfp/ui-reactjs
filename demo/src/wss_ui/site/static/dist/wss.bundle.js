@@ -29557,7 +29557,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var LinkMenuItem = function LinkMenuItem(props) {
-        return _react2.default.createElement('li', { className: 'menu--item' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link", target: '_blank' }, props.text));
+        return _react2.default.createElement('li', { className: 'menu--item' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link" }, props.text));
       };
 
       LinkMenuItem.propTypes = {
@@ -29934,7 +29934,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       };
 
       var TableHeaderItem = function TableHeaderItem(props) {
-        return _react2.default.createElement('th', null, _react2.default.createElement('span', null), _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' }, props.label));
+        return _react2.default.createElement('th', null, _react2.default.createElement('span', null, props.label, _react2.default.createElement('i', { className: 'fa fa-fw fa-sort' })));
       };
 
       var TableRow = function TableRow(props) {
