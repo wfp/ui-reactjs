@@ -4,7 +4,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 
 import os
 
-from wfp_commonlib.wallet import Wallet
+# from wfp_commonlib.wallet import Wallet
 
 SETTINGS_DIR = os.path.dirname(__file__)
 rel = lambda *parts: os.path.abspath(os.path.join(SETTINGS_DIR, *parts))
@@ -19,7 +19,7 @@ SECRET_KEY = '^fi1g3*gs(l&=agdh#l47f6^87779_x)a07j1!@7@_i#_9&y5*'
 
 
 # WALLET
-wallet = Wallet(os.path.expanduser('~/.wss_demo_credentials.json'))
+# wallet = Wallet(os.path.expanduser('~/.wss_demo_credentials.json'))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
