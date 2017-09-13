@@ -11,7 +11,7 @@ import PageCreate from './components/page_create';
 
     let setup = urlsContextData => {
       urls = urlsContextData;
-      ReactDOM.render(<PageCreate urls={urls} />, document.getElementById('create'));
+      ReactDOM.render(<PageCreate urls={urls} />, document.getElementById('id_create'));
     };
 
 	  return {urls: urls, setup: setup};

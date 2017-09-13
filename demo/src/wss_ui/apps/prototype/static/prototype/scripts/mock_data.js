@@ -147,7 +147,6 @@ form['IPSAS-20'] = {
     metadata: []
 };
 
-var my_requests = [];
 var requests_awaiting = [{
     requestor: "Michele FABOZZI",
     request: { type: "HR044 - Leave Application", id: "HR-017097" },

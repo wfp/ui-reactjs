@@ -1,28 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import WSSHeader from "./components/header";
+import Home from './components/index';
 
 
 (function () {
 
-  var wss = function() {
+  var index = function() {
 
     var urls = {};
 
     let setup = urlsContextData => {
       urls = urlsContextData;
-      ReactDOM.render(<WSSHeader urls={urls} />,
-        document.getElementById('header'));
+      ReactDOM.render(<Home urls={urls}/>,
+        document.getElementById('id_home'));
     };
 
 	  return {urls: urls, setup: setup};
   };
 
-  if (!window.wss) {
-    window.wss = wss();
+  if (!window.index) {
+    window.index = index();
   }
 }());
-
-
-

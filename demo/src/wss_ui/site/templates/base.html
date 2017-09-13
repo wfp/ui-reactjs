@@ -40,7 +40,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="{% static '/dist/styles/wss.css' %}">
+    <link rel="stylesheet" href="{% static '/dist/styles/header_ep.css' %}">
     <!-- endbuild -->
 
   </head>
@@ -49,7 +49,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="header"></div>
+    <div id="id_header"></div>
 
     {% block contents %}
 
@@ -76,10 +76,10 @@
     <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
 
     <!--<script src="{% static '/dist/common.bundle.js' %}"></script>-->
-    <script src="{% static '/dist/wss.bundle.js' %}"></script>
+    <script src="{% static '/dist/header_ep.bundle.js' %}"></script>
 
     <script>
-      wss.setup({
+      header.setup({
         my: "{% url 'my' %}",
         incoming: "{% url 'incoming' %}",
         create: "{% url 'create' %}"

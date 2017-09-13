@@ -26,10 +26,7 @@ const TableHeader = props => {
 
 const TableHeaderItem = props => {
   return (
-    <th>
-      <span>{props.label}
-      <i className="fa fa-fw fa-sort"></i>
-      </span>
+    <th>{props.label}<i className="fa fa-fw fa-sort"></i>
     </th>
   );
 };

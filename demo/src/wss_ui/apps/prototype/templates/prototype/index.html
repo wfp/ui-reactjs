@@ -1,7 +1,20 @@
 {% extends "prototype/base.html" %}
+{% load static %}
 
-    {% block page_contents %}
-    {% include "prototype/fragments/page_home.html" %}
-    {% endblock page_contents %}
+{% block page_contents %}
+
+    <div id="id_home"></div>
+
+{% endblock page_contents %}
 
 
+{% block bottom-scripts %}
+    {{ block.super }}
+    <script src="{% static '/dist/index_ep.bundle.js' %}"></script>
+    <script>
+        index.setup({
+            awaiting_action_requests: "{% url 'awaiting-action-requests-json' %}",
+            my_latest_requests: "{% url 'my-latest-requests-json' %}"
+        });
+    </script>
+{% endblock bottom-scripts %}

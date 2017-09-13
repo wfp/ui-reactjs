@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const RequestHistory = props => {
   let historyItems = props.history.map((el, index) => {
     return (
-      <li className="wfp-grid">
+      <li key={index} className="wfp-grid">
         <div className="wfp-u-5-6">
           <span className="hist_date" >{el.date}</span>
           <span>{el.author}</span>

@@ -28,10 +28,9 @@ export default class RequestAvailableActions extends React.Component {
   }
 
   render() {
-    console.log("Render Actions !!!");
-    let available_actions = this.props.actions.map(el => {
+    let available_actions = this.props.actions.map((el, index) => {
       return (
-        <li className="menu--item">
+        <li key={index} className="menu--item">
           <a onClick={this.performAction}>
             <span>{el}</span>
           </a>

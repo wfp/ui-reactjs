@@ -5,9 +5,11 @@ const extractCSS = new ExtractTextPlugin('./styles/[name].css');
 
 module.exports = {
   entry: {
-    wss: ['./src/wss_ui/site/static/project/wss.js', 'wfp-wss-ui-react/lib/styles/main.css'],
+    header_ep: ['./src/wss_ui/site/static/project/header_ep.js', 'wfp-wss-ui-react/lib/styles/main.css'],
+    my_requests_ep: './src/wss_ui/site/static/project/my_requests_ep.js',
     page_create_ep: './src/wss_ui/site/static/project/page_create_ep.js',
-    incoming_ep: './src/wss_ui/site/static/project/incoming_ep.js'
+    incoming_ep: './src/wss_ui/site/static/project/incoming_ep.js',
+    index_ep: './src/wss_ui/site/static/project/index_ep.js'
   },
   output: {
     path: path.resolve('./src/wss_ui/site/static/dist'),

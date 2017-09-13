@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 234);
+/******/ 	return __webpack_require__(__webpack_require__.s = 236);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -32940,7 +32940,9 @@ RequestAvailableActions.propTypes = {};
 /* 231 */,
 /* 232 */,
 /* 233 */,
-/* 234 */
+/* 234 */,
+/* 235 */,
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32954,33 +32956,33 @@ var _reactDom = __webpack_require__(116);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _incoming = __webpack_require__(235);
+var _index = __webpack_require__(237);
 
-var _incoming2 = _interopRequireDefault(_incoming);
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
 
-  var incoming_requests = function incoming_requests() {
+  var index = function index() {
 
     var urls = {};
 
     var setup = function setup(urlsContextData) {
       urls = urlsContextData;
-      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, { urls: urls, src: urls.src }), document.getElementById('id_incoming'));
+      _reactDom2.default.render(_react2.default.createElement(_index2.default, { urls: urls }), document.getElementById('id_home'));
     };
 
     return { urls: urls, setup: setup };
   };
 
-  if (!window.incoming_requests) {
-    window.incoming_requests = incoming_requests();
+  if (!window.index) {
+    window.index = index();
   }
 })();
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33027,28 +33029,28 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 // import getJSON from 'jquery';
 
-var WSSIncomingRequests = function (_React$Component) {
-  _inherits(WSSIncomingRequests, _React$Component);
+var WSSAwaitingActionRequests = function (_React$Component) {
+  _inherits(WSSAwaitingActionRequests, _React$Component);
 
-  function WSSIncomingRequests(props, context) {
-    _classCallCheck(this, WSSIncomingRequests);
+  function WSSAwaitingActionRequests(props, context) {
+    _classCallCheck(this, WSSAwaitingActionRequests);
 
-    var _this = _possibleConstructorReturn(this, (WSSIncomingRequests.__proto__ || Object.getPrototypeOf(WSSIncomingRequests)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (WSSAwaitingActionRequests.__proto__ || Object.getPrototypeOf(WSSAwaitingActionRequests)).call(this, props, context));
 
     _this.state = {
-      incomingRequests: []
+      awaitingActionRequests: []
     };
     return _this;
   }
 
-  _createClass(WSSIncomingRequests, [{
+  _createClass(WSSAwaitingActionRequests, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
 
       $.getJSON(this.props.src, function (data) {
         _this2.setState({
-          incomingRequests: data['incoming_requests']
+          awaitingActionRequests: data['awaiting_action_requests']
         });
       });
     }
@@ -33058,7 +33060,7 @@ var WSSIncomingRequests = function (_React$Component) {
       var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
         return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { key: index, label: el.label });
       });
-      var incomingRequestsItems = this.state.incomingRequests.map(function (el, index) {
+      var awaitingActionRequestsItems = this.state.awaitingActionRequests.map(function (el, index) {
         return _react2.default.createElement(
           'tr',
           { key: index },
@@ -33096,10 +33098,6 @@ var WSSIncomingRequests = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'content' },
-        _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, {
-          home: labels.home,
-          nextLabels: [labels.incoming_requests],
-          nextLinks: [this.props.urls.incoming] }),
         _react2.default.createElement(
           'section',
           null,
@@ -33109,10 +33107,9 @@ var WSSIncomingRequests = function (_React$Component) {
             _react2.default.createElement(
               'span',
               null,
-              labels.incoming_requests
+              labels.awaiting_your_action
             )
           ),
-          _react2.default.createElement(_wfpWssUiReact.FilterPanel, null),
           _react2.default.createElement(
             _wfpWssUiReact.Table,
             null,
@@ -33124,23 +33121,171 @@ var WSSIncomingRequests = function (_React$Component) {
             _react2.default.createElement(
               'tbody',
               null,
-              incomingRequestsItems
+              awaitingActionRequestsItems
             )
-          ),
-          _react2.default.createElement(_wfpWssUiReact.Pages, null)
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'wfp-btn btn-small xsmall' },
+          _react2.default.createElement(
+            'span',
+            null,
+            labels.view_all
+          )
         )
       );
     }
   }]);
 
-  return WSSIncomingRequests;
+  return WSSAwaitingActionRequests;
 }(_react2.default.Component);
 
-WSSIncomingRequests.propTypes = {
+WSSAwaitingActionRequests.propTypes = {
   className: _propTypes2.default.string
 };
 
-exports.default = WSSIncomingRequests;
+var WSSMyLatestRequests = function (_React$Component2) {
+  _inherits(WSSMyLatestRequests, _React$Component2);
+
+  function WSSMyLatestRequests(props, context) {
+    _classCallCheck(this, WSSMyLatestRequests);
+
+    var _this3 = _possibleConstructorReturn(this, (WSSMyLatestRequests.__proto__ || Object.getPrototypeOf(WSSMyLatestRequests)).call(this, props, context));
+
+    _this3.state = {
+      myLatestRequests: []
+    };
+    return _this3;
+  }
+
+  _createClass(WSSMyLatestRequests, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this4 = this;
+
+      $.getJSON(this.props.src, function (data) {
+        _this4.setState({
+          myLatestRequests: data['my_latest_requests']
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
+        return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { key: index, label: el.label });
+      });
+      var myLatestRequestsItems = this.state.myLatestRequests.map(function (el, index) {
+        return _react2.default.createElement(
+          'tr',
+          { key: index },
+          _react2.default.createElement(
+            'td',
+            null,
+            el.requestor
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              _react2.default.createElement(
+                'div',
+                null,
+                el.request.type
+              ),
+              _react2.default.createElement(
+                'div',
+                null,
+                el.request.id
+              )
+            )
+          ),
+          _react2.default.createElement(_historycell2.default, { history: el.history }),
+          _react2.default.createElement(_statuscell2.default, { status: el.status }),
+          _react2.default.createElement(_detailscell2.default, { details: el.details }),
+          _react2.default.createElement(_actionscell2.default, {
+            actions: el.actions, defaultAction: el.defaultAction })
+        );
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'content' },
+        _react2.default.createElement(
+          'section',
+          null,
+          _react2.default.createElement(
+            'h2',
+            null,
+            _react2.default.createElement(
+              'span',
+              null,
+              labels.your_latest_requests
+            )
+          ),
+          _react2.default.createElement(
+            _wfpWssUiReact.Table,
+            null,
+            _react2.default.createElement(
+              _wfpWssUiReact.TableHeader,
+              null,
+              headersItems
+            ),
+            _react2.default.createElement(
+              'tbody',
+              null,
+              myLatestRequestsItems
+            )
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'wfp-btn btn-small xsmall' },
+            _react2.default.createElement(
+              'span',
+              null,
+              labels.view_all
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return WSSMyLatestRequests;
+}(_react2.default.Component);
+
+WSSMyLatestRequests.propTypes = {
+  className: _propTypes2.default.string
+};
+
+var Home = function (_React$Component3) {
+  _inherits(Home, _React$Component3);
+
+  function Home() {
+    _classCallCheck(this, Home);
+
+    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+  }
+
+  _createClass(Home, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(WSSAwaitingActionRequests, { src: this.props.urls.awaiting_action_requests }),
+        _react2.default.createElement(WSSMyLatestRequests, { src: this.props.urls.my_latest_requests })
+      );
+    }
+  }]);
+
+  return Home;
+}(_react2.default.Component);
+
+exports.default = Home;
 
 /***/ })
 /******/ ]);
