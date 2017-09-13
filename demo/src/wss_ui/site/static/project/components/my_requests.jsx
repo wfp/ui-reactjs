@@ -16,19 +16,19 @@ import RequestDetails from './request/detailscell';
 import RequestAvailableActions from './request/actionscell';
 
 
-class WSSIncomingRequests extends React.Component {
+class WSSMyRequests extends React.Component {
 
   constructor(props, context) {
     super(props, context);
     this.state = {
-      incomingRequests: []
+      myRequests: []
     };
   }
 
   componentDidMount() {
     $.getJSON(this.props.src, data => {
       this.setState({
-        incomingRequests: data['incoming_requests'],
+        myRequests: data['my_requests'],
       });
     })
   }
@@ -45,7 +45,7 @@ class WSSIncomingRequests extends React.Component {
     ].map((el, index) => {
       return <TableHeaderItem key={index} label={el.label}/>;
     });
-    let incomingRequestsItems = this.state.incomingRequests.map((el, index) => {
+    let myRequestsItems = this.state.myRequests.map((el, index) => {
       return (
         <tr key={index}>
           <td>
@@ -71,11 +71,11 @@ class WSSIncomingRequests extends React.Component {
 
         <Breadcrumbs
           home={labels.home}
-          nextLabels={[labels.incoming_requests]}
-          nextLinks={[this.props.urls.incoming]}/>
+          nextLabels={[labels.my_requests]}
+          nextLinks={[this.props.urls.my]}/>
 
         <section>
-          <h2><span>{labels.incoming_requests}</span></h2>
+          <h2><span>{labels.my_requests}</span></h2>
 
           <FilterPanel/>
 
@@ -84,7 +84,7 @@ class WSSIncomingRequests extends React.Component {
               {headersItems}
             </TableHeader>
             <tbody>
-            {incomingRequestsItems}
+            {myRequestsItems}
             </tbody>
           </Table>
           <Pages/>
@@ -96,8 +96,8 @@ class WSSIncomingRequests extends React.Component {
 }
 
 
-WSSIncomingRequests.propTypes = {
+WSSMyRequests.propTypes = {
   className: PropTypes.string
 };
 
-export default WSSIncomingRequests;
+export default WSSMyRequests;

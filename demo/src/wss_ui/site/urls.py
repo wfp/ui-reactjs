@@ -8,6 +8,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
+from wss_ui.site.fake_data_views.incoming_requests import IncomingRequestsJSON
+from wss_ui.site.fake_data_views.awaiting_action_requests import AwaitingActionsRequestsJSON
+from wss_ui.site.fake_data_views.my_latest_requests import MyLatestRequestsJSON
+from wss_ui.site.fake_data_views.my_requests import MyRequestsJSON
 
 from .views import LoginView, LogoutView
 
@@ -41,6 +45,14 @@ urlpatterns = [
 
 ]
 
+fake_data_urlpatterns = [
+  url(r'^incoming_requests/$', IncomingRequestsJSON.as_view(), name='incoming-requests-json'),
+  url(r'^awaiting_action_requests/$', AwaitingActionsRequestsJSON.as_view(), name='awaiting-action-requests-json'),
+  url(r'^my_latest_requests/$', MyLatestRequestsJSON.as_view(), name='my-latest-requests-json'),
+  url(r'^my_requests/$', MyRequestsJSON.as_view(), name='my-requests-json'),
+
+]
+urlpatterns += fake_data_urlpatterns
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

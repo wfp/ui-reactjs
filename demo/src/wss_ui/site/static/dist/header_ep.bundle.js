@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 234);
+/******/ 	return __webpack_require__(__webpack_require__.s = 226);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -32623,324 +32623,19 @@ module.exports = onlyChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 222 */
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+__webpack_require__(227);
+module.exports = __webpack_require__(229);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(28);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(40);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var RequestHistory = function RequestHistory(props) {
-  var historyItems = props.history.map(function (el, index) {
-    return _react2.default.createElement(
-      'li',
-      { key: index, className: 'wfp-grid' },
-      _react2.default.createElement(
-        'div',
-        { className: 'wfp-u-5-6' },
-        _react2.default.createElement(
-          'span',
-          { className: 'hist_date' },
-          el.date
-        ),
-        _react2.default.createElement(
-          'span',
-          null,
-          el.author
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'wfp-u-1-6 message-box' },
-        _react2.default.createElement(
-          'a',
-          { href: '#' },
-          _react2.default.createElement('i', { className: 'fa fa-fw fa-envelope' })
-        )
-      )
-    );
-  });
-  return _react2.default.createElement(
-    'td',
-    null,
-    _react2.default.createElement(
-      'ul',
-      null,
-      historyItems
-    )
-  );
-};
-
-RequestHistory.propTypes = {};
-
-exports.default = RequestHistory;
 
 /***/ }),
-/* 223 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(28);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(40);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var RequestStatus = function RequestStatus(props) {
-  var children = [];
-
-  for (var currentStep = 1; currentStep <= props.status.steps; currentStep++) {
-    var dotClass = currentStep <= props.status.current ? "dot " + props.status.state : "dot";
-    var edgeClass = currentStep < props.status.current ? "edge " + props.status.state : "edge";
-
-    if (currentStep == props.status.current) {
-      dotClass = dotClass + " action";
-    }
-
-    children.push(_react2.default.createElement('div', { key: currentStep + dotClass, className: dotClass }));
-    if (currentStep < props.status.steps) {
-      children.push(_react2.default.createElement('div', { key: currentStep + edgeClass, className: edgeClass }));
-    }
-  }
-
-  return _react2.default.createElement(
-    'td',
-    null,
-    _react2.default.createElement(
-      'div',
-      { className: 'status-widget' },
-      children
-    )
-  );
-};
-
-RequestStatus.propTypes = {};
-
-exports.default = RequestStatus;
-
-/***/ }),
-/* 224 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(28);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(40);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var RequestDetails = function RequestDetails(props) {
-  var detailsItems = props.details.map(function (el, index) {
-    return _react2.default.createElement(
-      'li',
-      { key: index },
-      _react2.default.createElement(
-        'div',
-        null,
-        el.name
-      ),
-      _react2.default.createElement(
-        'div',
-        null,
-        el.value
-      )
-    );
-  });
-  return _react2.default.createElement(
-    'td',
-    null,
-    _react2.default.createElement(
-      'ul',
-      null,
-      detailsItems
-    )
-  );
-};
-
-RequestDetails.propTypes = {};
-
-exports.default = RequestDetails;
-
-/***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(28);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(40);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var RequestAvailableActions = function (_React$Component) {
-  _inherits(RequestAvailableActions, _React$Component);
-
-  function RequestAvailableActions(props) {
-    _classCallCheck(this, RequestAvailableActions);
-
-    var _this = _possibleConstructorReturn(this, (RequestAvailableActions.__proto__ || Object.getPrototypeOf(RequestAvailableActions)).call(this, props));
-
-    _this.state = {
-      listIsVisible: false
-    };
-    _this.toggleListVisibility = _this.toggleListVisibility.bind(_this);
-    _this.performAction = _this.performAction.bind(_this);
-    return _this;
-  }
-
-  _createClass(RequestAvailableActions, [{
-    key: 'toggleListVisibility',
-    value: function toggleListVisibility() {
-      console.log("TOGGLE!!!");
-      this.setState(function (prevState) {
-        return {
-          listIsVisible: !prevState.listIsVisible
-        };
-      });
-    }
-  }, {
-    key: 'performAction',
-    value: function performAction() {
-      console.log("Perform Action!!!");
-      this.setState({
-        listIsVisible: false
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var available_actions = this.props.actions.map(function (el, index) {
-        return _react2.default.createElement(
-          'li',
-          { key: index, className: 'menu--item' },
-          _react2.default.createElement(
-            'a',
-            { onClick: _this2.performAction },
-            _react2.default.createElement(
-              'span',
-              null,
-              el
-            )
-          )
-        );
-      });
-      return _react2.default.createElement(
-        'td',
-        null,
-        _react2.default.createElement(
-          'div',
-          { className: 'inline-actions' },
-          _react2.default.createElement(
-            'span',
-            null,
-            _react2.default.createElement(
-              'span',
-              { className: 'template' },
-              _react2.default.createElement(
-                'button',
-                { className: 'wfp-btn btn-small xsmall modal-trigger wfp-btn--primary' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  this.props.defaultAction
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'span',
-            null,
-            _react2.default.createElement(
-              'button',
-              { onClick: this.toggleListVisibility, className: 'wfp-btn xsmall' },
-              _react2.default.createElement('i', { className: "fa fa-fw" + (this.state.listIsVisible ? " fa-chevron-up" : " fa-chevron-down") })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'dropdown', style: { display: this.state.listIsVisible ? "block" : "none" } },
-              _react2.default.createElement(
-                'ul',
-                { className: 'menu--group' },
-                available_actions
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return RequestAvailableActions;
-}(_react2.default.Component);
-
-exports.default = RequestAvailableActions;
-
-
-RequestAvailableActions.propTypes = {};
-
-/***/ }),
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32954,33 +32649,33 @@ var _reactDom = __webpack_require__(116);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _incoming = __webpack_require__(235);
+var _header = __webpack_require__(228);
 
-var _incoming2 = _interopRequireDefault(_incoming);
+var _header2 = _interopRequireDefault(_header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
 
-  var incoming_requests = function incoming_requests() {
+  var header = function header() {
 
     var urls = {};
 
     var setup = function setup(urlsContextData) {
       urls = urlsContextData;
-      _reactDom2.default.render(_react2.default.createElement(_incoming2.default, { urls: urls, src: urls.src }), document.getElementById('id_incoming'));
+      _reactDom2.default.render(_react2.default.createElement(_header2.default, { urls: urls }), document.getElementById('id_header'));
     };
 
     return { urls: urls, setup: setup };
   };
 
-  if (!window.incoming_requests) {
-    window.incoming_requests = incoming_requests();
+  if (!window.header) {
+    window.header = header();
   }
 })();
 
 /***/ }),
-/* 235 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32989,8 +32684,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(28);
 
@@ -33002,145 +32695,44 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _wfpWssUiReact = __webpack_require__(203);
 
-var _historycell = __webpack_require__(222);
-
-var _historycell2 = _interopRequireDefault(_historycell);
-
-var _statuscell = __webpack_require__(223);
-
-var _statuscell2 = _interopRequireDefault(_statuscell);
-
-var _detailscell = __webpack_require__(224);
-
-var _detailscell2 = _interopRequireDefault(_detailscell);
-
-var _actionscell = __webpack_require__(225);
-
-var _actionscell2 = _interopRequireDefault(_actionscell);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var WSSHeader = function WSSHeader(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'navbar' },
+    _react2.default.createElement(
+      _wfpWssUiReact.CommonLinksHeader,
+      null,
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: 'http://communities.wfp.org', text: 'WFP Communities' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: 'http://opweb.wfp.org', text: 'OPweb' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: 'http://docustore.wfp.org', text: 'Docustore' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: 'http://manuals.wfp.org/', text: 'WFP Manuals' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: 'http://newgo.wfp.org/', text: 'WFPgo' })
+    ),
+    _react2.default.createElement(
+      _wfpWssUiReact.Header,
+      { title: 'WFP Self-Service' },
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.my, text: 'My requests' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.incoming, text: 'Incoming requests' }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.create, text: 'Create a request', isButton: true }),
+      _react2.default.createElement(_wfpWssUiReact.SearchWidget, null),
+      _react2.default.createElement(_wfpWssUiReact.UserMenuWidget, null)
+    )
+  );
+};
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import getJSON from 'jquery';
-
-var WSSIncomingRequests = function (_React$Component) {
-  _inherits(WSSIncomingRequests, _React$Component);
-
-  function WSSIncomingRequests(props, context) {
-    _classCallCheck(this, WSSIncomingRequests);
-
-    var _this = _possibleConstructorReturn(this, (WSSIncomingRequests.__proto__ || Object.getPrototypeOf(WSSIncomingRequests)).call(this, props, context));
-
-    _this.state = {
-      incomingRequests: []
-    };
-    return _this;
-  }
-
-  _createClass(WSSIncomingRequests, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      $.getJSON(this.props.src, function (data) {
-        _this2.setState({
-          incomingRequests: data['incoming_requests']
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var headersItems = [{ label: "REQUESTOR" }, { label: "REQUEST" }, { label: "HISTORY" }, { label: "STATUS" }, { label: "DETAILS" }, { label: "ACTIONS" }].map(function (el, index) {
-        return _react2.default.createElement(_wfpWssUiReact.TableHeaderItem, { key: index, label: el.label });
-      });
-      var incomingRequestsItems = this.state.incomingRequests.map(function (el, index) {
-        return _react2.default.createElement(
-          'tr',
-          { key: index },
-          _react2.default.createElement(
-            'td',
-            null,
-            el.requestor
-          ),
-          _react2.default.createElement(
-            'td',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: '#' },
-              _react2.default.createElement(
-                'div',
-                null,
-                el.request.type
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                el.request.id
-              )
-            )
-          ),
-          _react2.default.createElement(_historycell2.default, { history: el.history }),
-          _react2.default.createElement(_statuscell2.default, { status: el.status }),
-          _react2.default.createElement(_detailscell2.default, { details: el.details }),
-          _react2.default.createElement(_actionscell2.default, {
-            actions: el.actions, defaultAction: el.defaultAction })
-        );
-      });
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'content' },
-        _react2.default.createElement(_wfpWssUiReact.Breadcrumbs, {
-          home: labels.home,
-          nextLabels: [labels.incoming_requests],
-          nextLinks: [this.props.urls.incoming] }),
-        _react2.default.createElement(
-          'section',
-          null,
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'span',
-              null,
-              labels.incoming_requests
-            )
-          ),
-          _react2.default.createElement(_wfpWssUiReact.FilterPanel, null),
-          _react2.default.createElement(
-            _wfpWssUiReact.Table,
-            null,
-            _react2.default.createElement(
-              _wfpWssUiReact.TableHeader,
-              null,
-              headersItems
-            ),
-            _react2.default.createElement(
-              'tbody',
-              null,
-              incomingRequestsItems
-            )
-          ),
-          _react2.default.createElement(_wfpWssUiReact.Pages, null)
-        )
-      );
-    }
-  }]);
-
-  return WSSIncomingRequests;
-}(_react2.default.Component);
-
-WSSIncomingRequests.propTypes = {
+WSSHeader.propTypes = {
   className: _propTypes2.default.string
 };
 
-exports.default = WSSIncomingRequests;
+exports.default = WSSHeader;
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

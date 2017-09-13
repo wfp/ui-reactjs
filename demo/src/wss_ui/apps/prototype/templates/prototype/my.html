@@ -1,7 +1,20 @@
 {% extends "prototype/base.html" %}
+{% load static %}
 
-    {% block page_contents %}
-    {% include "prototype/fragments/page_my.html" %}
-    {% endblock page_contents %}
+{% block page_contents %}
+
+    <div id="id_my_requests"></div>
+
+{% endblock page_contents %}
 
 
+{% block bottom-scripts %}
+    {{ block.super }}
+    <script src="{% static '/dist/my_requests_ep.bundle.js' %}"></script>
+    <script>
+        my_requests.setup({
+            my: "{% url 'my' %}",
+            src: "{% url 'my-requests-json' %}"
+        });
+    </script>
+{% endblock bottom-scripts %}

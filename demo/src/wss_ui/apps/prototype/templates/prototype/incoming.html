@@ -3,17 +3,18 @@
 
 {% block page_contents %}
 
-<div id="incoming"></div>
+    <div id="id_incoming"></div>
 
 {% endblock page_contents %}
 
 
-{%block bottom-scripts%}
-{{block.super}}
-  <script src="{% static '/dist/incoming_ep.bundle.js' %}"></script>
-  <script>
-    incoming_requests.setup({
-      incoming: "{% url 'incoming' %}",
-    });
-  </script>
-{%endblock bottom-scripts%}
+{% block bottom-scripts %}
+    {{ block.super }}
+    <script src="{% static '/dist/incoming_ep.bundle.js' %}"></script>
+    <script>
+        incoming_requests.setup({
+            incoming: "{% url 'incoming' %}",
+            src: "{% url 'incoming-requests-json' %}"
+        });
+    </script>
+{% endblock bottom-scripts %}

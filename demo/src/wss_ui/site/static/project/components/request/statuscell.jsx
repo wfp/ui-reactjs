@@ -14,9 +14,9 @@ const RequestStatus = props => {
       dotClass = dotClass + " action";
     }
 
-    children.push(<div className={dotClass} />);
+    children.push(<div key={currentStep + dotClass} className={dotClass} />);
     if (currentStep < props.status.steps) {
-      children.push(<div className={edgeClass} />);
+      children.push(<div key={currentStep + edgeClass} className={edgeClass} />);
     }
   }
 
