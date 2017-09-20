@@ -151,6 +151,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'wss_ui.site',
-    'wss_ui.apps.prototype'
+    'wss_ui.apps.prototype',
+  # 'webpack_loader',
+
 ]
 

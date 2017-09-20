@@ -17,8 +17,12 @@ var config = {
       commonjs: 'react',
       amd: 'react'
     },
+    'react-dom': {
+      root: 'ReactDOM', commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom'
+    },
     'react/lib/ReactCSSTransitionGroup': 'ReactCSSTransitionGroup',
-    'react-dom': 'ReactDOM'
   },
   module: {
     rules: [
@@ -43,7 +47,8 @@ var config = {
   },
   plugins: [ extractCSS ],
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    modules: ['node_modules', 'bower_components'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss']
   }
 };
 

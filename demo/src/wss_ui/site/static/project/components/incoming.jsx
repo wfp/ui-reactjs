@@ -77,7 +77,7 @@ class WSSIncomingRequests extends React.Component {
         <section>
           <h2><span>{labels.incoming_requests}</span></h2>
 
-          <FilterPanel/>
+          <FilterPanel src={this.props.urls.request_filters}/>
 
           <Table>
             <TableHeader>

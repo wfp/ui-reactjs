@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('./styles/[name].css');
 
 module.exports = {
+  devtool: "#eval-source-map",
   entry: {
     header_ep: ['./src/wss_ui/site/static/project/header_ep.js', 'wfp-wss-ui-react/lib/styles/main.css'],
     my_requests_ep: './src/wss_ui/site/static/project/my_requests_ep.js',
@@ -37,7 +38,9 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    modules: ['node_modules', 'bower_components'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+    symlinks: true
   },
   plugins: [
     // new CommonsChunkPlugin({
