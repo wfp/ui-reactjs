@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const LinkMenuItem = props => {
   return (
-    <li className="menu--item">
+    <li className="menu--item {props.className}">
       <a href={props.url} className={props.isButton ?
         "wfp-btn wfp-btn--primary" : "menu--link"}>
         {props.text}

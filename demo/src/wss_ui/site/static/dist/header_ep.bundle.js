@@ -24847,7 +24847,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var LogoItem = function LogoItem(props) {
-        return _react2.default.createElement('div', { className: 'wfp-u-1-5 wfp-u-md-1-4 header--container' }, _react2.default.createElement('h1', { className: 'header--title ' }, _react2.default.createElement('a', { href: '/', className: 'header--logo' }, props.title)));
+        return _react2.default.createElement('div', { className: 'wfp-u-1 wfp-u-lg-1-5 wfp-u-md-1-4 header--container' }, _react2.default.createElement('h1', { className: 'header--title menuitem' }, _react2.default.createElement('a', { href: '/', className: 'header--logo' }, props.title)));
       };
 
       LogoItem.propTypes = {
@@ -24880,7 +24880,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var HeaderMenuGroup = function HeaderMenuGroup(props) {
-        return _react2.default.createElement('nav', { className: 'header--menu' }, _react2.default.createElement('ul', { className: 'menu--group' }, props.children));
+        return _react2.default.createElement('nav', { className: 'header--menu {this.props.className ? this.props.className : \'\')}' }, _react2.default.createElement('ul', { className: 'menu--group' }, props.children));
       };
 
       HeaderMenuGroup.propTypes = {};
@@ -29487,7 +29487,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var Header = function Header(props) {
-        return _react2.default.createElement('header', { className: 'wfp-header-int' }, _react2.default.createElement('div', { className: 'wfp-grid wfp-wrapper' }, _react2.default.createElement(_logoitem2.default, { title: props.title }), _react2.default.createElement('div', { className: 'wfp-u-3-5 wfp-u-md-3-4 header--nav' }, _react2.default.createElement(_headermenugroup2.default, null, props.children))));
+        return _react2.default.createElement('header', { className: 'wfp-header-int' }, _react2.default.createElement('div', { className: 'wfp-grid wfp-wrapper' }, _react2.default.createElement(_logoitem2.default, { title: props.title }), _react2.default.createElement('div', { className: 'wfp-u-1 wfp-u-lg-4-5 wfp-u-md-3-4 header--nav' }, _react2.default.createElement(_headermenugroup2.default, { id: 'extended_menu' }, props.children))));
       };
 
       Header.propTypes = {
@@ -29524,7 +29524,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var CommonLinksHeader = function CommonLinksHeader(props) {
-        return _react2.default.createElement('header', { className: 'wfp-header-super' }, _react2.default.createElement('div', { className: 'wfp-grid wfp-wrapper wfp-overbar' }, _react2.default.createElement('div', { className: 'wfp-u-1-1' }, _react2.default.createElement(_headermenugroup2.default, null, props.children))));
+        return _react2.default.createElement('header', { className: 'wfp-header-super' }, _react2.default.createElement('div', { className: 'wfp-grid wfp-wrapper wfp-overbar' }, _react2.default.createElement('div', { className: 'wfp-u-1-1' }, _react2.default.createElement('button', { className: 'header--toggle header--btn wfp-visible-xs dropdown-trigger closed' }, 'WFP Websites'), _react2.default.createElement(_headermenugroup2.default, { className: 'wfp-header--menu wfp-hidden-xs dropdown' }, props.children), _react2.default.createElement(_headermenugroup2.default, { className: 'wfp-header--menu wfp-hidden-xs' }, props.children))));
       };
 
       CommonLinksHeader.propTypes = {
@@ -29557,7 +29557,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
 
       var LinkMenuItem = function LinkMenuItem(props) {
-        return _react2.default.createElement('li', { className: 'menu--item' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link" }, props.text));
+        return _react2.default.createElement('li', { className: 'menu--item {props.className}' }, _react2.default.createElement('a', { href: props.url, className: props.isButton ? "wfp-btn wfp-btn--primary" : "menu--link" }, props.text));
       };
 
       LinkMenuItem.propTypes = {
@@ -32715,7 +32715,7 @@ var WSSHeader = function WSSHeader(props) {
       { title: 'WFP Self-Service' },
       _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.my, text: 'My requests' }),
       _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.incoming, text: 'Incoming requests' }),
-      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { url: props.urls.create, text: 'Create a request', isButton: true }),
+      _react2.default.createElement(_wfpWssUiReact.LinkMenuItem, { id: 'main-cta', url: props.urls.create, text: 'Create a request', isButton: true }),
       _react2.default.createElement(_wfpWssUiReact.SearchWidget, null),
       _react2.default.createElement(_wfpWssUiReact.UserMenuWidget, null)
     )

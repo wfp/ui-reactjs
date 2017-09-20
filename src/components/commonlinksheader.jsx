@@ -10,9 +10,12 @@ const CommonLinksHeader = props => {
     <header className="wfp-header-super">
       <div className="wfp-grid wfp-wrapper wfp-overbar">
         <div className="wfp-u-1-1">
-          <HeaderMenuGroup>
-            {props.children}
-          </HeaderMenuGroup>
+          <button className="header--toggle header--btn wfp-visible-xs dropdown-trigger closed">WFP Websites</button>
+            
+              <HeaderMenuGroup className="wfp-header--menu wfp-hidden-xs dropdown">{props.children}</HeaderMenuGroup>
+            
+              <HeaderMenuGroup className ="wfp-header--menu wfp-hidden-xs">{props.children}</HeaderMenuGroup>
+
         </div>
       </div>
     </header>

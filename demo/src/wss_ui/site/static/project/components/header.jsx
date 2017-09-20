@@ -21,17 +21,21 @@ const WSSHeader = props => {
         <LinkMenuItem url="http://newgo.wfp.org/" text="WFPgo" />
       </CommonLinksHeader>
 
+      {/* <!-- Header START --> */}
       <Header title="WFP Self-Service">
         <LinkMenuItem url={props.urls.my} text="My requests" />
         <LinkMenuItem url={props.urls.incoming} text="Incoming requests" />
 
-        <LinkMenuItem url={props.urls.create} text="Create a request" isButton={true} />
+        <LinkMenuItem id="main-cta" url={props.urls.create} text="Create a request" isButton={true} />
 
         <SearchWidget />
 
         <UserMenuWidget />
       </Header>
+      {/* <!-- Header END --> */}
+
     </div>
+
   );
 };
 

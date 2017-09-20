@@ -49,12 +49,355 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="id_header"></div>
+    <!-- CONTAINER ROOT -->
+    <div id="main" class="wfp-grid">
 
-    {% block contents %}
+        <div id="id_header" class="wfp-u-1-1">
+        </div>
+        
+      <div class="wfp-u-1-1">
+        <div class="wfp-wrapper" id="id_home">
+
+            <!-- HEADER & PAGE BODY START -->
+            {% block contents %}
+
+            {% endblock contents %}
+            <!-- HEADER & PAGE BODY END -->
 
 
-    {% endblock contents %}
+            <!--div class="content">
+                <section>
+                    <h2 class="fill-data" data-content="labels.awaiting_your_action">Awaiting your action</h2>
+                    <table rules="group" class="wfp-table tablesorter tablesorter-default tablesorter896ca6c5224e6" role="grid">
+                        <thead>
+                            <tr role="row" class="tablesorter-headerRow">
+                                <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Requestor: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.requestor">Requestor</span> <i class="fa fa-fw fa-sort"></i></div></th>
+                                <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Request: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.request">Request</span> <i class="fa fa-fw fa-sort"></i></div></th>
+                                <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="History: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.history" data-sorter="false">History</span> </div></th>
+                                <th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Status: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.status">Status</span> <i class="fa fa-fw fa-sort"></i></div></th>
+                                <th data-column="4" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Details: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.details" data-sorter="false">Details</span> </div></th>
+                                <th class="table_cols_actions tablesorter-header tablesorter-headerUnSorted" data-column="5" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Actions: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.action">Actions</span> </div></th>
+                            </tr>
+                        </thead>
+                        <tbody class="fill-data-list" data-content="requests_awaiting" aria-live="polite" aria-relevant="all"><tr class="" role="row">
+                                <td class="fill-data-list-item" data-content="requestor">Michele FABOZZI</td>
+                                <td>
+                                    <a href="#">
+                                        <div class="fill-data-list-item" data-content="request.type">HR044 - Leave Application</div>
+                                        <div class="fill-data-list-item" data-content="request.id">HR-017097</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="wfp-grid">
+                                            <div class="wfp-u-5-6">
+                                                <span class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</span>
+                                                <span class="fill-data-list-item" data-content="author">Submit by Raffaele FABOZZI</span>
+                                            </div>
+                                            <div class="wfp-u-1-6 fill-data-list-item message-box 124" data-fill-attribute="class" data-content="message"><a href="#"><i class="fa fa-fw fa-envelope"></i></a></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="4" data-done="2" data-state="working" data-require_action_msg="SUPERVISOR ACKNOWLEDGE<br>You have to confirm to acknowledge the request.x"><div class="dot working"></div><div class="edge working"></div><div class="dot working tooltip" data-tooltip="SUPERVISOR ACKNOWLEDGE<br>You have to confirm to acknowledge the request.x"></div><div class="edge"></div><div class="dot"></div><div class="edge"></div><div class="dot"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Friday 30 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="inline-actions">
+                                        <span class="fill-data-list-item" data-fill-mode="list" data-content="actions"><span class="">
+                                                <button class="wfp-btn btn-small xsmall fill-data-list-item modal-trigger wfp-btn--primary" data-modal-title="Confirm" data-modal-content="Confirm" data-modal-confirm="OK" data-modal-mode="confirm" data-fill-attribute="class" data-content="mode"><span class=" fill-data-list-item" data-content="name">Acknowledge</span></button>
+                                            </span></span>
+                                        <span>
+                                            <button class="wfp-btn xsmall other dropdown-trigger closed hidable" data-hidable-mode="use_fill" data-hidable-if-empty="secondary_actions"><i class="fa fa-fw fa-chevron-down"></i></button>
+                                            <div class="dropdown">
+                                                <div class="dropdown--label">Other actions</div>
+                                              <ul class="menu--group fill-data-list-item" data-fill-mode="list" data-content="secondary_actions"></ul>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr><tr class="" role="row">
+                                <td class="fill-data-list-item" data-content="requestor">Michele MERCALDO</td>
+                                <td>
+                                    <a href="#">
+                                        <div class="fill-data-list-item" data-content="request.type">HR044 - Leave Application</div>
+                                        <div class="fill-data-list-item" data-content="request.id">HR-015710</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="wfp-grid">
+                                            <div class="wfp-u-5-6">
+                                                <span class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</span>
+                                                <span class="fill-data-list-item" data-content="author">Submit by Raffaele FABOZZI</span>
+                                            </div>
+                                            <div class="wfp-u-1-6 fill-data-list-item message-box 124" data-fill-attribute="class" data-content="message"><a href="#"><i class="fa fa-fw fa-envelope"></i></a></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="4" data-done="2" data-state="working"><div class="dot working"></div><div class="edge working"></div><div class="dot working"></div><div class="edge"></div><div class="dot"></div><div class="edge"></div><div class="dot"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Friday 30 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="inline-actions">
+                                        <span class="fill-data-list-item" data-fill-mode="list" data-content="actions"><span class="">
+                                                <button class="wfp-btn btn-small xsmall fill-data-list-item modal-trigger wfp-btn--primary" data-modal-title="Confirm" data-modal-content="Confirm" data-modal-confirm="OK" data-modal-mode="confirm" data-fill-attribute="class" data-content="mode"><span class=" fill-data-list-item" data-content="name">Approve</span></button>
+                                            </span></span>
+                                        <span>
+                                            <button class="wfp-btn xsmall other dropdown-trigger closed hidable" data-hidable-mode="use_fill" data-hidable-if-empty="secondary_actions"><i class="fa fa-fw fa-chevron-down"></i></button>
+                                            <div class="dropdown">
+                                                <div class="dropdown--label">Other actions</div>
+                                              <ul class="menu--group fill-data-list-item" data-fill-mode="list" data-content="secondary_actions"><div class="">
+                                                    <li class="menu--item "><a class="http://localhost:8080/#&quot;&quot;"><span class="fill-data-list-item" data-content="name">Reject</span></a></li>
+                                                </div><div class="">
+                                                    <li class="menu--item "><a class="http://localhost:8080/#&quot;&quot;"><span class="fill-data-list-item" data-content="name">Send Back</span></a></li>
+                                                </div></ul>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr><tr class="" role="row">
+                                <td class="fill-data-list-item" data-content="requestor">Enrico GARAVINI</td>
+                                <td>
+                                    <a href="#">
+                                        <div class="fill-data-list-item" data-content="request.type">HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)</div>
+                                        <div class="fill-data-list-item" data-content="request.id">HR-015703</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="wfp-grid">
+                                            <div class="wfp-u-5-6">
+                                                <span class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</span>
+                                                <span class="fill-data-list-item" data-content="author">Submit by Enrico GARAVINI</span>
+                                            </div>
+                                            <div class="wfp-u-1-6 fill-data-list-item message-box undefined" data-fill-attribute="class" data-content="message"><a href="#"><i class="fa fa-fw fa-envelope"></i></a></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="3" data-done="2" data-state="working"><div class="dot working"></div><div class="edge working"></div><div class="dot working"></div><div class="edge"></div><div class="dot"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Friday 30 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="inline-actions">
+                                        <span class="fill-data-list-item" data-fill-mode="list" data-content="actions"></span>
+                                        <span>
+                                            <button class="wfp-btn xsmall other dropdown-trigger closed hidable" data-hidable-mode="use_fill" data-hidable-if-empty="secondary_actions"><i class="fa fa-fw fa-chevron-down"></i></button>
+                                            <div class="dropdown">
+                                                <div class="dropdown--label">Other actions</div>
+                                              <ul class="menu--group fill-data-list-item" data-fill-mode="list" data-content="secondary_actions"></ul>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr></tbody>
+                    </table>
+                    <button class="wfp-btn btn-small xsmall fill-data-list-item " data-fill-attribute="class" data-content="mode"><span class=" fill-data-list-item fill-data" data-content="labels.view_all">View All</span></button>
+
+                </section>
+                
+                
+                <section>
+                    <h2 class="fill-data" data-content="labels.your_latest_requests">Your latest requests</h2>
+                    <table rules="group" class="wfp-table tablesorter tablesorter-default tablesorter3d02376571646" role="grid">
+                        <thead>
+                            <tr role="row" class="tablesorter-headerRow">
+                                <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Request: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.request">Request</span> <i class="fa fa-fw fa-sort"></i></div></th>
+                                <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="History: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.history" data-sorter="false">History</span> </div></th>
+                                <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Status: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.status">Status</span> <i class="fa fa-fw fa-sort"></i></div></th>
+                                <th data-column="3" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Details: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.details" data-sorter="false">Details</span> </div></th>
+                                <th class="table_cols_actions tablesorter-header tablesorter-headerUnSorted" data-column="4" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="Actions: No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><span class="fill-data" data-content="labels.action" data-sorter="false">Actions</span> </div></th>
+                            </tr>
+                        </thead>
+                        <tbody class="fill-data-list" data-content="requests_latest" aria-live="polite" aria-relevant="all"><tr class="" role="row">
+                                <td>
+                                    <a class="fill-data-list-item menuitem" data-target="content" data-action="HR-017097" data-content="request.id" data-fill-attribute="data-action" href="#">
+                                    <div class="fill-data-list-item" data-content="request.type">HR044 - Leave Application</div>
+                                    <div class="fill-data-list-item" data-content="request.id">HR-017097</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="">
+                                            <div class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</div>
+                                            <div class="fill-data-list-item" data-content="author">Submit by Enrico GARAVINI</div>
+                                            <div class="fill-data-list-item" data-content="message"></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="4" data-done="1" data-state="working"><div class="dot working"></div><div class="edge"></div><div class="dot"></div><div class="edge"></div><div class="dot"></div><div class="edge"></div><div class="dot"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Thursday 22 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item" data-fill-mode="list" data-content="actions"><div class="">
+                                            <button class="wfp-btn btn-medium xsmall fill-data-list-item modal-trigger wfp-btn--negative" data-fill-attribute="class" data-content="mode" data-modal-title="Confirm" data-modal-content="Confirm" data-modal-confirm="OK" data-modal-mode="confirm"><span class=" fill-data-list-item" data-content="name">Delete</span></button>
+                                        </div></div>
+                                </td>
+                            </tr><tr class="" role="row">
+                                <td>
+                                    <a class="fill-data-list-item menuitem" data-target="content" data-action="HR-015592" data-content="request.id" data-fill-attribute="data-action" href="#">
+                                    <div class="fill-data-list-item" data-content="request.type">HR044 - Leave Application</div>
+                                    <div class="fill-data-list-item" data-content="request.id">HR-015592</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="">
+                                            <div class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</div>
+                                            <div class="fill-data-list-item" data-content="author">Submit by Maurizio BLASILLI</div>
+                                            <div class="fill-data-list-item" data-content="message"></div>
+                                        </li><li class="">
+                                            <div class="fill-data-list-item hist_date" data-content="date">Thursday 30 June 2017</div>
+                                            <div class="fill-data-list-item" data-content="author">Send back by Daniela TALONE</div>
+                                            <div class="fill-data-list-item" data-content="message"></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="4" data-done="2" data-state="working" data-require_action="true" data-require_action_msg="ERROR<br>The request has been returned from WINGS. Check the reason for the error in the 'Info' tab of the request."><div class="dot working"></div><div class="edge working"></div><div class="dot working action tooltip" data-tooltip="ERROR<br>The request has been returned from WINGS. Check the reason for the error in the 'Info' tab of the request."></div><div class="edge"></div><div class="dot"></div><div class="edge"></div><div class="dot"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Thursday 22 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item" data-fill-mode="list" data-content="actions"></div>
+                                </td>
+                            </tr><tr class="" role="row">
+                                <td>
+                                    <a class="fill-data-list-item menuitem" data-target="content" data-action="HR-015591" data-content="request.id" data-fill-attribute="data-action" href="#">
+                                    <div class="fill-data-list-item" data-content="request.type">HR044 - Leave Application</div>
+                                    <div class="fill-data-list-item" data-content="request.id">HR-015591</div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="history"><li class="">
+                                            <div class="fill-data-list-item hist_date" data-content="date">Monday 26 June 2017</div>
+                                            <div class="fill-data-list-item" data-content="author">Submit by Enrico GARAVINI</div>
+                                            <div class="fill-data-list-item" data-content="message"></div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item status-widget" data-fill-attribute="data-steps|data-done|data-state|data-require_action|data-require_action_msg" data-content="status.steps|status.current|status.state|status.require_action|status.require_action_msg" data-steps="3" data-done="3" data-state="success"><div class="dot success"></div><div class="edge success"></div><div class="dot success"></div><div class="edge success"></div><div class="dot success"></div></div>
+                                </td>
+                                <td>
+                                    <ul class="fill-data-list-item" data-fill-mode="list" data-content="details"><li class="">
+                                            <div class="fill-data-list-item" data-content="name">Leave date</div>
+                                            <div class="fill-data-list-item" data-content="value">Monday 5 June 2017</div>
+                                        </li></ul>
+                                </td>
+                                <td>
+                                    <div class="fill-data-list-item" data-fill-mode="list" data-content="actions"><div class="">
+                                            <button class="wfp-btn btn-medium xsmall fill-data-list-item modal-trigger wfp-btn--negative" data-fill-attribute="class" data-content="mode" data-modal-title="Confirm" data-modal-content="Confirm" data-modal-confirm="OK" data-modal-mode="confirm"><span class=" fill-data-list-item" data-content="name">Delete</span></button>
+                                        </div></div>
+                                </td>
+                            </tr></tbody>
+                    </table>
+
+                    <button class="wfp-btn btn-small xsmall fill-data-list-item " data-fill-attribute="class" data-content="mode"><span class=" fill-data-list-item fill-data" data-content="labels.view_all">View All</span></button>
+
+                </section>
+            </div -->
+
+        </div>
+
+        <div id="overlay" style="display: none;"><div class="content-search" style="display: none;">
+            <div class="closer"><i class="fa fa-fw fa-close"></i></div>
+                <section class="wfp-grid wfp-form-list--latest" id="forms-latest">
+                    <h4 class="wfp-u-1-1"><i class="fa fa-fw fa-clock-o"></i> <span class="fill-data" data-content="labels.latest_forms_used">Latest forms used</span></h4>
+                    <div class="fill-data-list wfp-grid wfp-u-1-1" data-content="latest_forms"><div class="wfp-u-1-1 wfp-grid wfp-form-description">
+                            <div class="wfp-u-1-12"></div>
+                            <div class="wfp-u-10-12">
+                                <div class="heading fill-data-list-item" data-content="heading"></div>
+                                <div class="title"><a class="fill-data-list-item" data-target="content" data-action="form_HR044" data-content="ident" data-fill-attribute="data-action"><span class="fill-data-list-item" data-content="name">Leave / Absence application</span></a></div>
+                                <div class="description fill-data-list-item" data-content="description">HR044 - This is the description for this form</div>
+                            </div>
+                        </div><div class="wfp-u-1-1 wfp-grid wfp-form-description">
+                            <div class="wfp-u-1-12"></div>
+                            <div class="wfp-u-10-12">
+                                <div class="heading fill-data-list-item" data-content="heading"></div>
+                                <div class="title"><a class="fill-data-list-item" data-target="content" data-action="form_IPSAS20" data-content="ident" data-fill-attribute="data-action"><span class="fill-data-list-item" data-content="name">Related party disclosure</span></a></div>
+                                <div class="description fill-data-list-item" data-content="description">[IPSAS-20] Related Party Disclosure - This is the description for this form</div>
+                            </div>
+                        </div><div class="wfp-u-1-1 wfp-grid wfp-form-description">
+                            <div class="wfp-u-1-12"></div>
+                            <div class="wfp-u-10-12">
+                                <div class="heading fill-data-list-item" data-content="heading"></div>
+                                <div class="title"><a class="fill-data-list-item" data-target="content" data-action="form_HR039" data-content="ident" data-fill-attribute="data-action"><span class="fill-data-list-item" data-content="name">Rental subsidy / advance / deduction</span></a></div>
+                                <div class="description fill-data-list-item" data-content="description">HR039 - This form regards Eucation Grant Requests. Submit this form for processing of payment.</div>
+                            </div>
+                        </div><div class="wfp-u-1-1 wfp-grid wfp-form-description">
+                            <div class="wfp-u-1-12"></div>
+                            <div class="wfp-u-10-12">
+                                <div class="heading fill-data-list-item" data-content="heading"></div>
+                                <div class="title"><a class="fill-data-list-item" data-target="content" data-action="form_HR027" data-content="ident" data-fill-attribute="data-action"><span class="fill-data-list-item" data-content="name">Telecommuting arrangement (TCA)</span></a></div>
+                                <div class="description fill-data-list-item" data-content="description">HR027 - This is the description for this form</div>
+                            </div>
+                        </div></div>
+                </section>
+                <section class="wfp-form-list--az" id="forms-filtered" style="display: none;">
+                    
+                    <h4 class="wfp-u-1-1"><i class="fa fa-fw fa-align-left"></i><span class="fill-data" data-content="labels.filtered_forms">Forms</span></h4>
+                    
+                    <div class="wfp-grid">
+                        <div class="fill-data-list wfp-grid wfp-u-1-1" data-content="filtered_by_search" data-list="refreshable"><div class="wfp-u-1-1 wfp-grid wfp-form-description template">
+                                <div class="wfp-u-1-12"></div>
+                                <div class="wfp-u-10-12">
+                                    <div class="heading fill-data-list-item" data-content="heading"></div>
+                                    <div class="title"><a class="fill-data-list-item menuitem" data-target="content" data-action="page_my" data-content="ident" data-fill-attribute="data-action" href="#"><span class="fill-data-list-item" data-content="name"></span></a></div>
+                                    <div class="description fill-data-list-item" data-content="description"></div>
+                                </div>
+                            </div></div>
+                    </div>
+
+                            
+                    <h4 class="wfp-u-1-1"><i class="fa fa-fw fa-question"></i><span class="fill-data" data-content="labels.filtered_howtos">How do I</span></h4>
+                    
+                    <div class="wfp-grid">
+                        <div class="fill-data-list wfp-grid wfp-u-1-1" data-content="filtered_howtos" data-list="refreshable"><div class="wfp-u-1-1 wfp-grid wfp-form-description template">
+                                <div class="wfp-u-1-12"></div>
+                                <div class="wfp-u-10-12">
+                                    <div class="heading fill-data-list-item" data-content="heading"></div>
+                                    <div class="title"><a class="fill-data-list-item menuitem" data-target="content" data-action="page_my" data-content="ident" data-fill-attribute="data-action" href="#"><span class="fill-data-list-item" data-content="name"></span></a></div>
+                                    <div class="description fill-data-list-item" data-content="description"></div>
+                                </div>
+                            </div></div>
+                    </div>
+
+                        
+                    <h4 class="wfp-u-1-1"><i class="fa fa-fw fa-link"></i><span class="fill-data" data-content="labels.filtered_links">Links</span></h4>
+                    
+                    <div class="wfp-grid">
+                        <div class="fill-data-list wfp-grid wfp-u-1-1" data-content="filtered_links" data-list="refreshable"><div class="wfp-u-1-1 wfp-grid wfp-form-description template">
+                                <div class="wfp-u-1-12"></div>
+                                <div class="wfp-u-10-12">
+                                    <div class="heading fill-data-list-item" data-content="heading"></div>
+                                    <div class="title"><a class="fill-data-list-item menuitem" data-target="content" data-action="page_my" data-content="ident" data-fill-attribute="data-action" href="#"><span class="fill-data-list-item" data-content="name"></span></a></div>
+                                    <div class="description fill-data-list-item" data-content="description"></div>
+                                </div>
+                            </div></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+      </div>
+    </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
