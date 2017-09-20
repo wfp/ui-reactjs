@@ -12,8 +12,7 @@ import Home from './components/index';
 
     let setup = urlsContextData => {
       urls = urlsContextData;
-      ReactDOM.render(<Home urls={urls}/>,
-        document.getElementById('id_home'));
+      ReactDOM.render(<Home urls={urls}/>, document.getElementById('id_home'));
     };
 
 	  return {urls: urls, setup: setup};

@@ -48,14 +48,18 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="wfp-grid" id="main">
+        <div class="wfp-u-1-1">
+            <div id="id_header"></div>
+        </div>
 
-    <div id="id_header"></div>
+        <div class="wfp-u-1-1">
+            {% block contents %}
 
-    {% block contents %}
 
-
-    {% endblock contents %}
-
+            {% endblock contents %}
+        </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -92,6 +96,31 @@
 
 
     <script src="{% static 'vendor/wfp-ui/dist/js/responsive-nav.js' %}" defer></script>
+
+    <script>
+    $(document).ready(function(){
+        // Response Navigation Fixes
+        // but the library js does not work properly
+        // so i have to add/remove corrected class to/from the target dom-element
+        window.responsiveNav('#js-menu-int', {
+          customToggle: "js-menu-int-trigger",
+          navClass: "header--menu",
+          openPos: "absolute",
+          closedPos: "static"
+        });
+        $('#js-menu-int-trigger').on('click', function(){
+            $('#js-menu-int').toggleClass('.closed');
+        });
+
+        // Overlay Fixes
+        var contentSearch = $('.content-search');
+        var contentSearchWrapper = $('.content-search').closest('#overlay');
+
+        if(!$(contentSearchWrapper).length){
+            contentSearch.wrap('<div id="overlay" style="display:none"></div>');
+        }
+    });
+    </script>
 
   </body>
 </html>

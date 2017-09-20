@@ -13,7 +13,8 @@ const Header = props => {
         <LogoItem title={props.title} />
 
         <div className="wfp-u-3-5 wfp-u-md-3-4 header--nav">
-          <HeaderMenuGroup>{props.children}</HeaderMenuGroup>
+            <button className="header--toggle" id="js-menu-int-trigger">Menu</button>
+            <HeaderMenuGroup>{props.children}</HeaderMenuGroup>
         </div>
       </div>
     </header>

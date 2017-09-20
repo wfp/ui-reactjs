@@ -171,9 +171,9 @@ WSSMyLatestRequests.propTypes = {
 class Home extends React.Component {
   render(){
     return(
-      <div>
-      <WSSAwaitingActionRequests src={this.props.urls.awaiting_action_requests}/>
-      <WSSMyLatestRequests src={this.props.urls.my_latest_requests}/>
+      <div className="wfp-wrapper">
+          <WSSAwaitingActionRequests src={this.props.urls.awaiting_action_requests}/>
+          <WSSMyLatestRequests src={this.props.urls.my_latest_requests}/>
       </div>
     )
   }

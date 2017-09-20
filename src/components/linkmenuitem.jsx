@@ -6,7 +6,7 @@ const LinkMenuItem = props => {
   return (
     <li className="menu--item">
       <a href={props.url} className={props.isButton ?
-        "wfp-btn wfp-btn--primary" : "menu--link"}>
+        "menu--link wfp-btn wfp-btn--primary" : "menu--link"}>
         {props.text}
       </a>
     </li>
