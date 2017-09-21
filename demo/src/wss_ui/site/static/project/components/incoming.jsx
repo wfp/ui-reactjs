@@ -8,7 +8,7 @@ import {
   FilterPanel,
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem
-} from "wfp-wss-ui-react";
+} from "wfp-ui-reactjs";
 
 import RequestHistory from './request/historycell';
 import RequestStatus from './request/statuscell';

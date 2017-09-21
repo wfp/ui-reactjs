@@ -7,7 +7,7 @@ import {
   LinkMenuItem,
   SearchWidget,
   UserMenuWidget
-} from "wfp-wss-ui-react";
+} from "wfp-ui-reactjs";
 
 
 const WSSHeader = props => {
