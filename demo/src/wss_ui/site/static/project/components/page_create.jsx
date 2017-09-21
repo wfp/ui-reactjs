@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {CommonLinksHeader, LinkMenuItem, Breadcrumbs, Tabs, Tab} from "wfp-wss-ui-react";
+import {
+  CommonLinksHeader,
+  LinkMenuItem,
+  Breadcrumbs,
+  Tabs, Tab
+} from "wfp-ui-reactjs";
 
 const GridHeading = props => {
   return (
