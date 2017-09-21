@@ -70,18 +70,16 @@ class FilterPanel extends React.Component {
             <form className="font-medium">
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                    <label className="fill-data" for="form-name" data-content="labels.form"></label>
+                    <label className="fill-data" htmlFor="form-name" data-content="labels.form"></label>
                     <Select
                       name="form-name"
-                      value="two"
+                      value="one"
                       options={this.state.formTypes}
                       onChange={this.state.onFormTypeChange}
                     />
 
                 </div>
-                <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-
-                <label className="fill-data" for="status" data-content="labels.status"></label>
+                <div>
                    <Select
                       name="status"
                       value="two"
@@ -99,19 +97,19 @@ class FilterPanel extends React.Component {
                       <label className="fill-data" data-content="labels.creation_date"></label>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat pl0">
-                      <label><span className="fill-data" for="from-date" data-content="labels.from"></span><span
+                      <label><span className="fill-data" htmlFor="from-date" data-content="labels.from"></span><span
                         className="required-symbol">*</span></label>
                       <input type="date" name="from-date"/>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat">
-                      <label><span className="fill-data" for="to-date" data-content="labels.to"></span><span
+                      <label><span className="fill-data" htmlFor="to-date" data-content="labels.to"></span><span
                         className="required-symbol">*</span></label>
                       <input type="date" name="to-date"/>
                     </div>
                   </div>
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                     <label><span className="fill-data" for="to-date" data-content="labels.to"></span><span
+                     <label><span className="fill-data"  htmlFor="to-date" data-content="labels.to"></span><span
                       className="required-symbol">*</span></label>
                   <Select
                       name="officer"

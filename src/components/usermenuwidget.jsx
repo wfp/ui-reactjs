@@ -6,7 +6,7 @@ const UserMenuWidget = props => {
   return (
     <li className="menu--item dropdown-trigger closed">
       <a className="menu--link no-underline">
-        <img src="" data-content="user.picture" data-fill-attribute="src" className="img img-round fill-data" />
+        <img src={props.imageSrc} className="img img-round" />
         <span className="fill-data" data-content="user.name"></span>
         <i className="fa fa-fw fa-chevron-down"></i>
       </a>
@@ -19,7 +19,7 @@ const UserMenuWidget = props => {
   );
 };
 
-UserMenuWidget.UserMenuWidget = {
+UserMenuWidget.PropTypes = {
 
 };
 

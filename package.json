@@ -69,8 +69,6 @@
     "style-loader": "^0.18.2",
     "styled-components": "^2.1.2",
     "webpack": "^3.6.0",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2",
     "wiredep": "^4.0.0"
   },
   "peerDependencies": {

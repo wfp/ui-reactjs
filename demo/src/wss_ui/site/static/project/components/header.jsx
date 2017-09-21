@@ -29,7 +29,7 @@ const WSSHeader = props => {
 
         <SearchWidget />
 
-        <UserMenuWidget />
+        <UserMenuWidget imageSrc={props.urls.user_image} />
       </Header>
     </div>
   );
