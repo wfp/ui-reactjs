@@ -1,11 +1,14 @@
+const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('./lib/styles/[name].css');
 
 
 var config = {
-  entry: ['./src/index.js'],
+  entry: [
+    './src/index.js'
+  ],
   output: {
-    library: 'wfp-wss-ui-react',
+    library: 'wfp-ui-reactjs',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     filename: "./lib/index.js",
@@ -42,13 +45,23 @@ var config = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader'],
         }),
+      },
+      {
+        test: /\.css$/,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader'],
+        }),
       }
     ]
   },
   plugins: [ extractCSS ],
   resolve: {
     modules: ['node_modules', 'bower_components'],
-    extensions: ['*', '.js', '.jsx', '.css', '.scss']
+    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+    alias: {
+      react: path.resolve('./node_modules/react'),
+    },
   }
 };
 
