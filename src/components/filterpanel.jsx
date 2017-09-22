@@ -8,40 +8,75 @@ class FilterPanel extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      formTypes: [],
+      formModels: [],
       statusOptions: [],
-      officers: []
+      officers: [],
+      formSelections: [],
+      statusSelections:[],
+      officerSelections:[]
     };
-    this.onFormTypeChange = this.onFormTypeChange.bind(this);
+    this.onFormModelChange = this.onFormModelChange.bind(this);
     this.onStatusChange = this.onStatusChange.bind(this);
     this.onOfficerChange = this.onOfficerChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear= this.handleClear.bind(this);
 
   };
 
-  onFormTypeChange(value) {
+  onFormModelChange(formModels) {
+    this.setState({formSelections:formModels});
+  };
+
+  onStatusChange(statuses) {
+    this.setState({statusSelections:statuses});
 
   };
 
-  onStatusChange(value) {
+  onOfficerChange(officers) {
+    this.setState({officerSelections:officers});
+
+  };
+  handleClear(event){
+    event.preventDefault();
+    this.setState({formSelections:[]});
+    this.setState({statusSelections:[]});
+    this.setState({officerSelections:[]});
+
+    this.props.handleFilterSubmit('')
 
   };
 
-  onOfficerChange(value) {
+  handleSubmit(event) {
+    event.preventDefault();
+    let filters = ''
+    const joinFilters = (key) => {
+      return ( (str, obj) => {
+          return str + '&' + key + '=' + obj['value']
+        }
+      )
+    }
+
+    filters += this.state.formSelections.reduce(joinFilters('form_model'), '')
+    filters += this.state.statusSelections.reduce(joinFilters('status'), '')
+    filters += this.state.officerSelections.reduce(joinFilters('officer'), '')
+
+    this.props.handleFilterSubmit(filters.replace('&','?'))
 
   };
-  onSubmit(event){}
-
 
   componentDidMount() {
     $.getJSON(this.props.src, data => {
       this.setState({
-        formTypes: data['form_types'],
+        formModels: data['form_types'],
         statusOptions: data['status_options'],
         officers: data['officers'],
       });
     })
   };
+
+  componentWillReceiveProps(nextProps){
+
+  }
 
   render() {
     return (
@@ -67,25 +102,27 @@ class FilterPanel extends React.Component {
           </div>
 
           <div className="wfp-form--stacked filter_container">
-            <form className="font-medium">
+            <form className="font-medium" onSubmit={this.handleSubmit}>
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
                     <label className="fill-data" htmlFor="form-name" data-content="labels.form"></label>
                     <Select
                       name="form-name"
-                      value="one"
-                      options={this.state.formTypes}
-                      onChange={this.state.onFormTypeChange}
+                      multi
+                      options={this.state.formModels}
+                      value={this.state.formSelections}
+                      onChange={this.onFormModelChange}
                     />
 
                 </div>
-                <div>
+                <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
+                    <label className="fill-data" htmlFor="form-name" data-content="labels.status"></label>
                    <Select
                       name="status"
-                      value="two"
-                      addLabelText={labels.status}
+                      multi
+                      value={this.state.statusSelections}
                       options={this.state.statusOptions}
-                      onChange={this.state.onStatusChange}
+                      onChange={this.onStatusChange}
                     />
 
                 </div>
@@ -97,7 +134,7 @@ class FilterPanel extends React.Component {
                       <label className="fill-data" data-content="labels.creation_date"></label>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat pl0">
-                      <label><span className="fill-data" htmlFor="from-date" data-content="labels.from"></span><span
+                      <label><span htmlFor="from-date" data-content="labels.from"></span><span
                         className="required-symbol">*</span></label>
                       <input type="date" name="from-date"/>
                     </div>
@@ -113,16 +150,17 @@ class FilterPanel extends React.Component {
                       className="required-symbol">*</span></label>
                   <Select
                       name="officer"
-                      value="one"
+                      multi
+                      value={this.state.officerSelections}
                       options={this.state.officers}
-                      onChange={this.state.onOfficerChange}
+                      onChange={this.onOfficerChange}
                     />
 
                 </div>
               </div>
               <div className="wfp-form--actions">
-                <button className="wfp-btn wfp-btn--ghost btn-small">Clear</button>
-                <button className="wfp-btn wfp-btn--primary btn-medium">Filter</button>
+                <button type='button' onClick={this.handleClear} className="wfp-btn wfp-btn--ghost btn-small">Clear</button>
+                <input type='submit' className="wfp-btn wfp-btn--primary btn-medium" value="Filter"/>
               </div>
             </form>
           </div>
@@ -133,7 +171,8 @@ class FilterPanel extends React.Component {
 };
 
 FilterPanel.propTypes = {
-
+  handleFilterSubmit: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired
 };
 
 export default FilterPanel;

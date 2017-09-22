@@ -19,6 +19,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.5.6",
-    "wfp-ui-reactjs": "0.0.2"
+    "wfp-ui-reactjs": "0.0.2",
+    "bower": "^1.8.2"
   }
 }
