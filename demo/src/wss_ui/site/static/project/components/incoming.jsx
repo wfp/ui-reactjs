@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import getJSON from 'jquery';
 
 import {
   Breadcrumbs,
@@ -20,32 +21,16 @@ class WSSIncomingRequests extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      incomingRequests: [],
-      filterString: ''
+      incomingRequests: []
     };
-    this.handleFilterSubmit = this.handleFilterSubmit.bind(this);
-  }
-
-  dataSource(source) {
-    $.getJSON(source, data => {
-      this.setState({
-        incomingRequests: data['incoming_requests'],
-      });
-    });
   }
 
   componentDidMount() {
-    this.dataSource(this.props.src);
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    if (nextState.filterString !== this.state.filterString) {
-      this.dataSource(this.props.src + nextState.filterString);
-    }
-  }
-
-  handleFilterSubmit(filters) {
-    this.setState({filterString: filters});
+    $.getJSON(this.props.src, data => {
+      this.setState({
+        incomingRequests: data['incoming_requests'],
+      });
+    })
   }
 
 
@@ -92,7 +77,7 @@ class WSSIncomingRequests extends React.Component {
         <section>
           <h2><span>{labels.incoming_requests}</span></h2>
 
-          <FilterPanel src={this.props.urls.request_filters} handleFilterSubmit={this.handleFilterSubmit}/>
+          <FilterPanel/>
 
           <Table>
             <TableHeader>
