@@ -2005,3 +2005,12 @@ hr {
 .px4 {
   padding-left: 4rem;
   padding-right: 4rem; }
+
+/* HEADER */
+.header--menu {
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  /* DROPDOWN */ }
+  .header--menu.opened {
+    z-index: 10 !important; }

@@ -244,3 +244,23 @@ hr{
 .pl4 { padding-left:   4rem }
 .py4 { padding-top:    4rem; padding-bottom: 4rem }
 .px4 { padding-left:   4rem; padding-right:  4rem }
+
+/* HEADER */
+
+.header--menu {
+    @include transition(all .2s ease-in-out 0s);
+
+    &.opened {
+        z-index: 10 !important;
+    }
+    /* DROPDOWN */
+    // .dropdown {
+    //     .menu--item {
+    //         display: block;
+    //         margin: 0 .5rem !important;
+    //         a {
+    //             display: block;
+    //         }
+    //     }
+    // }
+}
