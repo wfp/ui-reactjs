@@ -29,7 +29,9 @@ const WSSHeader = props => {
 
         <SearchWidget />
 
-        <UserMenuWidget imageSrc={props.urls.user_image} />
+        <UserMenuWidget imagesrc={props.urls.user_image} username="Maurizio Blasilli">
+          <LinkMenuItem url={props.urls.logout} text="Logout" linkStyle={false} />
+        </UserMenuWidget>
       </Header>
     </div>
   );
