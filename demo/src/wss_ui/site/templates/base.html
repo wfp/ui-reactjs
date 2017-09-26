@@ -10,6 +10,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- WFP UI + Grid System ~ SASS import does not work-->
+    <link rel="stylesheet" href="{% static 'vendor/wfp-ui/dist/css/wfpui+grid.css' %}">
 
     <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/lato/lato.css">
     <link rel="stylesheet" href="http://cdn.wfp.org/libraries/webfonts/aleo/aleo.css">
@@ -85,9 +86,7 @@
       header.setup({
         my: "{% url 'my' %}",
         incoming: "{% url 'incoming' %}",
-        create: "{% url 'create' %}",
-        user_image: "{% static 'images/default-avatar.gif' %}",
-        logout: "/logout/"
+        create: "{% url 'create' %}"
       });
     </script>
 
@@ -96,23 +95,10 @@
     {% endblock bottom-scripts %}
 
 
-    <script src="{% static 'vendor/wfp-ui/dist/js/responsive-nav.js' %}" defer></script>
+    <!--script src="{% static 'vendor/wfp-ui/dist/js/responsive-nav.js' %}" defer></script-->
 
     <script>
     $(document).ready(function(){
-        // Response Navigation Fixes
-        // but the library js does not work properly
-        // so i have to add/remove corrected class to/from the target dom-element
-        window.responsiveNav('#js-menu-int', {
-          customToggle: "js-menu-int-trigger",
-          navClass: "header--menu",
-          openPos: "absolute",
-          closedPos: "static"
-        });
-        $('#js-menu-int-trigger').on('click', function(){
-            $('#js-menu-int').toggleClass('.closed');
-        });
-
         // Overlay Fixes
         var contentSearch = $('.content-search');
         var contentSearchWrapper = $('.content-search').closest('#overlay');

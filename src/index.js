@@ -14,7 +14,6 @@ import {
   TableHeaderItem, TableRow, TableRowItem
 } from './components/table';
 
-import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css'
 import WssStyle from './styles/main.scss';
 
 module.exports = {

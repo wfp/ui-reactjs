@@ -3,7 +3,6 @@
 
 
 // Imports
-@import '../../node_modules/react-select/dist/react-select.css';
 @import 'colors';
 
 @import 'navbar';
@@ -29,13 +28,13 @@
 @import 'responsive';
 @import 'user';
 
+@import 'mixins';
 
 // Global CSS
 body {
     font-size:0.9em;
     font-family: "lato", sans-serif;
 }
-
 
 h1{}
 h2{
@@ -111,7 +110,6 @@ section, .section{
     font-weight: bold;
 }
 
-
 /* OVERRIDES */
 
 
@@ -149,7 +147,6 @@ hr{
 .debug{
     background-color: #F00;
 }
-
 
 /* Basscss Margin */
 
@@ -243,3 +240,25 @@ hr{
 .pl4 { padding-left:   4rem }
 .py4 { padding-top:    4rem; padding-bottom: 4rem }
 .px4 { padding-left:   4rem; padding-right:  4rem }
+
+
+/* HEADER */
+
+.header--menu {
+    @include transition(all .2s ease-in-out 0s);
+
+    &.opened {
+        z-index: 10 !important;
+    }
+    /* DROPDOWN */
+    .dropdown {
+        .menu--item {
+            display: block;
+            margin: 0 .5rem !important;
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
