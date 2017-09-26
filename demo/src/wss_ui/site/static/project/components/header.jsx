@@ -9,8 +9,33 @@ import {
   UserMenuWidget
 } from "wfp-ui-reactjs";
 
+import uuid from 'uuid';
+
+const fakeUrls = [
+ {
+    id: uuid.v4(),
+    url: '/profile',
+    label: 'link 1'
+ },
+ {
+    id: uuid.v4(),
+    url: '/profile',
+    label: 'link 2'
+ },
+ {
+    id: uuid.v4(),
+    url: '/profile',
+    label: 'link 3'
+ },
+ {
+    id: uuid.v4(),
+    url: '/profile',
+    label: 'link 4'
+ },
+];
 
 const WSSHeader = props => {
+    const userprofileUrls = fakeUrls;
   return (
     <div className="navbar">
       <CommonLinksHeader>
@@ -25,13 +50,11 @@ const WSSHeader = props => {
         <LinkMenuItem url={props.urls.my} text="My requests" />
         <LinkMenuItem url={props.urls.incoming} text="Incoming requests" />
 
-        <LinkMenuItem url={props.urls.create} text="Create a request" isButton={true} />
+        <LinkMenuItem url={props.urls.create} text="Create a request" isButton={ false } />
 
         <SearchWidget />
 
-        <UserMenuWidget imagesrc={props.urls.user_image} username="Maurizio Blasilli">
-          <LinkMenuItem url={props.urls.logout} text="Logout" linkStyle={false} />
-        </UserMenuWidget>
+        <UserMenuWidget urls={userprofileUrls} />
       </Header>
     </div>
   );

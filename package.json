@@ -69,5 +69,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "uuid": "^3.1.0"
   }
 }
