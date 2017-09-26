@@ -1,46 +1,70 @@
-import React from 'react';
+import React, {
+    Component
+} from 'react';
 import PropTypes from 'prop-types';
-
-
-class UserMenuWidget extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuOpen: false
-    };
-    this.onToggleMenuState = this.onToggleMenuState.bind(this);
-  };
-
-  onToggleMenuState() {
-    this.setState({
-      isMenuOpen: !this.state.isMenuOpen
-    });
-  };
-
-  render() {
-    let menuStateClass = "menu--item dropdown-trigger " + (this.state.isMenuOpen?"open":"closed");
-    let chevronStateClass = "fa fa-fw " + (this.state.isMenuOpen?"fa-chevron-up":"fa-chevron-down");
-    return (
-      <li className={menuStateClass} onClick={this.onToggleMenuState}>
-        <a className="menu--link no-underline">
-          <img src={this.props.imagesrc} className="img img-round"/>
-          <span>{this.props.username}</span>
-          <i className={chevronStateClass}></i>
-        </a>
-        <div className="dropdown">
-          <ul className="menu--group">
-            {this.props.children}
-          </ul>
-        </div>
-      </li>
-    );
-  };
+import DropdownItem from './dropdownitem';
+import classnames from 'classnames';
+class UserMenuWidget extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        };
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+    }
+    componentDidMount() {
+        this.setState({
+            open: false
+        });
+    }
+    toggleDropdown(evt) {
+        this.setState({
+            open: !this.state.open
+        });
+    }
+    render() {
+        const classes = classnames('menu--item dropdown-trigger', {
+            'closed': !this.state.open,
+            'opened': !!this.state.open
+        });
+        return (<li className={ classes }>
+            <a className="menu--link no-underline" onClick={ this.toggleDropdown }>
+                <img src="" data-content="user.picture" data-fill-attribute="src" className="img img-round fill-data" />
+                <span className="fill-data" data-content="user.name"></span>
+                <i className="fa fa-fw fa-chevron-down"></i>
+              </a>
+          <div className="dropdown">
+            <ul className="menu--group">
+            {this.props.urls.map( (el) =>{
+                return <DropdownItem key={el.id} url={el.url} label={el.label} />
+            }
+            )}
+              <li className="menu--item"><a className="">Sign Out</a></li>
+            </ul>
+          </div>
+        </li>);
+    }
 }
-
-UserMenuWidget.PropTypes = {
-  imagesrc: PropTypes.string,
-  username: PropTypes.string
+/*
+const UserMenuWidget = props => {
+  return (
+    <li className="menu--item dropdown-trigger opened">
+      <a className="menu--link no-underline">
+        <img src="" data-content="user.picture" data-fill-attribute="src" className="img img-round fill-data" />
+        <span className="fill-data" data-content="user.name"></span>
+        <i className="fa fa-fw fa-chevron-down"></i>
+      </a>
+      <div className="dropdown">
+        <ul className="menu--group">
+        {props.urls.map( (el) =>{
+            return <DropdownItem key={el.id} url={el.url} label={el.label} />
+        }
+        )}
+          <li className="menu--item"><a className="">Sign Out</a></li>
+        </ul>
+      </div>
+    </li>
+  );
 };
-
+*/
 export default UserMenuWidget;
