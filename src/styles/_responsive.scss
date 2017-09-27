@@ -1,4 +1,11 @@
-@media screen and (max-width: 35.5em) {
+/* BREAKPOINT VARIABLES */
+$sm-screen: 35.5em;
+$md-screen: 48em;
+$lg-screen: 64em;
+$xl-screen: 80em;
+
+
+@media screen and (max-width: $sm-screen) {
   .wfp-header-super {
     text-align: left;
     margin: 0;
@@ -14,7 +21,7 @@
   }
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: $md-screen) {
   table,
   thead,
   tbody,
@@ -94,6 +101,12 @@
     .header--menu {
     }
   }
+  .header--menu {
+    .wfp-btn {
+        padding: 1rem !important;
+        border-radius: 0px;
+    }
+  }
 
 
   table.wfp-table {
@@ -111,9 +124,9 @@
   }
 }
 
-@media screen and (max-width: 64em) {}
+@media screen and (max-width: $lg-screen) {}
 
-@media screen and (max-width: 80em) {}
+@media screen and (max-width: $xl-screen) {}
 
 
 /* em wfp-hidden values */
@@ -146,7 +159,7 @@
 
 /* wfp-hidden-sm */
 
-@media screen and (min-width: 35.5em) and (max-width: 47.938em) {
+@media screen and (min-width: $sm-screen) and (max-width: 47.938em) {
   .wfp-visible-xs {
     display: none
   }
@@ -171,7 +184,7 @@
 
 /* wfp-hidden-md */
 
-@media screen and (min-width: 48em) and (max-width: 63.938em) {
+@media screen and (min-width: $md-screen) and (max-width: 63.938em) {
   .wfp-visible-xs {
     display: none
   }
@@ -196,7 +209,7 @@
 
 /* wfp-hidden-lg */
 
-@media screen and (min-width: 64em) and (max-width: 79.938em) {
+@media screen and (min-width: $lg-screen) and (max-width: 79.938em) {
   .wfp-visible-xs {
     display: none
   }
@@ -221,7 +234,7 @@
 
 /* wfp-hidden-xl */
 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: $xl-screen) {
   .wfp-visible-xs {
     display: none
   }
