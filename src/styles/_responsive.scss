@@ -2,7 +2,7 @@
   .wfp-header-super {
     text-align: left;
     margin: 0;
-    // display: none;
+    display: none;
   }
 
   .wfp--breadcrumbs {
@@ -90,6 +90,11 @@
   .wfp-header-int .header--search {
     display: none;
   }
+  .wfp-header-int {
+    .header--menu {
+    }
+  }
+
 
   table.wfp-table {
     font-size: 0.6em;

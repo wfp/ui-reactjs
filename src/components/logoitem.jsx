@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const LogoItem = props => {
   return (
-    <div className="wfp-u-1-6 header--container">
+    <div className="wfp-u-1-8 header--container">
       <h1 className="header--title ">
         <a href="/" className="header--logo">{props.title}</a>
       </h1>
