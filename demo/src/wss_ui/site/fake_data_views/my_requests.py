@@ -134,4 +134,9 @@ my_requests = {
 
 class MyRequestsJSON(View):
   def get(self, request, *args, **kwargs):
+    if request.GET:
+      filtered = {}
+      filtered['my_requests'] = my_requests['my_requests'][2:]
+
+      return JsonResponse(filtered)
     return JsonResponse(my_requests)

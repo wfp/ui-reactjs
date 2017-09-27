@@ -17,11 +17,11 @@ const RequestHistory = props => {
     );
   });
   return (
-    <td>
+
       <ul>
         {historyItems}
       </ul>
-    </td>
+
   );
 };
 

@@ -1,70 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import getJSON from 'jquery';
 
 import {
   Breadcrumbs,
   Pages,
-  FilterPanel,
-  Table, TableHeader,
-  TableHeaderItem, TableRow, TableRowItem
+  FilterPanel
 } from "wfp-ui-reactjs";
 
-import RequestHistory from './request/historycell';
-import RequestStatus from './request/statuscell';
-import RequestDetails from './request/detailscell';
-import RequestAvailableActions from './request/actionscell';
-
+import RequestTable from './request/requesttable';
 
 class WSSMyRequests extends React.Component {
 
   constructor(props, context) {
     super(props, context);
     this.state = {
-      myRequests: []
+      myRequests: [],
+      filterString: ''
     };
+    this.handleFilterSubmit = this.handleFilterSubmit.bind(this);
   }
-
-  componentDidMount() {
-    $.getJSON(this.props.src, data => {
-      this.setState({
-        myRequests: data['my_requests'],
-      });
-    })
+  handleFilterSubmit(filters) {
+    this.setState({filterString: filters});
   }
-
-
   render() {
-    let headersItems = [
-      {label: "REQUESTOR"},
-      {label: "REQUEST"},
-      {label: "HISTORY"},
-      {label: "STATUS"},
-      {label: "DETAILS"},
-      {label: "ACTIONS"}
-    ].map((el, index) => {
-      return <TableHeaderItem key={index} label={el.label}/>;
-    });
-    let myRequestsItems = this.state.myRequests.map((el, index) => {
-      return (
-        <tr key={index}>
-          <td>
-            {el.requestor}
-          </td>
-          <td>
-            <a href="#">
-              <div>{el.request.type}</div>
-              <div>{el.request.id}</div>
-            </a>
-          </td>
-          <RequestHistory history={el.history}/>
-          <RequestStatus status={el.status}/>
-          <RequestDetails details={el.details}/>
-          <RequestAvailableActions
-            actions={el.actions} defaultAction={el.defaultAction}/>
-        </tr>
-      );
-    });
 
     return (
       <div className="content">
@@ -77,16 +35,8 @@ class WSSMyRequests extends React.Component {
         <section>
           <h2><span>{labels.my_requests}</span></h2>
 
-          <FilterPanel/>
-
-          <Table>
-            <TableHeader>
-              {headersItems}
-            </TableHeader>
-            <tbody>
-            {myRequestsItems}
-            </tbody>
-          </Table>
+          <FilterPanel src={this.props.urls.request_filters} handleFilterSubmit={this.handleFilterSubmit}/>
+          <RequestTable src={this.props.src} filterString={this.state.filterString} data_key="my_requests"/>
           <Pages/>
         </section>
 

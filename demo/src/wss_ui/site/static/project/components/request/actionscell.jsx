@@ -38,7 +38,7 @@ export default class RequestAvailableActions extends React.Component {
       );
     });
     return (
-      <td>
+
         <div className="inline-actions">
           <span>
             <span className="template">
@@ -58,7 +58,7 @@ export default class RequestAvailableActions extends React.Component {
             </div>
           </span>
         </div>
-      </td>
+
     );
   }
 }

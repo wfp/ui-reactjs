@@ -12,11 +12,11 @@ const RequestDetails = props => {
     );
   });
   return (
-    <td>
+
       <ul>
         {detailsItems}
       </ul>
-    </td>
+
   );
 };
 

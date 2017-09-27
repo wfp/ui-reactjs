@@ -21,11 +21,11 @@ const RequestStatus = props => {
   }
 
   return (
-    <td>
+
       <div className="status-widget">
         {children}
       </div>
-    </td>
+
   );
 };
 
