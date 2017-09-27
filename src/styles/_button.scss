@@ -1,7 +1,8 @@
+@import 'colors';
 .wfp-btn {
 
 	margin-bottom: 10px;
-	
+
 	&.btn-wide{
     	width:200px;
     }
@@ -28,9 +29,18 @@
 }
 
 .header--menu {
-	button.wfp-btn {
+	.wfp-btn {
 		border: none;
 		box-shadow: none;
-    margin: 0;
+        margin: 0;
+        &.wfp-btn--primary {
+            padding: .5rem !important;
+            background-color: $blue-darker;
+            border-color: $blue-dark;
+            &:hover {
+                background-color: darken($blue-darker, 15%);
+                border-bottom-color: $blue-darker;
+            }
+        }
 	}
 }

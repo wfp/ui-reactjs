@@ -100,18 +100,6 @@
 
     <script>
     $(document).ready(function(){
-        // Response Navigation Fixes
-        // but the library js does not work properly
-        // so i have to add/remove corrected class to/from the target dom-element
-        window.responsiveNav('#js-menu-int', {
-          customToggle: "js-menu-int-trigger",
-          navClass: "header--menu",
-          openPos: "absolute",
-          closedPos: "static"
-        });
-        $('#js-menu-int-trigger').on('click', function(){
-            $('#js-menu-int').toggleClass('.closed');
-        });
 
         // Overlay Fixes
         var contentSearch = $('.content-search');
