@@ -14,7 +14,8 @@
     <script>
         my_requests.setup({
             my: "{% url 'my' %}",
-            src: "{% url 'my-requests-json' %}"
+            src: "{% url 'my-requests-json' %}",
+            request_filters: "{% url 'request-filters' %}",
         });
     </script>
 {% endblock bottom-scripts %}

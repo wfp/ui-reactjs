@@ -28,6 +28,13 @@ module.exports = {
           }
         }
       },
+       {
+        test: /\.scss$/,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
+      },
       {
         test: /\.css$/,
         use: extractCSS.extract({

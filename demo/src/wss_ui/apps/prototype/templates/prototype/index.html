@@ -11,6 +11,8 @@
 {% block bottom-scripts %}
     {{ block.super }}
     <script src="{% static '/dist/index_ep.bundle.js' %}"></script>
+
+
     <script>
         index.setup({
             awaiting_action_requests: "{% url 'awaiting-action-requests-json' %}",
