@@ -33,8 +33,10 @@
 		border: none;
 		box-shadow: none;
         margin: 0;
+        &.wfp-btn {
+            padding: .5rem;
+        }
         &.wfp-btn--primary {
-            padding: .5rem !important;
             background-color: $blue-darker;
             border-color: $blue-dark;
             &:hover {
