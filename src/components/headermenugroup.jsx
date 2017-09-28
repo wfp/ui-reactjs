@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 
 const HeaderMenuGroup = props => {
-    const menuClasses = `header--menu ${!!props.openTrigger ? 'opened':'closed'}`;
+  const menuClasses = `header--menu ${!!props.openTrigger ? 'opened':'closed'}`;
   return (
-    <nav className={menuClasses} id="js-menu-int">
+    <nav className={menuClasses}>
       <ul className="menu--group">
         {props.children}
       </ul>
@@ -14,7 +14,8 @@ const HeaderMenuGroup = props => {
 };
 
 HeaderMenuGroup.propTypes = {
-
+  children: PropTypes.node,
+  openTrigger: PropTypes.bool,
 };
 
 

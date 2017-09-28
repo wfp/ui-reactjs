@@ -7,7 +7,10 @@ const LinkMenuItem = props => {
   let style = props.isButton?basicStyle+" menu--link wfp-btn wfp-btn--primary":basicStyle;
   return (
     <li className="menu--item">
-      <a href={props.url} className={style}>
+      <a
+        className={style}
+        href={props.url}
+      >
         {props.text}
       </a>
     </li>
@@ -15,10 +18,10 @@ const LinkMenuItem = props => {
 };
 
 LinkMenuItem.propTypes = {
-  url: PropTypes.string,
-  text: PropTypes.string,
   isButton : PropTypes.bool,
-  linkStyle : PropTypes.bool
+  linkStyle : PropTypes.bool,
+  text: PropTypes.string,
+  url: PropTypes.string,
 };
 
 LinkMenuItem.defaultProps = {

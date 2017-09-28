@@ -1,10 +1,9 @@
+@import 'colors';
 /* BREAKPOINT VARIABLES */
 $sm-screen: 35.5em;
 $md-screen: 48em;
 $lg-screen: 64em;
 $xl-screen: 80em;
-
-
 @media screen and (max-width: $sm-screen) {
   .wfp-header-super {
     text-align: left;
@@ -19,47 +18,43 @@ $xl-screen: 80em;
   .wfp-header-super .wfp-grid.wfp-wrapper.wfp-overbar a.menu--link {
     color: inherit;
   }
+
+  .ReactTable {
+    .rt-tbody,
+    .rt-thead {
+      min-width: auto !important;
+    }
+
+    .rt-tr {
+      display: flex;
+      flex: 0 1 auto;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      align-content: flex-start;
+    }
+
+    .rt-td {
+      width: 100% !important;
+      flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+      flex-wrap: wrap;
+      white-space: normal;
+
+      > * {
+        text-align: left;
+      }
+    }
+
+    .rt-thead {
+      .rt-resizable-header {
+        flex: 1 0 auto !important;
+        width: 100% !important;
+      }
+    }
+  }
 }
-
 @media screen and (max-width: $md-screen) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-
-  thead {
-    tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-  }
-
-  tr {
-    border: 1px solid #ccc;
-  }
-
-  td {
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%;
-
-    &:before {
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
-    }
-  }
-
-
   h2 {
     font-size: 2em;
   }
@@ -77,6 +72,7 @@ $xl-screen: 80em;
     //display: none;
     background-color: inherit;
     box-shadow: none;
+
     .menu--group {
       text-align: right;
       background-color: inherit;
@@ -84,12 +80,12 @@ $xl-screen: 80em;
 
     .menu--item {
       display: inline-block;
+
       a {
         background-color: inherit;
         border-color: transparent;
       }
     }
-
     position: relative;
     top: 0;
   }
@@ -97,17 +93,13 @@ $xl-screen: 80em;
   .wfp-header-int .header--search {
     display: none;
   }
-  .wfp-header-int {
-    .header--menu {
-    }
-  }
+
   .header--menu {
     .wfp-btn {
-        padding: 1rem !important;
-        border-radius: 0px;
+      padding: 1rem !important;
+      border-radius: 0;
     }
   }
-
 
   table.wfp-table {
     font-size: 0.6em;
@@ -123,135 +115,116 @@ $xl-screen: 80em;
     border: none;
   }
 }
-
 @media screen and (max-width: $lg-screen) {}
-
 @media screen and (max-width: $xl-screen) {}
-
-
 /* em wfp-hidden values */
-
-
 /* wfp-hidden-xs */
-
 @media screen and (max-width: 35.438em) {
   .wfp-visible-sm {
-    display: none
+    display: none;
   }
 
   .wfp-visible-md {
-    display: none
+    display: none;
   }
 
   .wfp-visible-lg {
-    display: none
+    display: none;
   }
 
   .wfp-visible-xl {
-    display: none
+    display: none;
   }
 
   .wfp-hidden-xs {
-    display: none
+    display: none;
   }
 }
-
-
 /* wfp-hidden-sm */
-
 @media screen and (min-width: $sm-screen) and (max-width: 47.938em) {
   .wfp-visible-xs {
-    display: none
+    display: none;
   }
 
   .wfp-visible-md {
-    display: none
+    display: none;
   }
 
   .wfp-visible-lg {
-    display: none
+    display: none;
   }
 
   .wfp-visible-xl {
-    display: none
+    display: none;
   }
 
   .wfp-hidden-sm {
-    display: none
+    display: none;
   }
 }
-
-
 /* wfp-hidden-md */
-
 @media screen and (min-width: $md-screen) and (max-width: 63.938em) {
   .wfp-visible-xs {
-    display: none
+    display: none;
   }
 
   .wfp-visible-sm {
-    display: none
+    display: none;
   }
 
   .wfp-visible-lg {
-    display: none
+    display: none;
   }
 
   .wfp-visible-xl {
-    display: none
+    display: none;
   }
 
   .wfp-hidden-md {
-    display: none
+    display: none;
   }
 }
-
-
 /* wfp-hidden-lg */
-
 @media screen and (min-width: $lg-screen) and (max-width: 79.938em) {
   .wfp-visible-xs {
-    display: none
+    display: none;
   }
 
   .wfp-visible-sm {
-    display: none
+    display: none;
   }
 
   .wfp-visible-md {
-    display: none
+    display: none;
   }
 
   .wfp-visible-xl {
-    display: none
+    display: none;
   }
 
   .wfp-hidden-lg {
-    display: none
+    display: none;
   }
 }
-
-
 /* wfp-hidden-xl */
-
 @media screen and (min-width: $xl-screen) {
   .wfp-visible-xs {
-    display: none
+    display: none;
   }
 
   .wfp-visible-sm {
-    display: none
+    display: none;
   }
 
   .wfp-visible-md {
-    display: none
+    display: none;
   }
 
   .wfp-visible-lg {
-    display: none
+    display: none;
   }
 
   .wfp-hidden-xl {
-    display: none
+    display: none;
   }
 }
