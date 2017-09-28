@@ -1,9 +1,5 @@
 @import 'colors';
-/* BREAKPOINT VARIABLES */
-$sm-screen: 35.5em;
-$md-screen: 48em;
-$lg-screen: 64em;
-$xl-screen: 80em;
+@import 'responsivebreakpoints';
 @media screen and (max-width: $sm-screen) {
   .wfp-header-super {
     text-align: left;
@@ -17,41 +13,6 @@ $xl-screen: 80em;
 
   .wfp-header-super .wfp-grid.wfp-wrapper.wfp-overbar a.menu--link {
     color: inherit;
-  }
-
-  .ReactTable {
-    .rt-tbody,
-    .rt-thead {
-      min-width: auto !important;
-    }
-
-    .rt-tr {
-      display: flex;
-      flex: 0 1 auto;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      align-content: flex-start;
-    }
-
-    .rt-td {
-      width: 100% !important;
-      flex: 1 0 auto !important;
-      justify-content: flex-start !important;
-      flex-wrap: wrap;
-      white-space: normal;
-
-      > * {
-        text-align: left;
-      }
-    }
-
-    .rt-thead {
-      .rt-resizable-header {
-        flex: 1 0 auto !important;
-        width: 100% !important;
-      }
-    }
   }
 }
 @media screen and (max-width: $md-screen) {
