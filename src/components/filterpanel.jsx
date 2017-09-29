@@ -56,7 +56,7 @@ class FilterPanel extends React.Component {
       )
     }
 
-    filters += this.state.formSelections.reduce(joinFilters('form_model'), '')
+    filters += this.state.formSelections.reduce(joinFilters('module_class'), '')
     filters += this.state.statusSelections.reduce(joinFilters('status'), '')
     filters += this.state.officerSelections.reduce(joinFilters('officer'), '')
 
@@ -67,7 +67,7 @@ class FilterPanel extends React.Component {
   componentDidMount() {
     $.getJSON(this.props.src, data => {
       this.setState({
-        formModels: data['form_types'],
+        formModels: data['form_models'],
         statusOptions: data['status_options'],
         officers: data['officers'],
       });
@@ -84,7 +84,7 @@ class FilterPanel extends React.Component {
         <div className="wfp-filter--closed">
           <div className="accordion-head">
             <a>
-              <span className="title" data-content="Show Filters"></span>
+              <span className="title">Show Filters</span>
               <span className="pull-right">
               <i className="fa fa-fw fa-chevron-down"></i>
             </span>
@@ -94,7 +94,7 @@ class FilterPanel extends React.Component {
         <div className="wfp-filter--open">
           <div className="accordion-head">
             <a>
-              <span className="title" data-content="Hide Filters"></span>
+              <span className="title">Hide Filters</span>
               <span className="pull-right">
                 <i className="fa fa-fw fa-chevron-up"></i>
             </span>
@@ -105,7 +105,7 @@ class FilterPanel extends React.Component {
             <form className="font-medium" onSubmit={this.handleSubmit}>
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                    <label  htmlFor="form-name" data-content="Form"></label>
+                    <label  htmlFor="form-name">Form</label>
                     <Select
                       name="form-name"
                       multi
@@ -116,7 +116,7 @@ class FilterPanel extends React.Component {
 
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                    <label  htmlFor="form-name" data-content="Status"></label>
+                    <label  htmlFor="form-name">Status</label>
                    <Select
                       name="status"
                       multi
@@ -131,23 +131,23 @@ class FilterPanel extends React.Component {
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
                   <div className="wfp-grid">
                     <div className="wfp-u-1-3 wfp-box--flat">
-                      <label  data-content="Creation Date"></label>
+                      <label >Creation Date</label>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat pl0">
-                      <label><span htmlFor="from-date" data-content="From"></span><span
-                        className="required-symbol">*</span></label>
+                      <label><span htmlFor="from-date">From</span>
+                        <span className="required-symbol">*</span></label>
                       <input type="date" name="from-date"/>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat">
-                      <label><span htmlFor="to-date" data-content="To"></span><span
-                        className="required-symbol">*</span></label>
+                      <label><span htmlFor="to-date">To</span>
+                        <span className="required-symbol">*</span></label>
                       <input type="date" name="to-date"/>
                     </div>
                   </div>
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                     <label><span htmlFor="to-date" data-content="To"></span><span
-                      className="required-symbol">*</span></label>
+                     <label><span htmlFor="to-date">To</span>
+                       <span className="required-symbol">*</span></label>
                   <Select
                       name="officer"
                       multi

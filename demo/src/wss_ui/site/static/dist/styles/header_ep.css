@@ -1735,7 +1735,6 @@ table.wfp-table {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 0;
   flex: 1 0 0;
-  white-space: nowrap;
   text-overflow: ellipsis;
   display: flex;
   align-items: center;
