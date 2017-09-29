@@ -25,7 +25,7 @@ class WSSMyRequests extends React.Component {
   render() {
 
     return (
-      <div className="content">
+      <div className="content wfp-wrapper">
 
         <Breadcrumbs
           home={labels.home}

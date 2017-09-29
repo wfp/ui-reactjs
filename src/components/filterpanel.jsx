@@ -84,7 +84,7 @@ class FilterPanel extends React.Component {
         <div className="wfp-filter--closed">
           <div className="accordion-head">
             <a>
-              <span className="title fill-data" data-content="labels.show_filters"></span>
+              <span className="title" data-content="Show Filters"></span>
               <span className="pull-right">
               <i className="fa fa-fw fa-chevron-down"></i>
             </span>
@@ -94,7 +94,7 @@ class FilterPanel extends React.Component {
         <div className="wfp-filter--open">
           <div className="accordion-head">
             <a>
-              <span className="title fill-data" data-content="labels.hide_filters"></span>
+              <span className="title" data-content="Hide Filters"></span>
               <span className="pull-right">
                 <i className="fa fa-fw fa-chevron-up"></i>
             </span>
@@ -105,7 +105,7 @@ class FilterPanel extends React.Component {
             <form className="font-medium" onSubmit={this.handleSubmit}>
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                    <label className="fill-data" htmlFor="form-name" data-content="labels.form"></label>
+                    <label  htmlFor="form-name" data-content="Form"></label>
                     <Select
                       name="form-name"
                       multi
@@ -116,7 +116,7 @@ class FilterPanel extends React.Component {
 
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                    <label className="fill-data" htmlFor="form-name" data-content="labels.status"></label>
+                    <label  htmlFor="form-name" data-content="Status"></label>
                    <Select
                       name="status"
                       multi
@@ -131,22 +131,22 @@ class FilterPanel extends React.Component {
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
                   <div className="wfp-grid">
                     <div className="wfp-u-1-3 wfp-box--flat">
-                      <label className="fill-data" data-content="labels.creation_date"></label>
+                      <label  data-content="Creation Date"></label>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat pl0">
-                      <label><span htmlFor="from-date" data-content="labels.from"></span><span
+                      <label><span htmlFor="from-date" data-content="From"></span><span
                         className="required-symbol">*</span></label>
                       <input type="date" name="from-date"/>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat">
-                      <label><span className="fill-data" htmlFor="to-date" data-content="labels.to"></span><span
+                      <label><span htmlFor="to-date" data-content="To"></span><span
                         className="required-symbol">*</span></label>
                       <input type="date" name="to-date"/>
                     </div>
                   </div>
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                     <label><span className="fill-data"  htmlFor="to-date" data-content="labels.to"></span><span
+                     <label><span htmlFor="to-date" data-content="To"></span><span
                       className="required-symbol">*</span></label>
                   <Select
                       name="officer"
@@ -161,7 +161,7 @@ class FilterPanel extends React.Component {
               <div className="wfp-form--actions">
                 <button type='button' onClick={this.handleClear} className="wfp-btn wfp-btn--ghost btn-small">Clear</button>
                 <input type='submit' className="wfp-btn wfp-btn--primary btn-medium" value="Filter"/>
-              </div>
+              </div>`
             </form>
           </div>
         </div>
