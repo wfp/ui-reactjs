@@ -76,7 +76,7 @@ class FilterPanel extends React.Component {
     $.getJSON(this.props.src, data => {
 
       this.setState({
-        formModels: data['form_models'],
+        formModels: data['form_types'],
         statusOptions: data['status_options'],
         officers: data['officers'],
       });
@@ -168,7 +168,7 @@ class FilterPanel extends React.Component {
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
 
-                     <label><span htmlFor="to-date">To</span>
+                    <label><span htmlFor="officer">Officer</span>
                        <span className="required-symbol">*</span></label>
                   <Select
                       name="officer"
@@ -178,15 +178,6 @@ class FilterPanel extends React.Component {
                       onChange={this.onOfficerChange}
 
                     />
-                    <span className="required-symbol">*</span>
-                  </label>
-                  <Select
-                    multi
-                    name="officer"
-                    onChange={this.onOfficerChange}
-                    options={this.state.officers}
-                    value={this.state.officerSelections}
-                  />
 
                 </div>
               </div>
