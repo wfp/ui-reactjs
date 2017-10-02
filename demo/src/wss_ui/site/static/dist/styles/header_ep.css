@@ -646,8 +646,7 @@ a.header--logo {
 .wfp-form--input-group-currency .wfp-form--input-currency-label {
   display: inline-block;
   border: 1px solid #8C8C8C;
-  padding: 6px;
-  padding-bottom: 7px;
+  padding: 6px 6px 7px;
   margin: 0;
   background-color: #E8E8E8; }
 
@@ -700,6 +699,37 @@ form .single-label {
 
 select:invalid {
   color: #8C8C8C; }
+
+/* FILTER PANEL */
+.wfp-form--stacked input:not([type]) {
+  border: none !important;
+  box-shadow: none !important; }
+
+.wfp-form--stacked .Select-control,
+.wfp-form--stacked input:not([type="submit"]) {
+  background-color: #E8E8E8; }
+
+.wfp-form--stacked label {
+  text-transform: capitalize; }
+
+.wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper {
+  line-height: 1;
+  position: relative;
+  top: 4px; }
+  .wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper .Select-input {
+    width: 5px; }
+    .wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper .Select-input input:not([type]) {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
+
+.wfp-form--stacked .Select--multi.has-value .Select-arrow-zone,
+.wfp-form--stacked .Select--multi.has-value .Select-clear-zone {
+  position: relative;
+  line-height: 1;
+  top: 4px; }
 
 #overlay {
   position: absolute;

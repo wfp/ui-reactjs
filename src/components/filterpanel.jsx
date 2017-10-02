@@ -1,7 +1,7 @@
- import React from 'react';
-import Select from 'react-select';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
-
+import React from 'react';
+import Select from 'react-select';
 
 class FilterPanel extends React.Component {
 
@@ -12,82 +12,95 @@ class FilterPanel extends React.Component {
       statusOptions: [],
       officers: [],
       formSelections: [],
-      statusSelections:[],
-      officerSelections:[]
+      statusSelections: [],
+      officerSelections: [],
+      openClass: false
     };
     this.onFormModelChange = this.onFormModelChange.bind(this);
     this.onStatusChange = this.onStatusChange.bind(this);
     this.onOfficerChange = this.onOfficerChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClear= this.handleClear.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+    this.handleFilterPanelToggle = this.handleFilterPanelToggle.bind(this);
 
   };
 
   onFormModelChange(formModels) {
-    this.setState({formSelections:formModels});
+    this.setState({ formSelections: formModels });
   };
 
   onStatusChange(statuses) {
-    this.setState({statusSelections:statuses});
+    this.setState({ statusSelections: statuses });
 
   };
 
   onOfficerChange(officers) {
-    this.setState({officerSelections:officers});
-
+    this.setState({ officerSelections: officers });
   };
-  handleClear(event){
+  handleClear(event) {
     event.preventDefault();
-    this.setState({formSelections:[]});
-    this.setState({statusSelections:[]});
-    this.setState({officerSelections:[]});
+    this.setState({ formSelections: [] });
+    this.setState({ statusSelections: [] });
+    this.setState({ officerSelections: [] });
 
-    this.props.handleFilterSubmit('')
+    this.props.handleFilterSubmit('');
 
   };
+  handleFilterPanelToggle(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({
+      openPanel: !this.state.openPanel
+    });
+  }
 
   handleSubmit(event) {
     event.preventDefault();
-    let filters = ''
+    let filters = '';
     const joinFilters = (key) => {
-      return ( (str, obj) => {
-          return str + '&' + key + '=' + obj['value']
-        }
-      )
-    }
+      return ((str, obj) => {
+        return str + '&' + key + '=' + obj['value'];
+      });
+    };
+
 
     filters += this.state.formSelections.reduce(joinFilters('module_class'), '')
     filters += this.state.statusSelections.reduce(joinFilters('status'), '')
     filters += this.state.officerSelections.reduce(joinFilters('officer'), '')
 
-    this.props.handleFilterSubmit(filters.replace('&','?'))
+    this.props.handleFilterSubmit(filters.replace('&', '?'));
 
   };
 
   componentDidMount() {
     $.getJSON(this.props.src, data => {
+
       this.setState({
-        formModels: data['form_models'],
+        formModels: data['form_types'],
         statusOptions: data['status_options'],
         officers: data['officers'],
       });
     })
   };
 
-  componentWillReceiveProps(nextProps){
-
-  }
+  componentWillReceiveProps(nextProps) {}
 
   render() {
+    let openClass = classnames('wfp-filter', {
+      'closed': !this.state.openClass,
+      'open': !!this.state.openClass
+    });
     return (
-      <div className="wfp-filter closed">
+      <div className={openClass}>
         <div className="wfp-filter--closed">
           <div className="accordion-head">
+
             <a>
               <span className="title">Show Filters</span>
+
               <span className="pull-right">
-              <i className="fa fa-fw fa-chevron-down"></i>
-            </span>
+                <i className="fa fa-fw fa-chevron-down" />
+              </span>
             </a>
           </div>
         </div>
@@ -95,16 +108,21 @@ class FilterPanel extends React.Component {
           <div className="accordion-head">
             <a>
               <span className="title">Hide Filters</span>
+
               <span className="pull-right">
-                <i className="fa fa-fw fa-chevron-up"></i>
-            </span>
+                <i className="fa fa-fw fa-chevron-up" />
+              </span>
             </a>
           </div>
 
           <div className="wfp-form--stacked filter_container">
-            <form className="font-medium" onSubmit={this.handleSubmit}>
+            <form
+              className="font-medium"
+              onSubmit={this.handleSubmit}
+            >
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
+
                     <label  htmlFor="form-name">Form</label>
                     <Select
                       name="form-name"
@@ -125,12 +143,14 @@ class FilterPanel extends React.Component {
                       onChange={this.onStatusChange}
                     />
 
+
                 </div>
               </div>
               <div className="wfp-grid">
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
                   <div className="wfp-grid">
                     <div className="wfp-u-1-3 wfp-box--flat">
+
                       <label >Creation Date</label>
                     </div>
                     <div className="wfp-u-1-3 wfp-box--flat pl0">
@@ -142,11 +162,13 @@ class FilterPanel extends React.Component {
                       <label><span htmlFor="to-date">To</span>
                         <span className="required-symbol">*</span></label>
                       <input type="date" name="to-date"/>
+
                     </div>
                   </div>
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
-                     <label><span htmlFor="to-date">To</span>
+
+                    <label><span htmlFor="officer">Officer</span>
                        <span className="required-symbol">*</span></label>
                   <Select
                       name="officer"
@@ -154,6 +176,7 @@ class FilterPanel extends React.Component {
                       value={this.state.officerSelections}
                       options={this.state.officers}
                       onChange={this.onOfficerChange}
+
                     />
 
                 </div>
@@ -166,7 +189,7 @@ class FilterPanel extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   };
 };
 
