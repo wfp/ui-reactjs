@@ -1,4 +1,5 @@
 import LinkTo from './components/linkto';
+import Banner from './components/betabanner';
 import Header from './components/header';
 import CommonLinksHeader from './components/commonlinksheader';
 import LinkMenuItem from './components/linkmenuitem';
@@ -19,6 +20,7 @@ import WssStyle from './styles/main.scss';
 
 module.exports = {
   LinkTo,
+  Banner,
   Header,
   CommonLinksHeader,
   LinkMenuItem,
