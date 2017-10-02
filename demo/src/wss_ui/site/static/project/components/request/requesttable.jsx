@@ -41,44 +41,54 @@ export default class RequestTable extends React.Component {
 
   render() {
 
+
     var columns = [{
       Header: <span>REQUESTOR<i className="fa fa-fw fa-sort"></i></span>,
-      //width: 300,
-      accessor: 'request',
+      id:1,
+      accessor: 'user',
       Cell: (row) => (
 
-        (<div>{row.value.type}</div>))
+        (<div> {row.value.first_name} {row.value.last_name}</div>))
 
     },
       {
         Header: <span>REQUEST<i className="fa fa-fw fa-sort"></i></span>,
-        accessor: 'request',
-        Cell: (row) => (<div>{row.value.id}</div>)
+          id:2,
+        accessor: 'info',
+        Cell: (row) => (<a href={row.value.url}>
+              <div>{row.value.type}</div>
+              <div>{row.value.id}</div>
+            </a>)
 
       },
       {
         Header: <span>HISTORY<i className="fa fa-fw fa-sort"></i></span>,
+          id:3,
         accessor: 'history',
         Cell: (row) => (<RequestHistory history={row.value}/>)
 
       },
       {
         Header: <span>STATUS<i className="fa fa-fw fa-sort"></i></span>,
-        accessor: 'status',
+          id:4,
+        accessor: d=>d.info.status,
         Cell: (row) => (<RequestStatus status={row.value}/>)
 
       },
       {
         Header: <span>DETAILS<i className="fa fa-fw fa-sort"></i></span>,
-        accessor: 'details',
+        id:5,
+          accessor: d=>d.info.details,
         Cell: (row) => (<RequestDetails details={row.value}/>)
 
       },
-      {
-        Header: <span>ACTIONS<i className="fa fa-fw fa-sort"></i></span>,
-        accessor: 'actions',
-        Cell: (row) => (<RequestAvailableActions actions={row.value}/>)
-      }
+        {
+            Header: <span>ACTIONS<i className="fa fa-fw fa-sort"></i></span>,
+
+            id: 6,
+            accessor: d => d.info.actions,
+            Cell: (row) => (<RequestAvailableActions actions={row.value.others} defaultAction={row.value.default}/>)
+        }
     ]
 
     return (
@@ -86,7 +96,8 @@ export default class RequestTable extends React.Component {
         data={this.state.requestData}
         columns={columns}
         showPagination={false}
-        minRows={0}
+        minRows={1}
+        noDataText=''
       />)
   };
 };

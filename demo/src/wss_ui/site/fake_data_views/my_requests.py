@@ -1,142 +1,151 @@
 from django.http import JsonResponse
 from django.views import View
 
-my_requests = {
-  "my_requests": [
-    {
-      "requestor": "Raffaele FABOZZI",
-      "request": {
-        "type": "HR044 - Leave Application",
-        "id": "HR-015715"
-      },
-      "history": [
-        {
-          "date": "Monday 26 June 2017",
-          "author": "Submit by Raffaele FABOZZI",
-          "message": 124
-        }
-      ],
-      "status": {
-        "steps": 4,
-        "current": 1,
-        "state": "working"
-      },
-      "details": [
-        {
-          "name": "Leave date",
-          "value": "Friday 30 June 2017"
-        }
-      ],
-      "actions": [
-        "Approve",
-        "Send Back"
-      ],
-      "defaultAction": "Approve"
-    },
-    {
-      "requestor": "Michele MERCALDO",
-      "request": {
-        "type": "HR044 - Leave Application",
-        "id": "HR-015710"
-      },
-      "history": [
-        {
-          "date": "Monday 26 June 2017",
-          "author": "Submit by Michele MERCALDO"
-        }
-      ],
-      "status": {
-        "steps": 4,
-        "current": 1,
-        "state": "working"
-      },
-      "details": [
-        {
-          "name": "Leave date",
-          "value": "Friday 30 June 2017"
-        }
-      ],
-      "actions": [
-        "Approve",
-        "Send Back"
-      ],
-      "defaultAction": "Approve"
-    },
-    {
-      "requestor": "Enrico GARAVINI",
-      "request": {
-        "type": "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)",
-        "id": "HR-015703"
-      },
-      "history": [
-        {
-          "date": "Monday 26 June 2017",
-          "author": "Submit by Enrico GARAVINI",
-          "message": 124
-        }
-      ],
-      "status": {
-        "steps": 4,
-        "current": 1,
-        "state": "working"
-      },
-      "details": [
-        {
-          "name": "Leave date",
-          "value": "Friday 30 June 2017"
-        }
-      ],
-      "actions": [
-        "Approve",
-        "Send Back"
-      ],
-      "defaultAction": "Approve"
-    },
-    {
-      "requestor": "Enrico GARAVINI",
-      "request": {
-        "type": "HR045b - Attendance sheet for Consultants and HQ SSAs (WINGS integrated)",
-        "id": "HR-015703"
-      },
-      "history": [
-        {
-          "date": "Sunday 25 June 2017",
-          "author": "Submit by Michele MERCALDO"
-        },
-        {
-          "date": "Sunday 25 June 2017",
-          "author": "Approve by Maurizio BLASILLI"
-        },
-        {
-          "date": "Monday 26 June 2017",
-          "author": "Approve by WINGS"
-        }
-      ],
-      "status": {
-        "steps": 4,
-        "current": 4,
-        "state": "success"
-      },
-      "details": [
-        {
-          "name": "Leave date",
-          "value": "Friday 16 June 2017"
-        }
-      ],
-      "actions": [
-        "Delete",
-      ],
-      "defaultAction": "Delete"
-    }
-  ]
-}
+my_requests = {"count": 5, "next": None, "previous": None,
+               "results": [
+                 {"id": 18,
+                  "user": {"id": 2, "indexno": "08838291",
+                           "username": "princy.lunawat",
+                           "first_name": "Princy",
+                           "last_name": "LUNAWAT",
+                           "email": "princy.lunawat@wfp.org"},
+                  "date_of_submit": "2017-09-26",
+                  "current_status": "supervisor_acknowledge",
+                  "module_class": "HR044", "info": {
+                   "status": [{"current": 0, "state": "", "steps": 0}], "url": "/HR044/hr044/18/detail/",
+                   "actions": {"default": "", "others": []}, "details": [], "type": "Leave Application",
+                   "id": "HR-000018"},
+                  "history": [{"user": {"id": 2,
+                                        "indexno": "08838291",
+                                        "username": "princy.lunawat",
+                                        "first_name": "Princy",
+                                        "last_name": "LUNAWAT",
+                                        "email": "princy.lunawat@wfp.org"},
+                               "transition": "submit",
+                               "timestamp": "2017-09-26T10:05:07.173450Z"}]},
+                 {"id": 13,
+                  "user": {"id": 2, "indexno": "08838291",
+                           "username": "princy.lunawat",
+                           "first_name": "Princy",
+                           "last_name": "LUNAWAT",
+                           "email": "princy.lunawat@wfp.org"},
+                  "date_of_submit": "2017-09-19",
+                  "current_status": "closed",
+                  "module_class": "HR044", "info": {"status": [
+                   {"current": 0, "state": "", "steps": 0}],
+                   "url": "/HR044/hr044/13/detail/",
+                   "actions": {
+                     "default": "",
+                     "others": []},
+                   "details": [],
+                   "type": "Leave Application",
+                   "id": "HR-000013"},
+                  "history": [{"user": {"id": 2,
+                                        "indexno": "08838291",
+                                        "username": "princy.lunawat",
+                                        "first_name": "Princy",
+                                        "last_name": "LUNAWAT",
+                                        "email": "princy.lunawat@wfp.org"},
+                               "transition": "submit",
+                               "timestamp": "2017-09-19T07:20:28.817975Z"},
+                              {"user": {"id": 8,
+                                        "indexno": "08800504",
+                                        "username": "maurizio.blasilli",
+                                        "first_name": "Maurizio",
+                                        "last_name": "BLASILLI",
+                                        "email": "maurizio.blasilli@wfp.org"},
+                               "transition": "supervisor_approve",
+                               "timestamp": "2017-09-19T07:23:45.867329Z"}]},
+                 {"id": 21,
+                  "user": {"id": 2, "indexno": "08838291",
+                           "username": "princy.lunawat",
+                           "first_name": "Princy",
+                           "last_name": "LUNAWAT",
+                           "email": "princy.lunawat@wfp.org"},
+                  "date_of_submit": "2017-09-26",
+                  "current_status": "supervisor_acknowledge",
+                  "module_class": "HR044", "info": {"status": [
+                   {"current": 0, "state": "", "steps": 0}],
+                   "url": "/HR044/hr044/21/detail/",
+                   "actions": {
+                     "default": "",
+                     "others": []},
+                   "details": [],
+                   "type": "Leave Application",
+                   "id": "HR-000021"},
+                  "history": [{"user": {"id": 2,
+                                        "indexno": "08838291",
+                                        "username": "princy.lunawat",
+                                        "first_name": "Princy",
+                                        "last_name": "LUNAWAT",
+                                        "email": "princy.lunawat@wfp.org"},
+                               "transition": "submit",
+                               "timestamp": "2017-09-26T12:33:06.167450Z"},
+                              {"user": {"id": 2,
+                                        "indexno": "08838291",
+                                        "username": "princy.lunawat",
+                                        "first_name": "Princy",
+                                        "last_name": "LUNAWAT",
+                                        "email": "princy.lunawat@wfp.org"},
+                               "transition": "recall",
+                               "timestamp": "2017-09-26T12:33:17.128281Z"},
+                              {"user": {"id": 2,
+                                        "indexno": "08838291",
+                                        "username": "princy.lunawat",
+                                        "first_name": "Princy",
+                                        "last_name": "LUNAWAT",
+                                        "email": "princy.lunawat@wfp.org"},
+                               "transition": "submit",
+                               "timestamp": "2017-09-26T12:33:35.860202Z"}]},
+                 {"id": 23,
+                  "user": {"id": 2, "indexno": "08838291",
+                           "username": "princy.lunawat",
+                           "first_name": "Princy",
+                           "last_name": "LUNAWAT",
+                           "email": "princy.lunawat@wfp.org"},
+                  "date_of_submit": "2017-09-27",
+                  "current_status": "completed",
+                  "module_class": "GiftDeclaration", "info": {
+                   "status": [
+                     {"current": 0, "state": "", "steps": 0}],
+                   "url": "/Gift%20Declaration/giftdeclaration/23/detail/",
+                   "actions": {"default": "", "others": []},
+                   "details": [], "type": "Gift Declaration",
+                   "id": "ETH-000023"}, "history": [{"user": {
+                   "id": 2, "indexno": "08838291",
+                   "username": "princy.lunawat",
+                   "first_name": "Princy", "last_name": "LUNAWAT",
+                   "email": "princy.lunawat@wfp.org"},
+                   "transition": "complete",
+                   "timestamp": "2017-09-27T08:13:58.696244Z"}]},
+                 {"id": 24,
+                  "user": {"id": 2, "indexno": "08838291",
+                           "username": "princy.lunawat",
+                           "first_name": "Princy",
+                           "last_name": "LUNAWAT",
+                           "email": "princy.lunawat@wfp.org"},
+                  "date_of_submit": "2017-09-27",
+                  "current_status": "completed",
+                  "module_class": "GiftDeclaration", "info": {
+                   "status": [
+                     {"current": 0, "state": "", "steps": 0}],
+                   "url": "/Gift%20Declaration/giftdeclaration/24/detail/",
+                   "actions": {"default": "", "others": []},
+                   "details": [], "type": "Gift Declaration",
+                   "id": "ETH-000024"}, "history": [{"user": {
+                   "id": 2, "indexno": "08838291",
+                   "username": "princy.lunawat",
+                   "first_name": "Princy", "last_name": "LUNAWAT",
+                   "email": "princy.lunawat@wfp.org"},
+                   "transition": "complete",
+                   "timestamp": "2017-09-27T08:27:33.439679Z"}]}]}
 
 
 class MyRequestsJSON(View):
   def get(self, request, *args, **kwargs):
     if request.GET:
       filtered = {}
-      filtered['my_requests'] = my_requests['my_requests'][2:]
+      filtered['results'] = my_requests['results'][2:]
 
       return JsonResponse(filtered)
     return JsonResponse(my_requests)

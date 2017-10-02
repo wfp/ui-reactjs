@@ -16,7 +16,7 @@ const WSSAwaitingActionRequests =(props) => {
     <div className="content">
       <section>
         <h2><span>{labels.awaiting_your_action}</span></h2>
-        <RequestTable src={props.src} data_key="awaiting_action_requests"/>
+        <RequestTable src={props.src} data_key="results"/>
       <button className="wfp-btn btn-small xsmall"><span>{labels.view_all}</span></button>
       </section>
     </div>
@@ -30,7 +30,7 @@ const WSSMyLatestRequests= (props) => {
     <div className="content">
       <section>
         <h2><span>{labels.your_latest_requests}</span></h2>
-        <RequestTable src={props.src} data_key="my_latest_requests"/>
+        <RequestTable src={props.src} data_key="results"/>
         <button className="wfp-btn btn-small xsmall"><span>{labels.view_all}</span></button>
       </section>
     </div>

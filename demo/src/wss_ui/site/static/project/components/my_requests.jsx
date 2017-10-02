@@ -36,7 +36,7 @@ class WSSMyRequests extends React.Component {
           <h2><span>{labels.my_requests}</span></h2>
 
           <FilterPanel src={this.props.urls.request_filters} handleFilterSubmit={this.handleFilterSubmit}/>
-          <RequestTable src={this.props.src} filterString={this.state.filterString} data_key="my_requests"/>
+          <RequestTable src={this.props.src} filterString={this.state.filterString} data_key="results"/>
           <Pages/>
         </section>
 

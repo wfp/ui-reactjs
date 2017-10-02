@@ -7,8 +7,8 @@ const RequestHistory = props => {
     return (
       <li key={index} className="wfp-grid">
         <div className="wfp-u-5-6">
-          <span className="hist_date" >{el.date}</span>
-          <span>{el.author}</span>
+          <span className="hist_date" >{el.timestamp}</span>
+          <span>{el.user.first_name} {el.user.last_name}</span>
         </div>
         <div className="wfp-u-1-6 message-box">
           <a href="#"><i className="fa fa-fw fa-envelope"></i></a>
