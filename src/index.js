@@ -6,7 +6,7 @@ import LogoItem from './components/logoitem';
 import SearchWidget from './components/searchwidget';
 import UserMenuWidget from './components/usermenuwidget';
 import Breadcrumbs from './components/breadcrumbs';
-import Pages from './components/pages';
+import Paginator from './components/paginator';
 import FilterPanel from './components/filterpanel';
 import {Tab, Tabs} from './components/tabs';
 import {
@@ -26,7 +26,7 @@ module.exports = {
   SearchWidget,
   UserMenuWidget,
   Breadcrumbs,
-  Pages,
+  Paginator,
   FilterPanel,
   Tab,
   Tabs,

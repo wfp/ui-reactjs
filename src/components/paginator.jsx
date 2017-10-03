@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ReactPaginate from 'react-paginate';
 
-const Pages = props => {
+
+const Paginator = props => {
   return (
     <div className="wfp-pagination">
       <ol className="pagination--wrapper">
@@ -29,9 +31,9 @@ const Pages = props => {
   );
 };
 
-Pages.propTypes = {
+Paginator.propTypes = {
 
 };
 
 
-export default Pages;
+export default Paginator;
