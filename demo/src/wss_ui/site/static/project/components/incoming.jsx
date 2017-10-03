@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   Breadcrumbs,
-  Pages,
+  Paginator,
   FilterPanel
 } from "wfp-ui-reactjs";
 
@@ -37,7 +37,7 @@ class WSSIncomingRequests extends React.Component {
 
           <FilterPanel src={this.props.urls.request_filters} handleFilterSubmit={this.handleFilterSubmit}/>
           <RequestTable src={this.props.src} filterString={this.state.filterString} data_key="results"/>
-          <Pages/>
+          <Paginator/>
         </section>
 
       </div>

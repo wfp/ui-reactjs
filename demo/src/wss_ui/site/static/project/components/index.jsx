@@ -4,7 +4,6 @@ import RequestTable from './request/requesttable';
 
 import {
   Breadcrumbs,
-  Pages,
   FilterPanel,
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem

@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.views import View
 
+from .data.fake_data_loader import get_fake_date
+
 my_requests = {"count": 5, "next": None, "previous": None,
                "results": [
                  {"id": 18,
@@ -143,9 +145,6 @@ my_requests = {"count": 5, "next": None, "previous": None,
 
 class MyRequestsJSON(View):
   def get(self, request, *args, **kwargs):
-    if request.GET:
-      filtered = {}
-      filtered['results'] = my_requests['results'][2:]
+    page_number = request.GET.get('page', '1')
+    return JsonResponse(get_fake_date("my_requests_{}".format(page_number)))
 
-      return JsonResponse(filtered)
-    return JsonResponse(my_requests)
