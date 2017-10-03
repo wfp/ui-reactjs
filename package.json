@@ -51,7 +51,8 @@
     "style-loader": "^0.18.2",
     "styled-components": "^2.1.2",
     "webpack": "^3.6.0",
-    "wiredep": "^4.0.0"
+    "wiredep": "^4.0.0",
+    "react-paginate": "^4.4.4"
   },
   "peerDependencies": {
     "react": "^15.6.1",

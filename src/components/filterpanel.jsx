@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Select from 'react-select';
-
+import DateWidget from './datewidget'
 class FilterPanel extends React.Component {
 
   constructor(props, context) {
@@ -14,11 +14,15 @@ class FilterPanel extends React.Component {
       formSelections: [],
       statusSelections: [],
       officerSelections: [],
+      fromDate: '',
+      toDate: '',
       openClass: false
     };
     this.onFormModelChange = this.onFormModelChange.bind(this);
     this.onStatusChange = this.onStatusChange.bind(this);
     this.onOfficerChange = this.onOfficerChange.bind(this);
+    this.onToDateChange= this.onToDateChange.bind(this);
+    this.onFromDateChange= this.onFromDateChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleFilterPanelToggle = this.handleFilterPanelToggle.bind(this);
@@ -37,11 +41,22 @@ class FilterPanel extends React.Component {
   onOfficerChange(officers) {
     this.setState({ officerSelections: officers });
   };
-  handleClear(event) {
+
+  onFromDateChange(date){
+    this.setState({fromDate: date})
+  };
+
+  onToDateChange(date){
+    this.setState({toDate:date})
+  };
+
+  handleClear(event){
     event.preventDefault();
     this.setState({ formSelections: [] });
     this.setState({ statusSelections: [] });
     this.setState({ officerSelections: [] });
+    this.setState({fromDate:''});
+    this.setState({toDate:''});
 
     this.props.handleFilterSubmit('');
 
@@ -65,9 +80,14 @@ class FilterPanel extends React.Component {
 
 
     filters += this.state.formSelections.reduce(joinFilters('module_class'), '')
-    filters += this.state.statusSelections.reduce(joinFilters('status'), '')
+    filters += this.state.statusSelections.reduce(joinFilters('current_status'), '')
     filters += this.state.officerSelections.reduce(joinFilters('officer'), '')
-
+    if (this.state.fromDate){
+      filters+='&submitted_date_from='+this.state.fromDate;
+    };
+    if (this.state.toDate) {
+      filters += '&submitted_date_to=' + this.state.toDate;
+    };
     this.props.handleFilterSubmit(filters.replace('&', '?'));
 
   };
@@ -76,9 +96,9 @@ class FilterPanel extends React.Component {
     $.getJSON(this.props.src, data => {
 
       this.setState({
-        formModels: data['form_types'],
-        statusOptions: data['status_options'],
-        officers: data['officers'],
+        formModels: data['module_class'],
+        statusOptions: data['current_status'],
+        officers: data['officer'],
       });
     })
   };
@@ -153,17 +173,8 @@ class FilterPanel extends React.Component {
 
                       <label >Creation Date</label>
                     </div>
-                    <div className="wfp-u-1-3 wfp-box--flat pl0">
-                      <label><span htmlFor="from-date">From</span>
-                        <span className="required-symbol">*</span></label>
-                      <input type="date" name="from-date"/>
-                    </div>
-                    <div className="wfp-u-1-3 wfp-box--flat">
-                      <label><span htmlFor="to-date">To</span>
-                        <span className="required-symbol">*</span></label>
-                      <input type="date" name="to-date"/>
-
-                    </div>
+                    <DateWidget label="From" value={this.state.fromDate} handleChange={this.onFromDateChange}/>
+                    <DateWidget label="To" value={this.state.toDate} handleChange={this.onToDateChange}/>
                   </div>
                 </div>
                 <div className="wfp-u-1 wfp-u-md-1-2 wfp-box--flat">
@@ -184,7 +195,7 @@ class FilterPanel extends React.Component {
               <div className="wfp-form--actions">
                 <button type='button' onClick={this.handleClear} className="wfp-btn wfp-btn--ghost btn-small">Clear</button>
                 <input type='submit' className="wfp-btn wfp-btn--primary btn-medium" value="Filter"/>
-              </div>`
+              </div>
             </form>
           </div>
         </div>

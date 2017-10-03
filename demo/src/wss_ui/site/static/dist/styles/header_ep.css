@@ -383,6 +383,44 @@
 }
 /* COLOR VARIABLES */
 /* COLOR VARIABLES */
+/* BREAKPOINT VARIABLES */
+/* Color variable */
+#beta-banner {
+  background-color: #FFC107;
+  color: #6d5200;
+  font-size: 0.75em;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-between;
+  align-items: center; }
+  @media screen and (max-width: 35.5em) {
+    #beta-banner {
+      display: block; } }
+  #beta-banner .wfp-wrapper {
+    padding: 0.2rem 0; }
+  #beta-banner .buttons {
+    display: inline-block;
+    margin-top: 0.55em;
+    margin-bottom: 0;
+    margin-right: 0.5rem; }
+    @media screen and (max-width: 35.5em) {
+      #beta-banner .buttons {
+        margin-top: 0;
+        margin-bottom: 0.55em;
+        float: right; } }
+  #beta-banner .wfp-btn {
+    color: #6d5200;
+    margin-right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: none; }
+  #beta-banner p {
+    margin: 0; }
+  #beta-banner a[href] {
+    margin: 0 .2rem; }
+
+/* COLOR VARIABLES */
 nav .img {
   display: inline;
   height: 32px;
