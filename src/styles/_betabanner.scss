@@ -1,0 +1,49 @@
+@import "colors";
+@import "responsivebreakpoints";
+/* Color variable */
+$beta-banner-background: #FFC107;
+
+#beta-banner {
+  @media screen and (max-width: $sm-screen) {
+    display: block;
+  }
+  background-color: $beta-banner-background;
+  color: darken($beta-banner-background, 30%);
+  font-size: 0.75em;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-between;
+  align-items: center;
+
+  .wfp-wrapper {
+    padding: 0.2rem 0;
+  }
+
+  .buttons {
+    display: inline-block;
+    margin-top: 0.55em;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+    @media screen and (max-width: $sm-screen) {
+      margin-top: 0;
+      margin-bottom: 0.55em;
+      float: right;
+    }
+  }
+
+  .wfp-btn {
+    color: darken($beta-banner-background, 30%);
+    margin-right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: none;
+  }
+
+  p {
+    margin: 0;
+  }
+  a[href] {
+    margin: 0 .2rem;
+  }
+}
