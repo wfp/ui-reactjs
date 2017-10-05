@@ -22,7 +22,7 @@
 
 #    - name: clone repo
 #      git: repo={{app_project_repo}}
-#          dest=~/checkout
+#          dest=~/checkout/wfp-ui/
 #          key_file="{{ ansible_env.HOME }}/.ssh/id_rsa"
 #          accept_hostkey=yes
 #          update=yes
@@ -34,11 +34,11 @@
 
     - name: install application from git
       shell:
-        chdir=~/checkout/demo/demo
+        chdir=~/checkout/wss-ui/demo
         pip install -e .
 
     - name: install Django
-      shell: pip install -qr ~/checkout/demo/demo/src/requirements/django.pip
+      shell: pip install -qr ~/checkout/wss-ui/demo/src/requirements/django.pip
 
 
     - name: copy django settings

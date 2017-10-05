@@ -9,6 +9,7 @@ import UserMenuWidget from './components/usermenuwidget';
 import Breadcrumbs from './components/breadcrumbs';
 import Paginator from './components/paginator';
 import FilterPanel from './components/filterpanel';
+import DateWidget from './components/datewidget';
 import {Tab, Tabs} from './components/tabs';
 import {
   Table, TableHeader,
@@ -30,6 +31,7 @@ module.exports = {
   Breadcrumbs,
   Paginator,
   FilterPanel,
+  DateWidget,
   Tab,
   Tabs,
   Table, TableHeader,
