@@ -5,7 +5,7 @@ import datetime
 import os
 
 NAME = 'wss_ui'.replace('_', '-')
-VERSION = __version__ = (0, 0, 1, 'alpha', 2)
+VERSION = __version__ = (0, 0, 1, 'alpha', 3)
 __author__ = 'WFP development team'
 
 
