@@ -37,7 +37,7 @@ class WSSMyRequests extends React.Component {
 
           <FilterPanel src={this.props.urls.request_filters} handleFilterSubmit={this.handleFilterSubmit}/>
           <RequestTable src={this.props.src} filterString={this.state.filterString} data_key="results"/>
-          <Paginator/>
+          <Paginator src="/my_requests/"/>
         </section>
 
       </div>
