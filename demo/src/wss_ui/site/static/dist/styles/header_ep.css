@@ -383,6 +383,44 @@
 }
 /* COLOR VARIABLES */
 /* COLOR VARIABLES */
+/* BREAKPOINT VARIABLES */
+/* Color variable */
+#beta-banner {
+  background-color: #FFC107;
+  color: #6d5200;
+  font-size: 0.75em;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-between;
+  align-items: center; }
+  @media screen and (max-width: 35.5em) {
+    #beta-banner {
+      display: block; } }
+  #beta-banner .wfp-wrapper {
+    padding: 0.2rem 0; }
+  #beta-banner .buttons {
+    display: inline-block;
+    margin-top: 0.55em;
+    margin-bottom: 0;
+    margin-right: 0.5rem; }
+    @media screen and (max-width: 35.5em) {
+      #beta-banner .buttons {
+        margin-top: 0;
+        margin-bottom: 0.55em;
+        float: right; } }
+  #beta-banner .wfp-btn {
+    color: #6d5200;
+    margin-right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: none; }
+  #beta-banner p {
+    margin: 0; }
+  #beta-banner a[href] {
+    margin: 0 .2rem; }
+
+/* COLOR VARIABLES */
 nav .img {
   display: inline;
   height: 32px;
@@ -646,8 +684,7 @@ a.header--logo {
 .wfp-form--input-group-currency .wfp-form--input-currency-label {
   display: inline-block;
   border: 1px solid #8C8C8C;
-  padding: 6px;
-  padding-bottom: 7px;
+  padding: 6px 6px 7px;
   margin: 0;
   background-color: #E8E8E8; }
 
@@ -700,6 +737,37 @@ form .single-label {
 
 select:invalid {
   color: #8C8C8C; }
+
+/* FILTER PANEL */
+.wfp-form--stacked input:not([type]) {
+  border: none !important;
+  box-shadow: none !important; }
+
+.wfp-form--stacked .Select-control,
+.wfp-form--stacked input:not([type="submit"]) {
+  background-color: #E8E8E8; }
+
+.wfp-form--stacked label {
+  text-transform: capitalize; }
+
+.wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper {
+  line-height: 1;
+  position: relative;
+  top: 4px; }
+  .wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper .Select-input {
+    width: 5px; }
+    .wfp-form--stacked .Select--multi.has-value .Select-multi-value-wrapper .Select-input input:not([type]) {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
+
+.wfp-form--stacked .Select--multi.has-value .Select-arrow-zone,
+.wfp-form--stacked .Select--multi.has-value .Select-clear-zone {
+  position: relative;
+  line-height: 1;
+  top: 4px; }
 
 #overlay {
   position: absolute;
