@@ -10,6 +10,8 @@ import Breadcrumbs from './components/breadcrumbs';
 import Paginator from './components/paginator';
 import FilterPanel from './components/filterpanel';
 import DateWidget from './components/datewidget';
+import StatusDot from './components/StatusDot';
+import StatusEdge from './components/StatusEdge';
 import {Tab, Tabs} from './components/tabs';
 import {
   Table, TableHeader,
@@ -32,6 +34,8 @@ module.exports = {
   Paginator,
   FilterPanel,
   DateWidget,
+  StatusDot,
+  StatusEdge,
   Tab,
   Tabs,
   Table, TableHeader,

@@ -67,3 +67,6 @@ RequestAvailableActions.propTypes = {
 
 };
 
+RequestAvailableActions.defaultProps = {
+  defaultAction: 'View'
+};
