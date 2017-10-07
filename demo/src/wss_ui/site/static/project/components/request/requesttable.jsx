@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactTable from 'react-table'
+import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
 import RequestHistory from './historycell';
 import RequestStatus from './statuscell';
 import RequestDetails from './detailscell';
 import RequestAvailableActions from './actionscell';
-
 
 export default class RequestTable extends React.Component {
 
@@ -22,9 +21,7 @@ export default class RequestTable extends React.Component {
 
   dataSource(source, data_key) {
     $.getJSON(source, data => {
-      this.setState({
-        requestData: data[data_key],
-      });
+      this.setState({ requestData: data[data_key] });
     });
   }
 
@@ -35,70 +32,73 @@ export default class RequestTable extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.filterString !== this.props.filterString) {
       this.dataSource(this.props.src + nextProps.filterString, this.state.data_key);
-      this.setState({filterString: nextProps.filterString})
+      this.setState({ filterString: nextProps.filterString });
     }
   }
 
   render() {
 
-
-    var columns = [{
-      Header: <span>REQUESTOR</span>,
-      id:1,
-      accessor: 'user',
-      Cell: (row) => (
-
-        (<div> {row.value.first_name} {row.value.last_name}</div>))
-
-    },
+    var columns = [
       {
+        Header: <span>REQUESTOR</span>,
+        id: 1,
+        accessor: 'user',
+        Cell: (row) => ((
+          <div>
+            {row.value.first_name}
+            {row.value.last_name}</div>
+        ))
+
+      }, {
         Header: <span>REQUEST</span>,
-          id:2,
+        id: 2,
         accessor: 'info',
-        Cell: (row) => (<a href={row.value.url}>
-              <div>{row.value.type}</div>
-              <div>{row.value.id}</div>
-            </a>)
+        Cell: (row) => (
+          <a href={row.value.url}>
+            <div>{row.value.type}</div>
+            <div>{row.value.id}</div>
+          </a>
+        )
 
-      },
-      {
+      }, {
         Header: <span>HISTORY</span>,
-          id:3,
+        id: 3,
         accessor: 'history',
-        Cell: (row) => (<RequestHistory history={row.value}/>)
+        Cell: (row) => (<RequestHistory history={row.value} />)
 
-      },
-      {
+      }, {
         Header: <span>STATUS</span>,
-          id:4,
-        accessor: d=>d.info.status,
-        Cell: (row) => (<RequestStatus status={row.value}/>)
+        id: 4,
+        accessor: d => d.info.status,
+        Cell: (row) => (<RequestStatus status={row.value} />)
 
-      },
-      {
+      }, {
         Header: <span>DETAILS</span>,
-        id:5,
-          accessor: d=>d.info.details,
-        Cell: (row) => (<RequestDetails details={row.value}/>)
+        id: 5,
+        accessor: d => d.info.details,
+        Cell: (row) => (<RequestDetails details={row.value} />)
 
-      },
-        {
-            Header: <span>ACTIONS</span>,
+      }, {
+        Header: <span>ACTIONS</span>,
 
-            id: 6,
-            accessor: d => d.info.actions,
-            Cell: (row) => (<RequestAvailableActions actions={row.value.others} defaultAction={row.value.default}/>)
-        }
-    ]
+        id: 6,
+        accessor: d => d.info.actions,
+        Cell: (row) => (<RequestAvailableActions
+          actions={row.value.others}
+          defaultAction={row.value.default}
+          title={row.value.title}
+          type={row.value.type}
+        />)
+      }
+    ];
 
-    return (
-      <ReactTable
-        data={this.state.requestData}
-        columns={columns}
-        showPagination={false}
-        minRows={1}
-        noDataText=''
-      />)
+    return (<ReactTable
+      columns={columns}
+      data={this.state.requestData}
+      minRows={1}
+      noDataText=''
+      showPagination={false}
+    />);
   };
 };
 
@@ -107,4 +107,3 @@ RequestTable.propTypes = {
   data_key: PropTypes.string.isRequired
 
 };
-
