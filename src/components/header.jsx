@@ -1,4 +1,3 @@
-import Banner from './betabanner';
 import React from 'react';
 import PropTypes from 'prop-types';
 import LogoItem from './logoitem';
@@ -20,10 +19,6 @@ class Header extends React.Component {
   render() {
     return (
       <header className="wfp-header-int">
-        <Banner
-          findOutMoreUrl="/more"
-          oldSiteUrl="/"
-        />
         <div className="wfp-grid wfp-wrapper">
 
           <LogoItem title={this.props.title} />
