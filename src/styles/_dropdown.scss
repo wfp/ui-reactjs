@@ -34,6 +34,12 @@
 .dropdown-trigger{
     position:relative;
     cursor:pointer;
+    .menu--link {
+      span {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+      }
+    }
     .dropdown {
         top:45px;
         right: 0;

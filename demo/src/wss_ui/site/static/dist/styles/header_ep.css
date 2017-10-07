@@ -392,7 +392,8 @@
   display: flex;
   flex: 1 0 auto;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  padding: .3rem 0 .4rem; }
   @media screen and (max-width: 35.5em) {
     #beta-banner {
       display: block; } }
@@ -528,9 +529,11 @@ a.header--logo {
   display: block;
   padding-left: 0;
   font-size: 1rem; }
-  .wfp--breadcrumbs .wfp--breadcrumbs--home, .wfp--breadcrumbs .wfp--breadcrumbs--step:not(:last-child) {
+  .wfp--breadcrumbs .wfp--breadcrumbs--home,
+  .wfp--breadcrumbs .wfp--breadcrumbs--step:not(:last-child) {
     color: #1F6EBC; }
-  .wfp--breadcrumbs .wfp--breadcrumbs--home:after, .wfp--breadcrumbs .wfp--breadcrumbs--step:not(:last-child):after {
+  .wfp--breadcrumbs .wfp--breadcrumbs--home:after,
+  .wfp--breadcrumbs .wfp--breadcrumbs--step:not(:last-child):after {
     content: "\A0\A0>\A0\A0";
     color: #BABABA;
     font-weight: normal; }
@@ -542,6 +545,8 @@ a.header--logo {
       color: #2A93FC; }
       .wfp--breadcrumbs li a:hover {
         color: #1F6EBC; }
+    .wfp--breadcrumbs li:last-child a {
+      color: #BABABA; }
 
 /* COLOR VARIABLES */
 .wfp-filter {
@@ -558,6 +563,8 @@ a.header--logo {
     display: block; }
     .wfp-filter.open .wfp-filter--open .accordion-head {
       background-color: #FAFAFA; }
+    .wfp-filter.open .wfp-filter--open .title {
+      color: #BABABA; }
   .wfp-filter.closed .wfp-filter--closed {
     display: block; }
     .wfp-filter.closed .wfp-filter--closed:hover {
@@ -593,7 +600,7 @@ a.header--logo {
   box-shadow: none;
   margin: 0; }
   .header--menu .wfp-btn.wfp-btn {
-    padding: .5rem; }
+    padding: .4rem .5rem; }
   .header--menu .wfp-btn.wfp-btn--primary {
     background-color: #037cf5;
     border-color: #2a93fc; }
@@ -718,9 +725,16 @@ form .single-label {
 
 .wfp-form--actions {
   width: 100%;
-  text-align: right; }
+  text-align: right;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center; }
   .wfp-form--actions button {
-    margin-left: 5px; }
+    margin-left: auto;
+    margin-right: 1rem;
+    cursor: pointer; }
+  .wfp-form--actions [type="submit"] {
+    cursor: pointer; }
 
 .wfp-box--flat-padded {
   margin-bottom: 2rem !important; }
@@ -745,7 +759,7 @@ select:invalid {
 
 .wfp-form--stacked .Select-control,
 .wfp-form--stacked input:not([type="submit"]) {
-  background-color: #E8E8E8; }
+  background-color: #FAFAFA; }
 
 .wfp-form--stacked label {
   text-transform: capitalize; }
@@ -817,6 +831,9 @@ select:invalid {
 .dropdown-trigger {
   position: relative;
   cursor: pointer; }
+  .dropdown-trigger .menu--link span {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem; }
   .dropdown-trigger .dropdown {
     top: 45px;
     right: 0; }

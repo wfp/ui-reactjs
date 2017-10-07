@@ -25,8 +25,8 @@ const WSSHeader = props => {
 
       <Header title="WFP Self-Service">
         <LinkMenuItem url={props.urls.my} text="My requests" />
-        <LinkMenuItem url={props.urls.incoming} text="Incoming requests" />
-
+        <LinkMenuItem url={props.urls.incoming} text="Incoming" />
+        <LinkMenuItem url={"/admin"} text="Manage" />
         <LinkMenuItem url={props.urls.create} text="Create a request" isButton={true} />
 
         <SearchWidget />

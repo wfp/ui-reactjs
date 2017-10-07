@@ -21,6 +21,9 @@
             background-color:$grey-lighterer;
         }
         display:block;
+        .title {
+          color: $grey-light;
+        }
     }
     &.closed .wfp-filter--closed{
         display:block;
@@ -28,7 +31,7 @@
             background-color: $grey-lighterer;
         }
     }
-    
+
     &.closed .wfp-filter--open{
         display:none;
     }
