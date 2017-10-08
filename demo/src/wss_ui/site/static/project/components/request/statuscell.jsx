@@ -1,37 +1,47 @@
-import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import React from 'react';
 
+import { StatusDot, StatusEdge } from 'wfp-ui-reactjs';
 
 const RequestStatus = props => {
   let children = [];
 
-  for (let currentStep = 1; currentStep <= props.status.steps; currentStep++)
-  {
-    let dotClass = currentStep <= props.status.current ? "dot " + props.status.state : "dot";
-    let edgeClass = currentStep < props.status.current ? "edge " + props.status.state : "edge";
+  for (let currentStep = 1; currentStep <= props.status.steps; currentStep++) {
+    let dotClasses = classnames('dot', {
+      [`${props.status.state}`]: currentStep <= props.status.current,
+      'action': currentStep === props.status.current
+    });
+    let edgeClasses = classnames('edge', {
+      [`${props.status.state}`]: currentStep < props.status.current
+    });
 
-    if (currentStep == props.status.current) {
-      dotClass = dotClass + " action";
-    }
+    let dotKey = [currentStep, dotClasses.split(' ').join('-')].join('-');
+    let edgeKey = [currentStep, edgeClasses.split(' ').join('-')].join('-');
+    let tooltipEnabled = (currentStep === props.status.current) ? true : false;
 
-    children.push(<div key={currentStep + dotClass} className={dotClass} />);
+    children.push(<StatusDot
+      key={dotKey}
+      statusClass={dotClasses}
+      tooltipEnabled={tooltipEnabled}
+    />);
     if (currentStep < props.status.steps) {
-      children.push(<div key={currentStep + edgeClass} className={edgeClass} />);
+      children.push(<StatusEdge
+        key={edgeKey}
+        statusClass={edgeClasses}
+      />);
     }
   }
 
   return (
 
-      <div className="status-widget">
-        {children}
-      </div>
+    <div className="status-widget">
+      {children}
+    </div>
 
   );
 };
 
-
-RequestStatus.propTypes = {
-
-};
+RequestStatus.propTypes = {};
 
 export default RequestStatus;

@@ -543,6 +543,20 @@
     }
   }
 }
+
+.message-box {
+  margin: 0px;
+  text-align: center;
+
+  .fa {
+    font-size: 1.5rem;
+  }
+}
+
+.history-cell--list-element {
+  margin-bottom: .5rem;
+}
+
 @media screen and (max-width: $sm-screen) {
   .ReactTable {
     .rt-tbody,
