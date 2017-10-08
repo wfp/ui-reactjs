@@ -29,6 +29,7 @@
 
 @import 'user';
 @import "reacttable";
+@import 'tabledropdownmodal';
 
 @import 'responsive';
 @import 'mixins';
@@ -67,7 +68,6 @@ section, .section{
 
 .faint{
     color: $grey-light;
-    color: black;
     font-size: 0.9em;
 }
 

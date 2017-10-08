@@ -535,6 +535,14 @@
   cursor: col-resize;
   user-select: none;
 }
+
+.ReactTable {
+  .inline-actions {
+    span:last-child{
+      margin-left: .3rem;
+    }
+  }
+}
 @media screen and (max-width: $sm-screen) {
   .ReactTable {
     .rt-tbody,
