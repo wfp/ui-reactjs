@@ -6,7 +6,6 @@ import RequestDetails from './detailscell';
 import RequestHistory from './historycell';
 import RequestStatus from './statuscell';
 
-
 export default class RequestTable extends React.Component {
 
   constructor(props, context) {
@@ -22,9 +21,7 @@ export default class RequestTable extends React.Component {
 
   dataSource(source, data_key) {
     $.getJSON(source, data => {
-      this.setState({
-        requestData: data[data_key],
-      });
+      this.setState({ requestData: data[data_key] });
     });
   }
 
@@ -40,7 +37,6 @@ export default class RequestTable extends React.Component {
   }
 
   render() {
-
 
     var columns = [{
       Header: <span>REQUESTOR<i className="fa fa-fw fa-sort" /></span>,
