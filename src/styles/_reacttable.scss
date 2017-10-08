@@ -536,6 +536,14 @@
   user-select: none;
 }
 
+.ReactTable {
+  .inline-actions {
+    span:last-child{
+      margin-left: .3rem;
+    }
+  }
+}
+
 .message-box {
   margin: 0px;
   text-align: center;

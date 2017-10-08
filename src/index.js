@@ -10,17 +10,20 @@ import Breadcrumbs from './components/breadcrumbs';
 import Paginator from './components/paginator';
 import FilterPanel from './components/filterpanel';
 import DateWidget from './components/datewidget';
+
 import StatusDot from './components/StatusDot';
 import StatusEdge from './components/StatusEdge';
 import {Tab, Tabs} from './components/tabs';
+
 import {
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem
 } from './components/table';
 import TableActionButton from './components/TableActionButton';
 import TableDropdownMenu from './components/TableDropdownMenu';
+import TableDropdownModal from './components/TableDropdownModal';
 
-import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css'
+import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
 import WssStyle from './styles/main.scss';
 
 module.exports = {
@@ -44,4 +47,5 @@ module.exports = {
   TableHeaderItem, TableRow, TableRowItem,
   TableActionButton,
   TableDropdownMenu,
+  TableDropdownModal,
 };
