@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
+  Banner,
   CommonLinksHeader,
   Header,
   LinkMenuItem,
@@ -13,6 +14,7 @@ import {
 const WSSHeader = props => {
   return (
     <div className="navbar">
+      <Banner oldSiteUrl="/" findOutMoreUrl="/" />
       <CommonLinksHeader>
         <LinkMenuItem url="http://communities.wfp.org" text="WFP Communities" />
         <LinkMenuItem url="http://opweb.wfp.org" text="OPweb" />
@@ -23,8 +25,8 @@ const WSSHeader = props => {
 
       <Header title="WFP Self-Service">
         <LinkMenuItem url={props.urls.my} text="My requests" />
-        <LinkMenuItem url={props.urls.incoming} text="Incoming requests" />
-
+        <LinkMenuItem url={props.urls.incoming} text="Incoming" />
+        <LinkMenuItem url={"/admin"} text="Manage" />
         <LinkMenuItem url={props.urls.create} text="Create a request" isButton={true} />
 
         <SearchWidget />

@@ -17,6 +17,8 @@ import {
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem
 } from './components/table';
+import TableActionButton from './components/TableActionButton';
+import TableDropdownMenu from './components/TableDropdownMenu';
 
 import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css'
 import WssStyle from './styles/main.scss';
@@ -39,5 +41,7 @@ module.exports = {
   Tab,
   Tabs,
   Table, TableHeader,
-  TableHeaderItem, TableRow, TableRowItem
+  TableHeaderItem, TableRow, TableRowItem,
+  TableActionButton,
+  TableDropdownMenu,
 };

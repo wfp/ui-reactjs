@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { TableActionButton, TableDropdownMenu } from 'wfp-ui-reactjs';
 
 export default class RequestAvailableActions extends React.Component {
 
@@ -14,59 +15,42 @@ export default class RequestAvailableActions extends React.Component {
   }
 
   toggleListVisibility() {
-    console.log("TOGGLE!!!");
     this.setState(prevState => ({
       listIsVisible: !prevState.listIsVisible
     }));
   }
 
   performAction() {
-    console.log("Perform Action!!!");
-    this.setState({
-      listIsVisible: false
-    });
+    this.setState({ listIsVisible: false });
   }
 
   render() {
-    let available_actions = this.props.actions.map((el, index) => {
-      return (
-        <li key={index} className="menu--item">
-          <a onClick={this.performAction}>
-            <span>{el}</span>
-          </a>
-        </li>
-      );
-    });
     return (
-
-        <div className="inline-actions">
-          <span>
-            <span className="template">
-              <button className="wfp-btn btn-small xsmall modal-trigger wfp-btn--primary">
-                <span>{this.props.defaultAction}</span>
-              </button>
-            </span>
+      <div className="inline-actions">
+        <span>
+          <span className="template">
+            <TableActionButton
+              action={this.props.defaultAction || undefined}
+              type={this.props.type || undefined}
+              url={this.props.url || undefined}
+            />
           </span>
-          <span>
-            <button onClick={this.toggleListVisibility} className="wfp-btn xsmall">
-              <i className={"fa fa-fw" + (this.state.listIsVisible?" fa-chevron-up":" fa-chevron-down")} />
-            </button>
-            <div className="dropdown" style={{display: this.state.listIsVisible?"block":"none"}}>
-              <ul className="menu--group">
-                {available_actions}
-              </ul>
-            </div>
-          </span>
-        </div>
-
+        </span>
+        {this.props.actions.length > 0 && (<TableDropdownMenu
+          actions={this.props.actions}
+          handleListVisibility={this.toggleListVisibility}
+          listIsVisible={this.state.listIsVisible}
+          title={this.props.title || undefined}
+        />)}
+      </div>
     );
   }
 }
 
 RequestAvailableActions.propTypes = {
-
+  actions: PropTypes.array, // object array to iterate subcomponent
+  defaultAction: PropTypes.string.isRequired, // this is the default label
+  type: PropTypes.string,
+  url: PropTypes.string
 };
-
-RequestAvailableActions.defaultProps = {
-  defaultAction: 'View'
-};
+RequestAvailableActions.defaultProps = {};

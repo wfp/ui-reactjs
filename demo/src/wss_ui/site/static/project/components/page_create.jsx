@@ -49,7 +49,7 @@ const Grid = props => {
 const PageCreate = (props) => {
   return (
 
-    <div className="content">
+    <div className="content wfp-wrapper">
       <Breadcrumbs home={labels.home} nextLabels={[labels.create_a_request]} nextLinks={[]}/>
 
       <section>
