@@ -38,7 +38,9 @@ export default class RequestAvailableActions extends React.Component {
         </span>
         {this.props.actions.length > 0 && (<TableDropdownMenu
           actions={this.props.actions}
+          description={this.props.description || undefined}
           handleListVisibility={this.toggleListVisibility}
+          isComplex={this.props.isComplex}
           listIsVisible={this.state.listIsVisible}
           title={this.props.title || undefined}
         />)}
