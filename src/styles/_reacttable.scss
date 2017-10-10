@@ -73,7 +73,7 @@
 
 .ReactTable .rt-thead .rt-td,
 .ReactTable .rt-thead .rt-th {
-  padding: 0.6em 0.5em;
+  padding: 1em 0.5em;
   line-height: normal;
   position: relative;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
@@ -544,17 +544,16 @@
   }
 }
 
-.message-box {
-  margin: 0px;
-  text-align: center;
-
-  .fa {
-    font-size: 1.5rem;
-  }
-}
-
 .history-cell--list-element {
   margin-bottom: .5rem;
+  .history-cell-container{
+    float: left;
+  }
+  .message-box {
+    margin: 0 20px;
+    text-align: center;
+    float: right;
+  }
 }
 
 @media screen and (max-width: $sm-screen) {

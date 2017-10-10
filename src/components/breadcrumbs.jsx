@@ -6,7 +6,7 @@ const Breadcrumbs = (props) => {
     <ul className="wfp--breadcrumbs">
       <li className="wfp--breadcrumbs--home wfp--breadcrumbs--step">
         <a href="#">
-          <i className="fa fa-fw fa-home"></i>
+          <span className="icon-home-dark xsmall pl3"></span>
           <span>{props.home}</span></a>
       </li>
       {
