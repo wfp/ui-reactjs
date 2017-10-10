@@ -18,18 +18,23 @@ const RequestStatus = props => {
 
     let dotKey = [currentStep, dotClasses.split(' ').join('-')].join('-');
     let edgeKey = [currentStep, edgeClasses.split(' ').join('-')].join('-');
-    let tooltipEnabled = (currentStep === props.status.current) ? true : false;
+    let tooltipEnabled = (props.status.tooltip !== '' && props.status.tooltip !== 'undefined') && (currentStep === props.status.current) ? true : false;
 
-    children.push(<StatusDot
-      key={dotKey}
-      statusClass={dotClasses}
-      tooltipEnabled={tooltipEnabled}
-    />);
+    children.push(
+      <StatusDot
+        key={dotKey}
+        statusClass={dotClasses}
+        tooltip={props.status.tooltip}
+        tooltipEnabled={tooltipEnabled}
+      />
+    );
     if (currentStep < props.status.steps) {
-      children.push(<StatusEdge
-        key={edgeKey}
-        statusClass={edgeClasses}
-      />);
+      children.push(
+        <StatusEdge
+          key={edgeKey}
+          statusClass={edgeClasses}
+        />
+      );
     }
   }
 
@@ -42,6 +47,8 @@ const RequestStatus = props => {
   );
 };
 
-RequestStatus.propTypes = {};
+RequestStatus.propTypes = {
+  status: PropTypes.object
+};
 
 export default RequestStatus;

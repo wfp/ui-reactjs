@@ -73,6 +73,7 @@
     }
   },
   "dependencies": {
-    "dateformat": "^3.0.2"
+    "dateformat": "^3.0.2",
+    "react-tippy": "^1.2.2"
   }
 }

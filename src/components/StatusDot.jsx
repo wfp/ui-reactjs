@@ -1,20 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Tooltip } from 'react-tippy';
+
+import 'react-tippy/dist/tippy.css';
 
 const StatusDot = (props) => {
-  const { statusClass, tooltipEnabled } = props;
+  const { statusClass, tooltipEnabled, tooltip } = props;
 
-  console.log(tooltipEnabled);
   return (
-    <div
-      className={statusClass}
-    />
+    <Tooltip
+      disabled={!tooltipEnabled}
+      position={'right'}
+      title={tooltip!=='' ? tooltip : ''}
+    ><div className={statusClass} /></Tooltip>
   );
 };
 
+
 StatusDot.propTypes = {
   statusClass: PropTypes.string,
-  tooltipEnabled: PropTypes.bool
+  tooltip: PropTypes.string,
+  tooltipEnabled: PropTypes.bool,
 };
 
 export default StatusDot;
