@@ -1,6 +1,6 @@
 {
   "name": "wfp-ui-reactjs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "lib/index.js",
   "files": [
     "lib/",
@@ -71,5 +71,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "dateformat": "^3.0.2"
   }
 }

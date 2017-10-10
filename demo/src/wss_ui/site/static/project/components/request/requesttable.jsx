@@ -1,10 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactTable from 'react-table';
-import PropTypes from 'prop-types';
+import RequestAvailableActions from './actionscell';
+import RequestDetails from './detailscell';
 import RequestHistory from './historycell';
 import RequestStatus from './statuscell';
-import RequestDetails from './detailscell';
-import RequestAvailableActions from './actionscell';
 
 export default class RequestTable extends React.Component {
 
@@ -92,15 +92,17 @@ export default class RequestTable extends React.Component {
           type={row.value.type}
         />)
       }
+
     ];
 
-    return (<ReactTable
-      columns={columns}
-      data={this.state.requestData}
-      minRows={1}
-      noDataText=''
-      showPagination={false}
-    />);
+    return (
+      <ReactTable
+        columns={columns}
+        data={this.state.requestData}
+        minRows={1}
+        noDataText=''
+        showPagination={false}
+      />);
   };
 };
 
