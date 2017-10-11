@@ -20,13 +20,11 @@ class UserMenuWidget extends React.Component {
 
   render() {
     let menuStateClass = "menu--item dropdown-trigger " + (this.state.isMenuOpen?"open":"closed");
-    let chevronStateClass = "fa fa-fw " + (this.state.isMenuOpen?"fa-chevron-up":"fa-chevron-down");
     return (
       <li className={menuStateClass} onClick={this.onToggleMenuState}>
         <a className="menu--link no-underline">
           <img src={this.props.imagesrc} className="img img-round"/>
           <span>{this.props.username}</span>
-          <i className={chevronStateClass}></i>
         </a>
         <div className="dropdown">
           <ul className="menu--group">

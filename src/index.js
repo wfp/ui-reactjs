@@ -1,7 +1,7 @@
 import LinkTo from './components/linkto';
 import Banner from './components/betabanner';
 import Header from './components/header';
-import CommonLinksHeader from './components/commonlinksheader';
+import CorporateStrip from './components/corporatestrip';
 import LinkMenuItem from './components/linkmenuitem';
 import LogoItem from './components/logoitem';
 import SearchWidget from './components/searchwidget';
@@ -30,7 +30,7 @@ module.exports = {
   LinkTo,
   Banner,
   Header,
-  CommonLinksHeader,
+  CorporateStrip,
   LinkMenuItem,
   LogoItem,
   SearchWidget,
@@ -49,3 +49,4 @@ module.exports = {
   TableDropdownMenu,
   TableDropdownModal,
 };
+
