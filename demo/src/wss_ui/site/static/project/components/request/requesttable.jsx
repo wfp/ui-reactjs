@@ -51,9 +51,10 @@ export default class RequestTable extends React.Component {
       Header: <span>REQUEST</span>,
       id:2,
       accessor: 'info',
-      Cell: (row) => (<a href={row.value.url}>
-        <div>{row.value.type}</div>
-        <div>{row.value.id}</div>
+      minWidth: 200,
+      Cell: (row) => (<a href={row.value.url} className="request-cell">
+        <div className="request-cell-type">{row.value.type}</div>
+        <div className="request-cell-value">{row.value.id}</div>
       </a>)
 
     },
@@ -62,8 +63,9 @@ export default class RequestTable extends React.Component {
       id:3,
       accessor: 'history',
       Cell: (row) => (<RequestHistory history={row.value} />),
-      minWidth: 200,
-
+      width: 300,
+      resizable: false,
+      sortable: false,
     },
     {
       Header: <span>STATUS</span>,
@@ -83,6 +85,9 @@ export default class RequestTable extends React.Component {
       Header: <span>ACTIONS</span>,
 
       id: 6,
+      width: 200,
+      resizable: false,
+      sortable: false,
       accessor: d => d.info.actions,
       Cell: (row) => (<RequestAvailableActions
         actions={row.value.others}

@@ -6,14 +6,14 @@ const RequestDetails = props => {
   let detailsItems = props.details.map((el, index) => {
     return (
       <li key={index}>
-        <div>{el.name}</div>
-        <div>{el.value}</div>
+        <div className="details-cell-key">{el.name}</div>
+        <div className="details-cell-value">{el.value}</div>
       </li>
     );
   });
   return (
 
-      <ul>
+      <ul className="details-cell">
         {detailsItems}
       </ul>
 
