@@ -39,7 +39,7 @@ export default class RequestTable extends React.Component {
   render() {
 
     var columns = [{
-      Header: <span>REQUESTOR<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>REQUESTOR</span>,
       id:1,
       accessor: 'user',
       Cell: (row) => (
@@ -48,41 +48,46 @@ export default class RequestTable extends React.Component {
 
     },
     {
-      Header: <span>REQUEST<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>REQUEST</span>,
       id:2,
       accessor: 'info',
-      Cell: (row) => (<a href={row.value.url}>
-        <div>{row.value.type}</div>
-        <div>{row.value.id}</div>
+      minWidth: 200,
+      Cell: (row) => (<a href={row.value.url} className="request-cell">
+        <div className="request-cell-type">{row.value.type}</div>
+        <div className="request-cell-value">{row.value.id}</div>
       </a>)
 
     },
     {
-      Header: <span>HISTORY<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>HISTORY</span>,
       id:3,
       accessor: 'history',
       Cell: (row) => (<RequestHistory history={row.value} />),
-      minWidth: 200,
-
+      width: 300,
+      resizable: false,
+      sortable: false,
     },
     {
-      Header: <span>STATUS<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>STATUS</span>,
       id:4,
       accessor: d=>d.info.status,
       Cell: (row) => (<RequestStatus status={row.value} />)
 
     },
     {
-      Header: <span>DETAILS<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>DETAILS</span>,
       id:5,
       accessor: d=>d.info.details,
       Cell: (row) => (<RequestDetails details={row.value} />)
 
     },
     {
-      Header: <span>ACTIONS<i className="fa fa-fw fa-sort" /></span>,
+      Header: <span>ACTIONS</span>,
 
       id: 6,
+      width: 200,
+      resizable: false,
+      sortable: false,
       accessor: d => d.info.actions,
       Cell: (row) => (<RequestAvailableActions
         actions={row.value.others}

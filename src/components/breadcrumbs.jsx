@@ -3,12 +3,40 @@ import PropTypes from 'prop-types';
 
 const Breadcrumbs = (props) => {
   return (
+
+      <nav className="wfp-breadcrumbs">
+        <ol className="breadcrumbs--wrapper">
+          <li className="breadcrumbs--item">
+            <a href="#home" className="breadcrumbs--link home">
+              <span className="icon-home-dark xsmall"></span><span>{props.home}</span>
+            </a>
+          </li>
+        {
+          props.nextLabels.map((nextLabel, ind) => {
+              var content = ""
+              if (props.nextLinks && props.nextLinks.length > ind) {
+                content = <a href={props.nextLinks[ind]} class="breadcrumbs--link" ><span>{nextLabel}</span></a>
+              }
+              else {
+                content = <span class="breadcrumbs--last">{nextLabel}</span>
+              }
+              return (
+                <li key={ind} className="breadcrumbs--item">
+                  {content}
+                </li>
+              );
+            })
+        }
+        </ol>
+      </nav>
+
+  /* 
     <ul className="wfp--breadcrumbs">
-      <li className="wfp--breadcrumbs--home wfp--breadcrumbs--step">
-        <a href="#">
-          <i className="fa fa-fw fa-home"></i>
-          <span>{props.home}</span></a>
-      </li>
+        <li className="wfp--breadcrumbs--home wfp--breadcrumbs--step">
+          <a href="#">
+            <span className="icon-home-dark xsmall pl3"></span>
+            <span>{props.home}</span></a>
+        </li>
       {
         props.nextLabels.map((nextLabel, ind) => {
           var content = ""
@@ -26,9 +54,11 @@ const Breadcrumbs = (props) => {
         })
       }
     </ul>
-
+    */
   )
 }
+
+
 
 Breadcrumbs.propTypes = {
   home: PropTypes.string,
