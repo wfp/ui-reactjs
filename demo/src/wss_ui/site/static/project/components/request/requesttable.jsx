@@ -38,72 +38,66 @@ export default class RequestTable extends React.Component {
 
   render() {
 
-    var columns = [{
-      Header: <span>REQUESTOR</span>,
-      id:1,
-      accessor: 'user',
-      Cell: (row) => (
+    var columns = [
+      {
+        Header: <span>REQUESTOR</span>,
+        id: 1,
+        accessor: 'user',
+        Cell: (row) => ((
+          <div>
+            {row.value.first_name}
+            {row.value.last_name}</div>
+        ))
 
-        (<div> {row.value.first_name} {row.value.last_name}</div>))
+      }, {
+        Header: <span>REQUEST</span>,
+        id: 2,
+        accessor: 'info',
+        Cell: (row) => (
+          <a href={row.value.url}>
+            <div>{row.value.type}</div>
+            <div>{row.value.id}</div>
+          </a>
+        )
 
-    },
-    {
-      Header: <span>REQUEST</span>,
-      id:2,
-      accessor: 'info',
-      minWidth: 200,
-      Cell: (row) => (<a href={row.value.url} className="request-cell">
-        <div className="request-cell-type">{row.value.type}</div>
-        <div className="request-cell-value">{row.value.id}</div>
-      </a>)
+      }, {
+        Header: <span>HISTORY</span>,
+        id: 3,
+        accessor: 'history',
+        Cell: (row) => (<RequestHistory history={row.value} />),
+        minWidth: 200
+      }, {
+        Header: <span>STATUS</span>,
+        id: 4,
+        accessor: d => d.info.status,
+        Cell: (row) => (<RequestStatus status={row.value} />)
 
-    },
-    {
-      Header: <span>HISTORY</span>,
-      id:3,
-      accessor: 'history',
-      Cell: (row) => (<RequestHistory history={row.value} />),
-      width: 300,
-      resizable: false,
-      sortable: false,
-    },
-    {
-      Header: <span>STATUS</span>,
-      id:4,
-      accessor: d=>d.info.status,
-      Cell: (row) => (<RequestStatus status={row.value} />)
+      }, {
+        Header: <span>DETAILS</span>,
+        id: 5,
+        accessor: d => d.info.details,
+        Cell: (row) => (<RequestDetails details={row.value} />)
 
-    },
-    {
-      Header: <span>DETAILS</span>,
-      id:5,
-      accessor: d=>d.info.details,
-      Cell: (row) => (<RequestDetails details={row.value} />)
+      }, {
+        Header: <span>ACTIONS</span>,
 
-    },
-    {
-      Header: <span>ACTIONS</span>,
-
-      id: 6,
-      width: 200,
-      resizable: false,
-      sortable: false,
-      accessor: d => d.info.actions,
-      Cell: (row) => (<RequestAvailableActions
-        actions={row.value.others}
-        defaultAction={row.value.default}
-      />)
-    }
+        id: 6,
+        accessor: d => d.info.actions,
+        Cell: (row) => (<RequestAvailableActions
+          actions={row.value.others}
+          defaultAction={row.value.default}
+        />),
+        minWidth: 150
+      }
     ];
 
-    return (
-      <ReactTable
-        columns={columns}
-        data={this.state.requestData}
-        minRows={1}
-        noDataText=''
-        showPagination={false}
-      />);
+    return (<ReactTable
+      columns={columns}
+      data={this.state.requestData}
+      minRows={1}
+      noDataText=''
+      showPagination={false}
+    />);
   };
 };
 
