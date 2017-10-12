@@ -2,61 +2,52 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ReactPaginate from 'react-paginate';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 class Paginator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      offset: 0,
-      limit: this.props.perPage,
-      src: this.props.src
+      pageCount:0,
     };
-    this.getLinks = this.getLinks.bind(this);
+    this.loadPaginator = this.loadPaginator.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
-    this.hrefBuilder = this.hrefBuilder.bind(this);
+
   }
 
   componentDidMount() {
-    this.getLinks();
+    this.loadPaginator();
   }
 
-  getLinks() {
-    $.ajax({
-      url: this.state.src,
-      data: {
-        limit: this.props.perPage,
-        offset: this.state.offset
+  loadPaginator() {
+    fetch(this.props.baseUrl, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Cache': 'no-cache'
       },
-      method: 'GET',
-      dataType: 'json',
-      success: data => {
-        console.log(data);
-        this.setState({ data: data.links.page_links, pageCount: data.links.page_links.length });
-      }
-    });
+      credentials: 'include'
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          pageCount: Math.ceil(data.total_pages),
+        });
+      });
   }
 
   handlePageClick(data) {
-    let { selected } = data;
-    let offset = Math.ceil(selected * this.props.perPage);
-    let baseUrl = this.props.src;
-    let url = this.state.data[selected][0].toString().split('?')[1];
-    console.log(baseUrl+'?'+url);
-    url = baseUrl + '?' + url;
-    // console.log(this);
-
-    this.setState({
-      offset: offset,
-      src: url
-    }, () => {
-      this.getLinks();
-    });
-  }
-  hrefBuilder(selectedIndex) {
-    const url = this.props.src;
-
-    return url+'?page='+selectedIndex;
+    var new_page_number = data.selected + 1;
+    if (this.props.baseUrl.indexOf('?')>-1) {
+      this.props.handlePageChange(this.props.baseUrl + '&page=' + new_page_number)
+    }
+    else{
+      this.props.handlePageChange(this.props.baseUrl + '?page=' + new_page_number)
+    };
   }
 
   render() {
@@ -64,6 +55,7 @@ class Paginator extends React.Component {
       <div className="wfp-pagination">
         <ReactPaginate
           activeClassName={"active"}
+          disabledClassName={"disabled"} //TODO: Create this class
           breakClassName={"pagination--item"}
           breakLabel={
             <a
@@ -72,8 +64,9 @@ class Paginator extends React.Component {
             >&hellip;
             </a>
           }
+
           containerClassName={"pagination--wrapper"}
-          hrefBuilder={this.hrefBuilder}
+          // hrefBuilder={this.hrefBuilder}
           marginPagesDisplayed={2}
           nextClassName={"pagination--item"}
           nextLabel={"next"}
@@ -82,8 +75,7 @@ class Paginator extends React.Component {
           pageClassName={"pagination--item"}
           pageCount={this.state.pageCount}
           pageLinkClassName={"pagination--btn"}
-          pageRangeDisplayed={5}
-          perPage={20}
+          pageRangeDisplayed={2}
           previousClassName={"pagination--item"}
           previousLabel={"previous"}
           previousLinkClassName={"pagination--btn"}
@@ -95,12 +87,8 @@ class Paginator extends React.Component {
 }
 
 Paginator.propTypes = {
-  perPage: PropTypes.number,
-  src: PropTypes.string.isRequired
-};
-
-Paginator.defaultProps = {
-  perPage: 10
+  baseUrl: PropTypes.string.isRequired,
+  handlePageChange: PropTypes.func.isRequired,
 };
 
 export default Paginator;
