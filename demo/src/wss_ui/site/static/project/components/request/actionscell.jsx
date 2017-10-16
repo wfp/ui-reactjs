@@ -26,7 +26,7 @@ export default class RequestAvailableActions extends React.Component {
 
   render() {
     return (
-      <div className="inline-actions">
+      <div className="inline-actions action-cell">
         <span>
           <span className="template">
             <TableActionButton

@@ -64,8 +64,8 @@ export default class RequestTable extends React.Component {
         Header: <span>HISTORY</span>,
         id: 3,
         accessor: 'history',
-        Cell: (row) => (<RequestHistory history={row.value} />)
-
+        Cell: (row) => (<RequestHistory history={row.value} />),
+        minWidth: 200
       }, {
         Header: <span>STATUS</span>,
         id: 4,
@@ -86,23 +86,23 @@ export default class RequestTable extends React.Component {
         Cell: (row) => (<RequestAvailableActions
           actions={row.value.others}
           defaultAction={row.value.default}
+
           description={row.value.description}
           isComplex={row.value.isComplex}
           title={row.value.title}
           type={row.value.type}
-        />)
+        />),
+        minWidth: 150
       }
-
     ];
 
-    return (
-      <ReactTable
-        columns={columns}
-        data={this.state.requestData}
-        minRows={1}
-        noDataText=''
-        showPagination={false}
-      />);
+    return (<ReactTable
+      columns={columns}
+      data={this.state.requestData}
+      minRows={1}
+      noDataText=''
+      showPagination={false}
+    />);
   };
 };
 

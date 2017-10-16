@@ -1,6 +1,6 @@
 {
   "name": "wfp-ui-reactjs",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "main": "lib/index.js",
   "files": [
     "lib/",
@@ -52,7 +52,9 @@
     "styled-components": "^2.1.2",
     "webpack": "^3.6.0",
     "wiredep": "^4.0.0",
-    "react-paginate": "^4.4.4"
+    "react-paginate": "^4.4.4",
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1"
   },
   "peerDependencies": {
     "react": "^15.6.1",
@@ -73,6 +75,7 @@
     }
   },
   "dependencies": {
-    "dateformat": "^3.0.2"
+    "dateformat": "^3.0.2",
+    "react-tippy": "^1.2.2"
   }
 }
