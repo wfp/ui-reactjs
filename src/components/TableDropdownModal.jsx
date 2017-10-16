@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import TableActionButton from './TableActionButton';
+import WfpActionButton from './wfpActionButton';
 
 const TableDropdownModal = (props) => {
   const messageBoxWrapperClass = classnames('table-messagebox');
@@ -14,7 +14,7 @@ const TableDropdownModal = (props) => {
       )}
       <div className={messageBoxFooterClass}>
         {props.actions.length > 0 && props.actions.map((action, index) => (
-          <TableActionButton
+          <WfpActionButton
             action={action.label}
             key={index}
             type={props.type}
