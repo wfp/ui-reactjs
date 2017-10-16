@@ -19,7 +19,28 @@
     "watch": "webpack --config webpack.config.js -w",
     "lint": "eslint src/**; exit 0",
     "lint:watch": "esw -w src/**",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__mocks__/fileMock.js"
+    },
+    "setupFiles": [
+      "<rootDir>/src/jestTestsSetup.jsx"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
