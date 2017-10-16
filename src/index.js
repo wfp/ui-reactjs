@@ -19,7 +19,7 @@ import {
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem
 } from './components/table';
-import TableActionButton from './components/TableActionButton';
+import WfpActionButton from './components/wfpActionButton';
 import TableDropdownMenu from './components/TableDropdownMenu';
 import TableDropdownModal from './components/TableDropdownModal';
 
@@ -45,8 +45,7 @@ module.exports = {
   Tabs,
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem,
-  TableActionButton,
+  WfpActionButton,
   TableDropdownMenu,
-  TableDropdownModal,
+  TableDropdownModal
 };
-
