@@ -26,13 +26,14 @@ export default class WfpActionButton extends React.Component {
     });
     return (
       <button className={classes} onClick={this.handleClick}>
-        <span>{this.props.action}</span>
+        <span>{this.props.label}</span>
       </button>
     );
   }
 }
 
 WfpActionButton.propTypes = {
+  label: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired,
   type: PropTypes.string
 };

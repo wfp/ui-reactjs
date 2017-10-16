@@ -7,14 +7,15 @@ import WfpActionButton from './wfpActionButton';
 
 
 test('Click open other actions menu', () => {
-  const action = 'MyAction';
+  const label = 'MyAction';
+  const action = 'action1';
   const actionWidget = shallow(
-    <WfpActionButton action={action} onActionClick={() => {}} />
+    <WfpActionButton label={label} action={action} onActionClick={() => {}} />
   );
 
   expect(actionWidget.find('button')).toHaveLength(1);
 
-  expect(actionWidget.find('button').text()).toEqual(action);
+  expect(actionWidget.find('button').text()).toEqual(label);
 
   actionWidget.find('button').simulate('click');
 });

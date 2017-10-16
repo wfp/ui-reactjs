@@ -9,7 +9,7 @@ const TableDropdownMenu = (props) => {
    * children
    * renders a li>a list based on props.actions
    */
-  let children = props.actions.map((el, index) => (
+   let children = props.actions.map((el, index) => (
     <li className="menu--item" key={index}>
       <a href={el.url}>{el.label}</a>
     </li>
