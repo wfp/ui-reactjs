@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner renders correctly 1`] = `
+<div
+  id="banner"
+>
+  <div
+    className="wfp-wrapper"
+  >
+    <div
+      className="wfp-hidden-lg wfp-hidden-xl"
+    >
+      Text inside
+    </div>
+    <div
+      className="wfp-hidden-md wfp-hidden-xs"
+    >
+      Text inside
+    </div>
+  </div>
+</div>
+`;

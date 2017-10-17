@@ -1,5 +1,5 @@
 import LinkTo from './components/linkto';
-import Banner from './components/betabanner';
+import Banner from './components/banner';
 import Header from './components/header';
 import CorporateStrip from './components/corporatestrip';
 import LinkMenuItem from './components/linkmenuitem';
