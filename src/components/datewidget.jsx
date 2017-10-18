@@ -14,7 +14,7 @@ export default class DateWidget extends React.Component {
 
   onDateChange(e) {
     this.props.handleChange(e.target.value);
-    this.setState({value: e.target.value});
+    this.setState({ value: e.target.value });
 
 
   };
@@ -25,24 +25,31 @@ export default class DateWidget extends React.Component {
       isRequired = <span className="required-symbol">*</span>;
     }
     return (
-      <div className="wfp-u-1-3 wfp-box--flat">
+      <div className={this.props.customGridClass + " wfp-box--flat"}>
         <label><span htmlFor={this.state.name}>{this.state.label}</span>
           {isRequired}</label>
-        <input type="date" name={this.state.name} value={this.props.value} onChange={this.onDateChange}/>
+        <input
+          name={this.state.name}
+          onChange={this.onDateChange}
+          type="date"
+          value={this.props.value}
+        />
       </div>
-    )
+    );
   }
 };
 
 
 DateWidget.propTypes = {
+  customGridClass: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string,
   label: PropTypes.string,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };
 
 DateWidget.defaultProps = {
+  customGridClass: "wfp-u-1-3",
   label: "",
   required:false
 };
