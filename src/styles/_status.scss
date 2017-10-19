@@ -15,7 +15,7 @@
         z-index: 10;
         cursor: pointer;
 
-        &.fail {
+        &.failure {
             &.action {
                 &:after {
                     content: '!';
@@ -45,7 +45,7 @@
         background-color: $green;
     }
 
-    .fail {
+    .failure {
         background-color: $red;
 
         &.action {
@@ -63,5 +63,7 @@
         background-color: $grey-dark;
     }
 
-    .waiting {}
+    .waiting {
+        background-color: $orange;
+    }
 }
