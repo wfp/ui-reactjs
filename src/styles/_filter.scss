@@ -1,41 +1,64 @@
 @import 'colors';
 
-.wfp-filter{
-    border:1px solid $grey-lighter;
-    margin-bottom: 2rem;
+.wfp-filter {
+  border: 1px solid $grey-lighter;
+  margin-bottom: 2rem;
 
-    .accordion-head{
-        padding:10px;
-        cursor:pointer;
-        a{
-            border-color: transparent;
-        }
-    }
+  .accordion-head {
+    padding: 10px;
+    cursor: pointer;
 
-    .filter_container{
-        padding: 0 2em 1em;
+    a {
+      border-color: transparent;
     }
+  }
 
-    &.open .wfp-filter--open{
-        .accordion-head{
-            background-color:$grey-lighterer;
-        }
-        display:block;
-        .title {
-          color: $grey-light;
-        }
-    }
-    &.closed .wfp-filter--closed{
-        display:block;
-        &:hover{
-            background-color: $grey-lighterer;
-        }
-    }
+  .filter_container {
+    padding: 0 2em 1em;
+  }
 
-    &.closed .wfp-filter--open{
-        display:none;
+  &.open .wfp-filter--open {
+    .accordion-head {
+      background-color: $grey-lighterer;
     }
-    &.open .wfp-filter--closed{
-        display:none;
+    display: block;
+
+    .title {
+      color: $grey-light;
     }
+  }
+
+  &.closed .wfp-filter--closed {
+    display: block;
+
+    &:hover {
+      background-color: $grey-lighterer;
+    }
+  }
+
+  &.closed .wfp-filter--open {
+    display: none;
+  }
+
+  &.open .wfp-filter--closed {
+    display: none;
+  }
+
+  .row-for-label {
+    margin: 0;
+    padding: 0;
+
+    > div {
+      margin: 0;
+      padding: 0;
+
+      label {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  input[type="submit"]{
+    border-radius: .2rem;
+  }
 }
