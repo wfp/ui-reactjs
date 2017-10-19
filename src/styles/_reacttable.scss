@@ -579,6 +579,7 @@
 
 .history-cell-wrapper {
   width: 100%;
+  text-align: center;
 
   .history-cell-wrapper--viewport {
     display: flex;
@@ -586,6 +587,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     max-height: none;
+    text-align: left;
     overflow: auto;
     // -webkit-transition: max-height 0.2s ease-in-out 0s;
     // transition: max-height 0.2s ease-in-out 0s;
@@ -603,6 +605,8 @@
   .wfp-link {
     font-size: 0.9rem;
     text-transform: lowercase;
+    margin-left: auto;
+    margin-right: auto;
 
     span {
       margin-left: 0.1rem;
