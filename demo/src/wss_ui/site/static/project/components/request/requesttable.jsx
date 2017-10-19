@@ -86,6 +86,11 @@ export default class RequestTable extends React.Component {
         Cell: (row) => (<RequestAvailableActions
           actions={row.value.others}
           defaultAction={row.value.default}
+
+          description={row.value.description}
+          isComplex={row.value.isComplex}
+          title={row.value.title}
+          type={row.value.type}
         />),
         minWidth: 150
       }
