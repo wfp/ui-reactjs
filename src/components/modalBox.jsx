@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import WfpActionButton from './wfpActionButton';
 
-const wfpModalBox = (props) => {
+const ModalBox = (props) => {
     const mainClass = classnames('modalbox');
     const bodyClass = classnames('modalbox--description');
     const footerClass = classnames('modalbox--footer');
@@ -15,26 +15,19 @@ const wfpModalBox = (props) => {
                 )
             }
             <div className={footerClass}>
-                {
-                    props.actions.length > 0 && props.actions.map((action, index) => (
-                        <WfpActionButton
-                            action={action.label}
-                            key={index}
-                            type={props.type}
-                        />
-                    ))
-                }
+                {props.children}
+
             </div>
         </div>
     );
 };
 
-wfpModalBox.propTypes = {
+ModalBox.propTypes = {
     actions: PropTypes.array,
     description: PropTypes.string,
     type: PropTypes.string
 };
 
-wfpModalBox.defaultProps = { };
+ModalBox.defaultProps = { };
 
-export default wfpModalBox;
+export default ModalBox;
