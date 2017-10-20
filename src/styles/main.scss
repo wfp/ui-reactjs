@@ -1,14 +1,10 @@
 // bower:scss
 // endbower
 // Imports
-@import '../../node_modules/react-select/dist/react-select.css';
-
-// Import WFP UI
+@import '../../node_modules/react-select/dist/react-select.css'; // Import WFP UI
 // TODO: Older version in bower_components
 @import '../../node_modules/wfp-ui/scss/_init.scss';
-@import '../../node_modules/wfp-ui/scss/modules/mixins';
-
-// TODO: use colors from WFP UI only and use scss from there
+@import '../../node_modules/wfp-ui/scss/modules/mixins'; // TODO: use colors from WFP UI only and use scss from there
 @import 'colors';
 @import "banner";
 @import 'navbar';
@@ -34,10 +30,11 @@
 @import "reacttable";
 @import 'tabledropdownmodal';
 @import 'responsive';
-@import 'mixins';
-// Global CSS
+@import 'mixins'; // Global CSS
+
 body {
     font-family: "lato", sans-serif;
+    font-size: 16px;
 }
 
 h2 {
@@ -490,6 +487,14 @@ hr {
     &.opened {
         z-index: 10 !important;
     }
+
+    .menu--item {
+        font-size: 1rem;
+
+        .menu--link {
+            font-size: 16px;
+        }
+    }
 }
 
 .wfp-pagination {
@@ -497,13 +502,14 @@ hr {
         &.disabled {
             border-color: $grey-lighter;
             cursor: not-allowed;
+
             .pagination--btn {
                 background-color: $grey-lighter;
                 color: white;
                 cursor: not-allowed;
                 pointer-events: none;
-
             }
+
             &:hover {
                 border-color: $grey-lighter;
             }
