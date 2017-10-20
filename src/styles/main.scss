@@ -30,8 +30,9 @@
 @import "reacttable";
 @import 'tabledropdownmodal';
 @import 'responsive';
-@import 'mixins'; // Global CSS
-
+@import 'mixins';
+@import 'gridcomponent';
+// Global CSS
 body {
     font-family: "lato", sans-serif;
     font-size: 16px;
