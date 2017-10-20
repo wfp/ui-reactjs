@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Box rendering 1`] = `
+<div
+  className="modalbox"
+>
+  <p
+    className="modalbox--description"
+  >
+    Modal Body description
+  </p>
+  <div>
+    <div
+      className="modalbox--footer"
+    >
+      <button
+        level={0}
+      />
+    </div>
+    <div
+      className="modalbox--footer"
+    >
+      <button
+        level={1}
+      />
+    </div>
+    <div
+      className="modalbox--footer"
+    >
+      <button
+        level={2}
+      />
+    </div>
+    <div
+      className="modalbox--footer"
+    >
+      <button
+        level={3}
+      />
+    </div>
+  </div>
+</div>
+`;

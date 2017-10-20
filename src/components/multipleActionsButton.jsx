@@ -40,11 +40,14 @@ export default class MultipleActionsButton extends React.Component {
                     {!!this.props.title && (
                          <div className="dropdown--label">{this.props.title}</div>
                      )}
-                    <ul className="menu--group">
+                    {/*<ul className="menu--group">
                         <li className="menu--item" key={index}>
-                            {this.props.children}
+                        {this.props.children}
                         </li>
-                    </ul>
+                        </ul> */}
+                    <ModalBox description="Secondary Actions Buttons">
+                        {this.props.children}
+                    </ModalBox>
                 </div>
             </span>
         );
