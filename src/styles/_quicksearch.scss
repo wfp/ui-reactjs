@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// Quicksearch style for search textfields
+// -----------------------------------------------------------------------------
+
+/* The Search element used in the Header and some Table Filters */
+
+.quicksearch {
+  margin: 0;
+  font-weight: normal;
+  display: inline-block;
+  @include media-query($md-screen) {
+    &.quicksearch--small {
+      .form-item .form-text,
+      .react-autosuggest__input {
+        border: 0;
+        width: 125px;
+        &.react-autosuggest__input--focused {
+          width: 200px;
+        }
+        @include media-query($lg-screen) {
+          width: 225px;
+          &.react-autosuggest__input--focused {
+            width: 300px;
+          }
+        }
+        font-size: 1rem;
+        transition: width 0.15s;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.quicksearch__wrap {
+  position: relative;
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    height: 100%;
+    content: "\f002";
+    top: 28%;
+    left: 0;
+    pointer-events: none;
+    margin: 0 0.8em;
+    line-height: 1rem;
+    color: $text-color;
+  }
+  input {
+    display: block !important;
+    padding-left: 2.5em !important;
+  }
+  &.quicksearch__wrap--expand {
+    input {
+      transition: all 0.3s;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes sidebar {
+  from {
+    opacity: 1;
+    transform: translateX(40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.react-autosuggest__suggestions-container--open {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  margin-top: 10px;
+  background: $white;
+  color: $black;
+  width: 50%;
+  height: calc(100vh - 130px);
+  padding-bottom: 1em;
+  overflow: hidden;
+  overflow-y: auto;
+  animation-name: sidebar;
+  animation-duration: 0.15s;
+  z-index: 100000;
+  box-shadow: rgba($black, 0.1) 0 3px 13px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background: darken($blue-lightest, 5);
+}
+
+.form-text,
+.react-autosuggest__input {
+  padding: 0 .5em 0 2em;
+  width: 100%;
+  height: 2.5em;
+  line-height: 2.75em;
+  color: $text-color;
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    color: $grey;
+  }
+  &:-moz-placeholder {
+    font-style: italic;
+    color: $grey;
+  }
+  &::-moz-placeholder {
+    font-style: italic;
+    color: $grey;
+  }
+  &:-ms-input-placeholder {
+    font-style: italic;
+    color: $grey;
+  }
+}
+
+/**
+ * Search Suggest
+ *
+ * The Suggestions when searching
+ * found on all pages in the header
+ */
+
+.react-autosuggest__suggestions-container {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    >div {
+      cursor: pointer;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid $grey-lightest;
+      /*overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;*/
+      &:hover {
+        background: $blue-lightest;
+        border-bottom: 1px solid darken($blue-lightest, 5);
+      }
+    }
+  }
+  .react-autosuggest__section-title {
+    font-size: 2em;
+    background: $grey-lightest;
+    color: $text-color;
+    strong {
+      margin-left: 4rem;
+      line-height: 3em;
+    }
+    strong:before {
+      font-family: FontAwesome;
+      content: "\f036";
+      position: absolute;
+      margin-left: -1.5em;
+      margin-top: 0.03em;
+      font-size: 0.8em;
+      width: 100%;
+    }
+  }
+}
+
+.react-autosuggest__suggestions-container--nosuggestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-style: italic;
+  color: $grey-lighter;
+}
+
+.suggestion__name {
+  color: $primary;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  /*overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;*/
+}
+
+.suggestion__small {
+  font-size: 1rem;
+  font-style: italic;
+  color: $grey-darker;
+  display: block;
+}
