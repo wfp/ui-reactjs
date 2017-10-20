@@ -1,41 +1,73 @@
-@import 'colors';
+@import "colors";
 
-.wfp-filter{
-    border:1px solid $grey-lighter;
+.wfp-filter {
+    border: 1px solid $grey-lighter;
     margin-bottom: 2rem;
 
-    .accordion-head{
-        padding:10px;
-        cursor:pointer;
-        a{
+    .accordion-head {
+        padding: 10px;
+        cursor: pointer;
+
+        a {
             border-color: transparent;
         }
     }
 
-    .filter_container{
+    .filter_container {
         padding: 0 2em 1em;
     }
 
-    &.open .wfp-filter--open{
-        .accordion-head{
-            background-color:$grey-lighterer;
+    &.open .wfp-filter--open {
+        .accordion-head {
+            background-color: $grey-lighterer;
         }
-        display:block;
+        display: block;
+
         .title {
-          color: $grey-light;
+            color: $grey-light;
         }
     }
-    &.closed .wfp-filter--closed{
-        display:block;
-        &:hover{
+
+    &.closed .wfp-filter--closed {
+        display: block;
+
+        &:hover {
             background-color: $grey-lighterer;
         }
     }
 
-    &.closed .wfp-filter--open{
-        display:none;
+    &.closed .wfp-filter--open {
+        display: none;
     }
-    &.open .wfp-filter--closed{
-        display:none;
+
+    &.open .wfp-filter--closed {
+        display: none;
+    }
+
+    .row-for-label {
+        margin: 0;
+        padding: 0;
+
+        > div {
+            margin: 0;
+            padding: 0;
+
+            label {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    input[type="submit"] {
+        border-radius: 0.2rem;
+    }
+}
+
+.wfp-form--stacked {
+    .wfp-filter--checkbox-wrapper {
+        label {
+            display: inline-block;
+        }
     }
 }

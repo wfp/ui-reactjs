@@ -1,0 +1,24 @@
+@import 'colors';
+
+.modalbox {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .modalbox--description {
+    padding: 0.5rem 1rem;
+  }
+
+  .modalbox--footer {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: space-around;
+    align-items: stretch;
+    min-width: 300px;
+    padding-top: 1rem;
+    border-top: 0.1rem solid $grey-lighterer;
+    margin: 0 0.5rem;
+  }
+}

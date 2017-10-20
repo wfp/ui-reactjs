@@ -1,7 +1,5 @@
 // bower:scss
 // endbower
-
-
 // Imports
 @import '../../node_modules/react-select/dist/react-select.css';
 
@@ -12,11 +10,9 @@
 
 // TODO: use colors from WFP UI only and use scss from there
 @import 'colors';
-
-@import "betabanner";
+@import "banner";
 @import 'navbar';
 @import 'sidebar';
-
 @import 'infobar';
 @import 'search';
 @import 'calendar';
@@ -30,245 +26,487 @@
 @import 'tooltip';
 @import 'modal';
 @import 'quicksearch';
-
+@import 'modalbox';
 @import 'metanavbar';
 @import 'blockquote';
 @import 'table';
-
 @import 'user';
 @import "reacttable";
 @import 'tabledropdownmodal';
-
 @import 'responsive';
 @import 'mixins';
-
 // Global CSS
 body {
     font-family: "lato", sans-serif;
 }
 
-h2{
+h2 {
     padding-top: 2rem;
     padding-bottom: 1.8rem;
 }
-h3{
+
+h3 {
     font-size: 2em;
     padding-top: 2.5rem;
     padding-bottom: 1.8rem;
-    i.fa{
+
+    i.fa {
         padding-right: 3rem;
     }
 }
 
-h4{
+h4 {
     padding-bottom: 0.5em;
     margin-bottom: 2rem;
     font-size: 1.5rem;
     border-bottom: 2px solid $grey-lighter;
 }
 
-section, .section{
+.section,
+section {
     padding-bottom: 3rem;
 }
 
-.faint{
+.faint {
     color: $grey-light;
     font-size: 0.9em;
 }
 
-.symbol{
+.symbol {
     font-weight: bold;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
-.hilight-symbol{
+.hilight-symbol {
     @extend .symbol;
     color: $black;
-
 }
 
-.required-symbol{
+.required-symbol {
     @extend .symbol;
     color: $red;
 }
 
-.tooltip-symbol{
+.tooltip-symbol {
     @extend .symbol;
     border-bottom: 1px dashed $grey;
     padding-bottom: 0.2rem;
     color: $grey-dark !important;
+
     &:hover {
         color: $primary !important;
     }
-    a{
+
+    a {
         color: $grey-dark !important;
+
         &:hover {
             color: $primary !important;
         }
     }
 }
 
-.name{
+.name {
     font-weight: bold;
     padding: 1em 0;
 }
 
-
-.hilight{
+.hilight {
     color: $black;
     font-weight: bold;
 }
-
-
 /* OVERRIDES */
-
-
-a, a:visited{
+a,
+a:visited {
     color: $primary;
-    &:hover{
+
+    &:hover {
         color: $accent;
     }
     outline: 0;
 }
 
-.no-underline{
-    border-color:transparent !important;
+.no-underline {
+    border-color: transparent !important;
 }
 
-.inline-actions{
+.inline-actions {
     display: inline-block;
 }
 
-hr{
+hr {
     margin-bottom: 3rem;
 }
-
-
 /* UTILS */
-
-
-.text-aligned-left{
+.text-aligned-left {
     text-align: left;
 }
-.text-aligned-right{
+
+.text-aligned-right {
     text-align: right;
 }
 
-.debug{
+.debug {
     background-color: #F00;
 }
-
-
 /* Basscss Margin */
+.m0 {
+    margin: 0;
+}
 
-.m0  { margin:        0 }
-.mt0 { margin-top:    0 }
-.mr0 { margin-right:  0 }
-.mb0 { margin-bottom: 0 }
-.ml0 { margin-left:   0 }
-.mx0 { margin-left:   0; margin-right:  0 }
-.my0 { margin-top:    0; margin-bottom: 0 }
+.mt0 {
+    margin-top: 0;
+}
 
-.m1  { margin:        0.5rem; }
-.mt1 { margin-top:    0.5rem; }
-.mr1 { margin-right:  0.5rem; }
-.mb1 { margin-bottom: 0.5rem; }
-.ml1 { margin-left:   0.5rem; }
-.mx1 { margin-left:   0.5rem;; margin-right:  0.5rem; }
-.my1 { margin-top:    0.5rem;; margin-bottom: 0.5rem; }
+.mr0 {
+    margin-right: 0;
+}
 
-.m2  { margin:        1rem }
-.mt2 { margin-top:    1rem }
-.mr2 { margin-right:  1rem }
-.mb2 { margin-bottom: 1rem }
-.ml2 { margin-left:   1rem }
-.mx2 { margin-left:   1rem; margin-right:  1rem }
-.my2 { margin-top:    1rem; margin-bottom: 1rem }
+.mb0 {
+    margin-bottom: 0;
+}
 
-.m3  { margin:        2rem }
-.mt3 { margin-top:    2rem }
-.mr3 { margin-right:  2rem }
-.mb3 { margin-bottom: 2rem }
-.ml3 { margin-left:   2rem }
-.mx3 { margin-left:   2rem; margin-right:  2rem }
-.my3 { margin-top:    2rem; margin-bottom: 2rem }
+.ml0 {
+    margin-left: 0;
+}
 
-.m4  { margin:        4rem }
-.mt4 { margin-top:    4rem }
-.mr4 { margin-right:  4rem }
-.mb4 { margin-bottom: 4rem }
-.ml4 { margin-left:   4rem }
-.mx4 { margin-left:   4rem; margin-right:  4rem }
-.my4 { margin-top:    4rem; margin-bottom: 4rem }
+.mx0 {
+    margin-left: 0;
+    margin-right: 0;
+}
 
-.mxn1 { margin-left: -0.5rem;; margin-right: -0.5rem;; }
-.mxn2 { margin-left: -1rem; margin-right: -1rem; }
-.mxn3 { margin-left: -2rem; margin-right: -2rem; }
-.mxn4 { margin-left: -4rem; margin-right: -4rem; }
+.my0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-.ml-auto { margin-left: auto }
-.mr-auto { margin-right: auto }
-.mx-auto { margin-left: auto; margin-right: auto; }
+.m1 {
+    margin: 0.5rem;
+}
 
+.mt1 {
+    margin-top: 0.5rem;
+}
+
+.mr1 {
+    margin-right: 0.5rem;
+}
+
+.mb1 {
+    margin-bottom: 0.5rem;
+}
+
+.ml1 {
+    margin-left: 0.5rem;
+}
+
+.mx1 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.my1 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.m2 {
+    margin: 1rem;
+}
+
+.mt2 {
+    margin-top: 1rem;
+}
+
+.mr2 {
+    margin-right: 1rem;
+}
+
+.mb2 {
+    margin-bottom: 1rem;
+}
+
+.ml2 {
+    margin-left: 1rem;
+}
+
+.mx2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.my2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.m3 {
+    margin: 2rem;
+}
+
+.mt3 {
+    margin-top: 2rem;
+}
+
+.mr3 {
+    margin-right: 2rem;
+}
+
+.mb3 {
+    margin-bottom: 2rem;
+}
+
+.ml3 {
+    margin-left: 2rem;
+}
+
+.mx3 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.my3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.m4 {
+    margin: 4rem;
+}
+
+.mt4 {
+    margin-top: 4rem;
+}
+
+.mr4 {
+    margin-right: 4rem;
+}
+
+.mb4 {
+    margin-bottom: 4rem;
+}
+
+.ml4 {
+    margin-left: 4rem;
+}
+
+.mx4 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.my4 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.mxn1 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.mxn2 {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.mxn3 {
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+
+.mxn4 {
+    margin-left: -4rem;
+    margin-right: -4rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Basscss Padding */
+.p0 {
+    padding: 0;
+}
 
-.p0  { padding: 0 }
-.pt0 { padding-top: 0 }
-.pr0 { padding-right: 0 }
-.pb0 { padding-bottom: 0 }
-.pl0 { padding-left: 0 }
-.px0 { padding-left: 0; padding-right:  0 }
-.py0 { padding-top: 0;  padding-bottom: 0 }
+.pt0 {
+    padding-top: 0;
+}
 
-.p1  { padding:        0.5rem }
-.pt1 { padding-top:    0.5rem }
-.pr1 { padding-right:  0.5rem }
-.pb1 { padding-bottom: 0.5rem }
-.pl1 { padding-left:   0.5rem }
-.py1 { padding-top:    0.5rem; padding-bottom: 0.5rem }
-.px1 { padding-left:   0.5rem; padding-right:  0.5rem }
+.pr0 {
+    padding-right: 0;
+}
 
-.p2  { padding:        1rem }
-.pt2 { padding-top:    1rem }
-.pr2 { padding-right:  1rem }
-.pb2 { padding-bottom: 1rem }
-.pl2 { padding-left:   1rem }
-.py2 { padding-top:    1rem; padding-bottom: 1rem }
-.px2 { padding-left:   1rem; padding-right:  1rem }
+.pb0 {
+    padding-bottom: 0;
+}
 
-.p3  { padding:        2rem }
-.pt3 { padding-top:    2rem }
-.pr3 { padding-right:  2rem }
-.pb3 { padding-bottom: 2rem }
-.pl3 { padding-left:   2rem }
-.py3 { padding-top:    2rem; padding-bottom: 2rem }
-.px3 { padding-left:   2rem; padding-right:  2rem }
+.pl0 {
+    padding-left: 0;
+}
 
-.p4  { padding:        4rem }
-.pt4 { padding-top:    4rem }
-.pr4 { padding-right:  4rem }
-.pb4 { padding-bottom: 4rem }
-.pl4 { padding-left:   4rem }
-.py4 { padding-top:    4rem; padding-bottom: 4rem }
-.px4 { padding-left:   4rem; padding-right:  4rem }
+.px0 {
+    padding-left: 0;
+    padding-right: 0;
+}
 
+.py0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.p1 {
+    padding: 0.5rem;
+}
+
+.pt1 {
+    padding-top: 0.5rem;
+}
+
+.pr1 {
+    padding-right: 0.5rem;
+}
+
+.pb1 {
+    padding-bottom: 0.5rem;
+}
+
+.pl1 {
+    padding-left: 0.5rem;
+}
+
+.py1 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.px1 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.p2 {
+    padding: 1rem;
+}
+
+.pt2 {
+    padding-top: 1rem;
+}
+
+.pr2 {
+    padding-right: 1rem;
+}
+
+.pb2 {
+    padding-bottom: 1rem;
+}
+
+.pl2 {
+    padding-left: 1rem;
+}
+
+.py2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.px2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.p3 {
+    padding: 2rem;
+}
+
+.pt3 {
+    padding-top: 2rem;
+}
+
+.pr3 {
+    padding-right: 2rem;
+}
+
+.pb3 {
+    padding-bottom: 2rem;
+}
+
+.pl3 {
+    padding-left: 2rem;
+}
+
+.py3 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.px3 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.p4 {
+    padding: 4rem;
+}
+
+.pt4 {
+    padding-top: 4rem;
+}
+
+.pr4 {
+    padding-right: 4rem;
+}
+
+.pb4 {
+    padding-bottom: 4rem;
+}
+
+.pl4 {
+    padding-left: 4rem;
+}
+
+.py4 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.px4 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
 /* HEADER */
-
 .header--menu {
     @include transition(all .2s ease-in-out 0s);
 
     &.opened {
         z-index: 10 !important;
     }
-    /* DROPDOWN */
-    // .dropdown {
-    //     .menu--item {
-    //         display: block;
-    //         margin: 0 .5rem !important;
-    //         a {
-    //             display: block;
-    //         }
-    //     }
-    // }
+}
+
+.wfp-pagination {
+    .pagination--item {
+        &.disabled {
+            border-color: $grey-lighter;
+            cursor: not-allowed;
+            .pagination--btn {
+                background-color: $grey-lighter;
+                color: white;
+                cursor: not-allowed;
+                pointer-events: none;
+
+            }
+            &:hover {
+                border-color: $grey-lighter;
+            }
+        }
+    }
 }

@@ -14,11 +14,12 @@ const TableDropdownModal = (props) => {
       )}
       <div className={messageBoxFooterClass}>
         {props.actions.length > 0 && props.actions.map((action, index) => (
-          <WfpActionButton
-            action={action.label}
-            key={index}
-            type={props.type}
-          />
+             <WfpActionButton
+                 label={action.label}
+                 action={action.action}
+                 key={index}
+                 type={props.type}
+             />
         ))}
       </div>
     </div>

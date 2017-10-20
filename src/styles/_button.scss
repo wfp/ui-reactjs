@@ -1,48 +1,112 @@
 @import 'colors';
-.wfp-btn {
 
+.wfp-btn {
 	margin-bottom: 10px;
 
-	&.btn-wide{
-    	width:200px;
-    }
-    &.btn-medium{
-    	width:160px;
-    }
-    &.btn-small{
-    	width:120px;
-    }
-    &.btn-xsmall{
-      width:110px;
-    }
-   	&.wfp-btn--ghost{
-   		border: none;
-   		box-shadow: none;
-   		&:hover{
-   			border: 1px solid rgba(0,0,0,.15);
-   			box-shadow: 0 1px 3px rgba(0,0,0,.2);
-   			background-color: $background;
-    		border-color: $primary;
-    		color: $accent;
-   		}
-   	}
+	&.btn-wide {
+		width: 200px;
+	}
+
+	&.btn-medium {
+		width: 160px;
+	}
+
+	&.btn-small {
+		width: 120px;
+	}
+
+	&.btn-xsmall {
+		width: 110px;
+	}
+
+	&.wfp-btn--ghost {
+		border: none;
+		box-shadow: none;
+
+		&:hover {
+			border: 1px solid rgba(0,0,0,.15);
+			box-shadow: 0 1px 3px rgba(0,0,0,.2);
+			background-color: $background;
+			border-color: $primary;
+			color: $accent;
+		}
+	}
+}
+
+.wfp-btn--a {
+	-webkit-transition: border 0.1s ease-in-out,background 0.1s ease-in-out,color 0.1s ease-in-out;
+	transition: border 0.1s ease-in-out,background 0.1s ease-in-out,color 0.1s ease-in-out;
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 100%;
+	line-height: 1.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	vertical-align: baseline;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	-webkit-appearance: none;
+	color: $primary;
+	background-color: #fff;
+	border-color: $primary;
+	text-align: center;
+	margin-bottom: 10px;
+
+	&:hover {
+		background-color: $blue-dark;
+		border-color: $blue-dark;
+		color: $background !important;
+	}
+
+	&.btn-wide {
+		width: 200px;
+	}
+
+	&.btn-medium {
+		width: 160px;
+	}
+
+	&.btn-small {
+		width: 120px;
+	}
+
+	&.btn-xsmall {
+		width: 110px;
+	}
+
+	&.wfp-btn--ghost {
+		border: none;
+		box-shadow: none;
+
+		&:hover {
+			border: 1px solid rgba(0,0,0,.15);
+			box-shadow: 0 1px 3px rgba(0,0,0,.2);
+			background-color: $background;
+			border-color: $primary;
+			color: $accent;
+		}
+	}
 }
 
 .header--menu {
 	.wfp-btn {
 		border: none;
 		box-shadow: none;
-        margin: 0;
-        &.wfp-btn {
-            padding: .4rem .5rem;
-        }
-        &.wfp-btn--primary {
-            background-color: $blue-darker;
-            border-color: $blue-dark;
-            &:hover {
-                background-color: darken($blue-darker, 15%);
-                border-bottom-color: $blue-darker;
-            }
-        }
+		margin: 0;
+
+		&.wfp-btn {
+			padding: 0.4rem 0.5rem;
+		}
+
+		&.wfp-btn--primary {
+			background-color: $blue-darker;
+			border-color: $blue-dark;
+
+			&:hover {
+				background-color: darken($blue-darker, 15%);
+				border-bottom-color: $blue-darker;
+			}
+		}
 	}
 }
