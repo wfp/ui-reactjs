@@ -9,6 +9,27 @@
 }
 
 
+.sidebar--open {
+    overflow: hidden;
+    //.content__wrapper {
+        position: relative;
+        //TODO: Wrap Content and remove duplicated react entry points
+        .navbar {
+            position: relative;
+            z-index: 10000;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            background: rgba($black,0.7);
+        }
+    //}
+}
 .sidebar {
 
     .menu--alt{

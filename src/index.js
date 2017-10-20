@@ -4,7 +4,8 @@ import Header from './components/header';
 import CorporateStrip from './components/corporatestrip';
 import LinkMenuItem from './components/linkmenuitem';
 import LogoItem from './components/logoitem';
-import SearchWidget from './components/searchwidget';
+//import SearchWidget from './components/searchwidget';
+import SearchWidget from './components/universalheader/search';
 import UserMenuWidget from './components/usermenuwidget';
 import Breadcrumbs from './components/breadcrumbs';
 import Paginator from './components/paginator';
@@ -25,6 +26,8 @@ import TableDropdownModal from './components/TableDropdownModal';
 
 import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
 import WssStyle from './styles/main.scss';
+
+import UniversalHeader from './components/universalheader/header.jsx';
 
 module.exports = {
   LinkTo,
@@ -47,5 +50,6 @@ module.exports = {
   TableHeaderItem, TableRow, TableRowItem,
   WfpActionButton,
   TableDropdownMenu,
-  TableDropdownModal
+  TableDropdownModal,
+  UniversalHeader
 };
