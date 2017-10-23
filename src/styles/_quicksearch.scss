@@ -70,9 +70,11 @@
 
 .react-autosuggest__suggestions-container--open {
   position: absolute;
+  top: 0;
   right: 0;
   height: 100vh;
-  margin-top: 10px;
+  //padding-top: 135px;
+  margin-top: 140px;
   background: $white;
   color: $black;
   width: 50%;
@@ -82,7 +84,7 @@
   overflow-y: auto;
   animation-name: sidebar;
   animation-duration: 0.15s;
-  z-index: 100000;
+  z-index: 1000;
   box-shadow: rgba($black, 0.1) 0 3px 13px;
 }
 

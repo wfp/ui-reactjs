@@ -29,6 +29,13 @@ import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
 import WssStyle from './styles/main.scss';
 
 import UniversalHeader from './components/universalheader/header.jsx';
+import UniversalHeaderTitle from './components/universalheader/title.jsx';
+import UniversalHeaderMainmenu from './components/universalheader/mainmenu.jsx';
+import UniversalModal from './components/universalmodal/modal.jsx';
+import UniversalModalTitle from './components/universalmodal/modaltitle.jsx';
+import UniversalModalContent from './components/universalmodal/modalcontent.jsx';
+import UniversalFooter from './components/universalfooter/footer.jsx';
+
 
 module.exports = {
   LinkTo,
@@ -53,5 +60,11 @@ module.exports = {
     MultipleActionsButton,
   TableDropdownMenu,
   TableDropdownModal,
-  UniversalHeader
+  UniversalHeader,
+  UniversalHeaderTitle,
+  UniversalHeaderMainmenu,
+  UniversalModal,
+  UniversalModalTitle,
+  UniversalModalContent,
+  UniversalFooter
 };

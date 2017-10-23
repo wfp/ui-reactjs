@@ -25,7 +25,7 @@ export default class WfpActionButton extends React.Component {
       'wfp-btn--tertiary': this.props.type === 'tertiary'
     });
     return (
-      <button className={classes} onClick={this.handleClick}>
+      <button className={classes} onClick={this.props.onClick ? this.props.onClick :  this.handleClick}>
         <span>{this.props.label}</span>
       </button>
     );

@@ -63,8 +63,6 @@ class Header extends React.Component {
 
 Header.propTypes = {
   Title: PropTypes.element,
-  Search: PropTypes.element,
-  UserMenu: PropTypes.element,
   MainMenu : PropTypes.element
 };
 
