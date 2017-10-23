@@ -547,6 +547,14 @@
   li {
     list-style: none;
   }
+  .details-cell-key,
+  .details-cell-value {
+      display: inline-block;
+  }
+  .details-cell-key {
+      font-weight: bold;
+      margin-right: .5rem;
+  }
 }
 
 .status-cell {}
