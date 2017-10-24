@@ -87,6 +87,10 @@
     background: $white;
 }
 
+.wfp-modal__footer {
+    margin-top: 1rem;
+}
+
 .wfp-modal__inner--scrollable {
     @extend .wfp-modal__inner;
     padding: 1em;
@@ -109,6 +113,10 @@
     line-height: 1.5rem;
     padding: 0;
     padding-right: 1em;
+    &:hover {
+        opacity: 0.9;
+        background-color: transparent;
+    }
     &:after, &:before {
         position: absolute;
         top: 0.3em;

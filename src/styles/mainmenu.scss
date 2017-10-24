@@ -446,6 +446,151 @@
 
 }
 
+
+/* Mainmenu Links */
+
+
+.rc-menu {
+    &:focus {outline:0;}
+    .menu--link {
+        color: $white;
+        border-bottom-width: 0;
+        &:visited {
+            color: $white;
+        }
+        padding: 1em 0.8em;
+        @include media-query($md-screen) {
+            margin: 0 .4em;
+            padding: .2em 0.5em;
+        }
+        @include media-query($lg-screen) {
+            margin: 0 .7em;
+            padding: .2em 0.5em;
+        }
+        font-size: 1em;
+        cursor: pointer;
+        &.active {
+            border-bottom: none !important;
+        }
+        &.is-active {
+            border-bottom: 1px solid $white;
+        }
+        position: relative;
+        font-weight: bold!important;
+        @include media-max($md-screen) {
+            color: $white;
+            background: $blue-darker;
+            &:active {
+                background: $blue-darkest;
+            }
+            border-top: 1px solid $blue;
+            display: block;
+            width: 100%;
+            position: relative;
+            &:not(:only-child) {
+                &:after {
+                    content: '\203A';
+                    transform: rotate(90deg);
+                    display: block;
+                    position: absolute;
+                    right: 0.3em;
+                    top: 0;
+                    background-image: none;
+                    font-size: 1.7em;
+                    margin: 0.4em;
+                }
+            }
+            .rc-menu-submenu-active & {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        text-transform: none;
+        @include media-query($md-screen) {
+            // TODO: Same look as wfp-btn Custom Menu Button
+            &.menu--button {
+                background: $blue-darker;
+                border-radius: 3px;
+                border: none;
+                box-shadow: none;
+                padding: 0.35em 0.7em;
+                transition: all 0.2s;
+                &:hover {
+                    background: darken($blue-darker,5);
+                }
+                &:after {
+                    display: none !important;
+                }
+            }
+            &:only-child {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    left: 0;
+                    bottom: -2px;
+                    width: 100%;
+                    height: 1px;
+                    background: $white;
+                    opacity: 0;
+                    transform: scaleX(0.5);
+                    transition: all 0.1s;
+                }
+            }
+            &:hover {
+                 &:only-child {
+                    &:after {
+                        opacity: 1;
+                        transform: scaleX(0.95);
+                    }
+                }
+            }
+
+             &:not(:only-child) {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0em;
+                    width: 100%;
+                    height: 1px;
+                    background: $white;
+                    opacity: 0;
+                    transform: scaleX(0.5);
+                    transition: all 0.1s;
+                }
+                &:hover {
+                    border-color: transparent;
+                    /* &:after {
+                        opacity: 0.3;
+                        transform: scaleX(0.8);
+                    } */
+                }
+            }
+        }
+        &.active {
+            @include media-query($lg-screen) {
+                border-bottom: none;
+                &:after {
+                    opacity: 1;
+                    transform: scaleX(1); //background: $blue-darkest;
+                }
+            }
+        }
+    }
+    .menu--link--mobile {
+        @include media-query($lg-screen) {
+            display: none;
+        }
+    }
+    .menu--link--desktop {
+        @include media-max($lg-screen) {
+            display: none;
+        }
+    }
+}
+
 /* Mobile Overview Button */
 
 .link__wrapper {

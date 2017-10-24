@@ -70,7 +70,6 @@ class Mainmenu extends React.Component {
       closeSubMenuOnMouseLeave={true}
       onTitleClick={this.onClick}>
           {this.props.children}
-
     </Menu>)}
 };
 
