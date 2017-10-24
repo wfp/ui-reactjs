@@ -597,7 +597,8 @@
 
 .history-cell-wrapper {
   width: 100%;
-  text-align: center;
+  text-align: left;
+ 
 
   .history-cell-wrapper--viewport {
     display: flex;
@@ -623,7 +624,7 @@
   .wfp-link {
     font-size: 0.9rem;
     text-transform: lowercase;
-    margin-left: auto;
+    margin-left: 3rem;
     margin-right: auto;
 
     span {
