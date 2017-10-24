@@ -19,13 +19,13 @@ export default class WfpActionButton extends React.Component {
   }
 
   render() {
-    let classes = classnames('wfp-btn btn-small xsmall modal-trigger', {
+    let classes = classnames('wfp-btn modal-trigger', {
       'wfp-btn--primary': this.props.type === 'primary',
       'wfp-btn--secondary': this.props.type === 'secondary',
       'wfp-btn--tertiary': this.props.type === 'tertiary'
     });
     return (
-      <button className={classes} onClick={this.handleClick}>
+      <button className={classes} onClick={this.props.onClick ? this.props.onClick :  this.handleClick}>
         <span>{this.props.label}</span>
       </button>
     );

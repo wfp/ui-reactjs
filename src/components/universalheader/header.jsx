@@ -61,11 +61,9 @@ class Header extends React.Component {
   }
 }
 
-Header.propTypes = {
-  Title: PropTypes.element,
-  Search: PropTypes.element,
-  UserMenu: PropTypes.element,
-  MainMenu : PropTypes.element
-};
 
+Header.propTypes = {
+  trigger: PropTypes.component,
+  children: PropTypes.component
+};
 export default Header;

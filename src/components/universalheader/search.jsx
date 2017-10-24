@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Portal from 'react-portal'
 import Autosuggest from 'react-autosuggest'
 import AutosuggestHighlightMatch from 'autosuggest-highlight/match'
 import AutosuggestHighlightParse from 'autosuggest-highlight/parse'
@@ -168,6 +169,23 @@ class Search extends React.Component {
     this.setState({ source: nextProps.data});
   }
 
+//** Attempting access **//
+  renderSuggestionsContainer = ({ containerProps , children, query }) => {
+    // My direct need is accessing a method of App
+    //var accessAppContext = this.someReactMethod();
+  
+    return (<Portal isOpened={true}>
+      <div {... containerProps}>{children}</div>
+    </Portal>);
+  };
+  
+  onChange = (event, { newValue, method }) => {
+    this.setState({
+      value: newValue
+    });
+  };
+
+
   render() {
     const { value, suggestions, noSuggestions } = this.state;
     const inputProps = {
@@ -190,12 +208,15 @@ class Search extends React.Component {
           getSectionSuggestions={this.getSectionSuggestions}
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
+          renderSuggestionsContainer={this.renderSuggestionsContainer}
           inputProps={inputProps}
           renderInputComponent={renderInputComponent} />
           { noSuggestions &&
-              <div className="react-autosuggest__suggestions-container react-autosuggest__suggestions-container--open react-autosuggest__suggestions-container--nosuggestion">
-                <span>No suggestions</span>
-              </div>
+              <Portal isOpened={true}>
+                <div className="react-autosuggest__suggestions-container react-autosuggest__suggestions-container--open react-autosuggest__suggestions-container--nosuggestion">
+                  <span>No suggestions</span>
+                </div>
+              </Portal>
           }
         </form>
     );

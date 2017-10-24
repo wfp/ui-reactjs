@@ -14,3 +14,14 @@
     left:100px;
     z-index:1000000;
 }
+
+.tippy-tooltip-content {
+    text-align: left;
+}
+
+.tooltip__title {
+    background: $grey-lightest;
+    font-size: 1.3rem;
+    margin: -0.4rem -0.8rem 0 -0.8rem;
+    padding: 0.8rem;
+}
