@@ -439,6 +439,16 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.ReactTable {
+    .rt-noData {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto;
+        transform: translate(0, 0);
+    }
+}
+
 .ReactTable .-loading {
   display: block;
   position: absolute;
