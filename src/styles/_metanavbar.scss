@@ -1,27 +1,41 @@
 /* Other navigational aid components */
-
 @import 'colors';
 
-.tab-selector{
+.tab-selector {
 	color: $grey;
 	font-size: 1rem;
 	padding-bottom: 1rem;
-	a, a:visited{	
+
+	a,
+	a:visited {
 		color: $grey;
-		padding: 1em 2em;
 		text-decoration: none;
-		border-bottom-color: transparent;
-		&:hover{
-			color: $primary;
-			border-bottom-color: $primary;
+		border: none;
+		border-right: 1px solid;
+
+		&:last-child {
+			border-right-color: transparent;
 		}
-		&.active{
-			color: $primary;
-			border-bottom-color: $primary;
-		}
-		&:focus{
+
+		&:focus {
 			text-decoration: none;
 			outline: 0;
+		}
+
+		&.active,
+		&:hover {
+			color: $primary;
+
+			span {
+				border-bottom-color: $primary;
+			}
+		}
+
+		span {
+			padding: 1em;
+			margin: 0 0.5em;
+			border-bottom: 1px solid transparent;
+			text-transform: uppercase;
 		}
 	}
 }

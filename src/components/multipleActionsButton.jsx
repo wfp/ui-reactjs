@@ -31,7 +31,6 @@ const MultipleActionsButton = (props) => {
                     <i className="fa fa-fw fa-ellipsis-v" />
                 </button>
               </Tooltip>
-               
         );
 }
 
