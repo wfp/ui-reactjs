@@ -15,9 +15,8 @@
         margin-bottom: 2em;
     }
     margin-top: 0;
-    //line-height: 1.75em;
     .h3 {
-        margin: 0.3em 0; //flex-basis: 50%;
+        margin: 0.3em 0;
         flex-shrink: 1;
         line-height: 3em;
         padding-right: 0.2em;
@@ -55,8 +54,6 @@
                 min-width: 200px;
                 width: 25%;
             }
-            //max-width: 35%;
-            //flex-basis: 35%;
         }
     }
     .headingwrap__right {
@@ -220,16 +217,12 @@
     }
     @include media-query($lg-screen) {
         column-count: 4;
-        // border-right: 2px $primary;
     }
     li {
         width: 100%;
         display: inline-block;
         overflow: hidden;
         white-space: nowrap;
-        /*&.longname {
-            width: 40%;
-        } */
         a {
             display: inline-block;
             max-width: calc(100% - 30px);
@@ -319,14 +312,9 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
-        /*@include media-max($sm-screen) {
-            padding-top: 4rem;
-        }*/
     }
 
     .menu__subtitle {
-        //text-transform: uppercase;
-        //color: $blue;
         font-size: 1.3rem;
         a {
             color: $text-color !important;

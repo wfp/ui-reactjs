@@ -41,6 +41,11 @@
     justify-content: center;
     align-items: center;
     animation: wfp-modal__overlay-in 0.2s forwards;
+    &.wfp-modal--small {
+        .wfp-modal {
+            max-width: 500px;
+        }
+    }
 }
 
 .modal__overlay__before--close {
@@ -89,6 +94,10 @@
 
 .wfp-modal__footer {
     margin-top: 1rem;
+    text-align: right;
+    .wfp-btn {
+        margin-left: 1em;
+    }
 }
 
 .wfp-modal__inner--scrollable {
@@ -119,11 +128,11 @@
     }
     &:after, &:before {
         position: absolute;
-        top: 0.3em;
-        right: 0.25em;
+        top: 0.3rem;
+        right: 0.25rem;
         content: "";
         display: block;
-        height: 15px;
+        height: 1rem;
         width: 2px;
         background: $white;
         transform: rotate(45deg);

@@ -19,7 +19,8 @@ class UniversalModal extends React.Component {
     this.setState({modalIsOpen: true});
   }
 
-  closeModal() {
+  closeModal(e) {
+    e.preventDefault();
     this.setState({modalIsOpen: false});
   }
 
@@ -43,14 +44,16 @@ class UniversalModal extends React.Component {
             beforeClose: 'wfp-modal__before--close'
           }}
           overlayClassName={{
-            base: 'wfp-modal__overlay',
+            base: `wfp-modal__overlay ${this.props.className}`,
             afterOpen: 'wfp-modal__overlay__after--open',
             beforeClose: 'wfp-modal__overlay__before--close'
           }}
         >
           <button className="wfp-modal__close" onClick={this.closeModal}>close</button>
           <div className="wfp-modal__inner">
-            {this.props.children}
+            {React.cloneElement(this.props.children, {
+             closeModal: this.closeModal
+            })}
           </div>
         </Modal>
       </span>);
