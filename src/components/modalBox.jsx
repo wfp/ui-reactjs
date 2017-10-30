@@ -1,12 +1,29 @@
 import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import WfpActionButton from './wfpActionButton';
+import lodash from 'lodash'
 
 const ModalBox = (props) => {
     const mainClass = classnames('modalbox');
     const bodyClass = classnames('modalbox--description');
     const footerClass = classnames('modalbox--footer');
+    const children = React.Children.toArray(props.children);
+    const partition = lodash.groupBy(children, child => {
+        if (child.props.hasOwnProperty('level')) {
+            return child.props.level;
+        }
+        return 0;
+    });
+    let index = 0;
+    const subfooters = lodash.map(partition, level => {
+        return (
+            <div key={"footer-" + (index++)} className={footerClass}>
+
+                {level}
+
+            </div>
+        );
+    });
     return (
         <div className={mainClass}>
             {
@@ -14,18 +31,15 @@ const ModalBox = (props) => {
                     <p className={bodyClass}>{props.description}</p>
                 )
             }
-            <div className={footerClass}>
-                {props.children}
-
+            <div>
+                {subfooters}
             </div>
         </div>
     );
 };
 
 ModalBox.propTypes = {
-    actions: PropTypes.array,
     description: PropTypes.string,
-    type: PropTypes.string
 };
 
 ModalBox.defaultProps = { };
