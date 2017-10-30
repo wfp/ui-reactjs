@@ -37,6 +37,7 @@ import UniversalModalTitle from './components/universalmodal/modaltitle.jsx';
 import UniversalModalContent from './components/universalmodal/modalcontent.jsx';
 import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
 import UniversalFooter from './components/universalfooter/footer.jsx';
+import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
 
 module.exports = {
@@ -70,5 +71,6 @@ module.exports = {
   UniversalModalTitle,
   UniversalModalContent,
   UniversalModalFooter,
-  UniversalFooter
+  UniversalFooter,
+  UniversalFooterMini
 };
