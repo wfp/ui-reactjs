@@ -11,3 +11,4 @@ demo/mydatabase
 demo/src/wss_ui/site/static/dist
 .tern-port
 .editorconfig
+package-lock.json
