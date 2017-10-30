@@ -1,0 +1,99 @@
+.wfp-secondaryheader {
+	position: relative;
+	@include media-max($md-screen) {
+		padding: 1rem 0.2rem 1.4rem;
+	}
+	@include print {
+		padding-top: 0;
+	}
+	padding: 1.8rem 0 2rem 0;
+	//box-shadow: 0px 2px 1px rgba($blue, 0.1) !important;
+	@extend .main-shadow;
+	&.wfp-secondaryheader--noborder {
+		box-shadow: none !important;
+	}
+}
+
+.secondaryheader__title {
+	margin-top: 0.3em;
+	margin-bottom: 0;
+	font-size: 2.5rem;
+	@include print {
+		font-size: 1.8rem;
+	}
+}
+
+.secondaryheader__title__icon {
+    height: 0.7em;
+    width: auto;
+    display: inline;
+    padding-right: 0.2em;
+    vertical-align: baseline;
+}
+
+/* Emergency Level Icon with link to OPweb */
+.emergencylevel {
+	background: $grey-lighter;
+	display: inline-flex;
+	align-items: center;
+	margin-right: 0.15em;
+	margin-top: -0.25em;
+	position: relative;
+	top: -0.15em;
+	border-radius: 3px;
+	.emergencylevel__icon {
+	    display: inline-block;
+	    color: #FFF !important;
+	    font-size: 0.6em;
+	    height: 100%;
+	    padding: 0.3em;
+	    margin-right: 0.2em;
+	    border-radius: 3px 0 0 3px;
+	}
+    &.l0 {
+    	.emergencylevel__icon {
+	        background: $primary;
+	    }
+    }
+    &.l2 {
+    	.emergencylevel__icon {
+	        background: $orange;
+	    }
+    }
+    &.l3 {
+    	.emergencylevel__icon {
+	        background: $red;
+	    }
+    }
+    &.other {
+    	.emergencylevel__icon {
+			background: $primary;
+    	}
+    }
+}
+
+.emergencylevel__text {
+	font-size: 1rem;
+	color: $text-color;
+	font-weight: normal;
+	letter-spacing: 0;
+	margin: 0 0.7em;
+}
+
+.refresh_menu_dropdown {
+	display: none;
+}
+
+
+.header_right {
+	position: absolute;
+	top: 2rem;
+	right: 0;
+	//TODO: Make this nicer
+	/*.refresh_menu_span {
+		i {
+			position: relative;
+			top: 5px;
+		}
+	} */
+}

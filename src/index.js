@@ -31,6 +31,7 @@ import WssStyle from './styles/main.scss';
 import UniversalHeader from './components/universalheader/header.jsx';
 import UniversalHeaderTitle from './components/universalheader/title.jsx';
 import UniversalHeaderMainmenu from './components/universalheader/mainmenu.jsx';
+import UniversalSecondaryHeader from './components/universalheader/secondaryheader.jsx';
 import UniversalModal from './components/universalmodal/modal.jsx';
 import UniversalModalTitle from './components/universalmodal/modaltitle.jsx';
 import UniversalModalContent from './components/universalmodal/modalcontent.jsx';
@@ -64,6 +65,7 @@ module.exports = {
   UniversalHeader,
   UniversalHeaderTitle,
   UniversalHeaderMainmenu,
+  UniversalSecondaryHeader,
   UniversalModal,
   UniversalModalTitle,
   UniversalModalContent,

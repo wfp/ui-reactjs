@@ -75,8 +75,19 @@
 .wfp-modal__title {
     background: $grey-lightest;
     margin: 0;
-    padding: 1rem 2rem;
+    padding: 1.08rem 2rem 1rem 2rem;
     width: 100%;
+    .wfp-modal--warning & {
+        color: $red;
+        background: rgba($red,0.1);
+        border-bottom: 2px solid rgba($red,0.25);
+        &:before {
+            font-family: FontAwesome;
+            content: "\f071";
+            margin-left: -0.1em;
+            margin-right: 0.5em;
+        }
+    }
 }
 
 .wfp-modal__content {
@@ -142,30 +153,3 @@
         transform: rotate(-45deg);
     }
 }
-
-/*.modal{
-    position: absolute;
-    top:200px;
-    left:calc( ( 100% - 350px) / 2);
-    width:400px;
-    background-color:white;
-    border-radius: 10px;
-
-    .header{
-        padding:20px;
-        font-size:1.5em;
-        color: rgba(0,0,0,0.85);
-        font-weight: bold;
-        border-bottom:1px solid rgba(0,0,0,0.2);
-    }
-    .body{
-        padding:20px;
-    }
-    .footer{
-        padding:20px;
-        border-top:1px solid rgba(0,0,0,0.2);
-        button{
-            margin-left:10px;
-        }
-    }
-}*/
