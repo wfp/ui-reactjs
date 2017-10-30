@@ -63,7 +63,7 @@ class Header extends React.Component {
 
 
 Header.propTypes = {
-  trigger: PropTypes.component,
-  children: PropTypes.component
+  trigger: PropTypes.func,
+  children: PropTypes.node
 };
 export default Header;

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
+import ModalTitle from './modaltitle'
+
 
 
 class UniversalModal extends React.Component {
@@ -19,16 +21,20 @@ class UniversalModal extends React.Component {
     this.setState({modalIsOpen: true});
   }
 
-  closeModal() {
+  closeModal(e) {
+    if (e) { e.preventDefault(); }
     this.setState({modalIsOpen: false});
   }
 
   render() {
-
+/*    {React.cloneElement(this.props.children, {
+             closeModal: this.closeModal
+            })}*/
     return(
       <span>
         {React.cloneElement(this.props.trigger, {
-         onClick: this.openModal
+         onClick: this.openModal,
+         closeModal: this.closeModal
         })}
          <Modal
           isOpen={this.state.modalIsOpen}
@@ -43,14 +49,16 @@ class UniversalModal extends React.Component {
             beforeClose: 'wfp-modal__before--close'
           }}
           overlayClassName={{
-            base: 'wfp-modal__overlay',
+            base: `wfp-modal__overlay wfp-modal--small  ${this.props.className}`,
             afterOpen: 'wfp-modal__overlay__after--open',
             beforeClose: 'wfp-modal__overlay__before--close'
           }}
         >
           <button className="wfp-modal__close" onClick={this.closeModal}>close</button>
           <div className="wfp-modal__inner">
-            {this.props.children}
+              {React.cloneElement(this.props.children, {
+                closeModal: this.closeModal
+              })}
           </div>
         </Modal>
       </span>);

@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const UniversalModalContent = ({ children }) => (
+const UniversalModalFooter = ({ children }) => (
   <div className="wfp-modal__footer">
     { children }
   </div>
 );
 
-UniversalModalContent.propTypes = {
+UniversalModalFooter.propTypes = {
   children: PropTypes.node
 };
 
-export default UniversalModalContent;
+export default UniversalModalFooter;

@@ -16,6 +16,8 @@ export default class WfpActionButton extends React.Component {
 
   handleClick() {
     this.props.onActionClick(this.props.action);
+    if (typeof this.props.closeModal === "function")
+      this.props.closeModal();
   }
 
   render() {

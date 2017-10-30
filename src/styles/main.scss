@@ -10,6 +10,7 @@
 
 // TODO: use colors from WFP UI only and use scss from there
 @import 'colors';
+@import 'utilities';
 @import "banner";
 @import 'navbar';
 @import 'sidebar';
@@ -23,6 +24,7 @@
 @import 'overlay';
 @import 'dropdown';
 @import 'status';
+@import 'secondaryheader';
 @import 'tooltip';
 @import 'modal';
 @import 'quicksearch';
@@ -36,11 +38,11 @@
 @import 'user';
 @import "reacttable";
 @import 'tabledropdownmodal';
-@import 'responsive';
+//@import 'responsive';
 @import 'mixins';
 @import 'gridcomponent';
 // Global CSS
-body {
+/*body {
     font-family: "lato", sans-serif;
 }
 
@@ -64,7 +66,7 @@ h4 {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     border-bottom: 2px solid $grey-lighter;
-}
+}*/
 
 .section,
 section {
@@ -121,7 +123,7 @@ section {
     font-weight: bold;
 }
 /* OVERRIDES */
-a,
+/*a,
 a:visited {
     color: $primary;
 
@@ -130,6 +132,7 @@ a:visited {
     }
     outline: 0;
 }
+*/
 
 .no-underline {
     border-color: transparent !important;

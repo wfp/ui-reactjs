@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Tooltip } from 'react-tippy';
+import { tooltipStyle } from '../utils/vars';
 
 import 'react-tippy/dist/tippy.css';
 
@@ -9,9 +10,10 @@ const StatusDot = (props) => {
 
   return (
     <Tooltip
+      { ...tooltipStyle }
       disabled={!tooltipEnabled}
-      position={'right'}
-      title={(tooltipEnabled && tooltip!=='') ? tooltip : ''}
+      position={'top'}
+      title={tooltip!=='' ? tooltip : ''}
     ><div className={statusClass} /></Tooltip>
   );
 };
