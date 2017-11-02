@@ -15,10 +15,10 @@ const Breadcrumbs = (props) => {
           props.nextLabels.map((nextLabel, ind) => {
               var content = ""
               if (props.nextLinks && props.nextLinks.length > ind) {
-                content = <a href={props.nextLinks[ind]} class="breadcrumbs--link" ><span>{nextLabel}</span></a>
+                content = <a href={props.nextLinks[ind]} className="breadcrumbs--link" ><span>{nextLabel}</span></a>
               }
               else {
-                content = <span class="breadcrumbs--last">{nextLabel}</span>
+                content = <span className="breadcrumbs--last">{nextLabel}</span>
               }
               return (
                 <li key={ind} className="breadcrumbs--item">
