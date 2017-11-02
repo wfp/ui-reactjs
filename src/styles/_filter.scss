@@ -5,12 +5,11 @@
     margin-bottom: 2rem;
 
     .accordion-head {
+        display: block;
         padding: 10px;
         cursor: pointer;
-
-        a {
-            border-color: transparent;
-        }
+        user-select: none;
+        color: darken($primary,12);
     }
 
     .filter_container {

@@ -18,11 +18,13 @@ nav .img {
 
   ul {
     width: 100%;
+    margin: 0;
   }
 
   li {
     display: inline-block;
     padding-left: 1rem;
+    margin: 0;
   }
 
   .wfp-grid.wfp-wrapper.wfp-overbar {
@@ -31,6 +33,8 @@ nav .img {
       color: $background;
       text-decoration: none;
       border-bottom-color: transparent;
+      font-size: .875rem;
+      padding: 0 .25em;
 
       &:focus,
       &:hover {
