@@ -49,7 +49,7 @@ function renderSuggestion(suggestion, { query }) {
       <div className="suggestion__content">
         <span className="suggestion__name">
           {
-          parts.map((part, index) => {
+          labelParts.map((part, index) => {
               const className = part.highlight ? 'highlight' : null;
               return (
                 <span className={className} key={index}>
@@ -61,7 +61,7 @@ function renderSuggestion(suggestion, { query }) {
         </span>
         <span className="suggestion__small">
             {
-            labelParts.map((part, index) => {
+            parts.map((part, index) => {
               const className = part.highlight ? 'highlight' : null;
               return (
                 <span className={className} key={index}>
