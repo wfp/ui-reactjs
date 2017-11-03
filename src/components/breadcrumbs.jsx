@@ -7,7 +7,7 @@ const Breadcrumbs = (props) => {
       <nav className="wfp-breadcrumbs">
         <ol className="breadcrumbs--wrapper">
           <li className="breadcrumbs--item">
-            <a href="#home" className="breadcrumbs--link home">
+            <a href={props.homeLink} className="breadcrumbs--link home">
               <span className="icon-home-dark xsmall"></span><span>{props.home}</span>
             </a>
           </li>
