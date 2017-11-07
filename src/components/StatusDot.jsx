@@ -11,9 +11,8 @@ const StatusDot = (props) => {
   return (
     <Tooltip
       { ...tooltipStyle }
-      disabled={!tooltipEnabled}
       position={'top'}
-      title={tooltip!=='' ? tooltip : ''}
+      title={tooltipEnabled && tooltip!=='' ? tooltip : ''}
     ><div className={statusClass} /></Tooltip>
   );
 };
