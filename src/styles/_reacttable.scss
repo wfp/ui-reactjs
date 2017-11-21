@@ -545,133 +545,29 @@
   }
 }*/
 
-.request-cell {
-  .request-cell-type {
-    font-size: 0.9rem;
-  }
-
-  .request-cell-value {}
-}
-
-.details-cell {
-  li {
-    list-style: none;
-  }
-  .details-cell-key,
-  .details-cell-value {
-      display: inline-block;
-  }
-  .details-cell-key {
-      font-weight: bold;
-      margin-right: .5rem;
-  }
-}
-
-.status-cell {}
-
-.history-cell--list-element {
-  list-style: none;
-  margin-bottom: 1em;
-  clear: left;
-
-  .history-cell-container {
-    float: left;
-    margin-bottom: 1em;
-
-    span {
-      padding-right: 0.25rem;
-      padding-left: 0;
-
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-  }
-
-  .message-box {
-    margin: 0 10px 1em;
-    text-align: center;
-    float: right;
-  }
-}
-
-.history-cell-wrapper {
-  width: 100%;
-  text-align: left;
- 
-
-  .history-cell-wrapper--viewport {
-    display: flex;
-    flex: 100 0 auto;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    max-height: none;
-    text-align: left;
-    overflow: auto;
-    // -webkit-transition: max-height 0.2s ease-in-out 0s;
-    // transition: max-height 0.2s ease-in-out 0s;
-    ul {
-      display: inline-block;
-      width: 100%;
-    }
-  }
-
-  .message-box {
-    margin-top: 7px;
-    margin-right: 0;
-    margin-left: auto;
-  }
-
-  .wfp-link {
-    font-size: 0.9rem;
-    text-transform: lowercase;
-    margin-left: 3rem;
-    margin-right: auto;
-
-    span {
-      margin-left: 0.1rem;
-      font-size: 0.9rem;
-    }
-  }
-}
-
-.limit-height {
-  .history-cell-wrapper--viewport {
-    max-height: 100px!important;
-    overflow: hidden!important;
-  }
-
-  .history-cell-wrapper--gradient {
-    position: relative;
-
-    &:after {
-      content: "";
-      display: block;
-      height: 25px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: -moz-linear-gradient(top, $gradient-start 0%, $gradient-end 100%);
-      background: -webkit-linear-gradient(top, $gradient-start 0%,$gradient-end 100%);
-      background: linear-gradient(to bottom, $gradient-start 0%,$gradient-end 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#00ffffff', endColorstr='#ffffff',GradientType=0 );
-    }
-  }
-}
-
-.action-cell {}
 @media screen and (max-width: $sm-screen) {
   .ReactTable {
+    margin-left: -1rem;
+    margin-right: -1rem;
     .rt-tbody,
     .rt-thead {
       min-width: auto !important;
     }
 
+    .rt-thead {
+      display: none !important;
+    }
+
+    .rt-tr-group {
+      padding: 0.5rem;
+      border-bottom: 10px solid $grey-lightest !important;
+    }
+
     .rt-tr {
       display: flex;
       flex: 0 1 auto;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       align-content: flex-start;
@@ -679,6 +575,7 @@
 
     .rt-td {
       width: 100% !important;
+      max-width: none !important;
       flex: 1 0 auto !important;
       justify-content: flex-start !important;
       flex-wrap: wrap;

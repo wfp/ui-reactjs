@@ -7,6 +7,7 @@ var config = {
   entry: [
     './src/index.js'
   ],
+  devtool: "inline-source-map",
   output: {
     library: 'wfp-ui-reactjs',
     libraryTarget: 'umd',
@@ -42,10 +43,18 @@ var config = {
       },
       {
         test: /\.scss$/,
-        use: extractCSS.extract({
+        loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
+          use:  [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: 'true'
+              }
+            },
+            { loader: 'sass-loader', options: { sourceMap: true } }
+          ]
+        })
       },
       {
         test: /\.css$/,
