@@ -82,7 +82,7 @@
     "react-portal": "^3.2.0",
     "react-select": "^1.0.0-rc.10",
     "react-test-renderer": "^15.6.2",
-    "react-tippy": "^1.2.2",
+    "react-tippy": "git://github.com/ZoharLiran/react-tippy.git#zl-add-guards",
     "run-sequence": "^1.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

@@ -1,10 +1,17 @@
 // bower:scss
 // endbower
 // Imports
-@import '../../node_modules/react-select/dist/react-select.css'; // Import WFP UI
+
+@import '../../node_modules/react-select/dist/react-select.css';
+
+// Import WFP UI
 // TODO: Older version in bower_components
 @import '../../node_modules/wfp-ui/scss/_init.scss';
-@import '../../node_modules/wfp-ui/scss/modules/mixins'; // TODO: use colors from WFP UI only and use scss from there
+@import '../../node_modules/wfp-ui/scss/modules/mixins';
+//@import '../../../wfp-ui/scss/wfpui';
+
+
+// TODO: use colors from WFP UI only and use scss from there
 @import 'colors';
 @import 'utilities';
 @import "banner";
@@ -22,6 +29,7 @@
 @import 'status';
 @import 'secondaryheader';
 @import 'tooltip';
+@import 'tooltips';
 @import 'modal';
 @import 'quicksearch';
 @import 'universalheader';
@@ -33,6 +41,7 @@
 @import 'table';
 @import 'user';
 @import "reacttable";
+@import "cells";
 @import 'tabledropdownmodal';
 @import 'responsive';
 @import 'mixins';
@@ -40,7 +49,6 @@
 // Global CSS
 /*body {
     font-family: "lato", sans-serif;
-    font-size: 16px;
 }
 
 h2 {
