@@ -1,7 +1,6 @@
-
 .request-cell {
   .request-cell-type {
-    font-size: 0.9rem;
+    //font-size: 0.9rem;
   }
 
   .request-cell-value {}
@@ -9,6 +8,7 @@
 
 .details-cell {
   width: 40% !important;
+  margin: 0;
   @include media-max($md-screen) {
     width: 50% !important;
   }
@@ -60,7 +60,7 @@
 
 .history-cell-wrapper {
   width: 100%;
-  text-align: center;
+  //text-align: center;
 
   .history-cell-wrapper--viewport {
     display: flex;
@@ -88,8 +88,8 @@
   .wfp-link {
     font-size: 0.9rem;
     text-transform: lowercase;
-    margin-left: auto;
-    margin-right: auto;
+    //margin-left: auto;
+    //margin-right: auto;
 
     span {
       margin-left: 0.1rem;
@@ -124,3 +124,27 @@
 }
 
 .action-cell {}
+
+
+@include media-max($md-screen) {
+  .ReactTable .rt-td {
+    &.status-widget--wrapper {
+      padding-top: 1.3em;
+      padding-bottom: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      border-top: 1px solid $grey-lighter;
+      border-bottom: 1px solid $grey-lighter;
+    }
+    &.details--wrapper {
+      width: 50% !important;
+    }
+    &.action--wrapper {
+      .action-cell {
+        text-align: right;
+        width: 100%;
+      }
+      width: 50% !important;
+    }
+  }
+}

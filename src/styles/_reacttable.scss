@@ -545,7 +545,9 @@
   }
 }*/
 
-@media screen and (max-width: $sm-screen) {
+
+
+@include media-max($md-screen) {
   .ReactTable {
     margin-left: -1rem;
     margin-right: -1rem;

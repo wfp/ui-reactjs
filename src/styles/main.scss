@@ -6,19 +6,20 @@
 
 // Import WFP UI
 // TODO: Older version in bower_components
-@import '../../node_modules/wfp-ui/scss/_init.scss';
-@import '../../node_modules/wfp-ui/scss/modules/mixins';
+@import '../../../wfp-ui/scss/_init.scss';
+@import '../../../wfp-ui/scss/modules/mixins';
 //@import '../../../wfp-ui/scss/wfpui';
-
 
 // TODO: use colors from WFP UI only and use scss from there
 @import 'colors';
 @import 'utilities';
 @import "banner";
 @import 'navbar';
+@import 'multiselect';
 @import 'sidebar';
 @import 'infobar';
 @import 'search';
+@import 'datepicker';
 @import 'calendar';
 @import 'breadcrumbs';
 @import 'filter';
@@ -26,6 +27,7 @@
 @import 'form';
 @import 'overlay';
 @import 'dropdown';
+@import 'fixes';
 @import 'status';
 @import 'secondaryheader';
 @import 'tooltip';
