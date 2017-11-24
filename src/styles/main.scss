@@ -6,8 +6,8 @@
 
 // Import WFP UI
 // TODO: Older version in bower_components
-@import '../../../wfp-ui/scss/_init.scss';
-@import '../../../wfp-ui/scss/modules/mixins';
+@import '../../node_modules/wfp-ui/scss/_init.scss';
+@import '../../node_modules/wfp-ui/scss/modules/mixins';
 //@import '../../../wfp-ui/scss/wfpui';
 
 // TODO: use colors from WFP UI only and use scss from there
