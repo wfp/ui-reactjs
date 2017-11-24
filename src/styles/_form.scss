@@ -269,14 +269,54 @@ select:invalid {
 }
 
 
+.wfp-form__required-description {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background: lighten($orange,15);
+}
+
 .wfp-wizard {
-
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.wfp-wizard__next {
-  float: right;
+.wfp-form--group--seperate {
+  border-bottom: 1px solid $grey-lighter;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
-.wfp-wizard__prev {
-  float: left;
+.wfp-form--group--seperatesmall {
+  border-bottom: 1px solid $grey-lighter;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.wfp-form--group--horizontal {
+  display: flex;
+  margin-bottom: 1em;
+  align-items: center;
+  label {
+    width: 50%;
+    max-width: 10rem;
+  }
+}
+
+.wfp-form--group__title {
+  font-size: 1.15em;
+  margin-bottom: 1em;
+}
+
+.wfp-staticinput {
+  width: 50%;
+  padding: 0.5rem;
+  border-left: 5px solid $grey-light;
+  background: $grey-lightest;
+}
+
+.wfp-form--group__hint {
+  padding: 0.5rem;
+  border-left: 5px solid $primary;
+  background: $grey-lightest;
 }

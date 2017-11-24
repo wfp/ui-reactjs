@@ -25,7 +25,7 @@ import MultipleActionsButton from './components/multipleActionsButton';
 import TableDropdownMenu from './components/TableDropdownMenu';
 import TableDropdownModal from './components/TableDropdownModal';
 
-import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
+//import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
 import WssStyle from './styles/main.scss';
 
 import UniversalHeader from './components/universalheader/header.jsx';
@@ -59,8 +59,8 @@ module.exports = {
   Tabs,
   Table, TableHeader,
   TableHeaderItem, TableRow, TableRowItem,
-    WfpActionButton,
-    MultipleActionsButton,
+  WfpActionButton,
+  MultipleActionsButton,
   TableDropdownMenu,
   TableDropdownModal,
   UniversalHeader,

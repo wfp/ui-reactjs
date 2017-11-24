@@ -7,7 +7,7 @@ var config = {
   entry: [
     './src/index.js'
   ],
-  devtool: "inline-source-map",
+  //devtool: "inline-source-map",
   output: {
     library: 'wfp-ui-reactjs',
     libraryTarget: 'umd',
