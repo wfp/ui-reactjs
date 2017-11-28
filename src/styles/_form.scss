@@ -275,11 +275,20 @@ select:invalid {
     background: lighten($orange,15);
 }
 
+/* Wizard Navigation */
+
 .wfp-wizard {
   margin: 2em 0;
   display: flex;
   justify-content: space-between;
 }
+
+ .wfp-wizard--alignleft {
+  justify-content: flex-start;
+  >button {
+    margin-right: 1em;
+  }
+ }
 
 .wfp-form--group--seperate {
   border-bottom: 1px solid $grey-lighter;
@@ -308,6 +317,15 @@ select:invalid {
   margin-bottom: 1em;
 }
 
+.wfp-form--group__inputfield {
+  display: flex;
+  flex-wrap: wrap;
+  >div {
+    width: 25%;
+    white-space: nowrap;
+  }
+}
+
 .wfp-staticinput {
   width: 50%;
   padding: 0.5rem;
@@ -317,6 +335,77 @@ select:invalid {
 
 .wfp-form--group__hint {
   padding: 0.5rem;
+  margin: 0.5em 0;
   border-left: 5px solid $primary;
   background: $grey-lightest;
+}
+
+/* Form List */
+
+.wfp-form__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Currency Inputs */
+
+.currencyinput__wrapper {
+  display: flex;
+  margin-top: -0.25em;
+}
+.currencyinput__select {
+  width: 170px;
+  margin-right: -1px;
+}
+
+/* Dropzone */
+
+.dropzone__select {
+  cursor: pointer;
+}
+
+.dropzone__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* User Select */
+
+.userselect__select {
+  .Select-control {
+    overflow: visible;
+  }
+}
+
+.userselect__value__text {
+  overflow: hidden;
+}
+
+.userselect__value {
+  overflow: visible !important;
+}
+
+.userselect__value__extended {
+    display: block;
+    font-size: 0.8em;
+    font-weight: bold;
+    background: $grey-lighter;
+    margin-left: -11px;
+    margin-right: -43.5px;
+    margin-top: 1px;
+    line-height: 1.3;
+    padding: 0.6em 0.8em;
+    img {
+      height: 2.6em;
+      width: auto;
+      border-radius: 100px;
+      float: left;
+      margin-right: 0.5em;
+    }
+    span {
+      display: block;
+      font-weight: normal;
+    }
 }

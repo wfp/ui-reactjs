@@ -39,10 +39,28 @@ import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
 import UniversalFooter from './components/universalfooter/footer.jsx';
 import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
+import {Button,
+        RenderInput,
+        RenderDropzone,
+        RenderCurrencyInput,
+        RenderCheckbox,
+        RenderTextarea,
+        RenderSelect,
+        RenderStatic,
+        RenderStaffSelect,
+        FormGroup,
+        FormGroupTitle,
+        FormGroupInputField,
+        FormHint,
+        RequiredInfo }  from './components/forms/inputs.jsx';
+
+import WizardNav from './components/forms/wizardNav.jsx';
+
 
 module.exports = {
   LinkTo,
   Banner,
+  Button,
   Header,
   CorporateStrip,
   LinkMenuItem,
@@ -72,5 +90,19 @@ module.exports = {
   UniversalModalContent,
   UniversalModalFooter,
   UniversalFooter,
-  UniversalFooterMini
+  UniversalFooterMini,
+  RenderInput,
+  RenderDropzone,
+  RenderCurrencyInput,
+  RenderCheckbox,
+  RenderTextarea,
+  RenderSelect,
+  RenderStatic,
+  RenderStaffSelect,
+  FormGroup,
+  FormGroupTitle,
+  FormGroupInputField,
+  FormHint,
+  RequiredInfo,
+  WizardNav
 };

@@ -36,8 +36,8 @@ var config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'react'],
-            plugins: ["transform-class-properties"]
+            presets: ['react'],
+            plugins: ['transform-class-properties', 'transform-object-rest-spread']
           }
         }
       },
@@ -52,7 +52,10 @@ var config = {
                 sourceMap: 'true'
               }
             },
-            { loader: 'sass-loader', options: { sourceMap: true } }
+            { loader: 'sass-loader', options: {
+              sourceMap: true,
+              includePaths: ["node_modules"]
+            } }
           ]
         })
       },
