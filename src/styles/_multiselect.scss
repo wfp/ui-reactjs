@@ -1,3 +1,48 @@
-.Select-control {
-	border-radius: 0;
+// control options
+$select-input-bg-disabled:          #f9f9f9;
+$select-input-border-color:         $grey-light;
+$select-input-border-radius:        0px;
+$select-input-border-focus:         $primary; // blue
+$select-input-box-shadow-focus:     inset 0 1px 3px rgba($black, 0.1);
+$select-input-border-width:         1px;
+$select-input-height:               37px;
+$select-input-internal-height:      ($select-input-height - ($select-input-border-width * 2));
+$select-input-placeholder:          #aaa;
+$select-text-color:                 #333;
+$select-link-hover-color:           $select-input-border-focus;
+$select-input-hover-box-shadow:     0 1px 0 rgba(0, 0, 0, 0.06);
+
+$select-padding-vertical:           10px;
+$select-padding-horizontal:         10px;
+
+// menu options
+$select-menu-box-shadow:            $select-input-hover-box-shadow;
+
+$select-option-color:               lighten($select-text-color, 20%);
+$select-option-focused-bg:          $blue-lighter; // pale blue
+$select-option-selected-bg:         $blue-lightest; // lightest blue
+
+// clear "x" button
+$select-clear-color:                #999;
+$select-clear-hover-color:          $red; // red
+
+// arrow indicator
+$select-arrow-color:                $grey-darker;
+$select-arrow-color-hover:          #666;
+$select-arrow-width:                5px;
+
+// multi-select item
+$select-item-color:                 $primary; // pale blue
+$select-item-bg:                    $blue-lightest;
+$select-item-hover-color:           darken($primary, 5%); // pale blue
+
+.Select {
+    margin: 0.25em 0;
+	.Select-control .Select-input input {
+		margin: 0;
+		padding: 0.35em;
+		padding-left: 0;
+	}
 }
+
+@import '../../node_modules/react-select/scss/default.scss';

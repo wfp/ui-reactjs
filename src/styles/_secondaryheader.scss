@@ -7,8 +7,7 @@
 		padding-top: 0;
 	}
 	padding: 1.8rem 0 2rem 0;
-	//box-shadow: 0px 2px 1px rgba($blue, 0.1) !important;
-	@extend .main-shadow;
+	box-shadow: $main-shadow;
 	&.wfp-secondaryheader--noborder {
 		box-shadow: none !important;
 	}
@@ -89,11 +88,4 @@
 	position: absolute;
 	top: 2rem;
 	right: 0;
-	//TODO: Make this nicer
-	/*.refresh_menu_span {
-		i {
-			position: relative;
-			top: 5px;
-		}
-	} */
 }

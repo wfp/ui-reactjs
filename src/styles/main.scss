@@ -2,16 +2,14 @@
 // endbower
 // Imports
 
-@import '../../node_modules/react-select/dist/react-select.css';
-
 // Import WFP UI
 // TODO: Older version in bower_components
-@import '../../node_modules/wfp-ui/scss/_init.scss';
-@import '../../node_modules/wfp-ui/scss/modules/mixins';
-//@import '../../../wfp-ui/scss/wfpui';
+//@import '../../node_modules/wfp-ui/scss/_init.scss';
+//@import '../../node_modules/wfp-ui/scss/modules/mixins';
+@import '../../node_modules/wfp-ui/scss/wfpui+grid';
 
 // TODO: use colors from WFP UI only and use scss from there
-@import 'colors';
+//@import 'colors';
 @import 'utilities';
 @import "banner";
 @import 'navbar';
