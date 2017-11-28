@@ -54,6 +54,8 @@ import {Button,
         FormHint,
         RequiredInfo }  from './components/forms/inputs.jsx';
 
+
+import StaffSelect from './components/forms/staffSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 
 
@@ -98,7 +100,7 @@ module.exports = {
   RenderTextarea,
   RenderSelect,
   RenderStatic,
-  RenderStaffSelect,
+  StaffSelect,
   FormGroup,
   FormGroupTitle,
   FormGroupInputField,
