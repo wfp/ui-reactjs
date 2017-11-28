@@ -1,8 +1,9 @@
-import React from 'react'
-import classNames from 'classnames'
-import InlineError from './inlineError'
-import Dropzone from 'react-dropzone'
-import Select from 'react-select'
+import React from 'react';
+import classNames from 'classnames';
+import InlineError from './inlineError';
+import Dropzone from 'react-dropzone';
+import Select from 'react-select';
+import PropTypes from 'prop-types';
 
 
 export const Label = ({ children, htmlFor }) => {
@@ -45,7 +46,7 @@ export const RenderDropzone = ({ input, name, label, type, selectDescription, me
 }
 
 
-const GravatarValue = (props) => {
+const RenderStaffSelectValue = (props) => {
 
     console.log(props);
     return (
@@ -63,13 +64,10 @@ const GravatarValue = (props) => {
     );
 };
 
-/*
-    propTypes: {
-        children: PropTypes.node,
-        placeholder: PropTypes.string,
-        value: PropTypes.object
-    },
-    */
+RenderStaffSelectValue.propTypes = {
+    children: PropTypes.node,
+    value: PropTypes.object
+};
 
 export class RenderStaffSelect extends React.Component {
 
@@ -108,7 +106,7 @@ export class RenderStaffSelect extends React.Component {
                             onChange={this.handleChange}        
                             loadOptions={loadOptions}     
                             searchable={true}
-                            valueComponent={GravatarValue}       
+                            valueComponent={RenderStaffSelectValue}       
                         />
                         <input {...input} placeholder={label} type="hidden" />
                     </div>
