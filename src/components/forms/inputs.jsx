@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 export const Label = ({ children, htmlFor, isRequired }) => {
     if (children !== false) {
         const labelClass = classNames({
-          'label--required': true
+          'label--required': isRequired
         }); 
         return (<label className={labelClass} htmlFor={htmlFor}>{children}</label>)
     }
