@@ -3,3 +3,9 @@
       font-size: 1.125rem;
   }
 }
+
+.wfp-wrapper--tight {
+	.row {
+		max-width: inherit;
+	}
+}
