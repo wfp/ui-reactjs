@@ -275,6 +275,18 @@ select:invalid {
     background: lighten($orange,15);
 }
 
+.label--required{
+  &:after {
+    color: $red;
+    font-size: 1.3em;
+    margin-top: -0.8em;
+    margin-bottom: -0.2em;
+    font-weight: bold;
+    content: "*";
+    display: inline-block;
+  }
+}
+
 /* Wizard Navigation */
 
 .wfp-wizard {
