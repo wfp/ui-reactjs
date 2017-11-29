@@ -1,21 +1,23 @@
 import React from 'react'
 import classNames from 'classnames'
 
-const InlineError = ({ touched, error, isRequired, children }) => {
+const InlineError = (props) => {
 
 	const inputClasses = classNames({
-      'required': isRequired
+      'required': props.isRequired,
+      'wfp-form--group' : props.wrapper !== false,
+      [`${props.className}`]: props.className,
     }); 
 
-  if (touched && error)
+  if (props.meta && props.meta.touched && props.meta.error)
     return (
       <div className={inputClasses}>
-        {children}
+        {props.children}
         <div className="error">
-          {error}
+          {props.meta.error}
         </div>
       </div>)
-  else return (<div className={inputClasses}>{children}</div>)
+  else return (<div className={inputClasses}>{props.children}</div>)
 }
 
 export default InlineError

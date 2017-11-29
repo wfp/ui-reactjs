@@ -16,14 +16,15 @@ export const Label = ({ children, htmlFor, isRequired }) => {
     else return null
 };
 
-export const RenderInput = ({ input, label, wrapper, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className={wrapper === false ? '' : 'wfp-form--group'}>
-            <Label>{label}</Label>
-            <input {...input} type={type}/>
-        </div>
-    </InlineError>
-);
+export const RenderInput = (props) => {
+    const { input, label, wrapper, type, meta: { touched, error } } = props;
+    return (
+        <InlineError {...props}>
+                <Label>{label}</Label>
+                <input {...input} type={type}/>
+        </InlineError>
+    )
+};
 
 
 export const RenderDropzone = ({ input, name, label, type, selectDescription, meta: { touched, error } }) => {
@@ -69,7 +70,7 @@ export class RenderCurrencyInput extends React.Component {
     render () {
         const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
         return (
-            <InlineError touched={touched} error={error}>
+            <InlineError {...props}>
                 <div className="wfp-form--group">
                     <Label>{label}</Label>
                     <div className="currencyinput__wrapper">
@@ -96,22 +97,22 @@ export class RenderCurrencyInput extends React.Component {
     }
 };
 
-export const RenderCheckbox = ({ input, label, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className="wfp-checkbox">
-            <input id={input.name} placeholder={label} type={type}/>
-            <Label htmlFor={input.name}>{label}</Label>
-        </div>
-    </InlineError>
-);
+export const RenderCheckbox = (props) => {
+    const { input, label, wrapper, type, meta: { touched, error } } = props;
+    return (
+        <InlineError {...props}>
+                
+                <input {...input} type={type}/>
+                <Label htmlFor={input.name}>{label}</Label>
+        </InlineError>
+    )
+};
 
 
-export const RenderTextarea = ({ input, label, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className="wfp-form--group">
-            <Label>{label}</Label>
-            <textarea {...input} placeholder={label} type={type}/>
-        </div>
+export const RenderTextarea = (props) => (
+    <InlineError {...props}>
+            <Label>{props.label}</Label>
+            <textarea {...props.input} placeholder={props.label} type={props.type}/>
     </InlineError>
 );
 
@@ -119,36 +120,44 @@ export const RenderTextarea = ({ input, label, type, meta: { touched, error } })
 export const RenderSelect = (props) => {
     const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
     return (
-        <InlineError touched={touched} error={error} isRequired={isRequired}>
-            <div className="wfp-form--group">
+        <InlineError {...props}>
             <Label isRequired={isRequired}>{label}</Label>
             <select {...input}>
                 <option value="">{selectEmptyText}</option>
                 {selectList.map(val => <option value={val} key={val}>{val}</option>)}
             </select>
+        </InlineError>
+    )
+}
+
+export const RenderStatic = (props) => {
+    const {data, label, hideLabel} = props;
+    const inputClass = classNames({
+        'wfp-staticinput': true,
+        'empty': !data
+    }); 
+    return (
+        <InlineError {...props}>
+            <div className="wfp-form--group--horizontal">
+                {hideLabel !== true &&
+                    <Label>{label}</Label>
+                }
+                <span className={inputClass}>{data ? data : "—"}</span>
             </div>
         </InlineError>
     )
 }
 
-export const RenderStatic = ({data, label, hideLabel}) => (
-    <div className="wfp-form--group--horizontal">
-        {hideLabel !== true &&
-            <Label>{label}</Label>
-        }
-        <span className="wfp-staticinput">{data}</span>
-    </div>
-)
-
-export const FormGroup = ({children, type, className}) => {
-	 const btnClass = classNames({
+export const FormGroup = (props) => {
+    const {children, type, className} = props;
+	const formGroupClass = classNames({
       'wfp-form--group': true,
       'wfp-form--group--seperate': (type === 'seperate'),
       'wfp-form--group--seperatesmall': (type === 'seperatesmall'),
-      [$`{className}`]: className,
+      [`${className}`]: className,
     }); 
 	return (
-		<div className={ btnClass }>
+		<div className={ formGroupClass }>
 			{children}
 		</div>
 	)
