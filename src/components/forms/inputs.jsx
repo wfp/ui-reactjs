@@ -119,7 +119,7 @@ export const RenderTextarea = ({ input, label, type, meta: { touched, error } })
 export const RenderSelect = (props) => {
     const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
     return (
-        <InlineError touched={touched} error={error}>
+        <InlineError touched={touched} error={error} isRequired={isRequired}>
             <div className="wfp-form--group">
             <Label isRequired={isRequired}>{label}</Label>
             <select {...input}>

@@ -57,6 +57,7 @@ import {Button,
 
 import StaffSelect from './components/forms/staffSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
+import InlineError from './components/forms/inlineError.jsx';
 
 
 module.exports = {
@@ -106,5 +107,6 @@ module.exports = {
   FormGroupInputField,
   FormHint,
   RequiredInfo,
-  WizardNav
+  WizardNav,
+  InlineError
 };
