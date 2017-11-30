@@ -302,7 +302,7 @@ select:invalid {
   }
  }
 
-.wfp-form--group--seperate {
+.wfp-form--group {
   border-bottom: 1px solid $grey-lighter;
   padding-bottom: 2em;
   margin-bottom: 2em;
@@ -425,4 +425,31 @@ select:invalid {
       display: block;
       font-weight: normal;
     }
+}
+
+/* Main Error */
+
+.main-error {
+  position: relative;
+  background: $orange;
+  padding: 1em;
+  padding-left: 7rem;
+  margin-bottom: 1em;
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    height: 100%;
+    font-size: 3rem;
+    content: "\f071";
+    top: 45%;
+    left: 0;
+    pointer-events: none;
+    margin: 0 0.8em;
+    line-height: 1rem;
+    color: darken($orange,20);
+  }
+}
+
+.main-error__title {
+  font-size: 1em;
 }

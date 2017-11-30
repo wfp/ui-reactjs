@@ -62,8 +62,6 @@ export class RenderCurrencyInput extends React.Component {
 
     handleChange = (value) => {
         this.setState({ value });
-        console.log(value);
-        console.log('Selected:', value);
         this.props.input.onChange(value.id);
     }
 
@@ -101,7 +99,6 @@ export const RenderCheckbox = (props) => {
     const { input, label, wrapper, type, meta: { touched, error } } = props;
     return (
         <InlineError {...props}>
-                
                 <input {...input} type={type}/>
                 <Label htmlFor={input.name}>{label}</Label>
         </InlineError>
