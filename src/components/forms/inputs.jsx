@@ -1,27 +1,24 @@
 import React from 'react';
 import classNames from 'classnames';
 import InlineError from './inlineError';
+import Label from './label';
 import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 
-export const Label = ({ children, htmlFor, isRequired }) => {
-    if (children !== false) {
-        const labelClass = classNames({
-          'label--required': isRequired
-        }); 
-        return (<label className={labelClass} htmlFor={htmlFor}>{children}</label>)
-    }
-    else return null
-};
 
 export const RenderInput = (props) => {
     const { input, label, wrapper, type, meta: { touched, error } } = props;
+
+    const inputClasses = classNames({
+      'invalid' : touched && error
+    }); 
+
     return (
         <InlineError {...props}>
                 <Label>{label}</Label>
-                <input {...input} type={type}/>
+                <input {...input} type={type} className={inputClasses} />
         </InlineError>
     )
 };
@@ -56,7 +53,7 @@ export class RenderCurrencyInput extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: null
+            value: this.props.defaultValue ? this.props.defaultValue : null
         }
     }
 
@@ -65,10 +62,16 @@ export class RenderCurrencyInput extends React.Component {
         this.props.input.onChange(value.id);
     }
 
+    componentDidMount () {
+        if (this.props.defaultValue) {
+            this.handleChange(this.props.defaultValue);
+        }
+    }
+
     render () {
         const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
         return (
-            <InlineError {...props}>
+            <InlineError {...this.props}>
                 <div className="wfp-form--group">
                     <Label>{label}</Label>
                     <div className="currencyinput__wrapper">

@@ -47,13 +47,14 @@ import {Button,
         RenderTextarea,
         RenderSelect,
         RenderStatic,
-        RenderStaffSelect,
         FormGroup,
         FormGroupTitle,
         FormGroupInputField,
         FormHint,
         RequiredInfo }  from './components/forms/inputs.jsx';
 
+
+import Label from './components/forms/label.jsx';
 import MainError from './components/forms/mainError.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
@@ -104,6 +105,7 @@ module.exports = {
   RenderStatic,
   StaffSelect,
   FormGroup,
+  Label,
   FormGroupTitle,
   FormGroupInputField,
   FormHint,
