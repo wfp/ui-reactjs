@@ -301,7 +301,7 @@ select:invalid {
   }
  }
 
-.wfp-form--group {
+.wfp-form--group--seperate {
   border-bottom: 1px solid $grey-lighter;
   padding-bottom: 2em;
   margin-bottom: 2em;
@@ -368,7 +368,9 @@ select:invalid {
 
 .currencyinput__wrapper {
   display: flex;
-  margin-top: -0.25em;
+  .Select, input {
+    margin-top: 0 !important;
+  }
 }
 .currencyinput__select {
   width: 170px;
