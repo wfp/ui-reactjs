@@ -56,7 +56,6 @@ import {Button,
 
 import Label from './components/forms/label.jsx';
 import MainError from './components/forms/mainError.jsx';
-import InlineError from './components/forms/inlineError.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import InlineError from './components/forms/inlineError.jsx';
