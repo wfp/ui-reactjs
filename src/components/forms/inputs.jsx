@@ -72,7 +72,6 @@ export class RenderCurrencyInput extends React.Component {
         const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
         return (
             <InlineError {...this.props}>
-                <div className="wfp-form--group">
                     <Label>{label}</Label>
                     <div className="currencyinput__wrapper">
                         <Select.Async
@@ -92,7 +91,6 @@ export class RenderCurrencyInput extends React.Component {
                         />
                         <input {...input} placeholder={label} type="hidden" />
                     </div>
-                </div>
             </InlineError>
         )
     }
