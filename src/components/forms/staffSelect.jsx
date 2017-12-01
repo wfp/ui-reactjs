@@ -1,8 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import InlineError from './inlineError';
-import {Label} from './inputs';
-import Dropzone from 'react-dropzone';
+import Label from './label';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
@@ -47,27 +46,25 @@ class StaffSelect extends React.Component {
     render () {
         const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
         return (
-            <InlineError touched={touched} error={error}>
-                <div className="wfp-form--group">
-                    <Label>{label}</Label>
-                    <div className="userselect__wrapper">
-                        <Select.Async
-                            id="state-select"
-                            ref="stateSelect"
-                            autoFocus
-                            className="userselect__select"
-                            name="selected-state"
-                            placeholder="Select staff by last name"
-                            valueKey="indexno"
-                            labelKey="text"
-                            value={this.state.value}
-                            onChange={this.handleChange}        
-                            loadOptions={loadOptions}     
-                            searchable={true}
-                            valueComponent={StaffSelectValue}       
-                        />
-                        <input {...input} placeholder={label} type="hidden" />
-                    </div>
+            <InlineError {...this.props}>
+                <Label>{label}</Label>
+                <div className="userselect__wrapper">
+                    <Select.Async
+                        id="state-select"
+                        ref="stateSelect"
+                        autoFocus
+                        className="userselect__select"
+                        name="selected-state"
+                        placeholder="Select staff by last name"
+                        valueKey="indexno"
+                        labelKey="text"
+                        value={this.state.value}
+                        onChange={this.handleChange}        
+                        loadOptions={loadOptions}     
+                        searchable={true}
+                        valueComponent={StaffSelectValue}       
+                    />
+                    <input {...input} placeholder={label} type="hidden" />
                 </div>
             </InlineError>
         )

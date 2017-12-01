@@ -1,29 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
 import InlineError from './inlineError';
+import Label from './label';
 import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 
-export const Label = ({ children, htmlFor, isRequired }) => {
-    if (children !== false) {
-        const labelClass = classNames({
-          'label--required': isRequired
-        }); 
-        return (<label className={labelClass} htmlFor={htmlFor}>{children}</label>)
-    }
-    else return null
-};
 
-export const RenderInput = ({ input, label, wrapper, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className={wrapper === false ? '' : 'wfp-form--group'}>
-            <Label>{label}</Label>
-            <input {...input} type={type}/>
-        </div>
-    </InlineError>
-);
+export const RenderInput = (props) => {
+    const { input, label, wrapper, type, meta: { touched, error } } = props;
+
+    const inputClasses = classNames({
+      'invalid' : touched && error
+    }); 
+
+    return (
+        <InlineError {...props}>
+                <Label>{label}</Label>
+                <input {...input} type={type} className={inputClasses} />
+        </InlineError>
+    )
+};
 
 
 export const RenderDropzone = ({ input, name, label, type, selectDescription, meta: { touched, error } }) => {
@@ -55,21 +53,25 @@ export class RenderCurrencyInput extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: null
+            value: this.props.defaultValue ? this.props.defaultValue : null
         }
     }
 
     handleChange = (value) => {
         this.setState({ value });
-        console.log(value);
-        console.log('Selected:', value);
         this.props.input.onChange(value.id);
+    }
+
+    componentDidMount () {
+        if (this.props.defaultValue) {
+            this.handleChange(this.props.defaultValue);
+        }
     }
 
     render () {
         const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
         return (
-            <InlineError touched={touched} error={error}>
+            <InlineError {...this.props}>
                 <div className="wfp-form--group">
                     <Label>{label}</Label>
                     <div className="currencyinput__wrapper">
@@ -96,22 +98,21 @@ export class RenderCurrencyInput extends React.Component {
     }
 };
 
-export const RenderCheckbox = ({ input, label, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className="wfp-checkbox">
-            <input id={input.name} placeholder={label} type={type}/>
-            <Label htmlFor={input.name}>{label}</Label>
-        </div>
-    </InlineError>
-);
+export const RenderCheckbox = (props) => {
+    const { input, label, wrapper, type, meta: { touched, error } } = props;
+    return (
+        <InlineError {...props}>
+                <input {...input} type={type}/>
+                <Label htmlFor={input.name}>{label}</Label>
+        </InlineError>
+    )
+};
 
 
-export const RenderTextarea = ({ input, label, type, meta: { touched, error } }) => (
-    <InlineError touched={touched} error={error}>
-        <div className="wfp-form--group">
-            <Label>{label}</Label>
-            <textarea {...input} placeholder={label} type={type}/>
-        </div>
+export const RenderTextarea = (props) => (
+    <InlineError {...props}>
+            <Label>{props.label}</Label>
+            <textarea {...props.input} placeholder={props.label} type={props.type}/>
     </InlineError>
 );
 
@@ -119,36 +120,44 @@ export const RenderTextarea = ({ input, label, type, meta: { touched, error } })
 export const RenderSelect = (props) => {
     const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
     return (
-        <InlineError touched={touched} error={error} isRequired={isRequired}>
-            <div className="wfp-form--group">
+        <InlineError {...props}>
             <Label isRequired={isRequired}>{label}</Label>
             <select {...input}>
                 <option value="">{selectEmptyText}</option>
                 {selectList.map(val => <option value={val} key={val}>{val}</option>)}
             </select>
+        </InlineError>
+    )
+}
+
+export const RenderStatic = (props) => {
+    const {data, label, hideLabel} = props;
+    const inputClass = classNames({
+        'wfp-staticinput': true,
+        'empty': !data
+    }); 
+    return (
+        <InlineError {...props}>
+            <div className="wfp-form--group--horizontal">
+                {hideLabel !== true &&
+                    <Label>{label}</Label>
+                }
+                <span className={inputClass}>{data ? data : "—"}</span>
             </div>
         </InlineError>
     )
 }
 
-export const RenderStatic = ({data, label, hideLabel}) => (
-    <div className="wfp-form--group--horizontal">
-        {hideLabel !== true &&
-            <Label>{label}</Label>
-        }
-        <span className="wfp-staticinput">{data}</span>
-    </div>
-)
-
-export const FormGroup = ({children, type, className}) => {
-	 const btnClass = classNames({
+export const FormGroup = (props) => {
+    const {children, type, className} = props;
+	const formGroupClass = classNames({
       'wfp-form--group': true,
       'wfp-form--group--seperate': (type === 'seperate'),
       'wfp-form--group--seperatesmall': (type === 'seperatesmall'),
-      [$`{className}`]: className,
+      [`${className}`]: className,
     }); 
 	return (
-		<div className={ btnClass }>
+		<div className={ formGroupClass }>
 			{children}
 		</div>
 	)

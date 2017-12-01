@@ -36,10 +36,10 @@
 .wfp-header-int {
     max-height: inherit;
     @include print {
-        //display: none;
+        display: none;
         /* position: fixed;
          display: block;
-         bottom: 0cm; */
+         bottom: 0cm; 
         position: absolute;
         background: none;
         box-shadow: none;
@@ -54,7 +54,7 @@
         .header__mobile__button,
         .content {
             display: none;
-        }
+        }*/
     }
 }
 

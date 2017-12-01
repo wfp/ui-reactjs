@@ -39,7 +39,6 @@
     }
   }
 }
-
 .wfp-form-overview {
   .form-meta-row {
     padding-top: 20px;
@@ -302,7 +301,7 @@ select:invalid {
   }
  }
 
-.wfp-form--group--seperate {
+.wfp-form--group {
   border-bottom: 1px solid $grey-lighter;
   padding-bottom: 2em;
   margin-bottom: 2em;
@@ -338,11 +337,16 @@ select:invalid {
   }
 }
 
+/* Static input unchangeable */
+
 .wfp-staticinput {
   width: 50%;
   padding: 0.5rem;
   border-left: 5px solid $grey-light;
   background: $grey-lightest;
+  &.empty {
+    color: $grey-lighter;
+  }
 }
 
 .wfp-form--group__hint {
@@ -403,7 +407,7 @@ select:invalid {
     display: block;
     font-size: 0.8em;
     font-weight: bold;
-    background: $grey-lighter;
+    background: $grey-light;
     margin-left: -11px;
     margin-right: -43.5px;
     margin-top: 1px;
@@ -420,4 +424,31 @@ select:invalid {
       display: block;
       font-weight: normal;
     }
+}
+
+/* Main Error */
+
+.main-error {
+  position: relative;
+  background: $orange;
+  padding: 1em;
+  padding-left: 7rem;
+  margin-bottom: 1em;
+  &:before {
+    font-family: FontAwesome;
+    position: absolute;
+    height: 100%;
+    font-size: 3rem;
+    content: "\f071";
+    top: 45%;
+    left: 0;
+    pointer-events: none;
+    margin: 0 0.8em;
+    line-height: 1rem;
+    color: darken($orange,20);
+  }
+}
+
+.main-error__title {
+  font-size: 1em;
 }
