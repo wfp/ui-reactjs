@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('./lib/styles/[name].css');
@@ -68,7 +69,16 @@ var config = {
       }
     ]
   },
-  plugins: [ extractCSS ],
+    plugins: [
+        extractCSS,
+
+        // minifies your code
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            }
+        })
+    ],
   resolve: {
     modules: ['node_modules', 'bower_components'],
     extensions: ['*', '.js', '.jsx', '.css', '.scss'],
