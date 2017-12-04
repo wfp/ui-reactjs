@@ -97,35 +97,39 @@ export class RenderCurrencyInput extends React.Component {
 };
 
 export const RenderCheckbox = (props) => {
-    const { input, label, wrapper, type, meta: { touched, error } } = props;
-    return (
-        <InlineError {...props}>
-                <input {...input} type={type}/>
-                <Label htmlFor={input.name}>{label}</Label>
-        </InlineError>
-    )
+  const { input, label, wrapper, type, meta: { touched, error } } = props;
+  return (
+    <InlineError {...props}>
+      <input {...input} type={type}/>
+      <Label htmlFor={input.name}>{label}</Label>
+    </InlineError>
+  )
 };
 
 
 export const RenderTextarea = (props) => (
-    <InlineError {...props}>
-            <Label>{props.label}</Label>
-            <textarea {...props.input} placeholder={props.label} type={props.type}/>
-    </InlineError>
+  <InlineError {...props}>
+    <Label>{props.label}</Label>
+    <textarea
+      {...props.input}
+      placeholder={props.label}
+      type={props.type}
+    />
+  </InlineError>
 );
 
 
 export const RenderSelect = (props) => {
-    const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
-    return (
-        <InlineError {...props}>
-            <Label isRequired={isRequired}>{label}</Label>
-            <select {...input}>
-                <option value="">{selectEmptyText}</option>
-                {selectList.map(val => <option value={val} key={val}>{val}</option>)}
-            </select>
-        </InlineError>
-    )
+  const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
+  return (
+    <InlineError {...props}>
+      <Label isRequired={isRequired}>{label}</Label>
+      <select {...input}>
+        <option value="">{selectEmptyText}</option>
+        {selectList.map(val => <option value={val} key={val}>{val}</option>)}
+      </select>
+    </InlineError>
+  )
 }
 
 export const RenderStatic = (props) => {
