@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inline Error Display 1`] = `
+<div
+  className="invalid className"
+>
+  The Content
+  <div
+    className="error"
+  />
+</div>
+`;

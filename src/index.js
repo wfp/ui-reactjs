@@ -1,9 +1,9 @@
 import LinkTo from './components/linkto';
 import Banner from './components/banner';
-import Header from './components/header';
+//import Header from './components/header';
 import CorporateStrip from './components/corporatestrip';
 import LinkMenuItem from './components/linkmenuitem';
-import LogoItem from './components/logoitem';
+//import LogoItem from './components/logoitem';
 //import SearchWidget from './components/searchwidget';
 import SearchWidget from './components/universalheader/search';
 import UserMenuWidget from './components/usermenuwidget';
@@ -65,10 +65,10 @@ module.exports = {
   LinkTo,
   Banner,
   Button,
-  Header,
+  //Header,
   CorporateStrip,
   LinkMenuItem,
-  LogoItem,
+  //LogoItem,
   SearchWidget,
   UserMenuWidget,
   Breadcrumbs,
