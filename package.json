@@ -81,6 +81,7 @@
     "rc-menu": "^5.1.4",
     "react-addons-test-utils": "^15.6.2",
     "react-autosuggest": "^9.3.2",
+    "react-dates": "^15.3.0",
     "react-dropzone": "^4.2.3",
     "react-modal": "^3.0.4",
     "react-paginate": "^4.4.4",

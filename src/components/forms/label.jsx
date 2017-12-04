@@ -7,15 +7,24 @@ const Label = ({ children, htmlFor, isRequired }) => {
     const labelClass = classNames({
       'label--required': isRequired
     }); 
-    return (<label className={labelClass} htmlFor={htmlFor}>{children}</label>)
+    return (
+  		<label
+	    	className={labelClass}
+	    	htmlFor={htmlFor}
+	    >
+	    		{children}
+	    </label>
+	  );
   }
-  else return null;
+  else {
+  	return null;
+  }
 };
 
 Label.propTypes = {
   children: PropTypes.node,
-  htmFor: PropTypes.string,
+  htmlFor: PropTypes.string,
   isRequired: PropTypes.bool
 };
 
-export default Label
+export default Label;
