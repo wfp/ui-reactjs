@@ -39,23 +39,26 @@ import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
 import UniversalFooter from './components/universalfooter/footer.jsx';
 import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
-import {Button,
-        RenderInput,
-        RenderDropzone,
-        RenderCurrencyInput,
-        RenderCheckbox,
-        RenderTextarea,
-        RenderSelect,
-        RenderStatic,
-        FormGroup,
-        FormGroupTitle,
-        FormGroupInputField,
-        FormHint,
-        RequiredInfo }  from './components/forms/inputs.jsx';
+import {
+  Button,
+  RenderInput,
+  RenderDropzone,
+  RenderCurrencyInput,
+  RenderCheckbox,
+  RenderTextarea,
+  RenderSelect,
+  RenderStatic,
+  FormGroup,
+  FormGroupTitle,
+  FormGroupInputField,
+  FormHint,
+  RequiredInfo }  from './components/forms/inputs.jsx';
 
 
 import Label from './components/forms/label.jsx';
 import MainError from './components/forms/mainError.jsx';
+import DatePicker from './components/forms/datePicker.jsx';
+import DateRangePicker from './components/forms/dateRangePicker.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import InlineError from './components/forms/inlineError.jsx';
@@ -67,6 +70,8 @@ module.exports = {
   Button,
   //Header,
   CorporateStrip,
+  DatePicker,
+  DateRangePicker,
   LinkMenuItem,
   //LogoItem,
   SearchWidget,

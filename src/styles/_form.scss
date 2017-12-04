@@ -141,6 +141,15 @@
   }
 }
 
+/* Single Date Picker */
+.wfp-form--stacked
+.wfp-form--date-picker {
+  input[type="text"] {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .disabled {
   input {
     background-color: $grey-lighter;
@@ -409,7 +418,7 @@ select:invalid {
     display: block;
     font-size: 0.8em;
     font-weight: bold;
-    background: $grey-light;
+    background: $grey-lighter;
     margin-left: -11px;
     margin-right: -43.5px;
     margin-top: 1px;
