@@ -11,7 +11,7 @@ const InlineError = (props) => {
       [`${props.className}`]: props.className,
     }); 
 
-  if ((props.meta && props.meta.touched && props.meta.error))
+  if (props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error))
     return (
       <div className={inputClasses}>
         {props.children}
@@ -26,7 +26,7 @@ InlineError.propTypes = {
     meta: PropTypes.object,
     children: PropTypes.node,
     className: PropTypes.string,
-    require: PropTypes.bool
+    required: PropTypes.bool
 };
 
 export default InlineError

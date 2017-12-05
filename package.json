@@ -58,8 +58,9 @@
     "css-loader": "^0.28.7",
     "dateformat": "^3.0.2",
     "del": "^2.2.0",
-    "enzyme": "^3.1.0",
-    "enzyme-adapter-react-15": "^1.0.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-utils": "^1.2.0",
     "es6-promise": "^4.1.1",
     "eslint": "^4.7.0",
     "eslint-plugin-import": "^2.7.0",
@@ -67,6 +68,7 @@
     "eslint-plugin-react": "^7.3.0",
     "eslint-watch": "^3.1.2",
     "extract-text-webpack-plugin": "^3.0.0",
+    "flexboxgrid": "^6.3.1",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^21.2.1",
     "lodash": "^4.17.4",
@@ -77,7 +79,9 @@
     "postcss-loader": "^2.0.6",
     "prop-types": "^15.5.10",
     "rc-menu": "^5.1.4",
+    "react-addons-test-utils": "^15.6.2",
     "react-autosuggest": "^9.3.2",
+    "react-dates": "^15.3.0",
     "react-dropzone": "^4.2.3",
     "react-modal": "^3.0.4",
     "react-paginate": "^4.4.4",
@@ -93,7 +97,7 @@
     "style-loader": "^0.18.2",
     "styled-components": "^2.1.2",
     "webpack": "^3.6.0",
-    "wfp-ui": "git+https://github.com/wfp/ui.git#develop",
+    "wfp-ui": "git://github.com/wfp/ui#develop",
     "wiredep": "^4.0.0"
   },
   "peerDependencies": {
@@ -113,5 +117,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

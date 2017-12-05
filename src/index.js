@@ -1,9 +1,9 @@
 import LinkTo from './components/linkto';
 import Banner from './components/banner';
-import Header from './components/header';
+//import Header from './components/header';
 import CorporateStrip from './components/corporatestrip';
 import LinkMenuItem from './components/linkmenuitem';
-import LogoItem from './components/logoitem';
+//import LogoItem from './components/logoitem';
 //import SearchWidget from './components/searchwidget';
 import SearchWidget from './components/universalheader/search';
 import UserMenuWidget from './components/usermenuwidget';
@@ -39,24 +39,28 @@ import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
 import UniversalFooter from './components/universalfooter/footer.jsx';
 import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
-import {Button,
-        RenderInput,
-        RenderDropzone,
-        RenderCurrencyInput,
-        RenderCheckbox,
-        RenderTextarea,
-        RenderSelect,
-        RenderStatic,
-        FormGroup,
-        FormGroupTitle,
-        FormGroupInputField,
-        FormHint,
-        RequiredInfo }  from './components/forms/inputs.jsx';
+import {
+  Button,
+  RenderInput,
+  RenderDropzone,
+  RenderCurrencyInput,
+  RenderCheckbox,
+  RenderTextarea,
+  RenderSelect,
+  RenderStatic,
+  FormGroup,
+  FormGroupTitle,
+  FormGroupInputField,
+  FormHint,
+  RequiredInfo }  from './components/forms/inputs.jsx';
 
 
 import Label from './components/forms/label.jsx';
 import MainError from './components/forms/mainError.jsx';
+import DatePicker from './components/forms/datePicker.jsx';
+import DateRangePicker from './components/forms/dateRangePicker.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
+import MultiSelect from './components/forms/multiSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 
@@ -65,10 +69,12 @@ module.exports = {
   LinkTo,
   Banner,
   Button,
-  Header,
+  //Header,
   CorporateStrip,
+  DatePicker,
+  DateRangePicker,
   LinkMenuItem,
-  LogoItem,
+  //LogoItem,
   SearchWidget,
   UserMenuWidget,
   Breadcrumbs,
@@ -103,6 +109,7 @@ module.exports = {
   RenderSelect,
   RenderStatic,
   StaffSelect,
+  MultiSelect,
   FormGroup,
   Label,
   FormGroupTitle,

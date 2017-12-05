@@ -45,4 +45,13 @@ $select-item-hover-color:           darken($primary, 5%); // pale blue
 	}
 }
 
+.invalid {
+	.Select-control {
+		border-color: $orange;
+	}
+	.Select {
+		margin-bottom: 0;
+	}
+}
+
 @import '../../node_modules/react-select/scss/default.scss';

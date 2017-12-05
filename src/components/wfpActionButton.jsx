@@ -16,8 +16,9 @@ export default class WfpActionButton extends React.Component {
 
   handleClick() {
     this.props.onActionClick(this.props.action);
-    if (typeof this.props.closeModal === "function")
+    if (typeof this.props.closeModal === "function") {
       this.props.closeModal();
+    }
   }
 
   render() {
@@ -25,10 +26,15 @@ export default class WfpActionButton extends React.Component {
       'wfp-btn--primary': this.props.type === 'primary',
       'wfp-btn--secondary': this.props.type === 'secondary',
       'wfp-btn--tertiary': this.props.type === 'tertiary',
-      'wfp-btn--negative': this.props.type === 'negative'
+      'wfp-btn--negative': this.props.type === 'negative',
+      [`${this.props.className}`]: this.props.className
     });
     return (
-      <button className={classes} onClick={this.props.onClick ? this.props.onClick :  this.handleClick}>
+      <button
+        className={classes}
+        type="button"
+        onClick={this.props.onClick ? this.props.onClick :  this.handleClick}
+      >
         <span>{this.props.label}</span>
       </button>
     );
@@ -36,8 +42,8 @@ export default class WfpActionButton extends React.Component {
 }
 
 WfpActionButton.propTypes = {
-  label: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   type: PropTypes.string
 };
 

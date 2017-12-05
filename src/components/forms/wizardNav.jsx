@@ -1,32 +1,98 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { submit } from 'redux-form'
+import React from 'react';
+import { connect } from 'react-redux';
+import { submit } from 'redux-form';
+import PropTypes from 'prop-types';
+
+import UniversalModal from '../universalmodal/modal';
+import UniversalModalTitle from '../universalmodal/modaltitle';
+import UniversalModalContent from '../universalmodal/modalcontent';
+import UniversalModalFooter from '../universalmodal/modalfooter';
+import WfpActionButton from '../wfpActionButton';
+
+
+const DefaultDialogContent = (props) => {
+  return (
+    <div>
+      <UniversalModalTitle>
+        Submit Form
+      </UniversalModalTitle>
+      <UniversalModalContent>
+        <p>Are you sure you wish to confirm this action?</p>
+        <UniversalModalFooter>
+          <a
+            href="#"
+            onClick={props.closeModal}
+          >
+            Cancel
+          </a>
+          {props.submitButton}
+        </UniversalModalFooter>
+      </UniversalModalContent>
+    </div>
+  );
+};
+
+DefaultDialogContent.propTypes = {
+  submitButton: PropTypes.node
+};
 
 const WizardNav = ({ previousPage, prevText, nextText, nextDisabled, prevHide, nextHide, dispatch }) => (
-    <div className="wfp-wizard">
-
-        <div>
-            {prevHide !== true &&
-                <button type="button" onClick={previousPage}
-                  className="wfp-btn--primary wfp-wizard__prev">
-                    {prevText ? prevText : 'Previous'}
-                </button>
-            }
-        </div>
-        
-        <div>
-            {nextHide !== true &&
-                <button
-                    className="wfp-btn--primary wfp-wizard__next"
-                    type="button"
-                    onClick={() => dispatch(submit('wizard'))}
-                    disabled={nextDisabled} >
-                        {nextText ? nextText : 'Next'}
-                </button>
-            }
-        </div>
-
+  <div className="wfp-wizard">
+    <div>
+      {prevHide !== true &&
+        <button
+          className="wfp-btn--primary wfp-wizard__prev"
+          onClick={previousPage}
+          type="button"
+        >
+          {prevText ? prevText : 'Previous'}
+        </button>
+      }
     </div>
-)
+    
+    <div>
+      {nextHide === 'confirm' &&
+        <UniversalModal
+          className="wfp-modal--small"
+          trigger={<WfpActionButton
+            label={nextText ? nextText : 'Next'}
+          />
+          }
+        >
+          <DefaultDialogContent
+            submitButton={ 
+              <WfpActionButton
+                label={nextText ? nextText : 'Next'}
+                onClick={() => dispatch(submit('wizard'))}
+              />
+            }
+          />
+        </UniversalModal>
+      }
 
-export default connect()(WizardNav)
+      {(nextHide !== 'confirm' && nextHide !== true)&&
+        <button
+          className="wfp-btn--primary wfp-wizard__next"
+          disabled={nextDisabled}
+          onClick={() => dispatch(submit('wizard'))}
+          type="button"
+        >
+          {nextText ? nextText : 'Next'}
+        </button>
+      }
+    </div>
+  </div>
+);
+
+
+WizardNav.propTypes = {
+  dispatch: PropTypes.func,
+  nextDisabled: PropTypes.bool,
+  nextHide: PropTypes.bool,
+  nextText: PropTypes.string,
+  previousPage: PropTypes.func,
+  prevHide: PropTypes.bool,
+  prevText: PropTypes.string,
+};
+
+export default connect()(WizardNav);

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label Display 1`] = `
+<label
+  className="label--required"
+  htmlFor={undefined}
+>
+  Hallo Welt
+</label>
+`;
