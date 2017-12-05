@@ -42,7 +42,6 @@ import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 import {
   Button,
   RenderInput,
-  RenderDropzone,
   RenderCurrencyInput,
   RenderCheckbox,
   RenderTextarea,
@@ -61,6 +60,7 @@ import DatePicker from './components/forms/datePicker.jsx';
 import DateRangePicker from './components/forms/dateRangePicker.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
 import MultiSelect from './components/forms/multiSelect.jsx';
+import FileUpload from './components/forms/fileUpload.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 
@@ -102,7 +102,7 @@ module.exports = {
   UniversalFooter,
   UniversalFooterMini,
   RenderInput,
-  RenderDropzone,
+  FileUpload,
   RenderCurrencyInput,
   RenderCheckbox,
   RenderTextarea,
