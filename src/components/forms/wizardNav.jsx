@@ -89,9 +89,9 @@ WizardNav.propTypes = {
   dispatch: PropTypes.func,
   nextDisabled: PropTypes.bool,
   nextHide: PropTypes.bool,
-  nextText: PropTypes.text,
+  nextText: PropTypes.string,
+  previousPage: PropTypes.func,
   prevHide: PropTypes.bool,
-  previousPage: PropTypes.number,
   prevText: PropTypes.string,
 };
 

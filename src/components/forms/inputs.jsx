@@ -100,31 +100,44 @@ export const RenderCheckbox = (props) => {
   const { input, label, wrapper, type, meta: { touched, error } } = props;
   return (
     <InlineError {...props}>
-      <input {...input} type={type}/>
+      <input {...input} id={input.name} type={type}/>
       <Label htmlFor={input.name}>{label}</Label>
     </InlineError>
   )
 };
 
 
-export const RenderTextarea = (props) => (
-  <InlineError {...props}>
-    <Label>{props.label}</Label>
-    <textarea
-      {...props.input}
-      placeholder={props.label}
-      type={props.type}
-    />
-  </InlineError>
-);
+export const RenderTextarea = (props) => {
+  const { input, label, placeholder, wrapper, type, meta: { touched, error } } = props;
+  const inputClasses = classNames({
+    'invalid' : touched && error
+  }); 
+
+  return (
+    <InlineError {...props}>
+      <Label>{props.label}</Label>
+      <textarea
+        {...props.input}
+        placeholder={placeholder}
+        type={type}
+        className={inputClasses}
+      />
+    </InlineError>
+  );
+};
 
 
 export const RenderSelect = (props) => {
   const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
+
+  const inputClasses = classNames({
+    'invalid' : touched && error
+  });
+
   return (
     <InlineError {...props}>
       <Label isRequired={isRequired}>{label}</Label>
-      <select {...input}>
+      <select className={inputClasses} {...input} >
         <option value="">{selectEmptyText}</option>
         {selectList.map(val => <option value={val} key={val}>{val}</option>)}
       </select>

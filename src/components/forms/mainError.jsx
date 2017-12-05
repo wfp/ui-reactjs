@@ -8,7 +8,7 @@ const MainError = ({ error, submitFailed }) => {
         <h4 className='main-error__title'>{error.title}</h4>
         {error.fields && (
           <ul className="main-error__list">
-            { Object.keys(error.fields).map((field, i) => <li key={i}>{error.fields[field]}</li>) }
+            { Object.keys(error.fields).map((field, i) => <li key={i}><label htmlFor={field}>{error.fields[field]}</label></li>) }
           </ul>
         )}
       </div>);

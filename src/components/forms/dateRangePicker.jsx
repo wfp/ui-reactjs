@@ -3,7 +3,8 @@ import React from 'react';
 import 'react-dates/initialize';
 
 import { DateRangePicker } from 'react-dates';
-import { START_DATE, END_DATE} from 'react-dates/constants';
+import InlineError from './inlineError';
+import { START_DATE, END_DATE } from 'react-dates/constants';
 
 class DateRangePickerWrapper extends React.Component {
   constructor(props) {
@@ -41,20 +42,37 @@ class DateRangePickerWrapper extends React.Component {
 
     return (
       <span>
-      <label className='DateRangePickerInput_label'>From</label> 
-      <DateRangePicker
-        endDate={endDate}
-        endDatePlaceholderText="To"
-        startDate={startDate}
-        startDatePlaceholderText="From"
-        focusedInput={this.state.focusedInput || null}
-        onDatesChange={this.handleDatesChange}
-        onFocusChange={this.handleFocusChange}
-        customArrowIcon={<label className='DateRangePickerInput_label to'>To</label>}
-        hideKeyboardShortcutsPanel= {true}
-        isOutsideRange = {this.props.isOutsideRange}
-      /></span>
+        <label className='DateRangePickerInput_label'>From</label> 
+        <DateRangePicker
+          customArrowIcon={<label className='DateRangePickerInput_label to'>To</label>}
+          endDate={endDate}
+          endDateId="end"
+          endDatePlaceholderText="To"
+          focusedInput={this.state.focusedInput || null}
+          hideKeyboardShortcutsPanel
+          isOutsideRange={this.props.isOutsideRange}
+          onDatesChange={this.handleDatesChange}
+          onFocusChange={this.handleFocusChange}
+          startDate={startDate}
+          startDateId="start"
+          startDatePlaceholderText="From"
+        />
+      </span>
     );
   }
 }
-export default DateRangePickerWrapper;
+
+const DateRangePickerEl = (fields) => {
+  return (
+    <InlineError {...fields.From}>
+      <DateRangePickerWrapper
+        endDateFieldName="To"
+        startDateFieldName="From"
+        {...fields}
+      />
+    </InlineError>
+  );
+};
+
+export default DateRangePickerEl;
+

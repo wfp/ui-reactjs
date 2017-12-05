@@ -60,6 +60,7 @@ import MainError from './components/forms/mainError.jsx';
 import DatePicker from './components/forms/datePicker.jsx';
 import DateRangePicker from './components/forms/dateRangePicker.jsx';
 import StaffSelect from './components/forms/staffSelect.jsx';
+import MultiSelect from './components/forms/multiSelect.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 
@@ -108,6 +109,7 @@ module.exports = {
   RenderSelect,
   RenderStatic,
   StaffSelect,
+  MultiSelect,
   FormGroup,
   Label,
   FormGroupTitle,

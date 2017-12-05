@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Modal from 'react-modal'
-import ModalTitle from './modaltitle'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Modal from 'react-modal';
+import ModalTitle from './modaltitle';
 
 
 
@@ -18,18 +18,15 @@ class UniversalModal extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
 
   closeModal(e) {
     if (e) { e.preventDefault(); }
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
-/*    {React.cloneElement(this.props.children, {
-             closeModal: this.closeModal
-            })}*/
     return(
       <span>
         {React.cloneElement(this.props.trigger, {
