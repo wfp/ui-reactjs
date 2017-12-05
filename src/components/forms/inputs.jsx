@@ -24,30 +24,6 @@ export const RenderInput = (props) => {
 };
 
 
-export const RenderDropzone = ({ input, name, label, type, selectDescription, meta: { touched, error } }) => {
-  const files = input.value;
-  return (
-    <div>
-      <Dropzone
-        className="wfp-btn xsmall dropzone__select"
-        name={name}
-        onDrop={( filesToUpload, e ) => input.onChange(filesToUpload)}
-      >
-        {selectDescription ? selectDescription : 'Upload a file'}
-      </Dropzone>
-      {touched &&
-        error &&
-        <span className="error">{error}</span>}
-      {files && Array.isArray(files) && (
-        <ul className="dropzone__list">
-          { files.map((file, i) => <li key={i}>{file.name} <a onClick={( filesToUpload, e ) => input.onChange('')}>clear</a></li>) }
-        </ul>
-      )}
-    </div>
-  );
-}
-
-
 export class RenderCurrencyInput extends React.Component {
 
     constructor(props) {

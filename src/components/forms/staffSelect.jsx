@@ -33,9 +33,9 @@ class StaffSelect extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      value: null
-    };
+     this.state = {
+      value: this.props.defaultValue ? this.props.defaultValue : null
+    }
   }
 
   handleChange = (value) => {
