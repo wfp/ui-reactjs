@@ -29,12 +29,15 @@ const MultipleActionsButton = (props) => {
                         </ul>
                     </div>
                 )}>
-
-            <button className="multiaction__more wfp-btn dropdown-trigger" type="button">
-                <i className="fa fa-fw fa-ellipsis-v" />
-            </button>
-        </Tooltip>
-    );
+                <button
+                    className="multiaction__more wfp-btn dropdown-trigger"
+                    type="button"
+                 >
+                    <i className="fa fa-fw fa-ellipsis-v" />
+                </button>
+              </Tooltip>
+        );
+>>>>>>> Body fix removed
 }
 
 MultipleActionsButton.propTypes = {
