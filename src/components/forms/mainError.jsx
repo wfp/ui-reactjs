@@ -6,9 +6,9 @@ const MainError = ({ error, submitFailed }) => {
 		return (
 			<div className='main-error'>
 				<h4 className='main-error__title'>An error occured.</h4>
-				{error.overall && (
+				{error.generic && (
 					<ul className="main-error__list">
-						{ error.overall.map((field, i) => <li key={i}><label>{field}</label></li>) }
+						{ error.generic.map((field, i) => <li key={i}><label>{field}</label></li>) }
 					</ul>
 				)}
 				{error.fields && (

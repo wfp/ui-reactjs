@@ -144,6 +144,19 @@
 /* Single Date Picker */
 .wfp-form--stacked
 .wfp-form--date-picker {
+  .SingleDatePickerInput {
+    &:after {
+      content: "date";
+      position: absolute;
+      top: 0.55em;
+      right: 0.7em;
+      font-family: FontAwesome;
+      user-select: none;
+      pointer-events: none;
+      content: "\f073";
+      //color: $primary;
+    }
+  }
   input[type="text"] {
     margin-top: 0;
     margin-bottom: 0;
@@ -228,6 +241,7 @@ form {
 select:invalid {
   color: $grey;
 }
+
 /* FILTER PANEL */
 .wfp-form--stacked {
   input:not([type]) {
@@ -244,7 +258,7 @@ select:invalid {
     text-transform: capitalize;
   }
 
-  .Select--multi {
+  /*.Select--multi {
     &.has-value {
       .Select-multi-value-wrapper {
         line-height: 1;
@@ -273,7 +287,7 @@ select:invalid {
         top: 4px;
       }
     }
-  }
+  }*/
 }
 
 
@@ -400,6 +414,10 @@ select:invalid {
 
 /* User Select */
 
+.userselect__wrapper {
+  margin-top: 0.25em;
+}
+
 .userselect__select {
   .Select-control {
     overflow: visible;
@@ -462,4 +480,15 @@ select:invalid {
 
 .main-error__title {
   font-size: 1em;
+}
+
+/* Select Element */
+
+.select-simple {
+  &.invalid {
+  select {
+      border-color: $orange;
+      margin-bottom: 0;
+    }
+  }
 }

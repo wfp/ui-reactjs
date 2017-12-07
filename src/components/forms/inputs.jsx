@@ -111,7 +111,7 @@ export const RenderSelect = (props) => {
   });
 
   return (
-    <InlineError {...props}>
+    <InlineError {...props} className="select-simple">
       <Label isRequired={isRequired}>{label}</Label>
       <select className={inputClasses} {...input} >
         <option value="">{selectEmptyText}</option>
