@@ -3,15 +3,16 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 const InlineError = (props) => {
+	const showInvalid = props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error);
 
 	const inputClasses = classNames({
 			'required': props.isRequired,
 			'wfp-form--group' : props.wrapper === true,
-		 'invalid' : props.meta && props.meta.touched && props.meta.error,
+		 	'invalid' : showInvalid,
 			[`${props.className}`]: props.className,
 		}); 
 
-	if (props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error))
+	if (showInvalid)
 		return (
 			<div className={inputClasses}>
 				{props.children}

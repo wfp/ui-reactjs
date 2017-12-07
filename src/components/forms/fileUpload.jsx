@@ -9,11 +9,17 @@ const FileUpload = (props) => {
     const files = input.value;
 
     const onChange = (filesToUpload) => {
+        //console.log(filesToUpload[0]);
+
+        //const name = filesToUpload[0].name;
+
          var reader = new window.FileReader();
             reader.readAsDataURL(filesToUpload[0]); 
             reader.onloadend = function() {
-                const base64data = reader.result;                
-                input.onChange(base64data);
+                const base64data = reader.result; 
+                filesToUpload[0].data = base64data;              
+                input.onChange(filesToUpload);
+                console.log(filesToUpload);
             }
     }
 
