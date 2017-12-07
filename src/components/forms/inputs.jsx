@@ -23,53 +23,36 @@ export const RenderInput = (props) => {
     )
 };
 
+export const RenderCurrencyInput = (props) => {
 
-export class RenderCurrencyInput extends React.Component {
+    const { input, label, type, loadOptions, meta: { touched, error } } = props;
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            value: this.props.defaultValue ? this.props.defaultValue : null
-        }
+    const handleChange = (value) => {
+        input.onChange(value);
     }
 
-    handleChange = (value) => {
-        this.setState({ value });
-        this.props.input.onChange(value.id);
-    }
-
-    componentDidMount () {
-        if (this.props.defaultValue) {
-            this.handleChange(this.props.defaultValue);
-        }
-    }
-
-    render () {
-        const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
-        return (
-            <InlineError {...this.props}>
-                    <Label>{label}</Label>
-                    <div className="currencyinput__wrapper">
-                        <Select.Async
-                            id="state-select"
-                            ref="stateSelect"
-                            autoFocus
-                            className="currencyinput__select"
-                            name="selected-state"
-                            valueKey="id"
-                            placeholder="Select currency"
-                            labelKey="text"
-                            clearable={false}
-                            value={this.state.value}
-                            onChange={this.handleChange}        
-                            loadOptions={loadOptions}     
-                            searchable={true}
-                        />
-                        <input {...input} placeholder={label} type="hidden" />
-                    </div>
-            </InlineError>
-        )
-    }
+    return (
+        <InlineError {...props}>
+                <Label>{label}</Label>
+                <div className="currencyinput__wrapper">
+                    <Select.Async
+                        id="state-select"
+                        autoFocus
+                        className="currencyinput__select"
+                        name="selected-state"
+                        valueKey="id"
+                        placeholder="Select currency"
+                        labelKey="text"
+                        clearable={false}
+                        value={input.value}
+                        onChange={handleChange}        
+                        loadOptions={loadOptions}     
+                        searchable={true}
+                    />
+                    <input {...input} placeholder={label} type="hidden" />
+                </div>
+        </InlineError>
+    )
 };
 
 export const RenderCheckbox = (props) => {
