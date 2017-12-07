@@ -4,7 +4,7 @@ import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
-
+import moment from 'moment';
 import 'react-dates/initialize';
 
 import { SingleDatePicker } from 'react-dates';
@@ -26,6 +26,11 @@ class StaffSelect extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    const realDate = moment(newProps.input.value);
+    this.setState({ value: realDate });
+  }
+
   render () {
     const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
     return (
@@ -33,7 +38,7 @@ class StaffSelect extends React.Component {
         <div className="wfp-form--date-picker">
           <Label>{label}</Label>
           <SingleDatePicker
-            date={this.state.date}
+            date={this.state.value}
             focused={this.state.focused}
             hideKeyboardShortcutsPanel= {true}
             numberOfMonths={1}
