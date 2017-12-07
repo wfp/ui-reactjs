@@ -74,6 +74,7 @@
     "lodash": "^4.17.4",
     "main-bower-files": "^2.5.0",
     "mathsass": "^0.10.1",
+    "moment": "^2.19.3",
     "node-sass": "^4.5.3",
     "polished": "^1.4.1",
     "postcss-loader": "^2.0.6",

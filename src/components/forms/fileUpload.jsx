@@ -44,7 +44,12 @@ const FileUpload = (props) => {
             )}
             {files && !Array.isArray(files) && (
                 <ul className="dropzone__list">
-                    <li>{files.name ? files.name : files.filename} <a onClick={( filesToUpload, e ) => input.onChange('')}>clear</a></li>
+                    <li>{files.name ? files.name : files.filename} 
+                        {files.filename &&
+                            <a href={`/${files.filename}`} target="_blank" className="dropzone__view">view</a>
+                        }
+                        <a onClick={( filesToUpload, e ) => input.onChange('')} className="dropzone__clear">clear</a>
+                    </li>
                 </ul>
             )}
         </div>
