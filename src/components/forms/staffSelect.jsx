@@ -6,20 +6,21 @@ import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 const StaffSelectValue = (props) => {
-  console.log("dssss");
   return (
     <div
       className="Select-value userselect__value"
     >
-      <div className="Select-value-label">
-        <div className="userselect__value__text">{props.children}</div>
-        <div className="userselect__value__extended">
+     {props.value &&
+        <div className="Select-value-label">
+          <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
+          <div className="userselect__value__extended">
 
-          <img src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
-          Index: {props.value.indexno}
-          <span>{props.value.email}</span>
+            <img src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
+            Index: {props.value.indexno}
+            <span>{props.value.email}</span>
+          </div>
         </div>
-      </div>
+      }
     </div>
   );
 };
@@ -34,7 +35,7 @@ class StaffSelect extends React.Component {
   constructor(props) {
     super(props);
      this.state = {
-      value: this.props.defaultValue ? this.props.defaultValue : null
+      value: this.props.defaultValue ? this.props.defaultValue : this.props.input.value ? this.props.input.value : null
     }
   }
 
