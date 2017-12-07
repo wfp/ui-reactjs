@@ -5,7 +5,7 @@ $select-input-border-radius:        0px;
 $select-input-border-focus:         $primary; // blue
 $select-input-box-shadow-focus:     inset 0 1px 3px rgba($black, 0.1);
 $select-input-border-width:         1px;
-$select-input-height:               37px;
+$select-input-height:               42px;
 $select-input-internal-height:      ($select-input-height - ($select-input-border-width * 2));
 $select-input-placeholder:          #aaa;
 $select-text-color:                 #333;
@@ -36,12 +36,21 @@ $select-item-color:                 $primary; // pale blue
 $select-item-bg:                    $blue-lightest;
 $select-item-hover-color:           darken($primary, 5%); // pale blue
 
+@import '../../node_modules/react-select/scss/default.scss';
+
 .Select {
     margin: 0.25em 0;
 	.Select-control .Select-input input {
-		margin: 0;
-		padding: 0.35em;
-		padding-left: 0;
+	    width: 100%;
+	    background: none transparent;
+	    cursor: default;
+	    display: inline-block;
+	    font-family: inherit;
+	    font-size: inherit;
+	    margin: 0;
+	    outline: none;
+	    line-height: 17px;
+	    padding: 12px 0 12px;
 	}
 }
 
@@ -54,4 +63,3 @@ $select-item-hover-color:           darken($primary, 5%); // pale blue
 	}
 }
 
-@import '../../node_modules/react-select/scss/default.scss';

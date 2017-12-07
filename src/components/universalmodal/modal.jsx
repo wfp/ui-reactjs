@@ -20,7 +20,7 @@ class UniversalModal extends React.Component {
   openModal() {
     this.setState({ modalIsOpen: true });
   }
-
+  
   closeModal(e) {
     if (e) { e.preventDefault(); }
     this.setState({ modalIsOpen: false });

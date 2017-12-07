@@ -8,12 +8,20 @@ const FileUpload = (props) => {
     const { input, name, label, type, selectDescription, meta: { touched, error } } = props;
     const files = input.value;
 
+    console.log("Files", files);
+
     const onChange = (filesToUpload) => {
+        //console.log(filesToUpload[0]);
+
+        //const name = filesToUpload[0].name;
+
          var reader = new window.FileReader();
             reader.readAsDataURL(filesToUpload[0]); 
             reader.onloadend = function() {
-                const base64data = reader.result;                
-                input.onChange(base64data);
+                const base64data = reader.result; 
+                filesToUpload[0].data = base64data;              
+                input.onChange(filesToUpload);
+                console.log(filesToUpload);
             }
     }
 
@@ -31,7 +39,12 @@ const FileUpload = (props) => {
                 <span className="error">{error}</span>}
             {files && Array.isArray(files) && (
                 <ul className="dropzone__list">
-                    { files.map((file, i) => <li key={i}>{file.name} <a onClick={( filesToUpload, e ) => input.onChange('')}>clear</a></li>) }
+                    { files.map((file, i) => <li key={i}>{file.name ? file.name : file.filename} <a onClick={( filesToUpload, e ) => input.onChange('')}>clear</a></li>) }
+                </ul>
+            )}
+            {files && !Array.isArray(files) && (
+                <ul className="dropzone__list">
+                    <li>{files.name ? files.name : files.filename} <a onClick={( filesToUpload, e ) => input.onChange('')}>clear</a></li>
                 </ul>
             )}
         </div>
