@@ -29,6 +29,7 @@ const MultipleActionsButton = (props) => {
                         </ul>
                     </div>
                 )}>
+
                 <button
                     className="multiaction__more wfp-btn dropdown-trigger"
                     type="button"
@@ -37,7 +38,6 @@ const MultipleActionsButton = (props) => {
                 </button>
               </Tooltip>
         );
->>>>>>> Body fix removed
 }
 
 MultipleActionsButton.propTypes = {
