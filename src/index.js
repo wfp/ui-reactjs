@@ -67,6 +67,7 @@ import FileUpload from './components/forms/fileUpload.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
 import FormActions from './components/forms/formActions.jsx';
 import InlineError from './components/forms/inlineError.jsx';
+import Info from './components/forms/info.jsx';
 
 
 module.exports = {
@@ -124,6 +125,7 @@ module.exports = {
   RequiredInfo,
   WizardNav,
   InlineError,
+  Info,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse
 };
