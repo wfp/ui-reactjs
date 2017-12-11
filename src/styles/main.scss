@@ -8,6 +8,9 @@
 
 // TODO: use colors from WFP UI only and use scss from there
 //@import 'colors';
+
+@import 'mixins';
+
 @import 'utilities';
 @import "banner";
 @import 'navbar';
@@ -16,7 +19,6 @@
 @import 'infobar';
 @import 'search';
 @import 'datepicker';
-@import 'calendar';
 @import 'breadcrumbs';
 @import 'filter';
 @import 'button';
@@ -28,7 +30,6 @@
 @import 'secondaryheader';
 @import 'tooltip';
 @import 'tooltips';
-@import 'modal';
 @import 'quicksearch';
 @import 'universalheader';
 @import 'mainmenu';
@@ -42,34 +43,9 @@
 @import "cells";
 @import 'tabledropdownmodal';
 @import 'responsive';
-@import 'mixins';
 @import 'gridcomponent';
-// Global CSS
-/*body {
-    font-family: "lato", sans-serif;
-}
 
-h2 {
-    padding-top: 2rem;
-    padding-bottom: 1.8rem;
-}
-
-h3 {
-    font-size: 2em;
-    padding-top: 2.5rem;
-    padding-bottom: 1.8rem;
-
-    i.fa {
-        padding-right: 3rem;
-    }
-}
-
-h4 {
-    padding-bottom: 0.5em;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    border-bottom: 2px solid $grey-lighter;
-}*/
+@import 'modal';
 
 .section,
 section {

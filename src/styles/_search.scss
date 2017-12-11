@@ -1,10 +1,8 @@
-@import 'colors';
-
 .wfp-header-int {
 	.header--search{
 		input.header--input{
 			width: 180px;
-			background-color: $background;
+			background-color: $white;
 			color: $accent;
 			outline: 0;
 			text-align: left;

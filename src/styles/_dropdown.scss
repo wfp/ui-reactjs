@@ -1,9 +1,7 @@
-@import 'colors';
-
 .dropdown{
     z-index: 1000;
     padding: 0.5em 0;
-    background-color: $background;
+    background-color: $white;
     color: $black;
     position:absolute;
     min-width: 250px;
@@ -23,7 +21,7 @@
                 border: none;
                 &:hover{
                     background-color: $primary;
-                    color: $background;
+                    color: $white;
                 }
             }
         }
@@ -47,7 +45,7 @@
     & + .dropdown {
         padding-top: 0;
         .dropdown--label{
-            background-color: $grey-lighterer;
+            background-color: $grey-lightest;
             color: $grey-dark;
             padding: 1em;
         }

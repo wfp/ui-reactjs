@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Info from './info';
 
-const Label = ({ children, htmlFor, isRequired }) => {
+const Label = ({ children, htmlFor, input, label, info, isRequired }) => {
   if (children !== false) {
     const labelClass = classNames({
       'label--required': isRequired
@@ -10,9 +11,9 @@ const Label = ({ children, htmlFor, isRequired }) => {
     return (
   		<label
 	    	className={labelClass}
-	    	htmlFor={htmlFor}
+	    	htmlFor={input ? input.name : ''}
 	    >
-	    		{children}
+	    		{children ? children : label} <Info>{info}</Info>
 	    </label>
 	  );
   }

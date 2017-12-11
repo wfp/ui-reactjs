@@ -99,7 +99,7 @@
   background-position: right center;
   background-color: $grey-lighterer;
 }
-
+/*
 @mixin input($type) {
   @if $type == common {
     -webkit-appearance: none;
@@ -279,6 +279,8 @@
   }
 }
 
+
+
 %wfp-form,
 .wfp-form {
   margin: 1rem 0;
@@ -398,13 +400,13 @@
 }
 
 
-
+*/
 
 
 
 /* ------- */
 
-
+/*
 .wfp-form-aligned {
   @extend %wfp-form;
 
@@ -460,9 +462,11 @@
     margin: 1.5em 0 0 11em;
 }
 
+*/
+
 /* TO DO MOVE INTO UI */
 
-
+/*
 @media screen and (min-width: 12em) {
     .wfp-u-xs-1,
     .wfp-u-xs-1-1,
@@ -665,4 +669,5 @@
     }
 }
 
+*/
 
