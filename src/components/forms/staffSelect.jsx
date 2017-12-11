@@ -11,7 +11,7 @@ const StaffSelectValue = (props) => {
         'Select-value': true,
         'userselect__value': true,
         'readonly': props.readOnly
-    }); 
+    });
 
     const errorImage = (ev) => {
         console.log("User image not existing");
@@ -25,7 +25,7 @@ const StaffSelectValue = (props) => {
                     <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
                     <div className="userselect__value__extended">
 
-                        <img onError={errorImage} src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
+                        <img onError={errorImage} src={`https://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
                         Index: {props.value.indexno}
                         <span>{props.value.email}</span>
                     </div>
@@ -60,13 +60,13 @@ const StaffSelect = (props) => {
                         className="userselect__select"
                         id="state-select"
                         labelKey="text"
-                        loadOptions={loadOptions}  
-                        name="selected-state" 
-                        onChange={handleChange} 
+                        loadOptions={loadOptions}
+                        name="selected-state"
+                        onChange={handleChange}
                         placeholder="Select staff by last name"
                         searchable={true}
                         value={input.value}
-                        valueComponent={StaffSelectValue}       
+                        valueComponent={StaffSelectValue}
                         valueKey="indexno"
                     />
                     <input

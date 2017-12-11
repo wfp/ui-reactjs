@@ -12,8 +12,8 @@ const Footer = props => {
         <div className="wfp-u-1 wfp-u-md-2-5 tc tr-md">
           <div className="pa1">
           <img
-            src="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/1x/en-standard.png"
-            srcSet="http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/1x/en-standard.png 1x, http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/2x/en-standard.png 2x"
+            src="https://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/1x/en-standard.png"
+            srcSet="https://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/1x/en-standard.png 1x, http://cdn.wfp.org/libraries/wfpui/v0.8.0/assets/logos/dark/png/2x/en-standard.png 2x"
             className="footer--logo" alt="WFP Logo" />
           </div>
         </div>
