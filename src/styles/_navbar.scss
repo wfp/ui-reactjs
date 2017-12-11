@@ -1,5 +1,3 @@
-@import 'colors';
-
 nav .img {
   display: inline;
   height: 32px;
@@ -30,7 +28,7 @@ nav .img {
   .wfp-grid.wfp-wrapper.wfp-overbar {
     a.menu--link {
       outline: 0;
-      color: $background;
+      color: $white;
       text-decoration: none;
       border-bottom-color: transparent;
       font-size: .875rem;
@@ -38,8 +36,8 @@ nav .img {
 
       &:focus,
       &:hover {
-        color: $background;
-        border-bottom-color: $background;
+        color: $white;
+        border-bottom-color: $white;
       }
     }
   }
@@ -58,5 +56,5 @@ nav .img {
 }
 
 a.header--logo {
-  color: $background !important;
+  color: $white !important;
 }

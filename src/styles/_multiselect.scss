@@ -43,7 +43,6 @@ $select-item-hover-color:           darken($primary, 5%); // pale blue
 	.Select-control .Select-input input {
 	    width: 100%;
 	    background: none transparent;
-	    cursor: default;
 	    display: inline-block;
 	    font-family: inherit;
 	    font-size: inherit;
@@ -51,6 +50,12 @@ $select-item-hover-color:           darken($primary, 5%); // pale blue
 	    outline: none;
 	    line-height: 17px;
 	    padding: 12px 0 12px;
+	}
+	&.is-disabled {
+		cursor: not-allowed;
+		.Select-arrow-zone {
+			display: none;
+		}
 	}
 }
 

@@ -39,6 +39,9 @@ import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
 import UniversalFooter from './components/universalfooter/footer.jsx';
 import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
+import loadCurrencies from './utils/loadCurrencies.jsx';
+import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation.jsx';
+
 import {
   Button,
   RenderInput,
@@ -62,6 +65,7 @@ import StaffSelect from './components/forms/staffSelect.jsx';
 import MultiSelect from './components/forms/multiSelect.jsx';
 import FileUpload from './components/forms/fileUpload.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
+import FormActions from './components/forms/formActions.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 
 
@@ -112,11 +116,14 @@ module.exports = {
   MultiSelect,
   FormGroup,
   Label,
+  FormActions,
   FormGroupTitle,
   FormGroupInputField,
   FormHint,
   MainError,
   RequiredInfo,
   WizardNav,
-  InlineError
+  InlineError,
+  loadCurrencies,
+  validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse
 };

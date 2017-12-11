@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 
 export const RenderInput = (props) => {
-    const { input, label, wrapper, type, meta: { touched, error } } = props;
+    const { input, label, disabled, wrapper, type, meta: { touched, error } } = props;
 
     const inputClasses = classNames({
       'invalid' : touched && error
@@ -17,15 +17,15 @@ export const RenderInput = (props) => {
 
     return (
         <InlineError {...props}>
-                <Label>{label}</Label>
-                <input {...input} type={type} className={inputClasses} />
+                <Label {...props} />
+                <input {...input} disabled={disabled} type={type} className={inputClasses} />
         </InlineError>
     )
 };
 
 export const RenderCurrencyInput = (props) => {
 
-    const { input, label, type, loadOptions, meta: { touched, error } } = props;
+    const { input, label, disabled, type, loadOptions, meta: { touched, error } } = props;
 
     const handleChange = (value) => {
         input.onChange(value);
@@ -33,12 +33,13 @@ export const RenderCurrencyInput = (props) => {
 
     return (
         <InlineError {...props}>
-                <Label>{label}</Label>
+                <Label {...props} />
                 <div className="currencyinput__wrapper">
                     <Select.Async
                         id="state-select"
                         autoFocus
                         className="currencyinput__select"
+                        disabled={disabled}
                         name="selected-state"
                         valueKey="id"
                         placeholder="Select currency"
@@ -58,9 +59,9 @@ export const RenderCurrencyInput = (props) => {
 export const RenderCheckbox = (props) => {
   const { input, label, wrapper, type, meta: { touched, error } } = props;
   return (
-    <InlineError {...props}>
+    <InlineError {...props} className="checkbox__wrapper">
       <input {...input} id={input.name} type={type}/>
-      <Label htmlFor={input.name}>{label}</Label>
+      <Label {...props} />
     </InlineError>
   )
 };
@@ -74,7 +75,7 @@ export const RenderTextarea = (props) => {
 
   return (
     <InlineError {...props}>
-      <Label>{props.label}</Label>
+      <Label {...props} />
       <textarea
         {...props.input}
         placeholder={placeholder}
@@ -95,7 +96,7 @@ export const RenderSelect = (props) => {
 
   return (
     <InlineError {...props} className="select-simple">
-      <Label isRequired={isRequired}>{label}</Label>
+      <Label {...props} />
       <select className={inputClasses} {...input} >
         <option value="">{selectEmptyText}</option>
         {selectList.map(val => <option value={val} key={val}>{val}</option>)}
@@ -114,7 +115,7 @@ export const RenderStatic = (props) => {
         <InlineError {...props}>
             <div className="wfp-form--group--horizontal">
                 {hideLabel !== true &&
-                    <Label>{label}</Label>
+                    <Label {...props} />
                 }
                 <span className={inputClass}>{data ? data : "—"}</span>
             </div>

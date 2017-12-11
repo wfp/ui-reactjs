@@ -6,86 +6,94 @@ import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 const StaffSelectValue = (props) => {
-  return (
-    <div
-      className="Select-value userselect__value"
-    >
-     {props.value &&
-        <div className="Select-value-label">
-          <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
-          <div className="userselect__value__extended">
 
-            <img src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
-            Index: {props.value.indexno}
-            <span>{props.value.email}</span>
-          </div>
+    const StaffSelectValueClass = classNames({
+        'Select-value': true,
+        'userselect__value': true,
+        'readonly': props.readOnly
+    }); 
+
+    const errorImage = (ev) => {
+        console.log("User image not existing");
+        //ev.target.src = 'some default image url'
+    }
+
+    return (
+        <div className={StaffSelectValueClass}>
+         {props.value &&
+                <div className="Select-value-label">
+                    <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
+                    <div className="userselect__value__extended">
+
+                        <img onError={errorImage} src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
+                        Index: {props.value.indexno}
+                        <span>{props.value.email}</span>
+                    </div>
+                </div>
+            }
         </div>
-      }
-    </div>
-  );
+    );
 };
 
 StaffSelectValue.propTypes = {
-  children: PropTypes.node,
-  value: PropTypes.object
+    children: PropTypes.node,
+    value: PropTypes.object
 };
 
-class StaffSelect extends React.Component {
+const StaffSelect = (props) => {
 
-  constructor(props) {
-    super(props);
-     this.state = {
-      value: this.props.defaultValue ? this.props.defaultValue : this.props.input.value ? this.props.input.value : null
+    const { input, label, type, disabled, readOnly, loadOptions, meta: { touched, error } } = props;
+
+    const handleChange = (value) => {
+        if (value) {
+            input.onChange(value);
+        }
     }
-  }
 
-  handleChange = (value) => {
-    this.setState({ value });
-    console.log(value);
-    console.log('Selected:', value);
-    if (value.indexno) {
-      this.props.input.onChange(value.indexno);
+    if (!readOnly) {
+        return (
+            <InlineError {...props}>
+                <Label>{label}</Label>
+                <div className="userselect__wrapper">
+                    <Select.Async
+                        autoFocus
+                        className="userselect__select"
+                        id="state-select"
+                        labelKey="text"
+                        loadOptions={loadOptions}  
+                        name="selected-state" 
+                        onChange={handleChange} 
+                        placeholder="Select staff by last name"
+                        searchable={true}
+                        value={input.value}
+                        valueComponent={StaffSelectValue}       
+                        valueKey="indexno"
+                    />
+                    <input
+                        {...input}
+                        placeholder={label}
+                        type="hidden"
+                    />
+                </div>
+            </InlineError>
+        )
     }
-  }
-
-  render () {
-    const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
-    return (
-      <InlineError {...this.props}>
-        <Label>{label}</Label>
-        <div className="userselect__wrapper">
-          <Select.Async
-            autoFocus
-            className="userselect__select"
-            id="state-select"
-            labelKey="text"
-            loadOptions={loadOptions}  
-            name="selected-state" 
-            onChange={this.handleChange} 
-            placeholder="Select staff by last name"
-            ref="stateSelect"
-            searchable={true}
-            value={this.state.value}
-            valueComponent={StaffSelectValue}       
-            valueKey="indexno"
-          />
-          <input
-            {...input}
-            placeholder={label}
-            type="hidden"
-          />
-        </div>
-      </InlineError>
-    )
-  }
+    else {
+        return (
+            <InlineError {...props}>
+                <Label>{label}</Label>
+                <StaffSelectValue readOnly value={input.value} />
+            </InlineError>
+        )
+    }
 };
 
 StaffSelect.propTypes = {
-  input: PropTypes.object,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  loadOptions: PropTypes.func,
-  meta: PropTypes.object
+    input: PropTypes.object,
+    label: PropTypes.string,
+    type: PropTypes.string,
+    loadOptions: PropTypes.func,
+    meta: PropTypes.object
 };
 
 export default StaffSelect;

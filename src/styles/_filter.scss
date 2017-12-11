@@ -1,5 +1,3 @@
-@import "colors";
-
 .wfp-filter {
     border: 1px solid $grey-lighter;
     margin-bottom: 2rem;
@@ -18,7 +16,7 @@
 
     &.open .wfp-filter--open {
         .accordion-head {
-            background-color: $grey-lighterer;
+            background-color: $grey-lightest;
         }
         display: block;
 
@@ -31,7 +29,7 @@
         display: block;
 
         &:hover {
-            background-color: $grey-lighterer;
+            background-color: $grey-lightest;
         }
     }
 

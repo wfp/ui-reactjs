@@ -5,7 +5,7 @@ import Dropzone from 'react-dropzone';
 import PropTypes from 'prop-types';
 
 const FileUpload = (props) => {
-    const { input, name, label, type, selectDescription, meta: { touched, error } } = props;
+    const { input, disabled, name, label, type, selectDescription, meta: { touched, error } } = props;
     const files = input.value;
 
     console.log("Files", files);
@@ -27,13 +27,15 @@ const FileUpload = (props) => {
 
     return (
         <div>
-            <Dropzone
-                className="wfp-btn xsmall dropzone__select"
-                name={name}
-                onDrop={ onChange } 
-            >
-                {selectDescription ? selectDescription : 'Upload a file'}
-            </Dropzone>
+            {!disabled &&
+                <Dropzone
+                    className="wfp-btn xsmall dropzone__select"
+                    name={name}
+                    onDrop={ onChange } 
+                >
+                    {selectDescription ? selectDescription : 'Upload a file'}
+                </Dropzone>
+            }
             {touched &&
                 error &&
                 <span className="error">{error}</span>}
@@ -48,7 +50,9 @@ const FileUpload = (props) => {
                         {files.filename &&
                             <a href={`/${files.filename}`} target="_blank" className="dropzone__view">view</a>
                         }
-                        <a onClick={( filesToUpload, e ) => input.onChange('')} className="dropzone__clear">clear</a>
+                        {!disabled &&
+                            <a onClick={( filesToUpload, e ) => input.onChange('')} className="dropzone__clear">clear</a>
+                        }
                     </li>
                 </ul>
             )}

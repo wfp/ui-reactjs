@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MainError = ({ error, submitFailed }) => {
-	if (error && submitFailed === true) {
+	// && submitFailed === true
+	if (error) {
 		return (
 			<div className='main-error'>
 				<h4 className='main-error__title'>An error occured.</h4>
