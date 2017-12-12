@@ -1,0 +1,57 @@
+.infobar {
+	position: relative;
+}
+
+.infobar__content {
+	display: flex;
+	align-items: flex-start;
+}
+
+.infobar__main {
+	width: 100%;
+	//transition: all 0.3s;
+	.expanded & {
+		width:70%;
+	}
+	@include media-query($xl-screen) {
+		width:70%;
+	}
+}
+.infobar__button {
+	position: absolute;
+	top: -5em;
+	right: 0;
+	@include media-query($xl-screen) {
+		display: none;
+	}
+}
+.infobar__bar {
+	width: 0%;
+	margin-left: 0;
+	overflow: hidden;
+	background: $grey-lightest;
+	//transition: all 0.3s;
+	.infobar__bar__inner {
+		padding: 1em;
+		//transform: translateX(300px);
+	}
+	.expanded & {
+		margin-left: 5%;
+		width:25%;
+	}
+	@include media-query($xl-screen) {
+		margin-left: 5%;
+		width:25%;
+	}
+}
+
+/*
+.infobar__bar__inner {
+	transform: translateX(300px);
+	.expanded & {
+		transform: translateX(0px);
+	}
+	@include media-query($lg-screen) {
+		width:70%;
+	}
+} */
