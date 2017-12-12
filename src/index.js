@@ -68,6 +68,7 @@ import WizardNav from './components/forms/wizardNav.jsx';
 import FormActions from './components/forms/formActions.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 import Info from './components/forms/info.jsx';
+import InfoBar from './components/forms/infoBar.jsx';
 
 
 module.exports = {
@@ -126,6 +127,7 @@ module.exports = {
   WizardNav,
   InlineError,
   Info,
+  InfoBar,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse
 };
