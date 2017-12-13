@@ -31,6 +31,7 @@ export default class WfpActionButton extends React.Component {
     });
     return (
       <button
+        disabled={this.props.disabled}
         className={classes}
         type="button"
         onClick={this.props.onClick ? this.props.onClick :  this.handleClick}
