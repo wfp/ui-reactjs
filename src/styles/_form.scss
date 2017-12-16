@@ -289,7 +289,7 @@ select:invalid {
 
  .wfp-wizard-actions {
 		justify-content: flex-end;
-		>button {
+		button {
 			margin-left: 1em;
 		}
  }
@@ -374,10 +374,10 @@ select:invalid {
 
 .checkbox__wrapper {
     input[type=checkbox] {
-        vertical-align: inherit !important;
+        //vertical-align: inherit !important;
     }
     label {
-        width: calc(100% - 50px);
+        width: calc(100% - 70px);
     }
 }
 

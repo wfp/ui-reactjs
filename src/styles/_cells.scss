@@ -7,22 +7,27 @@
 }
 
 .details-cell {
-  width: 40% !important;
   margin: 0;
-  @include media-max($md-screen) {
+  width: 100%;
+  /*@include media-max($md-screen) {
     width: 50% !important;
+  }*/
+  ul {
+    margin: 0;
   }
-  padding: 0;
   li {
     list-style: none;
   }
-  .details-cell-key,
-  .details-cell-value {
-      display: inline-block;
+  .details-cell__value {
+    margin-bottom: 0.5em;
+    //display: inline-block;
   }
-  .details-cell-key {
+  .details-cell__key {
       font-weight: bold;
-      margin-right: .5rem;
+      font-size: 0.8em;
+      //color: $grey;
+      margin-bottom: -0.1em;
+      //margin-right: .5rem;
   }
 }
 
