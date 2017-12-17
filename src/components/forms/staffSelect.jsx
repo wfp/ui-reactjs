@@ -10,6 +10,7 @@ const StaffSelectValue = (props) => {
     const StaffSelectValueClass = classNames({
         'Select-value': true,
         'userselect__value': true,
+        'readonly--inline': props.readOnly === 'inline',
         'readonly': props.readOnly
     }); 
 
@@ -42,7 +43,7 @@ StaffSelectValue.propTypes = {
 
 const StaffSelect = (props) => {
 
-    const { input, label, type, disabled, readOnly, loadOptions, meta: { touched, error } } = props;
+    const { input, value, label, type, disabled, readOnly, loadOptions} = props;
 
     const handleChange = (value) => {
         if (value) {
@@ -82,7 +83,7 @@ const StaffSelect = (props) => {
         return (
             <InlineError {...props}>
                 <Label>{label}</Label>
-                <StaffSelectValue readOnly value={input.value} />
+                <StaffSelectValue readOnly={readOnly} value={value ? value : input.value} />
             </InlineError>
         )
     }

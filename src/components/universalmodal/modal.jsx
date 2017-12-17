@@ -17,6 +17,12 @@ class UniversalModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if (newProps.trigger === "open") {
+      this.openModal();
+    }
+  }
+
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -29,11 +35,15 @@ class UniversalModal extends React.Component {
   render() {
     return(
       <span>
-        {React.cloneElement(this.props.trigger, {
-         onClick: this.openModal,
-         closeModal: this.closeModal
-        })}
-         <Modal
+        {this.props.trigger !== 'open' &&
+          <span>
+          {React.cloneElement(this.props.trigger, {
+           onClick: this.openModal,
+           closeModal: this.closeModal
+          })}
+          </span>
+        }
+        <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
