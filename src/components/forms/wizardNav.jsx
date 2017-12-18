@@ -36,7 +36,7 @@ DefaultDialogContent.propTypes = {
   submitButton: PropTypes.node
 };
 
-const WizardNav = ({ previousPage, prevText, nextText, nextDisabled, prevHide, nextHide, dispatch }) => (
+const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nextDisabled, prevHide, nextHide, dispatch }) => (
   <div className="wfp-wizard">
     <div>
       {prevHide !== true &&
@@ -63,7 +63,7 @@ const WizardNav = ({ previousPage, prevText, nextText, nextDisabled, prevHide, n
             submitButton={ 
               <WfpActionButton
                 label={nextText ? nextText : 'Next'}
-                onClick={() => dispatch(submit('wizard'))}
+                onClick={nextPage ?  nextPage : () => dispatch(submit('wizard'))}
               />
             }
           />
@@ -74,7 +74,7 @@ const WizardNav = ({ previousPage, prevText, nextText, nextDisabled, prevHide, n
         <button
           className="wfp-btn--primary wfp-wizard__next"
           disabled={nextDisabled}
-          onClick={() => dispatch(submit('wizard'))}
+          onClick={nextPage ?  nextPage : () => dispatch(submit('wizard'))}
           type="button"
         >
           {nextText ? nextText : 'Next'}

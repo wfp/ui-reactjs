@@ -67,6 +67,16 @@ export const RenderCheckbox = (props) => {
 };
 
 
+export const RenderRadio = (props) => {
+  const { input, label, wrapper, type, meta: { touched, error } } = props;
+  return (
+    <InlineError {...props} className="wfp-radio">
+      <input {...input} id={input.name} type={type}/>
+      <Label {...props} />
+    </InlineError>
+  )
+};
+
 export const RenderTextarea = (props) => {
   const { input, label, placeholder, wrapper, type, meta: { touched, error } } = props;
   const inputClasses = classNames({

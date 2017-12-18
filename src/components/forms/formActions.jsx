@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormActions = ({ error, submitFailed }) => {
+import UniversalModal from '../universalmodal/modal';
+import UniversalModalTitle from '../universalmodal/modaltitle';
+import UniversalModalContent from '../universalmodal/modalcontent';
+import UniversalModalFooter from '../universalmodal/modalfooter';
+import WfpActionButton from '../wfpActionButton';
+
+const FormActions = ({ error, modal, submitFailed }) => {
 	return (
 		<div className="wfp-wizard wfp-wizard-actions">
-			    <button type="submit" className="wfp-btn">Save Changes</button>
-                <button type="submit" className="wfp-btn--primary">Submit</button>
+			    <WfpActionButton label="Save Form" type="secondary"/>
+			    {modal}
 		</div>
     );
 };

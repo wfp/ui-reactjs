@@ -9,3 +9,22 @@
 		max-width: inherit;
 	}
 }
+
+.simple-box {
+	background: $grey-lightest;
+	padding: 1em;
+	height: 100%;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.simple-box__wrapper {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.simple-box--lighter {
+	background: $white;
+	border: 1px solid $grey-lighter;
+}
