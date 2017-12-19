@@ -18,7 +18,13 @@ class UniversalModal extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if (newProps.trigger === "open") {
+    if (newProps.modalIsOpen === true) {
+      this.openModal();
+    }
+  }
+
+  componentWillMount () {
+    if (this.props.modalIsOpen === true) {
       this.openModal();
     }
   }
@@ -27,15 +33,18 @@ class UniversalModal extends React.Component {
     this.setState({ modalIsOpen: true });
   }
   
-  closeModal(e) {
+  closeModal = (e) => {
     if (e) { e.preventDefault(); }
+    if (this.props.closeModal) {
+      this.props.closeModal();
+    }
     this.setState({ modalIsOpen: false });
   }
 
   render() {
     return(
       <span>
-        {this.props.trigger !== 'open' &&
+        {this.props.trigger &&
           <span>
           {React.cloneElement(this.props.trigger, {
            onClick: this.openModal,
