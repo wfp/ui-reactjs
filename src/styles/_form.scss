@@ -434,9 +434,9 @@ select:invalid {
 }
 
 .userselect__value__extended {
-		display: block;
+		display: flex;
+		align-items: center;
 		font-size: 0.8em;
-		font-weight: bold;
 		background: $grey-lighter;
 		margin-left: -11px;
 		margin-right: -46px;
@@ -457,7 +457,7 @@ select:invalid {
             background: $white;
 			border-radius: 100px;
 			float: left;
-			margin-right: 0.5em;
+			margin-right: 0.8em;
 		}
 		span {
 			display: block;

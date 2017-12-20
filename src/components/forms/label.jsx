@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Info from './info';
 
 const Label = ({ children, htmlFor, input, label, info, isRequired }) => {
-  if (children !== false) {
+  if (children !== false && label !== false) {
     const labelClass = classNames({
       'label--required': isRequired
     }); 

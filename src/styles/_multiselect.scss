@@ -5,7 +5,7 @@ $select-input-border-radius:        0px;
 $select-input-border-focus:         $primary; // blue
 $select-input-box-shadow-focus:     inset 0 1px 3px rgba($black, 0.1);
 $select-input-border-width:         1px;
-$select-input-height:               42px;
+$select-input-height:               43px;
 $select-input-internal-height:      ($select-input-height - ($select-input-border-width * 2));
 $select-input-placeholder:          #aaa;
 $select-text-color:                 #333;
@@ -57,6 +57,11 @@ $select-item-hover-color:           darken($primary, 5%); // pale blue
 			display: none;
 		}
 	}
+}
+
+
+.Select-clear {
+	line-height: inherit;
 }
 
 .invalid {

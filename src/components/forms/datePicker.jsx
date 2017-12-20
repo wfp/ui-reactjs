@@ -27,8 +27,10 @@ class StaffSelect extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const realDate = moment(newProps.input.value);
-    this.setState({ value: realDate });
+    if (newProps.input.value && newProps.input.value !== this.props.input.value) {
+      const realDate = moment(newProps.input.value);
+      this.setState({ value: realDate });
+    }
   }
 
   render () {
