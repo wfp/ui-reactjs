@@ -36,7 +36,7 @@ DefaultDialogContent.propTypes = {
   submitButton: PropTypes.node
 };
 
-const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nextDisabled, prevHide, nextHide, dispatch }) => (
+const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nextDisabled, prevHide, nextHide, saveShow, saveDisabled, savePage, saveText, dispatch }) => (
   <div className="wfp-wizard">
     <div>
       {prevHide !== true &&
@@ -51,6 +51,19 @@ const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nex
     </div>
     
     <div>
+
+
+       {(saveShow === true) &&
+        <button
+          className="wfp-btn wfp-wizard__save"
+          disabled={saveDisabled}
+          onClick={savePage ?  savePage : () => dispatch(submit('wizard'))}
+          type="button"
+        >
+          {saveText ? saveText : 'Save'}
+        </button>
+      }
+      
       {nextHide === 'confirm' &&
         <UniversalModal
           className="wfp-modal--small"
