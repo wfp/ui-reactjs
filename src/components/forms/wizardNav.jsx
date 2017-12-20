@@ -51,6 +51,19 @@ const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nex
     </div>
     
     <div>
+
+
+       {(saveShow === true) &&
+        <button
+          className="wfp-btn wfp-wizard__save"
+          disabled={saveDisabled}
+          onClick={savePage ?  savePage : () => dispatch(submit('wizard'))}
+          type="button"
+        >
+          {saveText ? saveText : 'Save'}
+        </button>
+      }
+      
       {nextHide === 'confirm' &&
         <UniversalModal
           className="wfp-modal--small"
@@ -68,17 +81,6 @@ const WizardNav = ({ previousPage, prevText, prevAction, nextText, nextPage, nex
             }
           />
         </UniversalModal>
-      }
-
-       {(saveShow === true) &&
-        <button
-          className="wfp-btn--primary wfp-wizard__next"
-          disabled={saveDisabled}
-          onClick={savePage ?  savePage : () => dispatch(submit('wizard'))}
-          type="button"
-        >
-          {saveText ? saveText : 'Save'}
-        </button>
       }
 
       {(nextHide !== 'confirm' && nextHide !== true)&&
