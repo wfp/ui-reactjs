@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 const StaffSelectValue = (props) => {
 
+    const {readOnly} = props;
+
     const StaffSelectValueClass = classNames({
         'Select-value': true,
         'userselect__value': true,
@@ -23,12 +25,25 @@ const StaffSelectValue = (props) => {
         <div className={StaffSelectValueClass}>
          {props.value &&
                 <div className="Select-value-label">
-                    <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
+                    {!readOnly &&
+                        <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
+                    }
                     <div className="userselect__value__extended">
-
-                        <img onError={errorImage} src={`https://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
-                        Index: {props.value.indexno}
-                        <span>{props.value.email}</span>
+                        <img onError={errorImage} src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
+                        {readOnly ? (
+                            <div className="userselect__description">
+                                <div className="userselect__value__text">
+                                    {props.value.last_name}, {props.value.first_name}
+                                </div>  
+                                <span>{props.value.position_title}</span>
+                                <span>{props.value.division}</span>
+                            </div>
+                        ):(
+                            <div className="userselect__description">
+                                <span>Index: {props.value.indexno}</span>
+                                <span>{props.value.email}</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             }
