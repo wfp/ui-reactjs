@@ -116,19 +116,24 @@ export const RenderSelect = (props) => {
 }
 
 export const RenderStatic = (props) => {
-    const {data, label, hideLabel} = props;
-    const inputClass = classNames({
-        'wfp-staticinput': true,
-        'empty': !data
+    const {className, data, label, hideLabel} = props;
+
+    const wrapperClass = classNames({
+      'wfp-form--group--horizontal': true,
+      [`${className}`]: className
     }); 
+
+    const inputClass = classNames({
+      'wfp-staticinput': true,
+      'empty': !data
+    });
+
     return (
-        <InlineError {...props}>
-            <div className="wfp-form--group--horizontal">
-                {hideLabel !== true &&
-                    <Label {...props} />
-                }
-                <span className={inputClass}>{data ? data : "—"}</span>
-            </div>
+        <InlineError {...props} className={wrapperClass}>
+          {hideLabel !== true &&
+              <Label {...props} />
+          }
+          <span className={inputClass}>{data ? data : "—"}</span>
         </InlineError>
     )
 }

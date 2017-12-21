@@ -300,8 +300,10 @@ select:invalid {
 
 .wfp-form--group--seperate {
 	border-bottom: 1px solid $grey-lighter;
-	padding-bottom: 2em;
-	margin-bottom: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .wfp-form--group--seperatesmall {
@@ -312,11 +314,18 @@ select:invalid {
 
 .wfp-form--group--horizontal {
 	display: flex;
-	margin-bottom: 1em;
+	//margin-bottom: 1em;
 	align-items: center;
 	label {
 		width: 50%;
 		max-width: 10rem;
+	}
+}
+
+.wfp-form--group--wide {
+	@extend .wfp-form--group--horizontal;
+	label {
+		max-width: 20rem;
 	}
 }
 
