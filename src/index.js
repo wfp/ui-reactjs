@@ -41,8 +41,8 @@ import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 
 import loadCurrencies from './utils/loadCurrencies.jsx';
 import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation.jsx';
-
 import normalizeDecimal from './utils/normalizers/normalizeDecimal.jsx';
+import {Unit} from './utils/valueHelpers.jsx';
 
 import {
   Button,
@@ -132,6 +132,7 @@ module.exports = {
   InlineError,
   Info,
   InfoBar,
+  Unit,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
   normalizeDecimal
