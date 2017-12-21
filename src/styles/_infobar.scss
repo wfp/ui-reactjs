@@ -11,10 +11,10 @@
 	width: 100%;
 	//transition: all 0.3s;
 	.expanded & {
-		width:70%;
+		width:60%;
 	}
 	@include media-query($xl-screen) {
-		width:70%;
+		width:60%;
 	}
 }
 .infobar__button {
@@ -37,11 +37,11 @@
 	}
 	.expanded & {
 		margin-left: 5%;
-		width:25%;
+		width:35%;
 	}
 	@include media-query($xl-screen) {
 		margin-left: 5%;
-		width:25%;
+		width:35%;
 	}
 }
 
