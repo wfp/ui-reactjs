@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import InlineError from './inlineError';
 import Label from './label';
+import { Unit } from './../../utils/units';
 import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
@@ -116,7 +117,7 @@ export const RenderSelect = (props) => {
 }
 
 export const RenderStatic = (props) => {
-    const {className, data, label, hideLabel} = props;
+    const {className, data, label, hideLabel, unit, unitFrom} = props;
 
     const wrapperClass = classNames({
       'wfp-form--group--horizontal': true,
@@ -133,7 +134,13 @@ export const RenderStatic = (props) => {
           {hideLabel !== true &&
               <Label {...props} />
           }
-          <span className={inputClass}>{data ? data : "—"}</span>
+          <span className={inputClass}>
+            {unit ? (
+              <Unit type={unit} from={unitFrom}>{data}</Unit>
+            ) : (
+              <span>{data ? data : "—"}</span>
+            )}
+          </span>
         </InlineError>
     )
 }

@@ -120,6 +120,15 @@ export const TusdSvg = ( props ) => {
 };
 
 // Generate Million USD based on USD 73821341 => 73.82 M USD 
+export const Currency = ( props ) => {
+  const value = MusdCalc(props.children);
+  if (value)
+    return <span className={props.className}>{value}<span className="unit__small">{props.from}</span></span>;
+  else
+    return <Invalid className={props.className}/>;
+};
+
+// Generate Million USD based on USD 73821341 => 73.82 M USD 
 export const Usd = ( props ) => {
   const value = MusdCalc(props.children/1000000);
   if (value)
@@ -127,6 +136,7 @@ export const Usd = ( props ) => {
   else
     return <Invalid className={props.className}/>;
 };
+
 
 export const Tusd = ( props ) => {
   const value = MusdCalc(props.children/1000);
@@ -357,6 +367,7 @@ const components = {
   Tusd,
   Musd,
   Busd,
+  Currency,
   Partners,
   Beneficiaries,
   Households,

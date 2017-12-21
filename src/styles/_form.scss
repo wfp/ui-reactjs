@@ -247,8 +247,7 @@ select:invalid {
 		box-shadow: none !important;
 	}
 
-	.Select-control,
-	input:not([type="submit"]) {
+	.Select-control {
 		background-color: $grey-lightest;
 	}
 }
