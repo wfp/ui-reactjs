@@ -71,6 +71,7 @@ import WizardNav from './components/forms/wizardNav.jsx';
 import FormActions from './components/forms/formActions.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 import Info from './components/forms/info.jsx';
+import CurrencyValue from './components/forms/currencyValue.jsx';
 import InfoBar from './components/forms/infoBar.jsx';
 
 
@@ -120,6 +121,7 @@ module.exports = {
   RenderRadio,
   StaffSelect,
   MultiSelect,
+  CurrencyValue,
   FormGroup,
   Label,
   FormActions,

@@ -18,10 +18,10 @@ function addZeroes( num ) {
     var value = Number(num);
     var res = num.split(".");
     if(num.indexOf('.') === -1) {
-        value = value.toFixed(1);
+        value = value.toFixed(2);
         num = value.toString();
     } else if (res[1].length < 3) {
-        value = value.toFixed(1);
+        value = value.toFixed(2);
         num = value.toString();
     }
 return num
@@ -37,6 +37,15 @@ export const InvalidSvg = ( props ) => {
     return <tspan className={props.className + " invalid"}>–</tspan>;
 };
 
+
+export const CurrencyCalc = ( value, showZero, showUnit ) => {
+  const round = 100;
+  var valueb = addCommas(addZeroes(Math.round(value * round) / round));
+  if ((valueb && valueb !== "NaN" && parseFloat(valueb) !== 0) ||showZero)
+    return valueb;
+  else
+    return false;
+}
 
 // Generate Million USD based on M USD 32.12 => 32.12 M USD
 
@@ -121,7 +130,7 @@ export const TusdSvg = ( props ) => {
 
 // Generate Million USD based on USD 73821341 => 73.82 M USD 
 export const Currency = ( props ) => {
-  const value = MusdCalc(props.children);
+  const value = CurrencyCalc(props.children);
   if (value)
     return <span className={props.className}>{value}<span className="unit__small">{props.from}</span></span>;
   else
