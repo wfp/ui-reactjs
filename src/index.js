@@ -42,6 +42,7 @@ import UniversalFooterMini from './components/universalfooter/footermini.jsx';
 import loadCurrencies from './utils/loadCurrencies.jsx';
 import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation.jsx';
 import normalizeDecimal from './utils/normalizers/normalizeDecimal.jsx';
+import normalizeDecimalSeperator from './utils/normalizers/normalizeDecimalSeperator.jsx';
 import {Unit} from './utils/units.jsx';
 
 import {
@@ -137,5 +138,6 @@ module.exports = {
   Unit,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
-  normalizeDecimal
+  normalizeDecimal,
+  normalizeDecimalSeperator
 };
