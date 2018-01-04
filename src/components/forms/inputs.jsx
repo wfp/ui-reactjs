@@ -99,7 +99,7 @@ export const RenderTextarea = (props) => {
 
 
 export const RenderSelect = (props) => {
-  const { input, selectEmptyText, isRequired, selectList, label, meta: { touched, error } } = props;
+  const { input, selectEmptyText, isRequired, selectList, label, disabled, meta: { touched, error } } = props;
 
   const inputClasses = classNames({
     'invalid' : touched && error
@@ -108,7 +108,7 @@ export const RenderSelect = (props) => {
   return (
     <InlineError {...props} className="select-simple">
       <Label {...props} />
-      <select className={inputClasses} {...input} >
+      <select className={inputClasses} {...input} disabled={disabled} >
         <option value="">{selectEmptyText}</option>
         {selectList.map(val => <option value={val} key={val}>{val}</option>)}
       </select>
