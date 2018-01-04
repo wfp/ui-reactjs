@@ -77,10 +77,10 @@ class DateRangePickerWrapper extends React.Component {
 
 const DateRangePickerEl = (fields) => {
   return (
-    <InlineError {...fields.From}>
+    <InlineError {...fields[fields.names[0]]}>
       <DateRangePickerWrapper
-        endDateFieldName="To"
-        startDateFieldName="From"
+        startDateFieldName={fields.names[0]}
+        endDateFieldName={fields.names[1]}
         {...fields}
       />
     </InlineError>
