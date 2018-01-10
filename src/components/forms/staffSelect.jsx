@@ -58,10 +58,10 @@ StaffSelectValue.propTypes = {
 
 const StaffSelect = (props) => {
 
-    const { input, value, label, type, disabled, readOnly, loadOptions} = props;
+    const { input, value, label, type, disabled, readOnly, loadOptions, disableEmpty} = props;
 
     const handleChange = (value) => {
-        if (value) {
+        if (value || disableEmpty !== true) {
             input.onChange(value);
         }
     }

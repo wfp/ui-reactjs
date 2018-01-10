@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
 
 const MultiSelect = (props) => {
 
-	const { input, label, multi, placeholder, simpleValue, type, valueKey, labelKey, options, meta: { touched, error } } = props;
+	const { disableEmpty, input, label, multi, placeholder, simpleValue, type, valueKey, labelKey, options, meta: { touched, error } } = props;
 		
 	const handleChange = (value) => {
-		if (value) {
-			input.onChange(value);
-		}
+        if (value || disableEmpty !== true) {
+            input.onChange(value);
+        }
 	}
 	
 	return (

@@ -26,10 +26,12 @@ export const RenderInput = (props) => {
 
 export const RenderCurrencyInput = (props) => {
 
-    const { input, label, disabled, type, loadOptions, meta: { touched, error } } = props;
+    const { input, disableEmpty, label, disabled, type, loadOptions, meta: { touched, error } } = props;
 
     const handleChange = (value) => {
-        input.onChange(value);
+        if (value || disableEmpty !== true) {
+            input.onChange(value);
+        }
     }
 
     return (
@@ -147,17 +149,17 @@ export const RenderStatic = (props) => {
 
 export const FormGroup = (props) => {
     const {children, type, className} = props;
-	const formGroupClass = classNames({
+    const formGroupClass = classNames({
       'wfp-form--group': true,
       'wfp-form--group--seperate': (type === 'seperate'),
       'wfp-form--group--seperatesmall': (type === 'seperatesmall'),
       [`${className}`]: className,
     }); 
-	return (
-		<div className={ formGroupClass }>
-			{children}
-		</div>
-	)
+    return (
+        <div className={ formGroupClass }>
+            {children}
+        </div>
+    )
 }
 
 export const FormGroupTitle = ({children}) => (
