@@ -13,17 +13,17 @@
 	.expanded & {
 		width:60%;
 	}
-	@include media-query($xl-screen) {
+	/*@include media-query($xl-screen) {
 		width:60%;
-	}
+	}*/
 }
 .infobar__button {
 	position: absolute;
 	top: -5em;
 	right: 0;
-	@include media-query($xl-screen) {
+	/*@include media-query($xl-screen) {
 		display: none;
-	}
+	}*/
 }
 .infobar__bar {
 	width: 0%;
@@ -39,10 +39,10 @@
 		margin-left: 5%;
 		width:35%;
 	}
-	@include media-query($xl-screen) {
+	/*@include media-query($xl-screen) {
 		margin-left: 5%;
 		width:35%;
-	}
+	}*/
 }
 
 /*
