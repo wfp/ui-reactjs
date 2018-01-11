@@ -14,6 +14,12 @@ class InfoBar extends React.Component {
         };
     }
 
+    componentWillMount() {
+        if (this.props.openByDefault === true) {
+            this.setState({ expanded: true });
+        }
+    }
+
     handleChange = () => {
         this.setState({ expanded: !this.state.expanded });
     }
