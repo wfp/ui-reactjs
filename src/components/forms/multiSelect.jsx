@@ -21,7 +21,7 @@ const MultiSelect = (props) => {
 		<div className="userselect__wrapper">
 		<Select
 			autoFocus
-			className="userselect__select"
+			className=""
 			id="state-select"
 			valueKey={valueKey ? valueKey : 'role_desc'}
 			labelKey={labelKey ? labelKey : 'role_desc'}

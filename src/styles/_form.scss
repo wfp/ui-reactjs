@@ -309,7 +309,8 @@ select:invalid {
 
 .wfp-form--group--horizontal {
 	display: flex;
-	//margin-bottom: 1em;
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
 	align-items: center;
 	label {
 		width: 50%;
@@ -326,7 +327,8 @@ select:invalid {
 
 .wfp-form--group__title {
 	font-size: 1.15em;
-	margin-bottom: 1em;
+	//font-weight: normal;
+	margin-bottom: 0.5em;
 }
 
 .wfp-form--group__inputfield {
@@ -351,10 +353,13 @@ select:invalid {
 }
 
 .wfp-form--group__hint {
+
+	/*
+	TODO: Remove, if no longer used
 	padding: 0.5rem;
 	margin: 0.5em 0;
 	border-left: 5px solid $primary;
-	background: $grey-lightest;
+	background: $grey-lightest;*/
 }
 
 /* Form List */
