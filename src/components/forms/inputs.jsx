@@ -60,9 +60,15 @@ export const RenderCurrencyInput = (props) => {
 };
 
 export const RenderCheckbox = (props) => {
-  const { input, label, wrapper, type, meta: { touched, error } } = props;
+  const { input, label, wrapper, className, type, meta: { touched, error } } = props;
+
+  const wrapperClass = classNames({
+    'checkbox__wrapper': true,
+    [`${className}`]: className
+  }); 
+
   return (
-    <InlineError {...props} className="checkbox__wrapper">
+    <InlineError {...props} className={wrapperClass}>
       <input {...input} id={input.name} type={type}/>
       <Label {...props} />
     </InlineError>
