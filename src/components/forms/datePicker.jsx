@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';

@@ -1,0 +1,71 @@
+/* Progress */
+
+.progress {
+
+}
+
+/* Progress Step */
+
+.progress__step {
+	padding-left: 3rem;
+	padding-bottom: 1em;
+	position: relative;
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		left: calc(0.5rem + 6px);
+		background: $grey-lighter;
+		width: 3px;
+		height: 100%;
+	}
+	&:after {
+		display: block;
+		content: "";
+		border-radius: 20px;
+		position: absolute;
+		left: 0.5rem;
+		top: 0;
+		background: $grey-lighter;
+		width: 14px;
+		height: 14px;
+	}
+	&.active {
+		.progress__step__title {
+			color: $text-color;
+		}
+		&:before, &:after {
+			background: $primary;
+		}
+	}
+}
+
+.progress__step__title {
+	font-size: 1rem;
+	color: $grey;
+	margin-bottom: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* Progress Item */
+
+.progress__item {
+	background: $grey-lighter;
+	padding: 0.5em;
+}
+
+.progress__item__title {
+	font-size: 0.9em;
+	color: $grey-light;
+	img {
+		width: 1em;
+		height: 1em;
+		margin-right: 0.3em;
+		display: inline-block;
+		vertical-align: sub;
+		color: $grey;
+		background: $grey-light;
+		border-radius: 1em;
+	}
+}

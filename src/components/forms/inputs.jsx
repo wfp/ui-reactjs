@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 
 export const RenderInput = (props) => {
-    const { input, label, disabled, wrapper, type, meta: { touched, error } } = props;
+    const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
 
     const inputClasses = classNames({
       'invalid' : touched && error
@@ -19,7 +19,7 @@ export const RenderInput = (props) => {
     return (
         <InlineError {...props}>
                 <Label {...props} />
-                <input {...input} disabled={disabled} type={type} className={inputClasses} />
+                <input {...input} id={input.name} disabled={disabled} type={type} className={inputClasses} />
         </InlineError>
     )
 };
@@ -60,9 +60,15 @@ export const RenderCurrencyInput = (props) => {
 };
 
 export const RenderCheckbox = (props) => {
-  const { input, label, wrapper, type, meta: { touched, error } } = props;
+  const { input, label, wrapper, className, type, meta: { touched, error } } = props;
+
+  const wrapperClass = classNames({
+    'checkbox__wrapper': true,
+    [`${className}`]: className
+  }); 
+
   return (
-    <InlineError {...props} className="checkbox__wrapper">
+    <InlineError {...props} className={wrapperClass}>
       <input {...input} id={input.name} type={type}/>
       <Label {...props} />
     </InlineError>
