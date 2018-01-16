@@ -19,7 +19,7 @@ export const RenderInput = (props) => {
     return (
         <InlineError {...props}>
                 <Label {...props} />
-                <input {...input} id={input.name} disabled={disabled} type={type} className={inputClasses} />
+                <input {...input} id={id ? id : input.name} disabled={disabled} type={type} className={inputClasses} />
         </InlineError>
     )
 };
