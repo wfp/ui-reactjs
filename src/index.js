@@ -74,6 +74,7 @@ import InlineError from './components/forms/inlineError.jsx';
 import Info from './components/forms/info.jsx';
 import CurrencyValue from './components/forms/currencyValue.jsx';
 import InfoBar from './components/forms/infoBar.jsx';
+import Progress from './components/progress/progress.jsx';
 
 
 module.exports = {
@@ -136,6 +137,7 @@ module.exports = {
   Info,
   InfoBar,
   Unit,
+  Progress,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
   normalizeDecimal,
