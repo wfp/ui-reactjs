@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 
 export const RenderInput = (props) => {
-    const { input, label, disabled, wrapper, type, meta: { touched, error } } = props;
+    const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
 
     const inputClasses = classNames({
       'invalid' : touched && error
@@ -19,7 +19,7 @@ export const RenderInput = (props) => {
     return (
         <InlineError {...props}>
                 <Label {...props} />
-                <input {...input} disabled={disabled} type={type} className={inputClasses} />
+                <input {...input} id={input.name} disabled={disabled} type={type} className={inputClasses} />
         </InlineError>
     )
 };
