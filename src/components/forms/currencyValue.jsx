@@ -7,6 +7,7 @@ import InlineError from './inlineError.jsx';
 import Label from './label.jsx';
 
 const CurrencyValue = (props) => {
+    const { id, loadOptions} = props;
     return (
         <InlineError {...props}>
         <Label {...props} />
@@ -17,12 +18,13 @@ const CurrencyValue = (props) => {
                 disabled
                 component={RenderCurrencyInput}
                 label={false}
-                loadOptions={props.loadOptions}
+                loadOptions={loadOptions}
             />
             <Field
                 name="comp"
                 type="text"
                 disabled
+                id={id}
                 component={RenderInput}
                 label={false}
                 wrapper={false}

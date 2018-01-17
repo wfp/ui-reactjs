@@ -4,6 +4,7 @@ import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
+import { Input } from './inputs';
 
 const StaffSelectValue = (props) => {
 
@@ -85,8 +86,8 @@ const StaffSelect = (props) => {
                         valueComponent={StaffSelectValue}
                         valueKey="indexno"
                     />
-                    <input
-                        {...input}
+                    <Input
+                        {...props}
                         placeholder={label}
                         type="hidden"
                     />
