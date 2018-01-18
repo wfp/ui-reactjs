@@ -1,21 +1,29 @@
 /* Progress */
-
-.progress {
-
+.progressel {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	max-height: 700px;
+	overflow: hidden;
+	transition: all 0.3s;
+	&.limit-height {
+		max-height: 100px;
+	}
 }
 
 /* Progress Step */
 
 .progress__step {
-	padding-left: 3rem;
+	padding-left: 2em;
 	padding-bottom: 1em;
 	position: relative;
 	&:before {
 		display: block;
 		content: "";
 		position: absolute;
-		left: calc(0.5rem + 6px);
-		background: $grey-lighter;
+		left: calc(0.5em + 6px);
+		background: $primary;
 		width: 3px;
 		height: 100%;
 	}
@@ -24,11 +32,12 @@
 		content: "";
 		border-radius: 20px;
 		position: absolute;
-		left: 0.5rem;
+		left: 0.5em;
 		top: 0;
-		background: $grey-lighter;
-		width: 14px;
-		height: 14px;
+		background: $white;
+		border: 2px solid $primary;
+		width: 10px;
+		height: 10px;
 	}
 	&.active {
 		.progress__step__title {
@@ -41,7 +50,7 @@
 }
 
 .progress__step__title {
-	font-size: 1rem;
+	font-size: 1em;
 	color: $grey;
 	margin-bottom: 1em;
 	font-weight: bold;
@@ -51,21 +60,66 @@
 /* Progress Item */
 
 .progress__item {
-	background: $grey-lighter;
-	padding: 0.5em;
+	list-style-type: none;
+	margin: 0;
+	padding-bottom: 0.5em;
+	position: relative;
+	padding-left: 1.5em;
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		left: 5px;
+		top: 0.2em;
+		background: $primary;
+		width: 2px;
+		height: 100%;
+	}
+	&:after {
+		display: block;
+		content: "";
+		border-radius: 20px;
+		position: absolute;
+		left: 0em;
+		top: 0.2em;
+		background: $white;
+		border: 2px solid $primary;
+		width: 12px;
+		height: 12px;
+	}
+	&:last-child {
+		&:before {
+			display: none;
+		}
+	}
 }
 
 .progress__item__title {
-	font-size: 0.9em;
-	color: $grey-light;
+	font-size: 1em;
+	font-weight: bold;
 	img {
 		width: 1em;
 		height: 1em;
 		margin-right: 0.3em;
 		display: inline-block;
 		vertical-align: sub;
-		color: $grey;
+		color: $primary;
 		background: $grey-light;
 		border-radius: 1em;
 	}
+}
+
+.progress__item__message {
+
+}
+
+.progress__more {
+	margin-top: -2em;
+	padding-top: 2.5em;
+	z-index: 1000;
+	outline: 0;
+	display: block;
+	width: 100%;
+	position: relative;
+	background: linear-gradient(to bottom, rgba($white,0) 0%,rgba($white,1) 60%);
 }

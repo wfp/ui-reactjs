@@ -7,7 +7,18 @@ import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
-
+export const Input = (props) => {
+    const { className, input, id, label, disabled, type, placeholder} = props;
+    return (
+        <input
+        {...input}
+        className={className} 
+        disabled={disabled}
+        id={id ? id : input.name}
+        type={type}
+        placeholder={placeholder}/>
+    )
+}
 
 export const RenderInput = (props) => {
     const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
@@ -18,8 +29,8 @@ export const RenderInput = (props) => {
 
     return (
         <InlineError {...props}>
-                <Label {...props} />
-                <input {...input} id={id ? id : input.name} disabled={disabled} type={type} className={inputClasses} />
+            <Label {...props} />
+            <Input {...props} />
         </InlineError>
     )
 };
@@ -53,14 +64,14 @@ export const RenderCurrencyInput = (props) => {
                         loadOptions={loadOptions}     
                         searchable={true}
                     />
-                    <input {...input} placeholder={label} type="hidden" />
+                    <Input {...props} placeholder={label} type="hidden" />
                 </div>
         </InlineError>
     )
 };
 
 export const RenderCheckbox = (props) => {
-  const { input, label, wrapper, className, type, meta: { touched, error } } = props;
+  const { id, input, label, wrapper, className, type, meta: { touched, error } } = props;
 
   const wrapperClass = classNames({
     'checkbox__wrapper': true,
@@ -69,25 +80,25 @@ export const RenderCheckbox = (props) => {
 
   return (
     <InlineError {...props} className={wrapperClass}>
-      <input {...input} id={input.name} type={type}/>
-      <Label {...props} />
+        <Input {...props} />
+        <Label {...props} />
     </InlineError>
   )
 };
 
 
 export const RenderRadio = (props) => {
-  const { input, label, wrapper, type, meta: { touched, error } } = props;
+  const { id, input, label, wrapper, type, meta: { touched, error } } = props;
   return (
     <InlineError {...props} className="wfp-radio">
-      <input {...input} id={input.name} type={type}/>
-      <Label {...props} />
+        <Input {...props} />
+        <Label {...props} />
     </InlineError>
   )
 };
 
 export const RenderTextarea = (props) => {
-  const { input, label, placeholder, wrapper, type, meta: { touched, error } } = props;
+  const {id, input, label, placeholder, wrapper, type, meta: { touched, error } } = props;
   const inputClasses = classNames({
     'invalid' : touched && error
   }); 
@@ -97,6 +108,7 @@ export const RenderTextarea = (props) => {
       <Label {...props} />
       <textarea
         {...props.input}
+        id={id ? id : input.name} 
         placeholder={placeholder}
         type={type}
         className={inputClasses}
@@ -107,7 +119,7 @@ export const RenderTextarea = (props) => {
 
 
 export const RenderSelect = (props) => {
-  const { input, selectEmptyText, isRequired, selectList, label, disabled, meta: { touched, error } } = props;
+  const {id, input, selectEmptyText, isRequired, selectList, label, disabled, meta: { touched, error } } = props;
 
   const inputClasses = classNames({
     'invalid' : touched && error
@@ -116,7 +128,11 @@ export const RenderSelect = (props) => {
   return (
     <InlineError {...props} className="select-simple">
       <Label {...props} />
-      <select className={inputClasses} {...input} disabled={disabled} >
+      <select
+        {...input}
+        className={inputClasses}
+        id={id ? id : input.name} 
+        disabled={disabled} >
         <option value="">{selectEmptyText}</option>
         {selectList.map(val => <option value={val} key={val}>{val}</option>)}
       </select>

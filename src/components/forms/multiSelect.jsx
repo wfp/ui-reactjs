@@ -4,6 +4,7 @@ import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
+import { Input } from './inputs';
 
 const MultiSelect = (props) => {
 
@@ -37,8 +38,8 @@ const MultiSelect = (props) => {
 			simpleValue={simpleValue ? simpleValue : true}
 			value={input.value}
 		/>
-		<input
-			{...input}
+		<Input
+			{...props}
 			placeholder={label}
 			type="hidden"
 		/>
