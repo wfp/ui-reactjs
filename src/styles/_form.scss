@@ -255,7 +255,9 @@ select:invalid {
 		background: lighten($orange,15);
 }
 
-.label--required{
+/* Label Attachments */
+
+.label--required {
 	&:after {
 		color: $red;
 		font-size: 1.3em;
@@ -263,6 +265,22 @@ select:invalid {
 		margin-bottom: -0.2em;
 		font-weight: bold;
 		content: "*";
+		display: inline-block;
+	}
+}
+
+.label--optional {
+	&:after {
+		color: $blue;
+		font-size: 0.7em;
+		border: 1px solid $blue;
+		text-transform: uppercase;
+		font-weight: 800;
+		position: relative;
+		top: -0.9em;
+		padding: 0 0.3em;
+		font-weight: bold;
+		content: "Optional";
 		display: inline-block;
 	}
 }

@@ -3,10 +3,11 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Info from './info';
 
-const Label = ({ children, htmlFor, input, label, info, isRequired }) => {
+const Label = ({ children, htmlFor, input, label, info, isOptional, isRequired }) => {
   if (children !== false && label !== false) {
     const labelClass = classNames({
-      'label--required': isRequired
+      'label--required': isRequired,
+      'label--optional': isOptional
     }); 
     return (
   		<label
