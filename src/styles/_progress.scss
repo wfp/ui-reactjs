@@ -1,4 +1,7 @@
 /* Progress */
+
+$progressmargin : 1.5em;
+
 .progressel {
 	list-style-type: none;
 	margin: 0;
@@ -30,49 +33,19 @@
 	}
 }
 
-/* Progress Step */
+/* Progress Message */
 
-.progress__step {
-	padding-left: 2em;
-	padding-bottom: 1em;
+.progress__message {
+	margin-top: 0.1em;
+	padding-top: 0.5em;
 	position: relative;
-	&:before {
-		display: block;
-		content: "";
-		position: absolute;
-		left: calc(0.5em + 6px);
-		background: $primary;
-		width: 3px;
-		height: 100%;
-	}
-	&:after {
-		display: block;
-		content: "";
-		border-radius: 20px;
-		position: absolute;
-		left: 0.5em;
-		top: 0;
-		background: $white;
-		border: 2px solid $primary;
-		width: 10px;
-		height: 10px;
-	}
-	&.active {
-		.progress__step__title {
-			color: $text-color;
-		}
-		&:before, &:after {
-			background: $primary;
-		}
-	}
+	font-style: italic;
+	border-top: 1px solid $grey-lighter;
 }
 
-.progress__step__title {
-	font-size: 1em;
-	color: $grey;
-	margin-bottom: 1em;
-	font-weight: bold;
-	text-transform: uppercase;
+.progress__message__date {
+	font-size: 0.7em;
+	color: $grey-light
 }
 
 /* Progress Item */
@@ -82,8 +55,11 @@
 	margin: 0;
 	padding-bottom: 0.5em;
 	position: relative;
-	padding-left: 1.5em;
-	&:before {
+	padding-left: $progressmargin;
+	&::first-letter {
+		text-transform: uppercase;
+	}
+	/*&:before {
 		display: block;
 		content: "";
 		position: absolute;
@@ -92,7 +68,7 @@
 		background: $primary;
 		width: 2px;
 		height: 100%;
-	}
+	}*/
 	&:after {
 		display: block;
 		content: "";
@@ -102,8 +78,8 @@
 		top: 0.5em;
 		background: $primary;
 		//border: 2px solid $primary;
-		width: 12px;
-		height: 12px;
+		width: 10px;
+		height: 10px;
 	}
 	&:last-child {
 		&:before {
@@ -114,7 +90,12 @@
 
 .progress__item__title {
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: normal;
+	font-style: italic;
+	b {
+		font-weight: bold;
+		font-style: normal;
+	}
 	img {
 		width: 1em;
 		height: 1em;
@@ -127,6 +108,11 @@
 	}
 }
 
-.progress__item__message {
+.progress__item__date {
+	color: $grey;
+}
 
+.progress__more {
+	margin-top: 0.5em;
+	margin-left: $progressmargin;
 }

@@ -99,7 +99,7 @@ const StaffSelect = (props) => {
         return (
             <InlineError {...props}>
                 <Label>{label}</Label>
-                <StaffSelectValue readOnly={readOnly} value={value ? value : input.value} />
+                <StaffSelectValue readOnly={readOnly} value={value ? value : input ? input.value : undefined} />
             </InlineError>
         )
     }
