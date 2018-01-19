@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import { DateRangePicker } from 'react-dates';
 import InlineError from './inlineError';
+import Label from './label';
 import { START_DATE, END_DATE } from 'react-dates/constants';
 
 class DateRangePickerWrapper extends React.Component {
@@ -75,13 +76,14 @@ class DateRangePickerWrapper extends React.Component {
   }
 }
 
-const DateRangePickerEl = (fields) => {
+const DateRangePickerEl = ( props) => {
   return (
-    <InlineError {...fields[fields.names[0]]}>
+    <InlineError {...props[props.names[0]]}>
+      <Label {...props} />
       <DateRangePickerWrapper
-        startDateFieldName={fields.names[0]}
-        endDateFieldName={fields.names[1]}
-        {...fields}
+        startDateFieldName={props.names[0]}
+        endDateFieldName={props.names[1]}
+        {...props}
       />
     </InlineError>
   );
