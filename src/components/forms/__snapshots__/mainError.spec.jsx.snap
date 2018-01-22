@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main Error Display 1`] = `
-<div
-  className="main-error"
->
-  <h4
-    className="main-error__title"
-  />
-</div>
-`;
+exports[`Main Error Display 1`] = `null`;

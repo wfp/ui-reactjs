@@ -32,16 +32,20 @@ const onlyDecimal = value => {
 
     sections[0] = addCommas(sections[0]);
 
-    // If numbers exist after first .
-    if (sections[1]) {
+    // If not completely empty
+    if (value === '') {
+        return '';
+    }
+    else if (sections[1]) {
         // Join first two sections and truncate end section to length 2
-        return sections[0] + '.' + sections[1].slice(0, 2)
+        const trail = (sections[1].slice(0, 2).length >= 2) ? '' : '0';
+        return sections[0] + '.' + sections[1].slice(0, 2) + trail;
         // If original value had a decimal place at the end, add it back
-    } else if (value.indexOf('.') !== -1) {
-        return sections[0] + '.'
+    }/* else if (value.indexOf('.') !== -1) {
+        return sections[0] + '.00'
         // Otherwise, return only section
-    } else {
-        return sections[0]
+    }*/ else {
+        return sections[0] + '.00'
     }
 
 }

@@ -3,8 +3,9 @@
 exports[`Label Display 1`] = `
 <label
   className="label--required"
-  htmlFor={undefined}
+  htmlFor=""
 >
   Hallo Welt
+   
 </label>
 `;
