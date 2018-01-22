@@ -2,8 +2,10 @@
 
 exports[`Modal Display 1`] = `
 <span>
-  <div>
-    Test
-  </div>
+  <span>
+    <div>
+      Trigger
+    </div>
+  </span>
 </span>
 `;

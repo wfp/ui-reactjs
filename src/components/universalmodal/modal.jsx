@@ -12,9 +12,6 @@ class UniversalModal extends React.Component {
     this.state = {
       modalIsOpen: false
     };
-
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -29,7 +26,7 @@ class UniversalModal extends React.Component {
     }
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalIsOpen: true });
   }
   
