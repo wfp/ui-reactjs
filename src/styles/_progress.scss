@@ -14,7 +14,7 @@
 		content: "";
 		margin-top: -2em;
 		padding-top: 2.5em;
-		z-index: 1000;
+		z-index: 10;
 		outline: 0;
 		display: block;
 		height: 50px;
@@ -33,29 +33,19 @@
 	}
 }
 
-/* Progress Message */
-
-.progress__message {
-	margin-top: 0.1em;
-	padding-top: 0.5em;
-	position: relative;
-	font-style: italic;
-	border-top: 1px solid $grey-lighter;
-}
-
-.progress__message__date {
-	font-size: 0.7em;
-	color: $grey-light
-}
-
 /* Progress Item */
 
 .progress__item {
 	list-style-type: none;
 	margin: 0;
-	padding-bottom: 0.5em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
 	position: relative;
+	//border-bottom: 1px solid $grey-lighter;
 	//padding-left: $progressmargin;
+	&:last-child {
+		display: none;
+	}
 	&::first-letter {
 		text-transform: uppercase;
 	}
@@ -88,6 +78,22 @@
 	}
 }
 
+/* Progress Message */
+
+.progress__message {
+	margin-top: 0.2em;
+	//padding-top: 0.5em;
+	padding-left: 0.5em;
+	position: relative;
+	font-style: italic;
+	border-left: 4px solid $grey-lighter;
+}
+
+.progress__message__date {
+	font-size: 0.7em;
+	color: $grey-light
+}
+
 .progress__item__title {
 	font-size: 1em;
 	font-weight: normal;
@@ -110,6 +116,13 @@
 
 .progress__item__date {
 	color: $grey;
+}
+
+.progress__unreadmessage {
+	&:before {
+        font-family: FontAwesome;
+        content: "\f003";
+	}
 }
 
 .progress__more {
