@@ -80,7 +80,7 @@ const StaffSelect = (props) => {
                         loadOptions={loadOptions}
                         name="selected-state"
                         onChange={handleChange}
-                        placeholder="Select staff by last name"
+                        placeholder="Enter last name to select employee"
                         searchable={true}
                         value={input.value}
                         valueComponent={StaffSelectValue}
