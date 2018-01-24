@@ -37,24 +37,6 @@
     max-height: inherit;
     @include print {
         display: none;
-        /* position: fixed;
-         display: block;
-         bottom: 0cm; 
-        position: absolute;
-        background: none;
-        box-shadow: none;
-        display: none;
-        .header--logo {
-            color: $primary;
-        }
-        .header__title {
-            margin: 0; //position: absolute;
-            //right: 0;
-        }
-        .header__mobile__button,
-        .content {
-            display: none;
-        }*/
     }
 }
 
