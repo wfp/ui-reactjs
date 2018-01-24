@@ -43,9 +43,7 @@
 	position: relative;
 	//border-bottom: 1px solid $grey-lighter;
 	//padding-left: $progressmargin;
-	&:last-child {
-		display: none;
-	}
+	
 	&::first-letter {
 		text-transform: uppercase;
 	}
