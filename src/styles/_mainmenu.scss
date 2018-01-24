@@ -1,4 +1,7 @@
-.rc-menu-hidden {
+$menu-padding: 1.8rem;
+$menu-padding-neg: -1.8rem;
+
+rc-menu-hidden {
     display: none;
 }
 
@@ -153,7 +156,7 @@
     margin: 0 -1em 0.5em -1em;
     padding: 1em 0.8em 1em 1em;
     @include media-query($lg-screen) {
-        margin: -1.8em -1.8em 1em -1.8em;
+        margin: $menu-padding-neg $menu-padding-neg 1em $menu-padding-neg;
         padding: 1em 1.75em 1em 2em;
     }
     background: lighten($grey-lightest, 0.5); //border-bottom: 2px solid $blue-lighter;
@@ -242,7 +245,7 @@
         top: 4rem;
         box-shadow: rgba(desaturate($blue, 70%), 0.2) 0 3px 12px,
                     rgba(desaturate($blue, 70%), 0.2) 0 32px 78px;
-        padding: 2rem;
+        padding: $menu-padding;
     }
 
     .submenu--wrap {
@@ -544,7 +547,7 @@
 .menu__glossary__title {}
 
 .menu__glossary__content {
-    padding-right: 2rem;
+    padding-right: $menu-padding;
     p {
         //font-style: italic;
     }
