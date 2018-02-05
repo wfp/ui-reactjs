@@ -13,34 +13,43 @@ class DateRangePickerWrapper extends React.Component {
     super(props);
     this.state = {
       focusedInput: null,
+      focused: null,
       startDate: null,
       endDate: null
     };
   }
 
   handleDatesChange = (dates) => {
-    if (dates.startDate) {
+    console.log(dates);
+    //if (dates.startDate) {
       const startField = this.props[this.props.startDateFieldName];
       startField.input.onChange(dates.startDate.format("YYYY-MM-DD"));
-    }
-    if (dates.endDate) {
+    //}
+    //if (dates.endDate) {
       const endField = this.props[this.props.endDateFieldName];
       endField.input.onChange(dates.endDate.format("YYYY-MM-DD"));
-    }
-    this.props.onDatesChange(dates);
+      if (dates.endDate) {
+        this.handleFocusChange('startDate');
+      }
+    //}
+    //this.props.onDatesChange(dates);
   }
 
   handleFocusChange = (focusedInput) => {
 
     this.setState({ focusedInput: focusedInput });
 
-    this.props.onFocusChange(focusedInput);
+    console.log("Handle Focus Change", focusedInput);
+
+    //this.props.onFocusChange(focusedInput);
 
     if (focusedInput === START_DATE) {
+      console.log("focus first");
       this.props[this.props.startDateFieldName].input.onFocus();
       return;
     }
     if (focusedInput === END_DATE) {
+      console.log("focus last");
       this.props[this.props.endDateFieldName].input.onFocus();
       return;
     }
@@ -59,6 +68,7 @@ class DateRangePickerWrapper extends React.Component {
         <label className='DateRangePickerInput_label'>From</label> 
         <DateRangePicker
           customArrowIcon={<label className='DateRangePickerInput_label to'>To</label>}
+          displayFormat="DD/MM/YYYY"
           endDate={this.state.endDate}
           endDateId="end"
           endDatePlaceholderText="To"
@@ -67,9 +77,15 @@ class DateRangePickerWrapper extends React.Component {
           isOutsideRange={this.props.isOutsideRange}
           onDatesChange={this.handleDatesChange}
           onFocusChange={this.handleFocusChange}
+          keepOpenOnDateSelect
           startDate={this.state.startDate}
           startDateId="start"
           startDatePlaceholderText="From"
+          renderCalendarInfo={(e) => {
+            return (
+              <div onClick>Hello</div>
+            )
+          }}
         />
       </span>
     );

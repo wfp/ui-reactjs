@@ -481,23 +481,26 @@ select:invalid {
 
 .main-error {
 	position: relative;
-	background: $orange;
-	padding: 1em;
-	padding-left: 7rem;
-	margin-bottom: 1em;
-	&:before {
+	background-color: $grey-lightest;
+	padding: 0.5rem 1rem;
+	border-left: 6px solid $orange;
+	border-radius: 2px;
+	line-height: 1.4;
+	margin: 1rem 0;
+	/*&:before {
 		font-family: FontAwesome;
 		position: absolute;
 		height: 100%;
-		font-size: 3rem;
+		font-size: 2rem;
 		content: "\f071";
-		top: 45%;
+		top: 50%;
 		left: 0;
 		pointer-events: none;
-		margin: 0 0.8em;
+		margin: 0 0.5em;
+		margin-top: -0.18em;
 		line-height: 1rem;
 		color: darken($orange,20);
-	}
+	}*/
 }
 
 .main-error__title {

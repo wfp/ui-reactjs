@@ -40,6 +40,7 @@ class StaffSelect extends React.Component {
           <Label>{label}</Label>
           <SingleDatePicker
             date={this.state.value}
+            displayFormat="DD/MM/YYYY"
             focused={this.state.focused}
             hideKeyboardShortcutsPanel= {true}
             numberOfMonths={1}
