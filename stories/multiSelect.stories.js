@@ -13,6 +13,7 @@ const SignupForm = props => (
 
 const handleSubmit = (event) => {
 	event.preventDefault();
+	console.log("Form values:", event);
 	console.log('Submitted!');
 }
 

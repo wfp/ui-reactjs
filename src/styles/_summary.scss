@@ -1,0 +1,27 @@
+.summary {
+	border-left-color: $grey;
+	padding: 1em;
+	>ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li {
+			width: 100%;
+		}
+	}
+}
+
+.summary__label {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+	&:after {
+		content: ":";
+	}
+}
+
+.summary__value {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+}
