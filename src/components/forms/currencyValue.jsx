@@ -5,9 +5,10 @@ import { Field, Fields, FieldArray, reduxForm, submit } from 'redux-form';
 import { RenderInput, RenderCurrencyInput } from './inputs.jsx';
 import InlineError from './inlineError.jsx';
 import Label from './label.jsx';
+import normalizeDecimalSeperator from '../../utils/normalizers/normalizeDecimalSeperator';
 
 const CurrencyValue = (props) => {
-    const { id, loadOptions} = props;
+    const { disabled, id, loadOptions} = props;
     return (
         <InlineError {...props}>
         <Label {...props} />
@@ -15,7 +16,7 @@ const CurrencyValue = (props) => {
             <Field
                 name="comp_currency"
                 type="text"
-                disabled
+                disabled={disabled}
                 component={RenderCurrencyInput}
                 label={false}
                 loadOptions={loadOptions}
@@ -23,9 +24,10 @@ const CurrencyValue = (props) => {
             <Field
                 name="comp"
                 type="text"
-                disabled
+                disabled={disabled}
                 id={id}
                 component={RenderInput}
+                normalize={normalizeDecimalSeperator}
                 label={false}
                 wrapper={false}
             />

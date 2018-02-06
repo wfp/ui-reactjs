@@ -80,8 +80,15 @@ class UniversalModal extends React.Component {
 
 
 UniversalModal.propTypes = {
-  trigger: PropTypes.node,
-  children: PropTypes.node
+  trigger: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
+
+
+UniversalModal.defaultProps = {
+  trigger: 'Trigger Buttons',
+  children: 'Modal content'
+};
+
 
 export default UniversalModal;

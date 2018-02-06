@@ -1,4 +1,5 @@
 blockquote{
+    background-color: $grey-lightest;
     border-left:1px solid gray;
     border-right: 1px solid gray;
     padding:3em;
@@ -11,3 +12,10 @@ blockquote{
         margin:2em;
     }
 }
+
+.blockquote {
+    background-color: $grey-lightest;
+    border-left: 6px solid $grey-light;
+    border-radius: 2px;
+    padding: 0.25rem 0 0.25rem 1rem;
+}   

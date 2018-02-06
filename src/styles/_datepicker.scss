@@ -732,7 +732,6 @@
   border-bottom-color: #fff
 }
 .DateInput__disabled {
-  background: #f2f2f2;
   color: #dbdbdb
 }
 .DateInput_input {
@@ -775,6 +774,18 @@
   padding: 0;
   position: absolute;
   width: 1px
+}
+
+.DateInput_fang {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: 1px;
+  left: 22px;
+  z-index: 2;
+  path {
+    fill: $white !important;
+  }
 }
 
 .wfp-form--stacked .DateRangePickerInput_label {

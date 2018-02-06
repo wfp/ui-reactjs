@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';
@@ -6,63 +6,37 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'react-dates/initialize';
 
-import { SingleDatePicker } from 'react-dates';
 import { START_DATE, END_DATE} from 'react-dates/constants';
+import "react-dates/initialize";
+import { SingleDatePicker } from "react-dates";
 
-class StaffSelect extends React.Component {
+class DatePicker extends Component {
+  state = { focused: null };
+  handleFocusChange = ({ focused }) => this.setState({ focused });
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null
-    };
-  }
+  render() {
+    const { disabled, meta: { error, touched }, input: { value = null, onChange } } = this.props;
+    const { focused = null } = this.state;
 
-  handleChange = (date) => {
-    this.setState({ date });
-    if (date) {
-      this.props.input.onChange(date.format("YYYY-MM-DD"));
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.input.value && newProps.input.value !== this.props.input.value) {
-      const realDate = moment(newProps.input.value);
-      this.setState({ value: realDate });
-    }
-  }
-
-  render () {
-    const { input, label, type, loadOptions, meta: { touched, error } } = this.props;
     return (
-      <InlineError {...this.props}>
+       <InlineError {...this.props}>
+        <Label {...this.props} />
         <div className="wfp-form--date-picker">
-          <Label>{label}</Label>
           <SingleDatePicker
-            date={this.state.value}
-            focused={this.state.focused}
-            hideKeyboardShortcutsPanel= {true}
+            date={value}
+            onDateChange={onChange}
+            disabled={disabled}
+            focused={focused}
+            hideKeyboardShortcutsPanel
             numberOfMonths={1}
-            onDateChange={this.handleChange}
-            onFocusChange={({ focused }) => this.setState({ focused })}
-          />
-          <input
-            {...input}
-            placeholder={label}
-            type="hidden"
+            onFocusChange={this.handleFocusChange}
+            id="date"
+            placeholder="date"
           />
         </div>
       </InlineError>
-    )
+    );
   }
-};
+}
 
-StaffSelect.propTypes = {
-  input: PropTypes.object,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  loadOptions: PropTypes.func,
-  meta: PropTypes.object
-};
-
-export default StaffSelect;
+export default DatePicker;

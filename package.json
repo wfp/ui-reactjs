@@ -20,7 +20,9 @@
     "lint": "eslint src/**; exit 0",
     "lint:watch": "esw -w src/**",
     "prepublish": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "modulePaths": [
@@ -43,6 +45,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.11",
+    "@storybook/addon-info": "^3.3.11",
+    "@storybook/addon-knobs": "^3.3.11",
+    "@storybook/addon-links": "^3.3.11",
+    "@storybook/addons": "^3.3.11",
+    "@storybook/react": "^3.3.11",
     "autosuggest-highlight": "^3.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -82,17 +90,19 @@
     "rc-menu": "git+https://github.com/Utzel-Butzel/menu.git",
     "react-addons-test-utils": "^15.6.2",
     "react-autosuggest": "^9.3.2",
-    "react-dates": "^15.3.0",
+    "react-dates": "^15.5.3",
     "react-dropzone": "^4.2.3",
     "react-modal": "^3.0.4",
     "react-paginate": "^4.4.4",
+    "react-placeholder": "^2.0.0",
     "react-portal": "^3.2.0",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
     "react-select": "^1.0.0-rc.10",
     "react-test-renderer": "^15.6.2",
     "react-tippy": "git://github.com/ZoharLiran/react-tippy.git#zl-add-guards",
     "redux": "^3.7.2",
-    "redux-form": "^7.1.2",
+    "redux-form": "^7.2.2",
     "run-sequence": "^1.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

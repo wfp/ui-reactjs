@@ -8,7 +8,12 @@ import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 export const Input = (props) => {
-    const { className, input, id, label, disabled, type, placeholder} = props;
+    const { className, input, id, label, disabled, meta: { touched, error }, type, placeholder} = props;
+
+    const inputClasses = classNames({
+      'invalid' : touched && error
+    }); 
+
     return (
         <input
         {...input}
@@ -16,16 +21,13 @@ export const Input = (props) => {
         disabled={disabled}
         id={id ? id : input.name}
         type={type}
+        className={inputClasses}
         placeholder={placeholder}/>
     )
 }
 
 export const RenderInput = (props) => {
     const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
-
-    const inputClasses = classNames({
-      'invalid' : touched && error
-    }); 
 
     return (
         <InlineError {...props}>

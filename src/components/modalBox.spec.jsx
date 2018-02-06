@@ -17,3 +17,5 @@ test('Modal Box rendering', () => {
 
     expect(tree).toMatchSnapshot();
 });
+
+
