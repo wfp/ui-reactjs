@@ -7,6 +7,8 @@ const InlineError = (props) => {
 
 	const inputClasses = classNames({
 			'required': props.isRequired,
+			'disabled': props.disabled,
+			'field--read-only': props.readOnly,
 			'wfp-form--group' : props.wrapper === true,
 		 	'invalid' : showInvalid,
 			[`${props.className}`]: props.className,

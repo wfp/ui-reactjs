@@ -139,27 +139,6 @@
 	}
 }
 
-/* Single Date Picker */
-.wfp-form--stacked
-.wfp-form--date-picker {
-	.SingleDatePickerInput {
-		&:after {
-			content: "date";
-			position: absolute;
-			top: 0.55em;
-			right: 0.7em;
-			font-family: FontAwesome;
-			user-select: none;
-			pointer-events: none;
-			content: "\f073";
-			//color: $primary;
-		}
-	}
-	input[type="text"] {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
 
 .disabled {
 	input {
@@ -550,4 +529,16 @@ select:invalid {
     input {
         max-width: 800px;
     }
+}
+
+.field--read-only {
+	display: flex;
+	align-items: center;
+	label {
+		width: 15%;
+		font-weight: bold;
+	}
+	input {
+		border: 0;
+	}
 }

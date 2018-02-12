@@ -19,4 +19,4 @@ const handleSubmit = (event) => {
 
 storiesOf('Forms', module)
 	.addDecorator(story => <Provider store={store}>{story()}</Provider>)
-	.add('Sample Form', () => <SampleForm handleSubmit={handleSubmit}/>);
+	.add('Sample Form', () => <SampleForm handleSubmit={handleSubmit} initialValues={{ cfm_comp: "US", date: "2018-04-07" }}/>);

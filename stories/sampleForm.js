@@ -7,11 +7,6 @@ import DatePicker from '../src/components/forms/datePicker';
 import { normalizeDecimalSeperator } from '../src/utils/normalizers/normalizeDecimalSeperator';
 
 
-const formatDates = (value, name) => {
-    // return moment(value);
-    return value
-};
-
 class SimpleForm extends Component {
   constructor(props) {
     super(props);
@@ -27,19 +22,18 @@ class SimpleForm extends Component {
           <p>This is a form. There can be blocks which are defined by FormGroups. A semantic unit has the prop type="seperate".</p>
 
           <FormGroup type="seperate">
-            <FormGroupTitle>A FormGroupTitle</FormGroupTitle>
-              <FormHint>dfsfdsffd</FormHint>
+            <FormGroupTitle>Optional &#60;FormGroupTitle/&#62; can introduce a FormGroup</FormGroupTitle>
+              <FormHint> &#60;FormHint /&#62; define use cases, i.e. only if associated with input fields, not as introductory instructions under section title</FormHint>
               <Field
                 name="cfm_comp"
                 type="text"
                 component={RenderInput}
-                label="A <RenderInput /> Element with an Info Tooltip"
+                label="Every Input needs a label above the input"
                 format={normalizeDecimalSeperator}
-                info="Hello World!"
                 normalize={normalizeDecimalSeperator}
                 wrapper
               />
-              <Field
+              {/*<Field
                 name="cfm_comp"
                 type="text"
                 disabled
@@ -63,34 +57,35 @@ class SimpleForm extends Component {
                 names={['access_from', 'access_to']}
                 component={DateRangePicker}
                 label="A DateRangePicker"
+                wrapper
             />
             <Fields
                 disabled
                 names={['access_from', 'access_to']}
                 component={DateRangePicker}
                 label="A DateRangePicker"
-            />
+                wrapper
+            />*/}
           </FormGroup>
 
           <FormGroup type="seperate">
             <FormGroupTitle>A FormGroupTitle</FormGroupTitle>
               <Field
-                name="cfm_comp"
+                name="date"
                 type="text"
                 component={DatePicker}
                 label="A <RenderInput /> Element with an Info Tooltip"
                 wrapper
               />
-              <Field
+              {/*<Field
                 name="cfm_comp"
                 type="text"
                 disabled
                 component={DatePicker}
                 label="A <RenderInput /> Element with an Info Tooltip"
                 wrapper
-              />
+              />*/}
             </FormGroup>
-
           <button type="submit" disabled={pristine || submitting}>
             Submit
           </button>
@@ -106,6 +101,6 @@ class SimpleForm extends Component {
 
 export default SimpleForm = reduxForm({
     form: 'SimpleForm',  //Form name is same
-    enableReinitialize: true,
+    //enableReinitialize: true,
     /*validate*/
 })(SimpleForm)

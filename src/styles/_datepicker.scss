@@ -5,7 +5,8 @@
 .SingleDatePicker_picker {
   z-index: 1;
   background-color: #fff;
-  position: absolute
+  position: absolute;
+  margin-top: -12px;
 }
 .SingleDatePicker_picker__rtl {
   direction: rtl
@@ -116,7 +117,8 @@
 .DateRangePicker_picker {
   z-index: 1;
   background-color: #fff;
-  position: absolute
+  position: absolute;
+  margin-top: -12px;
 }
 .DateRangePicker_picker__rtl {
   direction: rtl
@@ -175,8 +177,8 @@
 }
 .DayPicker__horizontal {
   background: #fff;
-  box-shadow: 0 4px 20px 4px rgba(0, 20, 60, 0.1),
-                    0 4px 80px -8px rgba(0, 20, 60, 0.2);
+  box-shadow: 0 1px 20px 4px rgba(0, 20, 60, 0.1),
+                    0 1px 80px -8px rgba(0, 20, 60, 0.2);
   border-radius: 2px
 }
 .DayPicker__verticalScrollable {
@@ -505,7 +507,8 @@
 }
 .CalendarMonth_table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
+  margin-top: 5px;
 }
 .CalendarMonth_caption {
   font-size: 18px;
@@ -780,7 +783,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  margin-top: 1px;
+  margin-top: -10px;
   left: 22px;
   z-index: 2;
   path {
@@ -796,4 +799,31 @@
   &.to {
     margin-left: 1em;
   }
+}
+
+.DateRangePickerInput_info {
+  text-align: right;
+  margin: 1.4em;
+  margin-top: 1em;
+  position: relative;
+  top: -1.2em;
+}
+
+.DateRangePickerInput_apply {
+
+}
+
+/* Single Date Picker */
+
+  .SingleDatePickerInput, .DateInput {
+    &:after {
+      position: absolute;
+      top: 0.815em;
+      right: 0.7em;
+      font-family: FontAwesome;
+      user-select: none;
+      pointer-events: none;
+      content: "\f073";
+      //color: $primary;
+    }
 }

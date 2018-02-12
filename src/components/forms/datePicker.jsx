@@ -15,16 +15,20 @@ class DatePicker extends Component {
   handleFocusChange = ({ focused }) => this.setState({ focused });
 
   render() {
-    const { disabled, meta: { error, touched }, input: { value = null, onChange } } = this.props;
+    const { disabled, readOnly, meta: { error, touched }, input: { value = null, onChange } } = this.props;
     const { focused = null } = this.state;
 
     return (
        <InlineError {...this.props}>
         <Label {...this.props} />
         <div className="wfp-form--date-picker">
+          {readOnly === true ? (
+            <div className="">{moment(value)}</div>
+          ) : (
           <SingleDatePicker
-            date={value}
+            date={value ? moment(value) : null}
             onDateChange={onChange}
+            displayFormat="DD/MM/YYYY"
             disabled={disabled}
             focused={focused}
             hideKeyboardShortcutsPanel
@@ -32,7 +36,7 @@ class DatePicker extends Component {
             onFocusChange={this.handleFocusChange}
             id="date"
             placeholder="date"
-          />
+          />)}
         </div>
       </InlineError>
     );
