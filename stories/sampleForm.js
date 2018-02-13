@@ -70,6 +70,7 @@ class SimpleForm extends Component {
 
           <FormGroup type="seperate">
             <FormGroupTitle>A FormGroupTitle</FormGroupTitle>
+            <FormHint innerHtml="First &middot; Second" />
               <Field
                 name="date"
                 type="text"
