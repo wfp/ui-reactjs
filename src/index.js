@@ -69,7 +69,6 @@ import StaffSelect from './components/forms/staffSelect.jsx';
 import MultiSelect from './components/forms/multiSelect.jsx';
 import FileUpload from './components/forms/fileUpload.jsx';
 import WizardNav from './components/forms/wizardNav.jsx';
-import FormActions from './components/forms/formActions.jsx';
 import InlineError from './components/forms/inlineError.jsx';
 import Info from './components/forms/info.jsx';
 import CurrencyValue from './components/forms/currencyValue.jsx';
@@ -126,7 +125,6 @@ module.exports = {
   CurrencyValue,
   FormGroup,
   Label,
-  FormActions,
   FormGroupTitle,
   FormGroupInputField,
   FormHint,

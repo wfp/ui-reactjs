@@ -214,11 +214,19 @@ export const Button = (props) => {
     )
 }
 
-export const FormHint = ({children}) => (
+export const FormHint = ({children, innerHtml}) => {
+  function showInnerHtml(content) {
+    return {__html: content}
+  }
+
+  return (
     <div className='wfp-form--group__hint'>
         {children}
+        {innerHtml && (
+          <div dangerouslySetInnerHTML={showInnerHtml(innerHtml)} ></div>
+        )}
     </div>
-)
+)}
 
 export const RequiredInfo = () => (
     <div className="wfp-form__required-description">

@@ -1,20 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { Fields, Field, reduxForm } from 'redux-form';
-import { RenderCurrencyInput, RenderInput } from '../src/components/forms/inputs';
-
-import StaffSelect from '../src/components/forms/staffSelect';
-
-import normalizeDecimalSeperator from '../src/utils/normalizers/normalizeDecimalSeperator';
-
-
+import { Field, reduxForm } from 'redux-form';
 
 import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router';
 import store from './configureStore';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
 
+import StaffSelect from '../src/components/forms/staffSelect';
 
 /* Currency fetch */
 
@@ -78,10 +71,6 @@ SimpleForm = reduxForm({
 })(SimpleForm)
 
 
-
-
-
-
 const handleSubmit = (event) => {
   event.preventDefault();
   console.log('Submitted!');
@@ -106,12 +95,10 @@ StaffSelect Input
 storiesOf('Forms', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('StaffSelect',
+  .add('Staff Select',
 
     withInfo(info)(() => {
-    
-    const readOnly = boolean('readOnly', false)
-
+      const readOnly = boolean('readOnly', false)
       return (
         <SimpleForm handleSubmit={handleSubmit} readOnly={readOnly} />
       )

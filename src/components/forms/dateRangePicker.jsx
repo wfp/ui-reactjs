@@ -8,23 +8,7 @@ import InlineError from './inlineError';
 import Label from './label';
 import { START_DATE, END_DATE } from 'react-dates/constants';
 
-
-//import 'react-dates/initialize'
-//import { DateRangePicker } from 'react-dates'
-//import 'react-dates/lib/css/_datepicker.css'
-
-
-
 class DateRangePickerEl extends Component {
-  /*state = { focusedInput: null, startDate: null, endDate: null }
-
-
-  this.state = {
-      focusedInput: props.autoFocusEndDate ? END_DATE : START_DATE,
-      startDate: props.initialStartDate,
-      endDate: props.initialEndDate,
-    };*/
-
 
   constructor(props) {
     super(props);
@@ -36,10 +20,12 @@ class DateRangePickerEl extends Component {
     };
   }
 
+  handleFocusChange = focusedInput => this.setState({ focusedInput });
 
-  handleFocusChange = focusedInput => this.setState({ focusedInput })
 
+  closeCalendar = () => this.setState({ focusedInput: null });
 
+  /* Update Redux-Forms values */
   handleDatesChange = (dates) => {
     console.log("Close fired", dates, this.state);
     if (dates.startDate) {
@@ -51,21 +37,31 @@ class DateRangePickerEl extends Component {
       const endField = this.props[this.props.names[1]];
       endField.input.onChange(dates.endDate.format("YYYY-MM-DD"));
     }
-
-    //console.log("Set Dates",dates.startDate.format("YYYY-MM-DD"), dates.endDate.format("YYYY-MM-DD"));
   }
 
-  componentWillReceiveProps(newProps) {
-    console.log(newProps);
+  /* Get initial values */
+  componentWillMount() {
     const startFieldName = this.props.names[0];
+    const realDateStart = moment(this.props[startFieldName].input.value);
+    this.setState({ startDate: realDateStart });
+
+    const endFieldName = this.props.names[1];
+    const realDateEnd = moment(this.props[endFieldName].input.value);
+    this.setState({ endDate: realDateEnd });
+  }
+
+  /* Update if redux-forms is sending new values */
+  componentWillReceiveProps(newProps) {
+    const startFieldName = this.props.names[0];
+
     if (newProps[startFieldName].input.value && newProps[startFieldName].input.value !== this.props[startFieldName].input.value) {
-      const realDate = moment(newProps[startFieldName].input.value);
-      this.setState({ startDate: realDate });
+      const realDateStart = moment(newProps[startFieldName].input.value);
+      this.setState({ startDate: realDateStart });
     }
     const endFieldName = this.props.names[1];
     if (newProps[endFieldName].input.value && newProps[endFieldName].input.value !== this.props[endFieldName].input.value) {
-      const realDate = moment(newProps[endFieldName].input.value);
-      this.setState({ endDate: realDate });
+      const realDateEnd = moment(newProps[endFieldName].input.value);
+      this.setState({ endDate: realDateEnd });
     }
   }
 
@@ -74,16 +70,10 @@ class DateRangePickerEl extends Component {
     const from = this.props[this.props.names[0]];
     const to = this.props[this.props.names[1]];
 
-    //const { meta: { error, touched }, input: { value: { startDate = null, endDate = null }, onChange } } = this.this.props
+    const { focusedInput = null } = this.state;
 
-    const onchangeb = () => {
-      return null;
-    }
-
-    const { focusedInput = null } = this.state
-    //from.input.value
     return (
-      <InlineError {...this.props[this.props.names[0]]}>
+      <InlineError {...this.props[this.props.names[0]]} wrapper={this.props.wrapper}>
         <Label {...this.props} />
         <label className='DateRangePickerInput_label'>From</label> 
         <DateRangePicker
@@ -91,8 +81,10 @@ class DateRangePickerEl extends Component {
           endDateId='endDate'
           endDate={this.state.endDate}
           endDatePlaceholderText='End Date'
+          displayFormat="DD/MM/YYYY"
           focusedInput={focusedInput}
           hideKeyboardShortcutsPanel
+          keepOpenOnDateSelect
           onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
           onFocusChange={this.handleFocusChange}
           onClose={this.handleDatesChange}
@@ -101,6 +93,10 @@ class DateRangePickerEl extends Component {
           startDatePlaceholderText='Start Date'
           disabled={this.props.disabled}
           readOnly={this.props.readOnly}
+          renderCalendarInfo={() => (
+            <div className="DateRangePickerInput_info">
+              <button onClick={this.closeCalendar} className="DateRangePickerInput_apply wfp-btn">Apply</button>
+            </div>)}
         />
       </InlineError>
     )
