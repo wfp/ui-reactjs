@@ -5,11 +5,15 @@ import store from '../../../stories/configureStore';
 
 import ReactTable from "react-table";
 
+import UniversalModal from '../universalmodal/modal';
+import UniversalModalTitle from '../universalmodal/modaltitle';
 import UniversalModalSubTitle from '../universalmodal/modalSubTitle';
 import UniversalModalContent from '../universalmodal/modalcontent';
+import UniversalModalFooter from '../universalmodal/modalfooter';
+import WfpActionButton from '../wfpActionButton';
+
 
 import { RenderInput, RenderSelect, FormGroup, FormGroupTitle, FormHint } from './inputs';
-import WfpActionButton from '../wfpActionButton';
 import Label from './label';
 
 
@@ -44,11 +48,11 @@ class BankingDialog extends Component {
         <div>
           <UniversalModalSubTitle>
             <div className="wfp-form">
-              <Label>Bank name, city or number to search...</Label>
+              <Label>Filter by Bank name, city or number to search...</Label>
               <input 
                 className={this.state.search ? 'notempty' : ''}
                 type="text"
-                placeholder="Enter bank name city or number to search.."
+                placeholder="Bank name, City or Number to search.."
                 value={this.state.search}
                 onChange={e => this.setState({search: e.target.value})} />
             </div>
@@ -105,9 +109,9 @@ class BankingDialog extends Component {
                     }
                   }
             ]}
-            defaultPageSize={10}
+            defaultPageSize={7}
             showPageSizeOptions={false}
-            className="-striped -highlight"
+            className="-striped"
           />
         </UniversalModalContent>
         </div>
@@ -121,4 +125,27 @@ BankingDialog = reduxForm({
     enableReinitialize: true
 })(BankingDialog)
 
-export default BankingDialog;
+
+const BankingDialogWrapper = (props) => {
+  return (
+      <div>
+          <UniversalModalTitle>
+              WINGS Banks
+          </UniversalModalTitle>
+            <Provider store={store}>
+              <BankingDialog data={props.data} updateBankingData={props.updateBankingData} closeModal={props.closeModal} />
+            </Provider>
+      </div>
+  )
+}
+
+
+const BankingDialogModal = (props) => (
+  <UniversalModal
+    type="large"
+    trigger={<WfpActionButton label="Search WINGS banks" />}>
+      <BankingDialogWrapper data={props.data} updateBankingData={props.updateBankingData} />
+  </UniversalModal>
+)
+
+export default BankingDialogModal;

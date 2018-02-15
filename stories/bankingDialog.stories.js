@@ -10,12 +10,6 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 import { Provider } from 'react-redux';
 import store from './configureStore';
 
-import UniversalModal from '../src/components/universalmodal/modal';
-import UniversalModalTitle from '../src/components/universalmodal/modaltitle';
-import UniversalModalContent from '../src/components/universalmodal/modalcontent';
-import UniversalModalFooter from '../src/components/universalmodal/modalfooter';
-import WfpActionButton from '../src/components/wfpActionButton';
-
 import BankingDialog from '../src/components/forms/bankingDialog';
 
 const data = [
@@ -43,23 +37,6 @@ const data = [
   }
 ];
 
-const DefaultDialogContent = (props) => {
-
-  const updateBankingData = (data) => {
-    console.log("Update", data);
-  }
-  return (
-      <div>
-          <UniversalModalTitle>
-              WINGS Banks
-          </UniversalModalTitle>
-          
-            <Provider store={store}>
-              <BankingDialog data={data} updateBankingData={updateBankingData} closeModal={props.closeModal} />
-            </Provider>
-      </div>
-  )
-}
 
 storiesOf('Modal Dialog')
   .addDecorator(withKnobs)
@@ -71,12 +48,13 @@ storiesOf('Modal Dialog')
       text: 'The Default Modal Dialog used for Confirmations or Yes/no Dialogs'
     })(() => {
 		const label = text('Button label', 'Open Modal');
+
+    const updateBankingData = (data) => {
+      console.log("Update data", data);
+    }
+
 	    return (
-	      	<UniversalModal
-            type="large"
-		       	trigger={<WfpActionButton label="Search WINGS banks" />}>
-		        	<DefaultDialogContent />
-		    </UniversalModal>
+        <BankingDialog data={data} updateBankingData={updateBankingData} />
 		)
 	}
     )
