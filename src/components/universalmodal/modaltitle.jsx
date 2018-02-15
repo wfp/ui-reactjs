@@ -8,7 +8,7 @@ const UniversalModalTitle = ({ children }) => (
 );
 
 UniversalModalTitle.propTypes = {
-  title: PropTypes.string
+  children: PropTypes.node
 };
 
 export default UniversalModalTitle;

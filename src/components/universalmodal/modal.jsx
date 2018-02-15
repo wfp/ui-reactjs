@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Modal from 'react-modal';
 import ModalTitle from './modaltitle';
 
@@ -39,6 +40,13 @@ class UniversalModal extends React.Component {
   }
 
   render() {
+
+    const overlayBaseClass = classNames({
+      'wfp-modal__overlay' : true,
+      'wfp-modal--small' : this.props.type === 'small',
+      'wfp-modal--large' : this.props.type === 'large'
+    }); 
+
     return(
       <span>
         {this.props.trigger &&
@@ -62,7 +70,7 @@ class UniversalModal extends React.Component {
             beforeClose: 'wfp-modal__before--close'
           }}
           overlayClassName={{
-            base: `wfp-modal__overlay wfp-modal--small  ${this.props.className}`,
+            base: overlayBaseClass,
             afterOpen: 'wfp-modal__overlay__after--open',
             beforeClose: 'wfp-modal__overlay__before--close'
           }}
