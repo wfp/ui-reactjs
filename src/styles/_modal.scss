@@ -5,6 +5,8 @@
  * Move to WFP UI once finalised
  */
 
+$inner-padding: 2rem;
+
 /* Animation opening the Modal */
  @keyframes wfp-modal-in {
     from {transform: scale(0.8); opacity: 0;}
@@ -46,6 +48,12 @@
             max-width: 500px;
         }
     }
+    &.wfp-modal--large {
+        .wfp-modal {
+            min-width: 80%;
+            max-width: 1000px;
+        }
+    }
 }
 
 .modal__overlay__before--close {
@@ -75,7 +83,7 @@
 .wfp-modal__title {
     background: $grey-lightest;
     margin: 0;
-    padding: 1.08rem 2rem 1rem 2rem;
+    padding: 1.08rem $inner-padding 1rem $inner-padding;
     width: 100%;
     .wfp-modal--warning & {
         color: $red;
@@ -92,8 +100,16 @@
 
 .wfp-modal__content {
     margin: 0;
-    padding: 2rem;
+    padding: $inner-padding;
     width: 100%;
+}
+
+.wfp-modal__sub-title {
+    margin: 0;
+    padding: $inner-padding;
+    width: 100%;
+    margin-top: -1rem;
+    background-color: $grey-lighter;
 }
 
 .wfp-modal__inner {

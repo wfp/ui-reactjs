@@ -74,6 +74,7 @@ import Info from './components/forms/info.jsx';
 import CurrencyValue from './components/forms/currencyValue.jsx';
 import InfoBar from './components/forms/infoBar.jsx';
 import Progress from './components/progress/progress.jsx';
+import Summary from './components/forms/summary.jsx';
 
 
 module.exports = {
@@ -87,6 +88,7 @@ module.exports = {
   LinkMenuItem,
   //LogoItem,
   SearchWidget,
+  Summary,
   UserMenuWidget,
   Breadcrumbs,
   Paginator,
