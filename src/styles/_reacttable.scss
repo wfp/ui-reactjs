@@ -239,6 +239,12 @@
   &.right {
     flex-direction: row-reverse;
   }
+  &.center {
+    >span {
+      display: block;
+      margin: auto;
+    }
+  }
 }
 
 .ReactTable .rt-td.-hidden,
@@ -438,6 +444,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+/*
 .ReactTable {
     .rt-noData {
         position: relative;
@@ -446,7 +453,7 @@
         margin: 0 auto;
         transform: translate(0, 0);
     }
-}
+}*/
 
 .ReactTable .-loading {
   display: block;

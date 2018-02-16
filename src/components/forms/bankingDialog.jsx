@@ -11,6 +11,7 @@ import UniversalModalSubTitle from '../universalmodal/modalSubTitle';
 import UniversalModalContent from '../universalmodal/modalcontent';
 import UniversalModalFooter from '../universalmodal/modalfooter';
 import WfpActionButton from '../wfpActionButton';
+import ReactTablePagination from '../reactTablePagination';
 
 
 import { RenderInput, RenderSelect, FormGroup, FormGroupTitle, FormHint } from './inputs';
@@ -93,13 +94,14 @@ class BankingDialog extends Component {
                     accessor: "bank_branch"
                   },
                   {
-                    Header: "Branch",
+                    Header: "Action",
                     accessor: "bank_branch",
+                    className: "center",
                     Cell: row => {
                       return (
                         <span>
                           <WfpActionButton
-                            label="Apply"
+                            label="Select"
                             action={row}
                             closeModal={this.props.closeModal}
                             onActionClick={this.props.updateBankingData}
@@ -112,6 +114,7 @@ class BankingDialog extends Component {
             defaultPageSize={7}
             showPageSizeOptions={false}
             className="-striped"
+            PaginationComponent={ReactTablePagination}
           />
         </UniversalModalContent>
         </div>
