@@ -136,7 +136,7 @@ export const RenderSelect = (props) => {
         id={id ? id : input.name} 
         disabled={disabled} >
         <option value="">{selectEmptyText}</option>
-        {selectList.map(val => <option value={val} key={val}>{val}</option>)}
+        {selectList.map((val, i) => <option value={(typeof val === 'object') ? val.id : val} key={i}>{(typeof val === 'object') ? val.text : val}</option>)}
       </select>
     </InlineError>
   )
