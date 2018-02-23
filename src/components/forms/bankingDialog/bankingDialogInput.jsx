@@ -18,10 +18,19 @@ const BankingDialogInput = (props) => {
     return (
         <InlineError {...props}>
             <Label {...props} />
-            {input.value &&
-                <div>{input.value.bank_name} {input.value.bank_number}</div>
-            }
-            <BankingDialog data={data} updateBankingData={updateBankingData} />
+                <div className="banking-dialog-input">
+                    {input.value ? (
+                        <div className="banking-dialog-input__selected">
+                            <b>{input.value.bank_name}</b>
+                            <span>Bank Key: {input.value.bank_number}</span>
+                        </div>
+                    ):(
+                        <div className="banking-dialog-input__selected banking-dialog-input__selected--no-bank">
+                            No Bank selected
+                        </div>
+                    )}
+                <BankingDialog data={data} updateBankingData={updateBankingData} />
+            </div>
         </InlineError>
     )
 };

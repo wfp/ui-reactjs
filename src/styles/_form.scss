@@ -137,8 +137,19 @@
 		display: inline-block !important;
 		width: 200px!important;
 	}
-}
 
+	/* Currency Inputs */
+	.currencyinput__wrapper {
+		display: flex;
+		.Select, input {
+			margin-top: 0 !important;
+		}
+	}
+	.currencyinput__select {
+		width: 170px;
+		margin-right: -1px;
+	}
+}
 
 .disabled {
 	input {
@@ -238,13 +249,13 @@ select:invalid {
 
 .label--required {
 	&:after {
-		color: $red;
+		/*color: $red;
 		font-size: 1.3em;
 		margin-top: -0.8em;
-		margin-bottom: -0.2em;
+		margin-bottom: -0.7em;
 		font-weight: bold;
 		content: "*";
-		display: inline-block;
+		display: inline-block;*/
 	}
 }
 
@@ -348,18 +359,7 @@ select:invalid {
 	padding: 0;
 }
 
-/* Currency Inputs */
 
-.currencyinput__wrapper {
-	display: flex;
-	.Select, input {
-		margin-top: 0 !important;
-	}
-}
-.currencyinput__select {
-	width: 170px;
-	margin-right: -1px;
-}
 
 /* Checkbox */
 
@@ -466,6 +466,9 @@ select:invalid {
 	border-radius: 2px;
 	line-height: 1.4;
 	margin: 1rem 0;
+	ul {
+		margin-bottom: 0;
+	}
 	/*&:before {
 		font-family: FontAwesome;
 		position: absolute;
@@ -541,4 +544,38 @@ select:invalid {
 	input {
 		border: 0;
 	}
+}
+
+/* Banking Dialog Input */
+
+.banking-dialog-input {
+	display: flex;
+	align-items: stretch;
+}
+
+.banking-dialog-input__selected {
+	background: $grey-lighter;
+	width: 75%;
+	max-width: 300px;
+	margin-right: 0.5em;
+	font-size: 0.75em;
+	padding: 0.5em 0.7em 0 0.7em;
+	vertical-align: top;
+	b {
+		display: block;
+		margin-bottom: -0.1em;
+	}
+	span {
+		display: block;
+		font-size: 0.8em;
+	}
+}
+
+.banking-dialog-input__selected--no-bank {
+	font-size: 1em;
+}
+
+.form__extent {
+	margin-top: -0.5em;
+	margin-bottom: -3em;
 }

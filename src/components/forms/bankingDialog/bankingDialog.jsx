@@ -136,7 +136,7 @@ const BankingDialogWrapper = (props) => {
 const BankingDialogModal = (props) => (
   <UniversalModal
     type="large"
-    trigger={<WfpActionButton label="Search WINGS banks" />}>
+    trigger={<WfpActionButton label="Search WINGS banks..." />}>
       <BankingDialogWrapper data={props.data} updateBankingData={props.updateBankingData} />
   </UniversalModal>
 )
