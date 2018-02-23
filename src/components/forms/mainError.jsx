@@ -9,14 +9,14 @@ class MainError extends Component {
 		super(props);
 	}
 
-	componentWillReceiveProps(newProps) {
+	/*componentWillReceiveProps(newProps) {
 		console.log(newProps);
-		if (newProps.error && 
+		if (newProps.error && newProps.submitFailed === true &&
 			(this.props.error && newProps.error.fields.length >= this.props.error.fields.length || 
-			 this.props.error && newProps.error.generic.length  >= this.props.error.generic.length )) {
-				window.scrollTo(0, 0);
+			 this.props.error && newProps.error.generic.length >= this.props.error.generic.length )) {
+				//window.scrollTo(0, 0);
 		}
-	}
+	}*/
 
 
 	render () {

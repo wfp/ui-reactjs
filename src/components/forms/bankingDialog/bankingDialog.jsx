@@ -1,21 +1,18 @@
 import React, { Component, PropTypes } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Provider } from 'react-redux';
-import store from '../../../stories/configureStore';
 
 import ReactTable from "react-table";
 
-import UniversalModal from '../universalmodal/modal';
-import UniversalModalTitle from '../universalmodal/modaltitle';
-import UniversalModalSubTitle from '../universalmodal/modalSubTitle';
-import UniversalModalContent from '../universalmodal/modalcontent';
-import UniversalModalFooter from '../universalmodal/modalfooter';
-import WfpActionButton from '../wfpActionButton';
-import ReactTablePagination from '../reactTablePagination';
+import UniversalModal from '../../universalmodal/modal';
+import UniversalModalTitle from '../../universalmodal/modaltitle';
+import UniversalModalSubTitle from '../../universalmodal/modalSubTitle';
+import UniversalModalContent from '../../universalmodal/modalcontent';
+import UniversalModalFooter from '../../universalmodal/modalfooter';
+import WfpActionButton from '../../wfpActionButton';
+import ReactTablePagination from '../../reactTablePagination';
 
 
-import { RenderInput, RenderSelect, FormGroup, FormGroupTitle, FormHint } from './inputs';
-import Label from './label';
+import { RenderInput, RenderSelect, FormGroup, FormGroupTitle, FormHint } from '../inputs';
+import Label from '../label';
 
 
 class BankingDialog extends Component {
@@ -102,7 +99,7 @@ class BankingDialog extends Component {
                         <span>
                           <WfpActionButton
                             label="Select"
-                            action={row}
+                            action={row.original}
                             closeModal={this.props.closeModal}
                             onActionClick={this.props.updateBankingData}
                           />
@@ -123,11 +120,6 @@ class BankingDialog extends Component {
   }
 }
 
-BankingDialog = reduxForm({
-    form: 'BankingDialog',  //Form name is same
-    enableReinitialize: true
-})(BankingDialog)
-
 
 const BankingDialogWrapper = (props) => {
   return (
@@ -135,9 +127,7 @@ const BankingDialogWrapper = (props) => {
           <UniversalModalTitle>
               WINGS Banks
           </UniversalModalTitle>
-            <Provider store={store}>
               <BankingDialog data={props.data} updateBankingData={props.updateBankingData} closeModal={props.closeModal} />
-            </Provider>
       </div>
   )
 }
@@ -146,7 +136,7 @@ const BankingDialogWrapper = (props) => {
 const BankingDialogModal = (props) => (
   <UniversalModal
     type="large"
-    trigger={<WfpActionButton label="Search WINGS banks" />}>
+    trigger={<WfpActionButton label="Search WINGS banks..." />}>
       <BankingDialogWrapper data={props.data} updateBankingData={props.updateBankingData} />
   </UniversalModal>
 )

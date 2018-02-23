@@ -11,7 +11,7 @@
 	width: 100%;
 	//transition: all 0.3s;
 	.expanded & {
-		width:60%;
+		width:65%;
 	}
 	/*@include media-query($xl-screen) {
 		width:60%;
@@ -37,7 +37,7 @@
 	}
 	.expanded & {
 		margin-left: 5%;
-		width:35%;
+		width:30%;
 	}
 	/*@include media-query($xl-screen) {
 		margin-left: 5%;

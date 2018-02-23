@@ -28,22 +28,22 @@ import TableDropdownModal from './components/TableDropdownModal';
 //import WfpStyle from 'wfp-ui/dist/css/wfpui+grid.css';
 import WssStyle from './styles/main.scss';
 
-import UniversalHeader from './components/universalheader/header.jsx';
-import UniversalHeaderTitle from './components/universalheader/title.jsx';
-import UniversalHeaderMainmenu from './components/universalheader/mainmenu.jsx';
-import UniversalSecondaryHeader from './components/universalheader/secondaryheader.jsx';
-import UniversalModal from './components/universalmodal/modal.jsx';
-import UniversalModalTitle from './components/universalmodal/modaltitle.jsx';
-import UniversalModalContent from './components/universalmodal/modalcontent.jsx';
-import UniversalModalFooter from './components/universalmodal/modalfooter.jsx';
-import UniversalFooter from './components/universalfooter/footer.jsx';
-import UniversalFooterMini from './components/universalfooter/footermini.jsx';
+import UniversalHeader from './components/universalheader/header';
+import UniversalHeaderTitle from './components/universalheader/title';
+import UniversalHeaderMainmenu from './components/universalheader/mainmenu';
+import UniversalSecondaryHeader from './components/universalheader/secondaryheader';
+import UniversalModal from './components/universalmodal/modal';
+import UniversalModalTitle from './components/universalmodal/modaltitle';
+import UniversalModalContent from './components/universalmodal/modalcontent';
+import UniversalModalFooter from './components/universalmodal/modalfooter';
+import UniversalFooter from './components/universalfooter/footer';
+import UniversalFooterMini from './components/universalfooter/footermini';
 
-import loadCurrencies from './utils/loadCurrencies.jsx';
-import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation.jsx';
-import normalizeDecimal from './utils/normalizers/normalizeDecimal.jsx';
-import normalizeDecimalSeperator from './utils/normalizers/normalizeDecimalSeperator.jsx';
-import {Unit} from './utils/units.jsx';
+import loadCurrencies from './utils/loadCurrencies';
+import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation';
+import normalizeDecimal from './utils/normalizers/normalizeDecimal';
+import normalizeDecimalSeperator from './utils/normalizers/normalizeDecimalSeperator';
+import {Unit} from './utils/units';
 
 import {
   Button,
@@ -58,23 +58,26 @@ import {
   FormGroupTitle,
   FormGroupInputField,
   FormHint,
-  RequiredInfo }  from './components/forms/inputs.jsx';
+  RequiredInfo }  from './components/forms/inputs';
 
 
-import Label from './components/forms/label.jsx';
-import MainError from './components/forms/mainError.jsx';
-import DatePicker from './components/forms/datePicker.jsx';
-import DateRangePicker from './components/forms/dateRangePicker.jsx';
-import StaffSelect from './components/forms/staffSelect.jsx';
-import MultiSelect from './components/forms/multiSelect.jsx';
-import FileUpload from './components/forms/fileUpload.jsx';
-import WizardNav from './components/forms/wizardNav.jsx';
-import InlineError from './components/forms/inlineError.jsx';
-import Info from './components/forms/info.jsx';
-import CurrencyValue from './components/forms/currencyValue.jsx';
-import InfoBar from './components/forms/infoBar.jsx';
-import Progress from './components/progress/progress.jsx';
-import Summary from './components/forms/summary.jsx';
+import Label from './components/forms/label';
+import MainError from './components/forms/mainError';
+import DatePicker from './components/forms/datePicker';
+import DateRangePicker from './components/forms/dateRangePicker';
+import StaffSelect from './components/forms/staffSelect';
+import MultiSelect from './components/forms/multiSelect';
+import FileUpload from './components/forms/fileUpload';
+import WizardNav from './components/forms/wizardNav';
+import InlineError from './components/forms/inlineError';
+import Info from './components/forms/info';
+import CurrencyValue from './components/forms/currencyValue';
+import InfoBar from './components/forms/infoBar';
+import Progress from './components/progress/progress';
+import Summary from './components/forms/summary';
+import BankingDialog from './components/forms/bankingDialog/bankingDialog';
+import BankingDialogInput from './components/forms/bankingDialog/bankingDialogInput';
+import LargeLoaderOverlay from './components/loader/largeLoaderOverlay';
 
 
 module.exports = {
@@ -137,7 +140,10 @@ module.exports = {
   Info,
   InfoBar,
   Unit,
+  LargeLoaderOverlay,
   Progress,
+  BankingDialog,
+  BankingDialogInput,
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
   normalizeDecimal,

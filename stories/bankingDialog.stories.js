@@ -10,7 +10,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 import { Provider } from 'react-redux';
 import store from './configureStore';
 
-import BankingDialog from '../src/components/forms/bankingDialog';
+import BankingDialog from '../src/components/forms/bankingDialog/bankingDialog';
 
 const data = [
   {
