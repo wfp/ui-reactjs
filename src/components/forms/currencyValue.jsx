@@ -12,7 +12,7 @@ const CurrencyValue = (props) => {
     return (
         <InlineError {...props}>
         <Label {...props} />
-        <div className="currencyinput__wrapper">
+        <div className="currency-value">
             <Field
                 name="comp_currency"
                 type="text"
