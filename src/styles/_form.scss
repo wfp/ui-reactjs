@@ -123,7 +123,8 @@
 	}
 }
 /* CURRENCY COMPONENT */
-.wfp-form--input-group-currency {
+.currency-value {
+	display: flex;
 	.wfp-form--input-currency-label {
 		display: inline-block;
 		border: 1px solid $grey;
@@ -139,12 +140,10 @@
 	}
 
 	/* Currency Inputs */
-	.currencyinput__wrapper {
-		display: flex;
-		.Select, input {
-			margin-top: 0 !important;
-		}
+	.Select, input {
+		margin-top: 0 !important;
 	}
+
 	.currencyinput__select {
 		width: 170px;
 		margin-right: -1px;

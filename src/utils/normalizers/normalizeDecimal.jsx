@@ -1,6 +1,5 @@
 const onlyDecimal = value => {
 
-    console.log("aaa");
     if (!value)
         value = ""
     value = value

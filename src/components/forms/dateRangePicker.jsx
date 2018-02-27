@@ -22,7 +22,6 @@ class DateRangePickerEl extends Component {
 
   handleFocusChange = focusedInput => this.setState({ focusedInput });
 
-
   closeCalendar = () => this.setState({ focusedInput: null });
 
   /* Update Redux-Forms values */

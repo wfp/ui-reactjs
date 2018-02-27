@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
 
-import { withKnobs, array, number } from '@storybook/addon-knobs/react';
+import { withKnobs, array, number, text } from '@storybook/addon-knobs/react';
 
 import Summary from '../src/components/forms/summary';
 
@@ -27,9 +27,10 @@ storiesOf('Forms')
         data: 'Overlay Loader for hiding the underlying content'
     })(() => {
 		const data = array("data", defaultData);
+    const theme = text("type", "light");
     const columnCount = array("columnCount", 3);
 	    return (
-      <Summary data={data} columnCount={columnCount} />
+      <Summary data={data} type={theme} columnCount={columnCount} />
 		)
 	}
     )
