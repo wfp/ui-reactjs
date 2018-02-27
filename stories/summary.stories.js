@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
 
-import { withKnobs, array, number, text } from '@storybook/addon-knobs/react';
+import { withKnobs, array, number, text, boolean } from '@storybook/addon-knobs/react';
 
 import Summary from '../src/components/forms/summary';
 
@@ -28,9 +28,11 @@ storiesOf('Forms')
     })(() => {
 		const data = array("data", defaultData);
     const theme = text("type", "light");
+    const title = text("title", "Title");
+    const toggleable = boolean("toggleable", false);
     const columnCount = array("columnCount", 3);
 	    return (
-      <Summary data={data} type={theme} columnCount={columnCount} />
+      <Summary data={data} type={theme} columnCount={columnCount} toggleable={toggleable} title={title}/>
 		)
 	}
     )

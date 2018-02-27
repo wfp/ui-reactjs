@@ -11,14 +11,16 @@ import WfpActionButton from '../wfpActionButton';
 import Blockquote from '../blockquote';
 
 
-const Summary = ({ data, columnCount, type }) => {
+const Summary = (props) => {
+
+	const { data, columnCount, type } = props;
 
 	const divStyle = {
 	  columnCount: columnCount ? columnCount : 2
 	};
 
 	return (
-		<Blockquote className="summary" style={divStyle} type={type}>
+		<Blockquote className="summary" style={divStyle} {...props}>
 			{data && Array.isArray(data) && (
                 <ul>
                     { data.map((el, i) => <li key={i}><b className="summary__label">{el.label}</b><span className="summary__value">{el.value}</span></li>) }
