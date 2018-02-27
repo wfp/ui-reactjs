@@ -14,10 +14,10 @@ const DefaultDialogContent = (props) => {
   return (
     <div>
       <UniversalModalTitle>
-        Submit Form
+        {props.dialogTitle ? props.dialogTitle : 'Submit Form'}
       </UniversalModalTitle>
       <UniversalModalContent>
-        <p>Are you sure you wish to confirm this action?</p>
+        <p>{props.dialogText ? props.dialogText : 'Are you sure you wish to confirm this action?'}</p>
         <UniversalModalFooter>
           <a
             href="#"
@@ -41,14 +41,34 @@ const WizardNav = ({ formName, previousPage, prevText, prevAction, nextText, nex
   return (
     <div className="wfp-wizard">
       <div>
-        {prevHide !== true &&
+        {prevHide !== true && prevHide !== 'confirm' &&
           <button
             className="wfp-btn--primary wfp-wizard__prev"
             onClick={previousPage}
             type="button"
           >
-            {prevText ? prevText : 'Previous'}
+            {prevText ? prevText : 'Back'}
           </button>
+        }
+        {prevHide === 'confirm' &&
+          <UniversalModal
+            className="wfp-modal--small"
+            trigger={<WfpActionButton
+              label={prevText ? prevText : 'Back'}
+            />
+            }
+          >
+            <DefaultDialogContent
+              dialogTitle="Leave form"
+              dialogText="Do you want to go back? All data will be lost"
+              submitButton={ 
+                <WfpActionButton
+                  label={nextText ? nextText : 'Next'}
+                  onClick={previousPage}
+                />
+              }
+            />
+          </UniversalModal>
         }
       </div>
       

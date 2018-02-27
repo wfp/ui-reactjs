@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Fields, Field, reduxForm } from 'redux-form';
+import { Fields, Field, clearFields, formValueSelector, reduxForm, untouch, change } from 'redux-form';
+import { connect, dispatch } from 'react-redux';
 
 import { RenderInput, RenderSelect, FormGroup, FormGroupTitle, FormHint } from '../src/components/forms/inputs';
 import DateRangePicker from '../src/components/forms/dateRangePicker';
@@ -12,9 +13,19 @@ class SimpleForm extends Component {
     super(props);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(this);
+    if (newProps.trytext === "US") {
+      dispatch(change('SimpleForm', 'trytext', 'dddd'));
+
+    }
+  }
+
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     console.log(this);
+
+
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
         <div>
@@ -24,8 +35,9 @@ class SimpleForm extends Component {
           <FormGroup type="seperate">
             <FormGroupTitle>Optional &#60;FormGroupTitle/&#62; can introduce a FormGroup</FormGroupTitle>
               <FormHint> &#60;FormHint /&#62; define use cases, i.e. only if associated with input fields, not as introductory instructions under section title</FormHint>
+
               <Field
-                name="cfm_comp"
+                name="trytext"
                 type="text"
                 component={RenderInput}
                 label="Every Input needs a label above the input"
@@ -33,6 +45,16 @@ class SimpleForm extends Component {
                 normalize={normalizeDecimalSeperator}
                 wrapper
               />
+
+              {this.props.trytext === "US" &&
+                <Field
+                  name="showtext"
+                  type="text"
+                  component={RenderInput}
+                  label="Show Input"
+                  wrapper
+                />
+              }
               {/*<Field
                 name="cfm_comp"
                 type="text"
@@ -99,6 +121,16 @@ class SimpleForm extends Component {
   }
 }
 
+
+const selector = formValueSelector('SimpleForm') 
+
+SimpleForm = connect(
+  state => {
+    return {
+      trytext: selector(state, 'trytext')
+    }
+  }
+)(SimpleForm)
 
 export default SimpleForm = reduxForm({
     form: 'SimpleForm',  //Form name is same

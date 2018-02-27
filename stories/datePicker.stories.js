@@ -71,7 +71,7 @@ StaffSelect Input
 ~~~
 `;
 
-storiesOf('Forms', module)
+storiesOf('Inputs', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
   .add('Date Picker',

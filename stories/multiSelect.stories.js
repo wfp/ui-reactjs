@@ -37,7 +37,7 @@ const info = `
 MultiSelect Input
 `;
 
-storiesOf('Forms', module)
+storiesOf('Inputs', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
   .add('Multi Select',

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import UniversalModal from '../universalmodal/modal';
@@ -10,14 +11,14 @@ import WfpActionButton from '../wfpActionButton';
 import Blockquote from '../blockquote';
 
 
-const Summary = ({ data, columnCount }) => {
+const Summary = ({ data, columnCount, type }) => {
 
 	const divStyle = {
 	  columnCount: columnCount ? columnCount : 2
 	};
 
 	return (
-		<Blockquote className="summary" style={divStyle} >
+		<Blockquote className="summary" style={divStyle} type={type}>
 			{data && Array.isArray(data) && (
                 <ul>
                     { data.map((el, i) => <li key={i}><b className="summary__label">{el.label}</b><span className="summary__value">{el.value}</span></li>) }

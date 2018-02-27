@@ -5,6 +5,8 @@ import { browserHistory } from 'react-router';
 import store from './configureStore';
 import SampleForm from './sampleForm';
 
+import { Values } from 'redux-form-website-template'
+
 const SignupForm = props => (
 	<div>saddas</div>
 )
@@ -19,4 +21,8 @@ const handleSubmit = (event) => {
 
 storiesOf('Forms', module)
 	.addDecorator(story => <Provider store={store}>{story()}</Provider>)
-	.add('Sample Form', () => <SampleForm handleSubmit={handleSubmit} initialValues={{ cfm_comp: "US", date: "2018-04-07" }}/>);
+	.add('Sample Form', () => (
+		<div>
+			<Values form="SimpleForm" />
+			<SampleForm handleSubmit={handleSubmit} initialValues={{ cfm_comp: "US", date: "2018-04-07" }}/>
+		</div>));

@@ -7,6 +7,7 @@ const Blockquote = (props) => {
     const { className, children, type } = props;
     const blockquoteClass = classNames({
       'blockquote' : true,
+      'blockquote--light': type === "light",
       'blockquote--warning': type === "warning",
       'blockquote--info': type === "info",
       [`${className}`]: className

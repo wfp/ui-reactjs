@@ -21,6 +21,7 @@
     "lint:watch": "esw -w src/**",
     "prepublish": "npm run build",
     "test": "jest",
+    "test-storybook": "storyshots",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -28,10 +29,7 @@
     "modulePaths": [
       "<rootDir>/src/"
     ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
+    "moduleFileExtensions": [ "js", "jsx", "ts", "tsx", "json" ],
     "moduleDirectories": [
       "node_modules",
       "bower_components"
@@ -49,6 +47,7 @@
     "@storybook/addon-info": "^3.3.11",
     "@storybook/addon-knobs": "^3.3.11",
     "@storybook/addon-links": "^3.3.11",
+    "@storybook/addon-storyshots": "^3.3.14",
     "@storybook/addons": "^3.3.11",
     "@storybook/react": "^3.3.11",
     "autosuggest-highlight": "^3.1.0",
@@ -104,6 +103,7 @@
     "react-tippy": "git://github.com/ZoharLiran/react-tippy.git#zl-add-guards",
     "redux": "^3.7.2",
     "redux-form": "^7.2.2",
+    "redux-form-website-template": "0.0.103",
     "run-sequence": "^1.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
