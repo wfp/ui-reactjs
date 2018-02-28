@@ -127,6 +127,15 @@ export const RenderSelect = (props) => {
     'invalid' : touched && error
   });
 
+  const selectListEl = selectList.map((val, i) => {
+    const value = (typeof val === 'object') ? val.id ? val.id : val.value: val;
+    return (
+      <option value={value} key={i}>
+        {(typeof val === 'object') ? val.text : val}
+      </option>
+    )
+  });
+
   return (
     <InlineError {...props} className="select-simple">
       <Label {...props} />
@@ -136,7 +145,7 @@ export const RenderSelect = (props) => {
         id={id ? id : input.name} 
         disabled={disabled} >
         <option value="">{selectEmptyText}</option>
-        {selectList.map((val, i) => <option value={(typeof val === 'object') ? val.id : val} key={i}>{(typeof val === 'object') ? val.text : val}</option>)}
+        {selectListEl}
       </select>
     </InlineError>
   )
