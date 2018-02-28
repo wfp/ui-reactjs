@@ -63,7 +63,7 @@ const WizardNav = ({ formName, previousPage, prevText, prevAction, nextText, nex
               dialogText="Do you want to go back? All data will be lost"
               submitButton={ 
                 <WfpActionButton
-                  label={nextText ? nextText : 'Next'}
+                  label={nextText ? nextText : 'Proceed'}
                   onClick={previousPage}
                 />
               }
