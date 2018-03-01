@@ -40,80 +40,76 @@ class BankingDialog extends Component {
         return output;
       })
     }
-
+    
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
         <div>
-          <UniversalModalSubTitle>
-            <div className="wfp-form">
-              <Label>Filter by Bank name, city or number to search...</Label>
-              <input 
-                className={this.state.search ? 'notempty' : ''}
-                type="text"
-                placeholder="Bank name, City or Number to search.."
-                value={this.state.search}
-                onChange={e => this.setState({search: e.target.value})} />
-            </div>
-          </UniversalModalSubTitle>
-          <UniversalModalContent>
-            <ReactTable
-            data={data}
-            columns={[
-                  {
-                    Header: "Bank Number",
-                    accessor: "bank_number"
-                  },
-                  {
-                    Header: "Bank Name",
-                    accessor: "bank_name"
-                  },
-                  {
-                    Header: "City",
-                    accessor: "city"
-                  },
-                  {
-                    Header: "Address",
-                    accessor: "street",
-                    Cell: row => {
-                      return (
-                        <span>
-                          {row.original.street} {row.original.address_number}
-                        </span>
-                      )
-                    }
-                  },
-                  {
-                    Header: "Swift",
-                    accessor: "swift_code"
-                  },
-                  {
-                    Header: "Branch",
-                    accessor: "bank_branch"
-                  },
-                  {
-                    Header: "Action",
-                    accessor: "bank_branch",
-                    className: "center",
-                    Cell: row => {
-                      return (
-                        <span>
-                          <WfpActionButton
-                            label="Select"
-                            action={row.original}
-                            closeModal={this.props.closeModal}
-                            onActionClick={this.props.updateBankingData}
-                          />
-                        </span>
-                      )
-                    }
+          <div className="wfp-form">
+            <Label>Filter by Bank name, city or number to search...</Label>
+            <input 
+              className={this.state.search ? 'notempty' : ''}
+              type="text"
+              placeholder="Bank name, City or Number to search.."
+              value={this.state.search}
+              onChange={e => this.setState({search: e.target.value})} />
+          </div>
+          <ReactTable
+          data={data}
+          columns={[
+                {
+                  Header: "Bank Number",
+                  accessor: "bank_number"
+                },
+                {
+                  Header: "Bank Name",
+                  accessor: "bank_name"
+                },
+                {
+                  Header: "City",
+                  accessor: "city"
+                },
+                {
+                  Header: "Address",
+                  accessor: "street",
+                  Cell: row => {
+                    return (
+                      <span>
+                        {row.original.street} {row.original.address_number}
+                      </span>
+                    )
                   }
-            ]}
-            defaultPageSize={7}
-            showPageSizeOptions={false}
-            className="-striped"
-            PaginationComponent={ReactTablePagination}
-          />
-        </UniversalModalContent>
+                },
+                {
+                  Header: "Swift",
+                  accessor: "swift_code"
+                },
+                {
+                  Header: "Branch",
+                  accessor: "bank_branch"
+                },
+                {
+                  Header: "Action",
+                  accessor: "bank_branch",
+                  className: "center",
+                  Cell: row => {
+                    return (
+                      <span>
+                        <WfpActionButton
+                          label="Select"
+                          action={row.original}
+                          closeModal={this.props.closeModal}
+                          onActionClick={this.props.updateBankingData}
+                        />
+                      </span>
+                    )
+                  }
+                }
+          ]}
+          defaultPageSize={7}
+          showPageSizeOptions={false}
+          className="-striped"
+          PaginationComponent={ReactTablePagination}
+        />
         </div>
       </form>
     )
@@ -121,24 +117,10 @@ class BankingDialog extends Component {
 }
 
 
-const BankingDialogWrapper = (props) => {
-  return (
-      <div>
-          <UniversalModalTitle>
-              WINGS Banks
-          </UniversalModalTitle>
-              <BankingDialog data={props.data} updateBankingData={props.updateBankingData} closeModal={props.closeModal} />
-      </div>
-  )
-}
-
-
 const BankingDialogModal = (props) => (
-  <UniversalModal
-    type="large"
-    trigger={<WfpActionButton label="Search WINGS banks..." />}>
-      <BankingDialogWrapper data={props.data} updateBankingData={props.updateBankingData} />
-  </UniversalModal>
+  <div>
+      <BankingDialog data={props.data} updateBankingData={props.updateBankingData} />
+  </div>
 )
 
 export default BankingDialogModal;

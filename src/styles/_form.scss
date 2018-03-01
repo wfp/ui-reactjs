@@ -334,7 +334,10 @@ select:invalid {
 /* Static input unchangeable */
 
 .wfp-staticinput {
-	width: 50%;
+	display: block;
+	.wfp-form--group--horizontal & {
+		width: 50%;
+	}
 	padding: 0.5rem;
 	border-left: 5px solid $grey-light;
 	background: $grey-lightest;
@@ -548,14 +551,14 @@ select:invalid {
 /* Banking Dialog Input */
 
 .banking-dialog-input {
-	display: flex;
-	align-items: stretch;
+	/*display: flex;
+	align-items: stretch; */
 }
 
 .banking-dialog-input__selected {
 	background: $grey-lighter;
-	width: 75%;
-	max-width: 300px;
+	/*width: 75%;
+	max-width: 300px;*/
 	margin-right: 0.5em;
 	font-size: 0.75em;
 	padding: 0.5em 0.7em 0 0.7em;
