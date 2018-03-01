@@ -537,7 +537,7 @@ select:invalid {
 }
 
 .field--read-only {
-	display: flex;
+	/*display: flex;
 	align-items: center;
 	label {
 		width: 15%;
@@ -545,23 +545,24 @@ select:invalid {
 	}
 	input {
 		border: 0;
-	}
+	}*/
 }
 
 /* Banking Dialog Input */
 
 .banking-dialog-input {
-	/*display: flex;
-	align-items: stretch; */
+	display: flex;
+	align-items: stretch;
 }
 
 .banking-dialog-input__selected {
 	background: $grey-lighter;
-	/*width: 75%;
-	max-width: 300px;*/
+	width: 75%;
+	min-height: 42px;
+	max-width: 300px;
 	margin-right: 0.5em;
 	font-size: 0.75em;
-	padding: 0.5em 0.7em 0 0.7em;
+	padding: 0.5em 0.7em 0.5em 0.7em;
 	vertical-align: top;
 	b {
 		display: block;
@@ -571,10 +572,6 @@ select:invalid {
 		display: block;
 		font-size: 0.8em;
 	}
-}
-
-.banking-dialog-input__selected--no-bank {
-	font-size: 1em;
 }
 
 .form__extent {
