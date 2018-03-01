@@ -8,28 +8,39 @@ import BankingDialog from './bankingDialog';
 
 
 const BankingDialogInput = (props) => {
-    const { data, input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
+    const { component, data, input, id, label, disabled, wrapper, type } = props;
 
     const updateBankingData = (data) => {
       console.log("Update data", data);
       input.onChange(data);
     }
 
+    const value = props.value ? props.value : input ? input.value : undefined;
+
+    let readOnly = false;
+
+    console.log(props, component);
+    if (props.readOnly === true || !props.meta) {
+        readOnly = true;
+    }
+
     return (
         <InlineError {...props}>
             <Label {...props} />
                 <div className="banking-dialog-input">
-                    {input.value ? (
+                    {value ? (
                         <div className="banking-dialog-input__selected">
-                            <b>{input.value.bank_name}</b>
-                            <span>Bank Key: {input.value.bank_number}</span>
+                            <b>{value.bank_name}</b>
+                            <span>Bank Key: {value.bank_key}</span>
                         </div>
                     ):(
                         <div className="banking-dialog-input__selected banking-dialog-input__selected--no-bank">
                             No Bank selected
                         </div>
                     )}
-                <BankingDialog data={data} updateBankingData={updateBankingData} />
+                {readOnly !== true &&
+                    <BankingDialog data={data} updateBankingData={updateBankingData} />
+                }
             </div>
         </InlineError>
     )

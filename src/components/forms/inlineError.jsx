@@ -11,6 +11,7 @@ const InlineError = (props) => {
 			'field--read-only': props.readOnly,
 			'wfp-form--group' : props.wrapper === true,
 		 	'invalid' : showInvalid,
+		 	[`wfp-form--group--${props.labelPosition}`]: props.labelPosition,
 			[`${props.className}`]: props.className,
 		}); 
 

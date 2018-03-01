@@ -120,33 +120,11 @@ export const RenderTextarea = (props) => {
 };
 
 
-export const RenderSelect = (props) => {
-  const {id, input, selectEmptyText, isRequired, selectList, label, disabled, meta: { touched, error } } = props;
-
-  const inputClasses = classNames({
-    'invalid' : touched && error
-  });
-
-  return (
-    <InlineError {...props} className="select-simple">
-      <Label {...props} />
-      <select
-        {...input}
-        className={inputClasses}
-        id={id ? id : input.name} 
-        disabled={disabled} >
-        <option value="">{selectEmptyText}</option>
-        {selectList.map((val, i) => <option value={(typeof val === 'object') ? val.id : val} key={i}>{(typeof val === 'object') ? val.text : val}</option>)}
-      </select>
-    </InlineError>
-  )
-}
 
 export const RenderStatic = (props) => {
     const {className, data, label, hideLabel, unit, unitFrom} = props;
 
     const wrapperClass = classNames({
-      'wfp-form--group--horizontal': true,
       [`${className}`]: className
     }); 
 

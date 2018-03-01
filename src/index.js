@@ -51,7 +51,6 @@ import {
   RenderCurrencyInput,
   RenderCheckbox,
   RenderTextarea,
-  RenderSelect,
   RenderStatic,
   RenderRadio,
   FormGroup,
@@ -67,6 +66,7 @@ import DatePicker from './components/forms/datePicker';
 import DateRangePicker from './components/forms/dateRangePicker';
 import StaffSelect from './components/forms/staffSelect';
 import MultiSelect from './components/forms/multiSelect';
+import { RenderSelect } from './components/forms/renderSelect';
 import FileUpload from './components/forms/fileUpload';
 import WizardNav from './components/forms/wizardNav';
 import InlineError from './components/forms/inlineError';
