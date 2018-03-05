@@ -85,13 +85,13 @@ class Search extends React.Component {
       suggestions: [],
       noSuggestions: false,
       search: []
-    };    
+    };
   }
 
   getSuggestions = (value) => {
     this.toggleSidebar(true);
     const escapedValue = escapeRegexCharacters(value.trim());
-  
+
     /*if (escapedValue === '') {
       return [];
     }*/
@@ -115,12 +115,12 @@ class Search extends React.Component {
       value: newValue
     });
   };
-  
+
    onSuggestionsFetchRequested = ({ value }) => {
     const suggestions = this.getSuggestions(value);
     const isInputBlank = value.trim() === '';
     const noSuggestions = !isInputBlank && suggestions.length === 0;
-    
+
     this.setState({
       suggestions,
       noSuggestions
@@ -173,12 +173,12 @@ class Search extends React.Component {
   renderSuggestionsContainer = ({ containerProps , children, query }) => {
     // My direct need is accessing a method of App
     //var accessAppContext = this.someReactMethod();
-  
+
     return (<Portal isOpened={true}>
       <div {... containerProps}>{children}</div>
     </Portal>);
   };
-  
+
   onChange = (event, { newValue, method }) => {
     this.setState({
       value: newValue
@@ -187,16 +187,17 @@ class Search extends React.Component {
 
 
   render() {
-    const { value, suggestions, noSuggestions } = this.state;
-    const inputProps = {
-      placeholder: this.props.placeholder,
-      value,
-      onChange: this.onChange
-    };
-    
+      const { value, suggestions, noSuggestions } = this.state;
+      const inputProps = {
+          id: this.props.id,
+          placeholder: this.props.placeholder,
+          value,
+          onChange: this.onChange
+      };
+
     return (
       <form acceptCharset="UTF-8" className="quicksearch quicksearch--small">
-        <Autosuggest 
+        <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -225,8 +226,9 @@ class Search extends React.Component {
 
 
 Search.propTypes = {
-  data: PropTypes.array,
-  placeholder: PropTypes.string
+    id: PropTypes.string,
+    data: PropTypes.array,
+    placeholder: PropTypes.string
 };
 
 export default Search;
