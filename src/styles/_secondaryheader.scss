@@ -11,12 +11,25 @@
 	&.wfp-secondaryheader--noborder {
 		box-shadow: none !important;
 	}
+	&.wfp-secondaryheader--narrow {
+		padding-top: 0.7em;
+		padding-bottom: 0.7em;
+		background: lighten($grey-lightest,3);
+		&.is-sticky {
+			z-index: 100000;
+			//box-shadow: none;
+		}
+	}
 }
 
 .secondaryheader__title {
 	margin-top: 0.3em;
 	margin-bottom: 0;
 	font-size: 2.5rem;
+	.wfp-secondaryheader--narrow & {
+		margin-top: 0.2em;
+		font-size: 1.3rem;
+	}
 	@include print {
 		font-size: 1.8rem;
 	}
