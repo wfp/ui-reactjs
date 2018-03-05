@@ -20,29 +20,24 @@ const MultiSelect = (props) => {
 	<InlineError {...props}>
 		<Label>{label}</Label>
 		<div className="userselect__wrapper">
-		<Select
-			autoFocus
-			className=""
-			id="state-select"
-			valueKey={valueKey ? valueKey : 'role_desc'}
-			labelKey={labelKey ? labelKey : 'role_desc'}
-			options={options}
-			multi={multi ? multi : true}
-			name="selected-state" 
-			onChange={handleChange} 
-			onBlur={() => {
-			     input.onBlur(input.value)
-			}}
-			placeholder={placeholder ? placeholder : 'Select Values'}
-			searchable={true}
-			simpleValue={simpleValue ? simpleValue : true}
-			value={input.value}
-		/>
-		<Input
-			{...props}
-			placeholder={label}
-			type="hidden"
-		/>
+			<Select
+				autoFocus
+				className=""
+				id="state-select"
+				valueKey={valueKey ? valueKey : 'role_desc'}
+				labelKey={labelKey ? labelKey : 'role_desc'}
+				options={options}
+				multi={multi ? multi : true}
+				name="selected-state" 
+				onChange={handleChange} 
+				onBlur={() => {
+				     input.onBlur(input.value)
+				}}
+				placeholder={placeholder ? placeholder : 'Select Values'}
+				searchable={true}
+				simpleValue={simpleValue ? simpleValue : true}
+				value={input.value}
+			/>
 		</div>
 	</InlineError>
 	);

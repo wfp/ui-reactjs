@@ -6,41 +6,35 @@ import Select from 'react-select';
 import PropTypes from 'prop-types';
 import { Input } from './inputs';
 
-const StaffSelectValue = (props) => {
+const DutyStationSelectValue = (props) => {
 
     const {readOnly} = props;
 
-    const StaffSelectValueClass = classNames({
+    const DutyStationSelectValueClass = classNames({
         'Select-value': true,
-        'userselect__value': true,
+        'dutystation__value': true,
         'readonly--inline': props.readOnly === 'inline',
         'readonly': props.readOnly
     });
 
-    const errorImage = (ev) => {
-        console.log("User image not existing");
-        //ev.target.src = 'some default image url'
-    }
-
     return (
-        <div className={StaffSelectValueClass}>
+        <div className={DutyStationSelectValueClass}>
          {props.value &&
                 <div className="Select-value-label">
                     {!readOnly &&
-                        <div className="userselect__value__text">{props.value.last_name}, {props.value.first_name}</div>
+                        <div className="dutystation__value__text">{props.value.last_name}, {props.value.first_name}</div>
                     }
-                    <div className="userselect__value__extended">
-                        <img onError={errorImage} src={`http://gtd.wfp.org/media/pictures/auto/${props.value.email}.jpg`} />
+                    <div className="dutystation__value__extended">
                         {readOnly ? (
-                            <div className="userselect__description">
-                                <div className="userselect__value__text">
+                            <div className="dutystation__description">
+                                <div className="dutystation__value__text">
                                     {props.value.last_name}, {props.value.first_name}
                                 </div>  
                                 <span>{props.value.position_title}</span>
                                 <span>{props.value.division}</span>
                             </div>
                         ):(
-                            <div className="userselect__description">
+                            <div className="dutystation__description">
                                 <span>Index: {props.value.indexno}</span>
                                 <span>{props.value.email}</span>
                             </div>
@@ -52,12 +46,12 @@ const StaffSelectValue = (props) => {
     );
 };
 
-StaffSelectValue.propTypes = {
+DutyStationSelectValue.propTypes = {
     children: PropTypes.node,
     value: PropTypes.object
 };
 
-const StaffSelect = (props) => {
+const DutyStationSelect = (props) => {
 
     const { input, value, label, type, disabled, readOnly, loadOptions, disableEmpty} = props;
 
@@ -71,19 +65,19 @@ const StaffSelect = (props) => {
         return (
             <InlineError {...props}>
                 <Label>{label}</Label>
-                <div className="userselect__wrapper">
+                <div className="dutystation__wrapper">
                     <Select.Async
                         autoFocus
-                        className="userselect__select"
+                        className="dutystation__select"
                         id="state-select"
                         labelKey="text"
                         loadOptions={loadOptions}
                         name="selected-state"
                         onChange={handleChange}
-                        placeholder="Enter last name to select employee"
+                        placeholder="Enter the Duty Station"
                         searchable={true}
                         value={input.value}
-                        valueComponent={StaffSelectValue}
+                        valueComponent={DutyStationSelectValue}
                         valueKey="indexno"
                     />
                 </div>
@@ -94,13 +88,13 @@ const StaffSelect = (props) => {
         return (
             <InlineError {...props}>
                 <Label>{label}</Label>
-                <StaffSelectValue readOnly={readOnly} value={value ? value : input ? input.value : undefined} />
+                <DutyStationSelectValue readOnly={readOnly} value={value ? value : input ? input.value : undefined} />
             </InlineError>
         )
     }
 };
 
-StaffSelect.propTypes = {
+DutyStationSelect.propTypes = {
     input: PropTypes.object,
     label: PropTypes.string,
     type: PropTypes.string,
@@ -108,4 +102,4 @@ StaffSelect.propTypes = {
     meta: PropTypes.object
 };
 
-export default StaffSelect;
+export default DutyStationSelect;

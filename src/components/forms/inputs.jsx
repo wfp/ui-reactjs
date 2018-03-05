@@ -66,7 +66,6 @@ export const RenderCurrencyInput = (props) => {
                         loadOptions={loadOptions}     
                         searchable={true}
                     />
-                    <Input {...props} placeholder={label} type="hidden" />
                 </div>
         </InlineError>
     )
