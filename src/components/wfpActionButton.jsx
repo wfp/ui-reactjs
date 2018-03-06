@@ -21,25 +21,30 @@ export default class WfpActionButton extends React.Component {
     }
   }
 
-  render() {
-    let classes = classnames('wfp-btn modal-trigger', {
-      'wfp-btn--primary': this.props.type === 'primary',
-      'wfp-btn--secondary': this.props.type === 'secondary',
-      'wfp-btn--tertiary': this.props.type === 'tertiary',
-      'wfp-btn--negative': this.props.type === 'negative',
-      [`${this.props.className}`]: this.props.className
-    });
-    return (
-      <button
-        disabled={this.props.disabled}
-        className={classes}
-        type="button"
-        onClick={this.props.onClick ? this.props.onClick :  this.handleClick}
-      >
-        <span>{this.props.label}</span>
-      </button>
-    );
-  }
+    render() {
+        const {
+            type, className, disabled,
+            onClick, label, ...other
+        } = props;
+        let classes = classnames('wfp-btn modal-trigger', {
+            'wfp-btn--primary': type === 'primary',
+            'wfp-btn--secondary': type === 'secondary',
+            'wfp-btn--tertiary': type === 'tertiary',
+            'wfp-btn--negative': type === 'negative',
+            [`${this.props.className}`]: className
+        });
+        return (
+            <button
+                disabled={disabled}
+                className={classes}
+                {...other}
+                type="button"
+                onClick={onClick ? onClick :  this.handleClick}
+            >
+                <span>{label}</span>
+            </button>
+        );
+    }
 }
 
 WfpActionButton.propTypes = {

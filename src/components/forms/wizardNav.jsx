@@ -39,84 +39,90 @@ DefaultDialogContent.propTypes = {
 const WizardNav = ({ formName, previousPage, prevText, prevAction, nextText, nextPage, nextDisabled, prevHide, nextHide, saveShow, saveDisabled, savePage, saveText, dispatch }) => {
   const formNameEl = formName ? formName : "wizard";
   return (
-    <div className="wfp-wizard">
-      <div>
-        {prevHide !== true && prevHide !== 'confirm' &&
-          <button
-            className="wfp-btn--primary wfp-wizard__prev"
-            onClick={previousPage}
-            type="button"
-          >
-            {prevText ? prevText : 'Back'}
-          </button>
-        }
-        {prevHide === 'confirm' &&
-          <UniversalModal
-            className="wfp-modal--small"
-            trigger={<WfpActionButton
-              label={prevText ? prevText : 'Back'}
-            />
-            }
-          >
-            <DefaultDialogContent
-              dialogTitle="Leave form"
-              dialogText="Do you want to go back? All data will be lost"
-              submitButton={ 
-                <WfpActionButton
-                  label={nextText ? nextText : 'Proceed'}
+      <div className="wfp-wizard">
+          <div>
+              {prevHide !== true && prevHide !== 'confirm' &&
+               <button
+                   className="wfp-btn--primary wfp-wizard__prev"
+                   id="wizard-back"
+                   onClick={previousPage}
+                   type="button"
+               >
+                   {prevText ? prevText : 'Back'}
+               </button>
+              }
+              {prevHide === 'confirm' &&
+               <UniversalModal
+                   className="wfp-modal--small"
+                   trigger={<WfpActionButton
+                                id="wizard-confirm-back"
+                                label={prevText ? prevText : 'Back'}
+                                />
+                           }
+               >
+                   <DefaultDialogContent
+                       dialogTitle="Leave form"
+                       dialogText="Do you want to go back? All data will be lost"
+                       submitButton={
+                           <WfpActionButton
+                               id="wizard-confirm-next"
+                               label={nextText ? nextText : 'Proceed'}
                   onClick={previousPage}
                 />
+                                    }
+                   />
+               </UniversalModal>
               }
-            />
-          </UniversalModal>
-        }
-      </div>
-      
-      <div>
+          </div>
+
+          <div>
 
 
-         {(saveShow === true) &&
-          <button
-            className="wfp-btn wfp-wizard__save"
-            disabled={saveDisabled}
-            onClick={savePage ?  savePage : () => dispatch(submit(formNameEl))}
-            type="button"
-          >
-            {saveText ? saveText : 'Save'}
-          </button>
-        }
-        
-        {nextHide === 'confirm' &&
-          <UniversalModal
-            className="wfp-modal--small"
-            trigger={<WfpActionButton
-              label={nextText ? nextText : 'Next'}
-            />
-            }
-          >
-            <DefaultDialogContent
-              submitButton={ 
-                <WfpActionButton
-                  label={nextText ? nextText : 'Next'}
-                  onClick={nextPage ?  nextPage : () => dispatch(submit(formNameEl))}
-                />
+              {(saveShow === true) &&
+               <button
+                   className="wfp-btn wfp-wizard__save"
+                   id="wizard-save"
+                   disabled={saveDisabled}
+                   onClick={savePage ?  savePage : () => dispatch(submit(formNameEl))}
+                   type="button"
+               >
+                   {saveText ? saveText : 'Save'}
+               </button>
               }
-            />
-          </UniversalModal>
-        }
 
-        {(nextHide !== 'confirm' && nextHide !== true)&&
-          <button
-            className="wfp-btn--primary wfp-wizard__next"
-            disabled={nextDisabled}
-            onClick={nextPage ?  nextPage : () => dispatch(submit(formNameEl))}
-            type="button"
-          >
-            {nextText ? nextText : 'Next'}
-          </button>
-        }
+              {nextHide === 'confirm' &&
+               <UniversalModal
+                   className="wfp-modal--small"
+                   trigger={<WfpActionButton
+                                label={nextText ? nextText : 'Next'}
+                                />
+                           }
+               >
+                   <DefaultDialogContent
+                       submitButton={
+                           <WfpActionButton
+                               id="wizard-submit"
+                               label={nextText ? nextText : 'Next'}
+                      onClick={nextPage ?  nextPage : () => dispatch(submit(formNameEl))}
+                  />
+                                    }
+                   />
+               </UniversalModal>
+              }
+
+              {(nextHide !== 'confirm' && nextHide !== true)&&
+               <button
+                   className="wfp-btn--primary wfp-wizard__next"
+                   id="wizard-next"
+                   disabled={nextDisabled}
+                   onClick={nextPage ?  nextPage : () => dispatch(submit(formNameEl))}
+                   type="button"
+               >
+                   {nextText ? nextText : 'Next'}
+               </button>
+              }
+          </div>
       </div>
-    </div>
   )
 };
 
