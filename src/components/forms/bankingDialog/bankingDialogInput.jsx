@@ -24,12 +24,20 @@ const BankingDialogInput = (props) => {
         readOnly = true;
     }
 
+    const clear = (e) => {
+        e.preventDefault();
+        input.onChange(null);
+    }
+
     return (
         <InlineError {...props}>
             <Label {...props} />
                 <div className="banking-dialog-input">
                     {value ? (
                         <div className="banking-dialog-input__selected">
+                            {readOnly !== true &&
+                                <a href="#" onClick={(e) => clear(e)} className="banking-dialog-input__clear">Clear</a>
+                            }
                             <b>{value.bank_name}</b>
                             <span>Bank Key: {value.bank_key}</span>
                         </div>
