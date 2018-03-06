@@ -78,6 +78,7 @@ import Summary from './components/forms/summary';
 import BankingDialog from './components/forms/bankingDialog/bankingDialog';
 import BankingDialogInput from './components/forms/bankingDialog/bankingDialogInput';
 import LargeLoaderOverlay from './components/loader/largeLoaderOverlay';
+import DutyStationSelect from './components/forms/dutyStationSelect';
 
 
 module.exports = {
@@ -141,6 +142,7 @@ module.exports = {
   InfoBar,
   Unit,
   LargeLoaderOverlay,
+  DutyStationSelect,
   Progress,
   BankingDialog,
   BankingDialogInput,

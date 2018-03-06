@@ -3,10 +3,10 @@ import { Fields, Field, reduxForm } from 'redux-form';
 import { RenderCurrencyInput, RenderInput } from '../src/components/forms/inputs';
 
 import CurrencyValue from '../src/components/forms/currencyValue';
-
 import normalizeDecimalSeperator from '../src/utils/normalizers/normalizeDecimalSeperator';
-
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
+
+import { Values } from 'redux-form-website-template'
 
 /* Currency fetch */
 
@@ -31,6 +31,7 @@ class SimpleForm extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <form onSubmit={handleSubmit} className="wfp-form--stacked">
+        <Values form="SimpleForm" />
         <div>
             {/*<div className="currencyinput__wrapper">
             <Field
