@@ -25,7 +25,7 @@ export default class WfpActionButton extends React.Component {
         const {
             type, className, disabled,
             onClick, label, ...other
-        } = props;
+        } = this.props;
         let classes = classnames('wfp-btn modal-trigger', {
             'wfp-btn--primary': type === 'primary',
             'wfp-btn--secondary': type === 'secondary',
