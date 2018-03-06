@@ -4,27 +4,29 @@ import PropTypes from 'prop-types';
 
 export default class WfpActionButton extends React.Component {
 
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      type: this.props.type
-    };
+        this.state = {
+            type: this.props.type
+        };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.props.onActionClick(this.props.action);
-    if (typeof this.props.closeModal === "function") {
-      this.props.closeModal();
+        this.handleClick = this.handleClick.bind(this);
     }
-  }
+
+    handleClick() {
+        this.props.onActionClick(this.props.action);
+        if (typeof this.props.closeModal === "function") {
+            this.props.closeModal();
+        }
+    }
 
     render() {
         const {
             type, className, disabled,
-            onClick, label, ...other
+            onClick, label,
+            onActionClick, closeModal,
+            ...other
         } = this.props;
         let classes = classnames('wfp-btn modal-trigger', {
             'wfp-btn--primary': type === 'primary',
@@ -48,11 +50,11 @@ export default class WfpActionButton extends React.Component {
 }
 
 WfpActionButton.propTypes = {
-  action: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string
+    action: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string
 };
 
 WfpActionButton.defaultProps = {
-  type: 'primary'
+    type: 'primary'
 };
