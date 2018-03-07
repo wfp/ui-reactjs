@@ -19,7 +19,6 @@ const BankingDialogInput = (props) => {
 
     let readOnly = false;
 
-    console.log(props, component);
     if (props.readOnly === true || !props.meta) {
         readOnly = true;
     }
@@ -27,6 +26,8 @@ const BankingDialogInput = (props) => {
     const clear = (e) => {
         e.preventDefault();
         input.onChange(null);
+        if (props.onClear)
+            props.onClear();
     }
 
     return (

@@ -60,6 +60,12 @@ storiesOf('Inputs', module)
 
     withInfo(info)(() => {
       const readOnly = boolean('readOnly', false);
+
+      const clear = () => {
+        console.log(clear);
+        alert("Cleared Input")
+      };
+
       return (
         <div>
         <Field
@@ -68,6 +74,7 @@ storiesOf('Inputs', module)
               component={BankingDialogInput}
               label="Select from WINGS Banks"
               readOnly={readOnly}
+              onClear={clear}
           />
 
           <BankingDialogInput 
