@@ -129,6 +129,7 @@ module.exports = {
   RenderRadio,
   StaffSelect,
   MultiSelect,
+  Blockquote,
   CurrencyValue,
   FormGroup,
   Label,

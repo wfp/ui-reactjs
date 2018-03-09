@@ -64,6 +64,10 @@ blockquote{
 }
 
 
+.blockquote--info {
+    border-left-color: $primary;
+}
+
 .blockquote--warning {
     border-left-color: $yellow;
     padding: 0.8rem;
@@ -91,5 +95,9 @@ blockquote{
 }
 
 .blockquote__content {
-    padding: 0.25rem 0 0.25rem 1rem;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+}
+
+.blockquote__action {
+    margin-left: 1em;
 }
