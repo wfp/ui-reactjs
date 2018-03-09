@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import InlineError from './inlineError';
 import Label from './label';
 import { Unit } from './../../utils/units';
-import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
