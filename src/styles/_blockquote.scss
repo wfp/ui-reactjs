@@ -63,6 +63,28 @@ blockquote{
     background-color: $white;
 }
 
+
+.blockquote--warning {
+    border-left-color: $yellow;
+    padding: 0.8rem;
+    padding-left: 4.5em;
+    position: relative;
+    &:before {
+        font-family: FontAwesome;
+        position: absolute;
+        height: 100%;
+        font-size: 2rem;
+        content: "\f071";
+        top: 50%;
+        left: 0;
+        pointer-events: none;
+        margin: 0 0.5em;
+        margin-top: -0.18em;
+        line-height: 1rem;
+        color: $yellow;
+    }
+}
+
 .blockquote__title {
     display: block;
     padding: 0.4rem 0 0.4rem 1rem;
