@@ -15,8 +15,12 @@ class Blockquote extends React.Component {
     this.setState({open: !this.state.open})
   }
 
+  showInnerHtml = (content) => {
+    return {__html: content}
+  }
+
   render () {
-      const { className, children, style, title, toggleable, columnCount, type, ...other } = this.props;
+      const { className, children, style, title, toggleable, columnCount, innerHtml, type, ...other } = this.props;
       const blockquoteClass = classNames({
         'blockquote' : true,
         'blockquote--toggleable': toggleable === true,
@@ -42,6 +46,9 @@ class Blockquote extends React.Component {
           }
           <div className={blockquoteContentClass} style={style}>
             { children }
+            {innerHtml && (
+              <div dangerouslySetInnerHTML={this.showInnerHtml(innerHtml)} ></div>
+            )}
           </div>
   	    </div>
   	  );

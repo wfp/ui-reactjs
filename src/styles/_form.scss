@@ -346,13 +346,6 @@ select:invalid {
 	}
 }
 
-.wfp-form--group__hint {
-	padding: 0.5rem;
-	margin: 0.5em 0;
-	border-left: 5px solid $primary;
-	background: $grey-lightest;
-}
-
 /* Form List */
 
 .wfp-form__list {
@@ -360,8 +353,6 @@ select:invalid {
 	margin: 0;
 	padding: 0;
 }
-
-
 
 /* Checkbox */
 
@@ -583,4 +574,9 @@ select:invalid {
 	margin-bottom: -3em;
 	position: relative;
 	z-index: 100;
+}
+
+/* Inline Form Acions */
+.wfp-form--inline-actions {
+	margin: 0.25em 0;
 }

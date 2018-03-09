@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import InlineError from './inlineError';
 import Label from './label';
 import { Unit } from './../../utils/units';
-import Dropzone from 'react-dropzone';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
@@ -191,13 +190,18 @@ export const Button = (props) => {
     )
 }
 
-export const FormHint = ({children, innerHtml}) => {
+export const FormHint = ({children, innerHtml, type}) => {
   function showInnerHtml(content) {
     return {__html: content}
   }
 
+  const formGroupClasses = classNames({
+      'wfp-form--group__hint': true,
+      [`wfp-form--group__hint--${type}`]: type,
+  });
+
   return (
-    <div className='wfp-form--group__hint'>
+    <div className={formGroupClasses}>
         {children}
         {innerHtml && (
           <div dangerouslySetInnerHTML={showInnerHtml(innerHtml)} ></div>

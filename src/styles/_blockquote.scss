@@ -17,7 +17,7 @@ blockquote{
     background-color: $grey-lightest;
     border-left: 6px solid $grey-light;
     border-radius: 2px;
-    margin: 1em 0;
+    margin: 0.5em 0;
 }   
 
 .blockquote--toggleable {
@@ -61,6 +61,28 @@ blockquote{
     border: 1px solid $grey-lighter;
     border-left:5px solid $grey-lighter;
     background-color: $white;
+}
+
+
+.blockquote--warning {
+    border-left-color: $yellow;
+    padding: 0.8rem;
+    padding-left: 4.5em;
+    position: relative;
+    &:before {
+        font-family: FontAwesome;
+        position: absolute;
+        height: 100%;
+        font-size: 2rem;
+        content: "\f071";
+        top: 50%;
+        left: 0;
+        pointer-events: none;
+        margin: 0 0.5em;
+        margin-top: -0.18em;
+        line-height: 1rem;
+        color: $yellow;
+    }
 }
 
 .blockquote__title {
