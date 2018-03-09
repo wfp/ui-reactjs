@@ -79,7 +79,7 @@ import BankingDialog from './components/forms/bankingDialog/bankingDialog';
 import BankingDialogInput from './components/forms/bankingDialog/bankingDialogInput';
 import LargeLoaderOverlay from './components/loader/largeLoaderOverlay';
 import DutyStationSelect from './components/forms/dutyStationSelect';
-import Blockquote from './components/forms/blockquote';
+import Blockquote from './components/blockquote';
 
 
 module.exports = {
