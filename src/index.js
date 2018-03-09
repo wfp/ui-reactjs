@@ -79,6 +79,7 @@ import BankingDialog from './components/forms/bankingDialog/bankingDialog';
 import BankingDialogInput from './components/forms/bankingDialog/bankingDialogInput';
 import LargeLoaderOverlay from './components/loader/largeLoaderOverlay';
 import DutyStationSelect from './components/forms/dutyStationSelect';
+import Blockquote from './components/forms/blockquote';
 
 
 module.exports = {
@@ -149,5 +150,6 @@ module.exports = {
   loadCurrencies,
   validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
   normalizeDecimal,
-  normalizeDecimalSeperator
+    normalizeDecimalSeperator,
+    Blockquote
 };
