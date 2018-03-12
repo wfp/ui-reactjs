@@ -11,17 +11,17 @@ export const Input = (props) => {
 
     const inputClasses = classNames({
       'invalid' : touched && error
-    }); 
+    });
 
     return (
         <input
-        {...input}
-        className={className} 
-        disabled={disabled}
-        id={id ? id : input.name}
-        type={type}
-        className={inputClasses}
-        placeholder={placeholder}/>
+            {...input}
+            className={className}
+            disabled={disabled}
+            id={id ? id : input.name}
+            type={type}
+            className={inputClasses}
+            placeholder={placeholder}/>
     )
 }
 
@@ -29,10 +29,11 @@ export const RenderInput = (props) => {
     const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
 
     return (
-        <InlineError {...props}>
+        <div>
             <Label {...props} />
             <Input {...props} />
-        </InlineError>
+            <InlineError {...props} />
+        </div>
     )
 };
 
@@ -61,8 +62,8 @@ export const RenderCurrencyInput = (props) => {
                         labelKey="text"
                         clearable={false}
                         value={input.value}
-                        onChange={handleChange}        
-                        loadOptions={loadOptions}     
+                        onChange={handleChange}
+                        loadOptions={loadOptions}
                         searchable={true}
                     />
                 </div>
@@ -76,7 +77,7 @@ export const RenderCheckbox = (props) => {
   const wrapperClass = classNames({
     'checkbox__wrapper': true,
     [`${className}`]: className
-  }); 
+  });
 
   return (
     <InlineError {...props} className={wrapperClass}>
@@ -101,14 +102,14 @@ export const RenderTextarea = (props) => {
   const {id, input, label, placeholder, wrapper, type, meta: { touched, error } } = props;
   const inputClasses = classNames({
     'invalid' : touched && error
-  }); 
+  });
 
   return (
     <InlineError {...props}>
       <Label {...props} />
       <textarea
         {...props.input}
-        id={id ? id : input.name} 
+        id={id ? id : input.name}
         placeholder={placeholder}
         type={type}
         className={inputClasses}
@@ -124,7 +125,7 @@ export const RenderStatic = (props) => {
 
     const wrapperClass = classNames({
       [`${className}`]: className
-    }); 
+    });
 
     const inputClass = classNames({
       'wfp-staticinput': true,
@@ -154,7 +155,7 @@ export const FormGroup = (props) => {
       'wfp-form--group--seperate': (type === 'seperate'),
       'wfp-form--group--seperatesmall': (type === 'seperatesmall'),
       [`${className}`]: className,
-    }); 
+    });
     return (
         <div className={ formGroupClass }>
             {children}
