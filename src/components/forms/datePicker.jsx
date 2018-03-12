@@ -14,7 +14,7 @@ class DatePicker extends Component {
 
   render() {
       const {
-          id, disabled, readOnly,
+          id, disabled, readOnly, initialVisibleMonth, isOutsideRange,
           meta: {
               error, touched
           },
@@ -37,6 +37,8 @@ class DatePicker extends Component {
                            displayFormat="DD/MM/YYYY"
                            disabled={disabled}
                            focused={focused}
+                           initialVisibleMonth={initialVisibleMonth}
+                           isOutsideRange={isOutsideRange}
                            hideKeyboardShortcutsPanel
                            numberOfMonths={1}
                            onFocusChange={this.handleFocusChange}
