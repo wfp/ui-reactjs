@@ -13,32 +13,48 @@ class DatePicker extends Component {
   handleFocusChange = ({ focused }) => this.setState({ focused });
 
   render() {
-    const { disabled, readOnly, meta: { error, touched }, input: { value = null, onChange } } = this.props;
-    const { focused = null } = this.state;
+      const {
+          id, disabled, readOnly,
+          meta: {
+              error, touched
+          },
+          input: {
+              value = null, onChange
+          }
+      } = this.props;
+      const { focused = null } = this.state;
 
-    return (
-       <InlineError {...this.props}>
-        <Label {...this.props} />
-        <div className="wfp-form--date-picker">
-          {readOnly === true ? (
-            <div className="">{moment(value)}</div>
-          ) : (
-          <SingleDatePicker
-            date={value ? moment(value) : null}
-            onDateChange={onChange}
-            displayFormat="DD/MM/YYYY"
-            disabled={disabled}
-            focused={focused}
-            hideKeyboardShortcutsPanel
-            numberOfMonths={1}
-            onFocusChange={this.handleFocusChange}
-            id="date"
-            placeholder="Enter Date"
-          />)}
-        </div>
-      </InlineError>
-    );
+      return (
+          <InlineError {...this.props}>
+              <Label {...this.props} />
+              <div className="wfp-form--date-picker">
+                  {readOnly === true ? (
+                       <div className="">{moment(value)}</div>
+                   ) : (
+                       <SingleDatePicker
+                           date={value ? moment(value) : null}
+                           onDateChange={onChange}
+                           displayFormat="DD/MM/YYYY"
+                           disabled={disabled}
+                           focused={focused}
+                           hideKeyboardShortcutsPanel
+                           numberOfMonths={1}
+                           onFocusChange={this.handleFocusChange}
+                           id={id}
+                           placeholder="Enter Date"
+                       />)}
+              </div>
+          </InlineError>
+      );
   }
 }
+
+DatePicker.propTypes = {
+    id: PropTypes.string
+};
+
+DatePicker.defaultProps = {
+    id: 'date'
+};
 
 export default DatePicker;
