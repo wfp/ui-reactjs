@@ -26,10 +26,20 @@ export const Input = (props) => {
 }
 
 export const RenderInput = (props) => {
-    const { input, id, label, disabled, wrapper, type, meta: { touched, error } } = props;
+    const {input, id, label, disabled, wrapper, type, meta: {touched, error}} = props;
+    const showInvalid = props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error);
+    const inputClasses = classNames({
+        'required': props.isRequired,
+        'disabled': props.disabled,
+        'field--read-only': props.readOnly,
+        'wfp-form--group': props.wrapper === true,
+        'invalid': showInvalid,
+        [`wfp-form--group--${props.labelPosition}`]: props.labelPosition,
+        [`${props.className}`]: props.className,
+    });
 
     return (
-        <div>
+        <div className={inputClasses}>
             <Label {...props} />
             <Input {...props} />
             <InlineError {...props} />
