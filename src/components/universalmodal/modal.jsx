@@ -27,7 +27,8 @@ class UniversalModal extends React.Component {
     }
   }
 
-  openModal = () => {
+  openModal = (e) => {
+    if (e) { e.preventDefault(); }
     this.setState({ modalIsOpen: true });
   }
   
@@ -53,7 +54,8 @@ class UniversalModal extends React.Component {
           <span>
           {React.cloneElement(this.props.trigger, {
            onClick: this.openModal,
-           closeModal: this.closeModal
+           closeModal: this.closeModal,
+           
           })}
           </span>
         }
