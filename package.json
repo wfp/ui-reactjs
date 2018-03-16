@@ -1,6 +1,6 @@
 {
   "name": "wfp-ui-reactjs",
-  "version": "0.3.2",
+  "version": "0.3.20",
   "main": "lib/index.js",
   "files": [
     "lib/",
