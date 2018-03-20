@@ -4,6 +4,8 @@ import {
     reduxForm
 } from 'redux-form';
 
+import { connect } from 'react-redux';
+
 import {
     FormGroup,
     RenderInput
@@ -27,6 +29,12 @@ const isNumber= field => {
     else {
         return null;
     }
+}
+
+const validate = values => {
+    const errors = {}
+
+    return errors
 }
 
 
@@ -95,7 +103,19 @@ Page2 = reduxForm({
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,  // <------ unregister fields on unmount
     enableReinitialize: true,
-    keepDirtyOnReinitialize: true
+    keepDirtyOnReinitialize: true,
+    validate
 })(Page2)
 
-export default Page2;
+const mapStateToProps = (state) => ({
+    initialValues: state.data.object
+
+});
+
+const mapDispatchToProps = (dispatch) => ({
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Page2);

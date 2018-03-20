@@ -19,6 +19,12 @@ import Page2 from './page2';
 
 const numberOfPages = 2;
 
+const validate = values => {
+    const errors = {}
+
+    return errors
+}
+
 class WizardNavigationForm extends Component {
     constructor(props) {
         super(props)
@@ -72,7 +78,8 @@ WizardNavigationForm = reduxForm({
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
     enableReinitialize: true,
-    keepDirtyOnReinitialize: true
+    keepDirtyOnReinitialize: true,
+    validate
 })(WizardNavigationForm);
 
 export default WizardNavigationForm;
