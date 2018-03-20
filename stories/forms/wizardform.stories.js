@@ -12,6 +12,9 @@ import WizardNavigationForm from './wizardform/wizardform';
 
 
 const emptyRequest = {
+    object: {
+
+    }
 };
 
 export const requestReducer = (state = emptyRequest, action) => {
