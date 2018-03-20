@@ -3,7 +3,7 @@ import {
   Field, formValueSelector, reduxForm,
   SubmissionError
 } from 'redux-form';
-import {connect, dispatch} from 'react-redux';
+
 
 import {
   FormGroup,
@@ -24,7 +24,7 @@ export class EmailValidationForm extends Component {
     return (
       <form onSubmit={handleSubmit(onSubmit)} className="wfp-form--stacked">
         <div>
-          <FormGroup type="seperate">
+          <FormGroup type="separate">
             <FormGroupTitle>Email validation form</FormGroupTitle>
             <FormHint>Nice email success@mail.com</FormHint>
             <Field
@@ -36,13 +36,6 @@ export class EmailValidationForm extends Component {
               wrapper
             />
           </FormGroup>
-
-          <button type="submit" disabled={pristine || submitting}>
-            Submit
-          </button>
-          <button type="button" disabled={pristine || submitting} onClick={reset}>
-            Clear Values
-          </button>
         </div>
       </form>
     )

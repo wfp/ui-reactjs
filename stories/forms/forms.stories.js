@@ -1,12 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router';
-import store from '../configureStore';
+import {storiesOf} from '@storybook/react';
+import {dispatch} from 'react-redux';
+import {browserHistory} from 'react-router';
 import {EmailValidationForm} from './testForms';
-import { SubmissionError } from 'redux-form';
+import {SubmissionError} from 'redux-form';
 
-import { Values } from 'redux-form-website-template'
+import {Values} from 'redux-form-website-template'
+import WizardNav from '../../src/components/forms/wizardNav';
 import {ProviderDecorator, sleep} from "../helpers";
 
 const asyncValidation = values => {
@@ -27,4 +27,5 @@ storiesOf('Forms', module)
 	.add('Form Errors', () => (
 		<div>
 			<EmailValidationForm onSubmit={asyncValidation} />
+      <WizardNav formName={"validateEmail"} dispatch={dispatch} prevHide={true} saveShow={true} nextHide={true} />
 		</div>));
