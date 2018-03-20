@@ -22,7 +22,7 @@
     "prepublish": "npm run build",
     "test": "jest",
     "test-storybook": "storyshots",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 5000",
     "build-storybook": "build-storybook"
   },
   "jest": {

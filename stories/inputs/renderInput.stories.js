@@ -35,7 +35,7 @@ The MultiSelect Input is a redux-form Field component, but can be also used as a
 storiesOf('Inputs', module)
   .addDecorator(withKnobs)
   .addDecorator(story => <Provider store={store}><FormWrapper>{story()}</FormWrapper></Provider>)
-  .add('Input',
+  .add('MultiSelect Input',
 
     withInfo(info)(() => {
       const readOnly = boolean('readOnly', false);
@@ -44,7 +44,7 @@ storiesOf('Inputs', module)
       const labelKey = text('labelKey', 'display_name');
       const options = object('options', output);
       return (
-        
+
         <Field
               name="name"
               component={RenderInput}
@@ -55,7 +55,7 @@ storiesOf('Inputs', module)
               labelKey={labelKey}
               multi={multi}
           />
-        
+
       )
     })
   );
