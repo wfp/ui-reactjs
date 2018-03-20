@@ -9,14 +9,14 @@ import PropTypes from 'prop-types';
 export const Input = (props) => {
     const { className, input, id, label, disabled, meta: { touched, error }, type, placeholder} = props;
 
-    const inputClasses = classNames({
+    const inputClasses = classNames(
+      className, {
       'invalid' : touched && error
     });
 
     return (
         <input
             {...input}
-            className={className}
             disabled={disabled}
             id={id ? id : input.name}
             type={type}
@@ -39,11 +39,12 @@ export const RenderInput = (props) => {
     });
 
     return (
+      <InlineError {...props} >
         <div className={inputClasses}>
             <Label {...props} />
             <Input {...props} />
-            <InlineError {...props} />
         </div>
+      </InlineError>
     )
 };
 
