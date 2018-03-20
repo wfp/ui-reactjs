@@ -27,12 +27,12 @@ export const Input = (props) => {
 
 export const RenderInput = (props) => {
     const {input, id, label, disabled, wrapper, type, meta: {touched, error}} = props;
-    const showInvalid = props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error);
-
     return (
       <InlineError {...props} >
+        <div>
           <Label {...props} />
           <Input {...props} />
+        </div>
       </InlineError>
     )
 };
