@@ -46,7 +46,7 @@ class BankingDialog extends Component {
         <div>
           <UniversalModalSubTitle>
             <div className="wfp-form">
-              <Label>Filter by Bank name, city or number to search...</Label>
+              <Label>Filter by bank name, bank number or city to search. If you can't find your bank, close this window to enter details manually.</Label>
               <input 
                 className={this.state.search ? 'notempty' : ''}
                 type="text"
