@@ -38,24 +38,26 @@ storiesOf('Inputs', module)
   .add('Multi Select',
 
     withInfo(info)(() => {
-      const readOnly = boolean('readOnly', false);
-      const multi = boolean('multi', true);
-      const valueKey = text('valueKey', 'email');
-      const labelKey = text('labelKey', 'display_name');
-      const options = object('options', output);
-      return (
-        
-        <Field
-              name="name"
-              component={MultiSelect}
-              label="Staff Member"
-              options={options}
-              readOnly={readOnly}
-              valueKey={valueKey}
-              labelKey={labelKey}
-              multi={multi}
-          />
-        
-      )
+        const readOnly = boolean('readOnly', false);
+        const multi = boolean('multi', true);
+        const simpleValue = boolean('simpleValue', true);
+        const valueKey = text('valueKey', 'email');
+        const labelKey = text('labelKey', 'display_name');
+        const options = object('options', output);
+        return (
+
+            <Field
+                name="name"
+                component={MultiSelect}
+                label="Staff Member"
+                options={options}
+                readOnly={readOnly}
+                valueKey={valueKey}
+                labelKey={labelKey}
+                simpleValue={simpleValue}
+                multi={multi}
+            />
+
+        )
     })
   );
