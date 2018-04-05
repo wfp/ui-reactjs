@@ -9,14 +9,14 @@ import PropTypes from 'prop-types';
 export const Input = (props) => {
     const { className, input, id, label, disabled, meta: { touched, error }, type, placeholder} = props;
 
-    const inputClasses = classNames({
+    const inputClasses = classNames(
+      className, {
       'invalid' : touched && error
     });
 
     return (
         <input
             {...input}
-            className={className}
             disabled={disabled}
             id={id ? id : input.name}
             type={type}
@@ -27,23 +27,13 @@ export const Input = (props) => {
 
 export const RenderInput = (props) => {
     const {input, id, label, disabled, wrapper, type, meta: {touched, error}} = props;
-    const showInvalid = props.meta && (props.meta.touched && props.meta.error || props.meta.submitFailed === true && props.meta.error);
-    const inputClasses = classNames({
-        'required': props.isRequired,
-        'disabled': props.disabled,
-        'field--read-only': props.readOnly,
-        'wfp-form--group': props.wrapper === true,
-        'invalid': showInvalid,
-        [`wfp-form--group--${props.labelPosition}`]: props.labelPosition,
-        [`${props.className}`]: props.className,
-    });
-
     return (
-        <div className={inputClasses}>
-            <Label {...props} />
-            <Input {...props} />
-            <InlineError {...props} />
+      <InlineError {...props} >
+        <div>
+          <Label {...props} />
+          <Input {...props} />
         </div>
+      </InlineError>
     )
 };
 
