@@ -46,6 +46,9 @@ export const RenderCurrencyInput = (props) => {
             input.onChange(value);
         }
     }
+    let filterOptions = true;
+    if (props.disableClientFilter)
+           filterOptions = false;
 
     return (
         <InlineError {...props}>
@@ -65,6 +68,7 @@ export const RenderCurrencyInput = (props) => {
                         onChange={handleChange}
                         loadOptions={loadOptions}
                         searchable={true}
+                        filterOptions={filterOptions}
                     />
                 </div>
         </InlineError>
