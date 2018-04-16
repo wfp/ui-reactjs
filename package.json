@@ -99,6 +99,7 @@
     "react-dates": "^15.5.3",
     "react-dropzone": "^4.2.3",
     "react-modal": "^3.0.4",
+    "react-month-picker": "git+https://github.com/mashony/react-month-picker.git",
     "react-paginate": "^4.4.4",
     "react-placeholder": "^2.0.0",
     "react-portal": "^3.2.0",
