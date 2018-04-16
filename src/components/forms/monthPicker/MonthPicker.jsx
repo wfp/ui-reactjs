@@ -18,15 +18,8 @@ class MonthPicker extends Component {
     this.container.show();
   };
 
-  render() {
-    const {
-      id, disabled, readOnly, displayFormat, minYear, maxYear, isOutsideRange,
-      input: {
-        value = null
-      }
-    } = this.props;
+  prepareValues = (value, displayFormat) => {
     let displayValue, mvalue;
-
     if (value) {
       const momentValue = moment(value);
       displayValue = momentValue.format(displayFormat);
@@ -41,6 +34,18 @@ class MonthPicker extends Component {
         year: moment().year(),
       }
     }
+    return {displayValue, mvalue}
+  }
+
+  render() {
+    const {
+      id, disabled, readOnly, displayFormat, minYear, maxYear, isOutsideRange,
+      input: {
+        value = null
+      }
+    } = this.props;
+
+    const {displayValue, mvalue} = this.prepareValues(value, displayFormat);
 
     return (
       <InlineError {...this.props}>
@@ -72,7 +77,9 @@ class MonthPicker extends Component {
   }
 }
 
-MonthPicker.propTypes = {};
+MonthPicker.propTypes = {
+
+};
 
 MonthPicker.defaultProps = {
   displayFormat: 'MMM. YYYY',

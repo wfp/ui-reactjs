@@ -40,9 +40,17 @@ import UniversalFooter from './components/universalfooter/footer';
 import UniversalFooterMini from './components/universalfooter/footermini';
 
 import loadCurrencies from './utils/loadCurrencies';
-import {validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse} from './utils/validation';
+import {
+  validateEmail,
+  isRequired,
+  arrayIsRequired,
+  validateDateRange,
+  validateRoles,
+  errorResponse
+} from './utils/validation';
 import normalizeDecimal from './utils/normalizers/normalizeDecimal';
-import normalizeDecimalSeperator from './utils/normalizers/normalizeDecimalSeperator';
+import normalizeDecimalSeperator
+  from './utils/normalizers/normalizeDecimalSeperator';
 import {Unit} from './utils/units';
 
 import {
@@ -57,7 +65,8 @@ import {
   FormGroupTitle,
   FormGroupInputField,
   FormHint,
-  RequiredInfo }  from './components/forms/inputs';
+  RequiredInfo,
+} from './components/forms/inputs';
 
 
 import Label from './components/forms/label';
@@ -66,7 +75,7 @@ import DatePicker from './components/forms/datePicker';
 import DateRangePicker from './components/forms/dateRangePicker';
 import StaffSelect from './components/forms/staffSelect';
 import MultiSelect from './components/forms/multiSelect';
-import { RenderSelect } from './components/forms/renderSelect';
+import {RenderSelect} from './components/forms/renderSelect';
 import FileUpload from './components/forms/fileUpload';
 import WizardNav from './components/forms/wizardNav';
 import InlineError from './components/forms/inlineError';
@@ -80,6 +89,7 @@ import BankingDialogInput from './components/forms/bankingDialog/bankingDialogIn
 import LargeLoaderOverlay from './components/loader/largeLoaderOverlay';
 import DutyStationSelect from './components/forms/dutyStationSelect';
 import Blockquote from './components/blockquote';
+import MonthPicker from './components/forms/monthPicker/MonthPicker';
 
 
 module.exports = {
@@ -103,8 +113,11 @@ module.exports = {
   StatusEdge,
   Tab,
   Tabs,
-  Table, TableHeader,
-  TableHeaderItem, TableRow, TableRowItem,
+  Table,
+  TableHeader,
+  TableHeaderItem,
+  TableRow,
+  TableRowItem,
   WfpActionButton,
   MultipleActionsButton,
   TableDropdownMenu,
@@ -149,8 +162,14 @@ module.exports = {
   BankingDialog,
   BankingDialogInput,
   loadCurrencies,
-  validateEmail, isRequired, arrayIsRequired, validateDateRange, validateRoles, errorResponse,
+  validateEmail,
+  isRequired,
+  arrayIsRequired,
+  validateDateRange,
+  validateRoles,
+  errorResponse,
   normalizeDecimal,
-    normalizeDecimalSeperator,
-    Blockquote
+  normalizeDecimalSeperator,
+  Blockquote,
+  MonthPicker
 };
