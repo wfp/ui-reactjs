@@ -10,7 +10,7 @@ class MonthPicker extends Component {
     const {
       input: {onChange}
     } = this.props;
-    const momentValue = moment().set({year, month: month - 1, day: 1});
+    const momentValue = moment.utc().set({year, month: month - 1}).startOf('month');
     onChange(momentValue)
   };
 

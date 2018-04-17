@@ -68,4 +68,25 @@ describe("<MonthPicker />", () => {
       </SimpleForm>)
     expect(wrapper.find(Picker).props().value).toEqual({ month: 1, year: 2018 })
   })
+
+  it('return date when form submitted', () => {
+    const onSubmit = jest.fn();
+    const wrapper = mount(
+      <SimpleForm onSubmit={onSubmit}>
+        <Field
+          name="month"
+          component={MonthPicker}
+          label="Select input"
+        />
+      </SimpleForm>)
+
+    const field = wrapper.find('input').first();
+    field.simulate('change', 'Jan. 2018')
+    const form = wrapper.find('form').first();
+    form.simulate('submit');
+    expect(onSubmit.mock.calls.length).toBe(1);
+    const submittedValues = onSubmit.mock.calls[0][0];
+    console.log(submittedValues)
+    expect(submittedValues).toEqual({ month: '01/12/2018' })
+  })
 })

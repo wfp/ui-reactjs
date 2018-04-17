@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import store from './configureStore';
 import { withKnobs, object, boolean, text } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
+import {Values} from 'redux-form-website-template'
 
 import DatePicker from '../src/components/forms/datePicker';
-
 /* Currency fetch */
 
 class SimpleForm extends Component {
@@ -81,7 +81,10 @@ storiesOf('Inputs', module)
       const disabled = boolean('disabled', false)
       const date = text('date', '2018-04-07')
       return (
-        <SimpleForm handleSubmit={handleSubmit} readOnly={readOnly} disabled={disabled}  initialValues={{ datepicker: date }}/>
+        <div>
+          <Values form="SimpleForm"/>
+          <SimpleForm handleSubmit={handleSubmit} readOnly={readOnly} disabled={disabled}  initialValues={{ datepicker: date }}/>
+        </div>
       )
     })
   );
