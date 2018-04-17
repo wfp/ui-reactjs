@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import FormWrapper from './formWrapper';
 
 export const ProviderWrapper = story => <Provider store={store}>{children}</Provider>;
-export const SimpleForm = ({children, initialValues}) =>
+export const SimpleForm = ({children, initialValues, onSubmit = () => {}}) =>
   <Provider store={store}>
-    <FormWrapper initialValues={initialValues}>{children}</FormWrapper>
+    <FormWrapper onSubmit={onSubmit} initialValues={initialValues}>{children}</FormWrapper>
   </Provider>;
 
