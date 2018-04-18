@@ -5,7 +5,6 @@ test/bower_components
 .idea
 *.log
 .DS_Store
-lib
 *.pyc
 demo/mydatabase
 demo/src/wss_ui/site/static/dist
