@@ -22,20 +22,19 @@ class DateRangePickerEl extends Component {
 
   handleFocusChange = focusedInput => this.setState({ focusedInput });
 
-  closeCalendar = () => this.setState({ focusedInput: null });
-
   /* Update Redux-Forms values */
-  handleDatesChange = (dates) => {
-    console.log("Close fired", dates, this.state);
-    if (dates.startDate) {
+  handleDatesChange = () => {
+    if (this.state.startDate) {
       const startField = this.props[this.props.names[0]];
-      startField.input.onChange(dates.startDate.format("YYYY-MM-DD"));
+      startField.input.onChange(this.state.startDate.format("YYYY-MM-DD"));
     }
 
-    if (dates.endDate) {
+    if (this.state.endDate) {
       const endField = this.props[this.props.names[1]];
-      endField.input.onChange(dates.endDate.format("YYYY-MM-DD"));
+      endField.input.onChange(this.state.endDate.format("YYYY-MM-DD"));
     }
+
+    this.setState({ focusedInput: null });
   }
 
   /* Get initial values */
@@ -66,9 +65,6 @@ class DateRangePickerEl extends Component {
 
   render () {
 
-    const from = this.props[this.props.names[0]];
-    const to = this.props[this.props.names[1]];
-
     const { focusedInput = null } = this.state;
 
     return (
@@ -86,7 +82,6 @@ class DateRangePickerEl extends Component {
           keepOpenOnDateSelect
           onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
           onFocusChange={this.handleFocusChange}
-          onClose={this.handleDatesChange}
           startDateId='startDate'
           startDate={this.state.startDate}
           startDatePlaceholderText='Start Date'
@@ -94,7 +89,7 @@ class DateRangePickerEl extends Component {
           readOnly={this.props.readOnly}
           renderCalendarInfo={() => (
             <div className="DateRangePickerInput_info">
-              <button onClick={this.closeCalendar} className="DateRangePickerInput_apply wfp-btn">Apply</button>
+              <button onClick={this.handleDatesChange} className="DateRangePickerInput_apply wfp-btn">Apply</button>
             </div>)}
         />
       </InlineError>
