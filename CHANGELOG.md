@@ -1,3 +1,8 @@
+v0.3.22-alpha-4 
+--------------------------------------
+- Fixed Date Range Picker 
+
+
 v0.0.1 - Fri, 1 Sep 2017 
 --------------------------------------
 - Library initial setup 
