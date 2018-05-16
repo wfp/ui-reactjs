@@ -1,3 +1,8 @@
+v0.3.22-alpha-5 
+--------------------------------------
+- Added delimiter into MultiSelect Component
+
+
 v0.3.22-alpha-4 
 --------------------------------------
 - Fixed Date Range Picker 
