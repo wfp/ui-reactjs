@@ -43,7 +43,7 @@ const StaffSelectValue = (props) => {
                             <div className="userselect__description">
                                 <span>Job title: {props.value.position_title}</span>
                                 <span>Org unit: {props.value.org_unit_name}</span>
-                                <span>Duty station: {props.value.country}, {props.value.workstation}</span>
+                                <span>Duty station: {props.value.country}, {props.value.duty_station}</span>
                             </div>
                         )}
                     </div>
