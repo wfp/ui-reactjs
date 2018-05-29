@@ -1,3 +1,8 @@
+v0.3.23 
+--------------------------------------
+- Production delivery 
+
+
 v0.3.22-alpha-7 
 --------------------------------------
 - Added ID for RenderStatic Component
