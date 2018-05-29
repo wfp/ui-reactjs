@@ -125,7 +125,7 @@ export const RenderTextarea = (props) => {
 
 
 export const RenderStatic = (props) => {
-    const {className, data, label, hideLabel, unit, unitFrom} = props;
+    const {id, className, data, label, hideLabel, unit, unitFrom} = props;
 
     const wrapperClass = classNames({
       [`${className}`]: className
@@ -141,7 +141,7 @@ export const RenderStatic = (props) => {
           {hideLabel !== true &&
               <Label {...props} />
           }
-          <span className={inputClass}>
+          <span id={id ? id : 'rs-'+label} className={inputClass}>
             {unit ? (
               <Unit type={unit} from={unitFrom}>{data}</Unit>
             ) : (
