@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import InlineError from './inlineError';
 import Label from './label';
 import Select from 'react-select';
+import _ from "lodash"
 import PropTypes from 'prop-types';
 import { Input } from './inputs';
 
@@ -35,7 +36,7 @@ const StaffSelectValue = (props) => {
                             <div className="userselect__description">
                                 <div className="userselect__value__text">
                                     {props.value.last_name}, {props.value.first_name}
-                                </div>  
+                                </div>
                                 <span>{props.value.position_title}</span>
                                 <span>{props.value.division}</span>
                             </div>
@@ -60,7 +61,13 @@ StaffSelectValue.propTypes = {
 
 const StaffSelect = (props) => {
 
-    const { input, value, label, type, disabled, readOnly, loadOptions, disableEmpty} = props;
+    const debouncedLoadOptions = _.debounce((searchTerm, callback) => {
+      props.loadOptions(searchTerm)
+        .then((result) => callback(null, result))
+        .catch((error) => callback(error, null));
+    }, props.debounceDelay);
+
+    const { input, value, label, type, disabled, readOnly, disableEmpty} = props;
 
     const handleChange = (value) => {
         if (value || disableEmpty !== true) {
@@ -78,7 +85,7 @@ const StaffSelect = (props) => {
                         className="userselect__select"
                         id="state-select"
                         labelKey="text"
-                        loadOptions={loadOptions}
+                        loadOptions={debouncedLoadOptions}
                         name="selected-state"
                         onChange={handleChange}
                         placeholder="Enter last name to select employee"
@@ -108,5 +115,9 @@ StaffSelect.propTypes = {
     loadOptions: PropTypes.func,
     meta: PropTypes.object
 };
+
+StaffSelect.defaultProps = {
+    debounceDelay: 500
+}
 
 export default StaffSelect;

@@ -12,7 +12,7 @@ import StaffSelect from '../src/components/forms/staffSelect';
 /* Currency fetch */
 
 function loadStaffmembers (input) {
-
+  console.log("loading")
   const output = [
     {
       display_name: "MUSTERMANN, Max",
