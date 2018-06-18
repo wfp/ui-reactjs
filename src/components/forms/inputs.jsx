@@ -91,15 +91,26 @@ export const RenderCheckbox = (props) => {
   )
 };
 
-
 export const RenderRadio = (props) => {
-  const { id, input, label, wrapper, type, meta: { touched, error } } = props;
-  return (
-    <InlineError {...props} className="wfp-radio">
-        <Input {...props} />
-        <Label {...props} />
-    </InlineError>
-  )
+  const { id, input, label, wrapper, type, meta: { touched, error, checked }, hint } = props;
+  if(hint && input.checked){
+    return (
+      <InlineError {...props} className="wfp-radio">
+          <Input {...props} />
+          <Label {...props} />
+          <FormHint type="inline">
+              {hint}
+          </FormHint>
+      </InlineError>
+    )
+  } else {
+    return (
+      <InlineError {...props} className="wfp-radio">
+          <Input {...props} />
+          <Label {...props} />
+      </InlineError>
+    )
+  }
 };
 
 export const RenderTextarea = (props) => {

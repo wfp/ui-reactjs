@@ -363,6 +363,9 @@ select:invalid {
     label {
         width: calc(100% - 70px);
     }
+    &.inline {
+        display: inline-block;
+    }
 }
 
 /* Dropzone */
